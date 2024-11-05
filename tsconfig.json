@@ -1,0 +1,9 @@
+{
+  "extends": "./typescript/base.json",
+  "include": ["eslint", "prettier", "typescript"],
+  "exclude": [
+    "eslint/presets/typescript.test",
+    "eslint/presets/typescript-react.test",
+    "eslint/styles/jsx-no-literals.test"
+  ]
+}

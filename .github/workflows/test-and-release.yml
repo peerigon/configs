@@ -1,0 +1,53 @@
+name: 🧪 Test and 🚀 Release
+
+on:
+  push:
+    branches:
+      - main
+      - beta
+  pull_request: {}
+  workflow_dispatch: {}
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-release:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+
+    strategy:
+      matrix:
+        node-version: [ 22.x ]
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # pin@main
+      - name: ⎔ Setup node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # pin@main
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: 🗄 Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # pin@main
+        with:
+          path: "**/node_modules"
+          key: node_modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: 📥 Install dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: |
+          npm ci --ignore-scripts
+      - name: 🧪 Test
+        run: |
+          npm test
+        env:
+          CI: true
+      - name: 🚀 Release on npm
+        if: ${{ contains(' refs/heads/main refs/heads/beta ', github.ref) && matrix.node-version == '22.x' }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run release
