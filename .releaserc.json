@@ -15,10 +15,8 @@
     [
       "@semantic-release/exec",
       {
-        "verifyConditionsCmd": "echo //npm.pkg.github.com/:_authToken=${process.env.GITHUB_TOKEN} > temp.npmrc && npm whoami --userconfig temp.npmrc --registry https://npm.pkg.github.com/",
-        "publishCmd": "npm publish --userconfig temp.npmrc --tag ${nextRelease.channel} --registry https://npm.pkg.github.com/ --no-git-tag-version",
-        "successCmd": "rm temp.npmrc",
-        "failCmd": "rm temp.npmrc"
+        "verifyConditionsCmd": "echo //npm.pkg.github.com/:_authToken=${process.env.GITHUB_TOKEN} > $TMPDIR/github.npmrc && npm whoami --userconfig $TMPDIR/github.npmrc --registry https://npm.pkg.github.com/",
+        "publishCmd": "npm publish --userconfig $TMPDIR/github.npmrc --tag ${nextRelease.channel} --registry https://npm.pkg.github.com/ --no-git-tag-version"
       }
     ]
   ]
