@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/peerigon/configs/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-11-10)
+
+
+### Bug Fixes
+
+* Prettify CHANGELOG.md ([f904e8d](https://github.com/peerigon/configs/commit/f904e8d535a8d04d615281bb942ccd8b2f12a9d9))
+
 # [1.0.0-beta.2](https://github.com/peerigon/configs/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-11-10)
 
 ### Features
