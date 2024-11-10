@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/peerigon/configs/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-11-10)
+
+
+### Features
+
+* Also release on Github ([0e3e84f](https://github.com/peerigon/configs/commit/0e3e84f54a4689c8c0c3a340435346c351662cc9))
+
 # 1.0.0-beta.1 (2024-11-05)
 
 
