@@ -1,3 +1,11 @@
+# [1.0.0-beta.4](https://github.com/peerigon/configs/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-11-10)
+
+
+### Bug Fixes
+
+* Adjust release script ([df43151](https://github.com/peerigon/configs/commit/df431514d28fd32d2bd69a50eeb8edf3e6cc1d44))
+* Adjust release script ([3668267](https://github.com/peerigon/configs/commit/366826718205e6f542f69d890a44c3595fa84340))
+
 # [1.0.0-beta.3](https://github.com/peerigon/configs/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-11-10)
 
 ### Bug Fixes
