@@ -39,7 +39,10 @@
   "files": [
     "eslint",
     "prettier",
-    "typescript"
+    "semantic-release",
+    "typescript",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "scripts": {
     "test": "run-p test:presets:* test:styles:*",
