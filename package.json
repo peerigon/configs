@@ -33,6 +33,7 @@
     "./eslint/styles/prefer-array-shorthand": "./eslint/styles/prefer-array-shorthand.js",
     "./eslint/styles/prefer-interface": "./eslint/styles/prefer-interface.js",
     "./prettier": "./prettier/base.js",
+    "./semantic-release": "./semantic-release/base.js",
     "./typescript": "./typescript/base.js"
   },
   "files": [
