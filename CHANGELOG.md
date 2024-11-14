@@ -1,3 +1,10 @@
+# [1.0.0-beta.6](https://github.com/peerigon/configs/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2024-11-14)
+
+
+### Bug Fixes
+
+* Missing files in package.json files array ([97111b6](https://github.com/peerigon/configs/commit/97111b66b1a741e25820bcf43b17355b59a95fca))
+
 # [1.0.0-beta.5](https://github.com/peerigon/configs/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2024-11-14)
 
 
