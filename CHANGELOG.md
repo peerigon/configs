@@ -1,3 +1,10 @@
+# [1.0.0-beta.5](https://github.com/peerigon/configs/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2024-11-14)
+
+
+### Features
+
+* Add shareable semantic-release config ([e0b585a](https://github.com/peerigon/configs/commit/e0b585a4eaaa4dbcfb206315870d3a22fa1d7186))
+
 # [1.0.0-beta.4](https://github.com/peerigon/configs/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-11-10)
 
 
