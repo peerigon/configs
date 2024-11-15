@@ -1,3 +1,10 @@
+# [1.0.0-beta.7](https://github.com/peerigon/configs/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2024-11-15)
+
+
+### Bug Fixes
+
+* TypeScript configs ([0c584e7](https://github.com/peerigon/configs/commit/0c584e70fd840e6ca857f4b177a21a389d958633))
+
 # [1.0.0-beta.6](https://github.com/peerigon/configs/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2024-11-14)
 
 
