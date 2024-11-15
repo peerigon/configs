@@ -1,0 +1,7 @@
+{
+  "extends": "./typescript.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true
+  }
+}
