@@ -1,3 +1,15 @@
+# [1.0.0-beta.8](https://github.com/peerigon/configs/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2024-11-16)
+
+
+### Bug Fixes
+
+* Downgrade ESLint ([d09f208](https://github.com/peerigon/configs/commit/d09f2084646c68fd9998685143563ba88ddaab0a))
+
+
+### Features
+
+* Update dependencies ([836a04f](https://github.com/peerigon/configs/commit/836a04f798741639837bb56fcf3ecbc028794c14))
+
 # [1.0.0-beta.7](https://github.com/peerigon/configs/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2024-11-15)
 
 
