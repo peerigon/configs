@@ -1,3 +1,10 @@
+# [1.0.0-beta.9](https://github.com/peerigon/configs/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2024-12-09)
+
+
+### Features
+
+* Improve TS configs and add library types ([760a898](https://github.com/peerigon/configs/commit/760a8983b9d780601e7c6e2cb2c867f45f55f25f))
+
 # [1.0.0-beta.8](https://github.com/peerigon/configs/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2024-11-16)
 
 
