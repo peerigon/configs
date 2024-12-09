@@ -18,7 +18,8 @@ const plugins = await Promise.all([
   safeResolve("prettier-plugin-tailwindcss"),
 ]);
 
-export default {
+/** @type {import("prettier").Config} */
+export const config = {
   plugins,
   importOrderParserPlugins: [
     "typescript",
@@ -28,3 +29,5 @@ export default {
   ],
   importOrderTypeScriptVersion: "5.0.0",
 };
+
+export default config;

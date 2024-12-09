@@ -1,7 +1,10 @@
 {
-  "extends": "./typescript.json",
+  "extends": "./base.json",
   "compilerOptions": {
-    "sourceMap": true,
-    "declaration": true
-  }
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "${configDir}/dist",
+    "sourceMap": true
+  },
+  "$schema": "https://json.schemastore.org/tsconfig"
 }

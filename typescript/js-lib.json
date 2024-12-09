@@ -1,0 +1,9 @@
+{
+  "extends": "./lib.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+    "outDir": "${configDir}/types"
+  },
+  "$schema": "https://json.schemastore.org/tsconfig"
+}

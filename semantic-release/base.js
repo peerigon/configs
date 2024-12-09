@@ -1,4 +1,5 @@
-export default {
+/** @type {import("semantic-release").Options} */
+export const config = {
   branches: ["main", { name: "beta", prerelease: true }],
   plugins: [
     "@semantic-release/commit-analyzer",
@@ -36,3 +37,5 @@ export default {
     ],
   ],
 };
+
+export default config;

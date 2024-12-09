@@ -7,7 +7,6 @@
     "isolatedModules": true,
     "lib": ["DOM", "ESNext"],
     "module": "NodeNext",
-    "noEmit": true, // If code should be emitted, it's recommended to create a separate tsconfig.build.json file
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -16,6 +15,10 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
+    // TODO: Turn on the following settings once TS 5.7 is released, see also https://nodejs.org/docs/latest/api/typescript.html#typescript-features
+    // "allowImportingTsExtensions": true,
+    // "rewriteRelativeImportExtensions": true,
+    // "verbatimModuleSyntax": true
   },
   "$schema": "https://json.schemastore.org/tsconfig"
 }

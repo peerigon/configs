@@ -21,26 +21,74 @@
   "author": "Peerigon GmbH <hello@peerigon.com>",
   "type": "module",
   "exports": {
-    "./eslint/presets/javascript-browser": "./eslint/presets/javascript-browser.js",
-    "./eslint/presets/javascript-node": "./eslint/presets/javascript-node.js",
-    "./eslint/presets/javascript": "./eslint/presets/javascript.js",
-    "./eslint/presets/typescript-node": "./eslint/presets/typescript-node.js",
-    "./eslint/presets/typescript-react": "./eslint/presets/typescript-react.js",
-    "./eslint/presets/typescript": "./eslint/presets/typescript.js",
-    "./eslint/styles/jsx-no-literals": "./eslint/styles/jsx-no-literals.js",
-    "./eslint/styles/no-default-export": "./eslint/styles/no-default-export.js",
-    "./eslint/styles/no-null": "./eslint/styles/no-null.js",
-    "./eslint/styles/prefer-array-shorthand": "./eslint/styles/prefer-array-shorthand.js",
-    "./eslint/styles/prefer-interface": "./eslint/styles/prefer-interface.js",
-    "./prettier": "./prettier/base.js",
-    "./semantic-release": "./semantic-release/base.js",
-    "./typescript": "./typescript/base.json",
-    "./typescript/lib": "./typescript/lib.json"
+    "./eslint/presets/javascript-browser": {
+      "types": "./types/eslint/presets/javascript-browser.d.ts",
+      "default": "./eslint/presets/javascript-browser.js"
+    },
+    "./eslint/presets/javascript-node": {
+      "types": "./types/eslint/presets/javascript-node.d.ts",
+      "default": "./eslint/presets/javascript-node.js"
+    },
+    "./eslint/presets/javascript": {
+      "types": "./types/eslint/presets/javascript.d.ts",
+      "default": "./eslint/presets/javascript.js"
+    },
+    "./eslint/presets/typescript-node": {
+      "types": "./types/eslint/presets/typescript-node.d.ts",
+      "default": "./eslint/presets/typescript-node.js"
+    },
+    "./eslint/presets/typescript-react": {
+      "types": "./types/eslint/presets/typescript-react.d.ts",
+      "default": "./eslint/presets/typescript-react.js"
+    },
+    "./eslint/presets/typescript": {
+      "types": "./types/eslint/presets/typescript.d.ts",
+      "default": "./eslint/presets/typescript.js"
+    },
+    "./eslint/styles/jsx-no-literals": {
+      "types": "./types/eslint/styles/jsx-no-literals.d.ts",
+      "default": "./eslint/styles/jsx-no-literals.js"
+    },
+    "./eslint/styles/no-default-export": {
+      "types": "./types/eslint/styles/no-default-export.d.ts",
+      "default": "./eslint/styles/no-default-export.js"
+    },
+    "./eslint/styles/no-null": {
+      "types": "./types/eslint/styles/no-null.d.ts",
+      "default": "./eslint/styles/no-null.js"
+    },
+    "./eslint/styles/prefer-array-shorthand": {
+      "types": "./types/eslint/styles/prefer-array-shorthand.d.ts",
+      "default": "./eslint/styles/prefer-array-shorthand.js"
+    },
+    "./eslint/styles/prefer-interface": {
+      "types": "./types/eslint/styles/prefer-interface.d.ts",
+      "default": "./eslint/styles/prefer-interface.js"
+    },
+    "./prettier": {
+      "types": "./types/prettier/base.d.ts",
+      "default": "./prettier/base.js"
+    },
+    "./semantic-release": {
+      "types": "./types/semantic-release/base.d.ts",
+      "default": "./semantic-release/base.js"
+    },
+    "./typescript": {
+      "default": "./typescript/base.json"
+    },
+    "./typescript/lib": {
+      "default": "./typescript/lib.json"
+    },
+    "./typescript/js-lib": {
+      "default": "./typescript/js-lib.json"
+    }
   },
   "files": [
+    "docs",
     "eslint",
     "prettier",
     "semantic-release",
+    "types",
     "typescript",
     "CHANGELOG.md",
     "README.md"
@@ -55,8 +103,11 @@
     "test:styles:no-null": "cd eslint/styles/no-null.test; eslint --max-warnings 0 .",
     "test:styles:prefer-array-shorthand": "cd eslint/styles/prefer-array-shorthand.test; eslint --max-warnings 0 .",
     "test:styles:prefer-interface": "cd eslint/styles/prefer-interface.test; eslint --max-warnings 0 .",
-    "test:types": "tsc",
+    "test:types": "tsc --noEmit",
     "test:prettier": "prettier --check .",
+    "build": "run-s build:*",
+    "build:types": "tsc",
+    "prepublishOnly": "npm run build",
     "prepare": "husky",
     "release": "semantic-release"
   },
@@ -107,6 +158,7 @@
   },
   "peerDependencies": {
     "eslint": "^9.0.0",
+    "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },
   "publishConfig": {
