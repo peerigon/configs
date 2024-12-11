@@ -23,6 +23,9 @@ export const javascript = [
       "unicorn/no-array-reduce": "off",
       "unicorn/prefer-global-this": "off", // Too many false positives
       "unicorn/prefer-ternary": "off",
+      // It makes sense to use Promise.all() with a single promise when we expect more to be added later.
+      // In that case we don't want to refactor the code, but just add the new promise.
+      "unicorn/no-single-promise-in-promise-methods": "off",
     },
   },
   {
