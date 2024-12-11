@@ -1,3 +1,11 @@
+# [1.0.0-beta.10](https://github.com/peerigon/configs/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2024-12-11)
+
+
+### Bug Fixes
+
+* Turn of TS's exactOptionalPropertyTypes ([4069985](https://github.com/peerigon/configs/commit/4069985cad9b2da629e441cc1f02fd0e4be7f4a0))
+* Turn off unicorn/no-single-promise-in-promise-methods ([0557a83](https://github.com/peerigon/configs/commit/0557a83c45b2fe3198f84d47412c90fbb87ddd69))
+
 # [1.0.0-beta.9](https://github.com/peerigon/configs/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2024-12-09)
 
 
