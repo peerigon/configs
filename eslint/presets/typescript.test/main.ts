@@ -5,6 +5,10 @@ import test from "./test.json" with { type: "json" };
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const snake_case = 123;
 
+// Should not complain about missing dot-notation here since
+// we're using TS's noPropertyAccessFromIndexSignature
+process.env["SOME_ENV_VAR"] = "test";
+
 class SomeClass {
   #someProp = true;
   private someEventHandler = () => {

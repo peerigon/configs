@@ -2,7 +2,9 @@
   "compilerOptions": {
     "checkJs": true,
     "esModuleInterop": true,
-    "exactOptionalPropertyTypes": true,
+    // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
+    // by complaining about too much unproblematic code. We may revisit this decision later.
+    "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": ["DOM", "ESNext"],
