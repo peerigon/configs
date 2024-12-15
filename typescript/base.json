@@ -9,6 +9,7 @@
     "isolatedModules": true,
     "lib": ["DOM", "ESNext"],
     "module": "NodeNext",
+    "noEmit": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
