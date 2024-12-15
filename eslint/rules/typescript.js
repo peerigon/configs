@@ -129,7 +129,15 @@ export const typescript = tsEslint.config(
       ],
       "no-return-await": "off",
       "@typescript-eslint/return-await": ["warn", "in-try-catch"], // https://typescript-eslint.io/rules/return-await
-      "@typescript-eslint/switch-exhaustiveness-check": "warn", // https://typescript-eslint.io/rules/switch-exhaustiveness-check
+      "@typescript-eslint/switch-exhaustiveness-check": [
+        "warn",
+        {
+          // It should not be necessary to list all possible values for a union type
+          // explicitly in a switch statement. E.g. if the types are generated, we don't
+          // want to adjust all switch statements every time the types are changed.
+          considerDefaultExhaustiveForUnions: true,
+        },
+      ], // https://typescript-eslint.io/rules/switch-exhaustiveness-check
       camelcase: "off",
       "max-lines": [
         "warn",
