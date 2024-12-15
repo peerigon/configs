@@ -1,3 +1,12 @@
+# [1.0.0-beta.11](https://github.com/peerigon/configs/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2024-12-15)
+
+
+### Bug Fixes
+
+* Move package types to regular dependencies ([6d6c169](https://github.com/peerigon/configs/commit/6d6c1695989f04898a1e730b6320b2cbea158a8f))
+* noEmit setting in TypeScript configs ([281334c](https://github.com/peerigon/configs/commit/281334c3565ca0cd1afcc8d39a94857a0d42e9ae))
+* Relax switch-exhaustiveness-check rule ([2f158a4](https://github.com/peerigon/configs/commit/2f158a4a25770897c6140d3356161349b79c1cc2))
+
 # [1.0.0-beta.10](https://github.com/peerigon/configs/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2024-12-11)
 
 
