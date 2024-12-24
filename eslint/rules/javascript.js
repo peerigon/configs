@@ -13,6 +13,9 @@ export const javascript = [
       // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/896
       "unicorn/prevent-abbreviations": "off",
       "unicorn/filename-case": "off",
+      // The default of import-style is highly subjective and not always the best choice.
+      // E.g. bundlers are able to tree-shake named imports easier than default imports.
+      "unicorn/import-style": "off",
       "unicorn/no-nested-ternary": "off",
       "unicorn/no-null": "off",
       "unicorn/no-useless-undefined": "off",
