@@ -1,3 +1,10 @@
+# [1.0.0-beta.14](https://github.com/peerigon/configs/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2024-12-30)
+
+
+### Bug Fixes
+
+* Add rootDir to lib tsconfig ([764e0c1](https://github.com/peerigon/configs/commit/764e0c191f07dfd1d996937a4df488d56be5a159))
+
 # [1.0.0-beta.13](https://github.com/peerigon/configs/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2024-12-30)
 
 
