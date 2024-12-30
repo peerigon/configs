@@ -1,3 +1,10 @@
+# [1.0.0-beta.13](https://github.com/peerigon/configs/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2024-12-30)
+
+
+### Bug Fixes
+
+* Improve error message for no-default-export ([198c911](https://github.com/peerigon/configs/commit/198c91151a3dfd33339715c21ec95aa7c5bfbe05))
+
 # [1.0.0-beta.12](https://github.com/peerigon/configs/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2024-12-30)
 
 
