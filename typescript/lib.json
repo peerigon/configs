@@ -5,6 +5,7 @@
     "declarationMap": true,
     "noEmit": false,
     "outDir": "${configDir}/dist",
+    "rootDir": "${configDir}/src",
     "sourceMap": true
   },
   "$schema": "https://json.schemastore.org/tsconfig"
