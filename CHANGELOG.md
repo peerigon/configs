@@ -1,3 +1,10 @@
+# [1.0.0-beta.12](https://github.com/peerigon/configs/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2024-12-30)
+
+
+### Bug Fixes
+
+* Turn off unicorn/import-style ([f3be043](https://github.com/peerigon/configs/commit/f3be04315de51747319899f1ede9be15c1df5d6b))
+
 # [1.0.0-beta.11](https://github.com/peerigon/configs/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2024-12-15)
 
 
