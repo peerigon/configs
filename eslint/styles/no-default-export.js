@@ -8,7 +8,8 @@ export const noDefaultExport = [
         "error",
         {
           selector: "ExportDefaultDeclaration",
-          message: "Prefer named exports",
+          message:
+            "Please use named exports instead. Named exports ensure consistent naming and make it easier to auto-import symbols.",
         },
       ],
     },
