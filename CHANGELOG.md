@@ -1,3 +1,10 @@
+# [1.0.0-beta.15](https://github.com/peerigon/configs/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2024-12-30)
+
+
+### Bug Fixes
+
+* Remove rootDir config from lib tsconfig again ([84fe9dc](https://github.com/peerigon/configs/commit/84fe9dca95cdeba4e188d57a489ec6e12608fed4))
+
 # [1.0.0-beta.14](https://github.com/peerigon/configs/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2024-12-30)
 
 
