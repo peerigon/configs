@@ -1,20 +1,12 @@
 # [1.0.0-beta.16](https://github.com/peerigon/configs/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2025-01-20)
 
-
 ### Bug Fixes
 
-* CHANGELOG.md not being properly formatted ([22720ea](https://github.com/peerigon/configs/commit/22720ea8bc3aab0477a89094b24f567571860c15))
-
+- CHANGELOG.md not being properly formatted ([22720ea](https://github.com/peerigon/configs/commit/22720ea8bc3aab0477a89094b24f567571860c15))
 
 ### Features
 
-* Improve CSS property sorting ([f9b9790](https://github.com/peerigon/configs/commit/f9b97901a318146bdaa81b9c2019e9038104b389))
-
-
-
-
-
-CHANGELOG.md 42ms (unchanged)
+- Improve CSS property sorting ([f9b9790](https://github.com/peerigon/configs/commit/f9b97901a318146bdaa81b9c2019e9038104b389))
 
 # [1.0.0-beta.15](https://github.com/peerigon/configs/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2024-12-30)
 

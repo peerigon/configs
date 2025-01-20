@@ -6,6 +6,12 @@ export const config = {
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
+      "@semantic-release/exec",
+      {
+        prepareCmd: "npx -y prettier --write CHANGELOG.md",
+      },
+    ],
+    [
       "@semantic-release/git",
       {
         assets: ["CHANGELOG.md"],
@@ -28,7 +34,6 @@ export const config = {
       {
         verifyConditionsCmd:
           'echo "registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${process.env.GITHUB_TOKEN}" > /tmp/github.npmrc && npm whoami --userconfig /tmp/github.npmrc',
-        generateNotesCmd: "npx -y prettier --write CHANGELOG.md",
         publishCmd:
           "npm publish --userconfig /tmp/github.npmrc --tag ${nextRelease.channel} --no-git-tag-version",
         successCmd: "rm /tmp/github.npmrc",
