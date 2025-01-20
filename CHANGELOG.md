@@ -1,3 +1,9 @@
+# [1.0.0-beta.17](https://github.com/peerigon/configs/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2025-01-20)
+
+### Bug Fixes
+
+- Changelog not formatted correctly ([cc12fa7](https://github.com/peerigon/configs/commit/cc12fa7abe725c4ab8597296094e2e485b1346e0))
+
 # [1.0.0-beta.16](https://github.com/peerigon/configs/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2025-01-20)
 
 ### Bug Fixes
