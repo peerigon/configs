@@ -28,6 +28,8 @@ export const config = {
     "importAttributes",
   ],
   importOrderTypeScriptVersion: "5.0.0",
+  cssDeclarationSorterOrder: "smacss",
+  cssDeclarationSorterKeepOverrides: false,
 };
 
 export default config;
