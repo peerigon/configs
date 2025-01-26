@@ -8,10 +8,6 @@ on:
   pull_request: {}
   workflow_dispatch: {}
 
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   test-and-release:
     runs-on: ubuntu-latest
@@ -21,11 +17,24 @@ jobs:
       matrix:
         node-version: [ 22.x ]
 
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.node-version }}
+      cancel-in-progress: true
+
+    permissions:
+      # Necessary for semantic-release
+      contents: write
+      issues: write
+      pull-requests: write
+      # Necessary for npm publish --provenance
+      # See https://docs.npmjs.com/generating-provenance-statements#example-github-actions-workflow
+      id-token: write
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # pin@main
       - name: ⎔ Setup node
-        uses: actions/setup-node@8f9cc178b6e843639351e0bd5d638e5fd0a8dec7 # pin@main
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # pin@main
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
@@ -49,6 +58,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
         run: |
           npm run release

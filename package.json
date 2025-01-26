@@ -73,6 +73,10 @@
       "types": "./types/semantic-release/base.d.ts",
       "default": "./semantic-release/base.js"
     },
+    "./semantic-release/cross-publish": {
+      "types": "./types/semantic-release/cross-publish.d.ts",
+      "default": "./semantic-release/cross-publish.js"
+    },
     "./typescript": {
       "default": "./typescript/base.json"
     },
@@ -162,6 +166,7 @@
     "typescript": "^5.6.3"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
