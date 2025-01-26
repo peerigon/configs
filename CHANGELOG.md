@@ -1,3 +1,9 @@
+# [1.0.0-beta.18](https://github.com/peerigon/configs/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2025-01-26)
+
+### Features
+
+- Add docs ([83e7f61](https://github.com/peerigon/configs/commit/83e7f617d6fc44abcd7e0d05c700299d8e2910c2))
+
 # [1.0.0-beta.17](https://github.com/peerigon/configs/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2025-01-20)
 
 ### Bug Fixes
