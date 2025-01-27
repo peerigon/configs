@@ -1,3 +1,9 @@
+# [1.0.0-beta.20](https://github.com/peerigon/configs/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2025-01-27)
+
+### Bug Fixes
+
+- Use cross-publish semantic release config ([c079ce0](https://github.com/peerigon/configs/commit/c079ce0df36b436ffc46da9e86a562855b8f2082))
+
 # [1.0.0-beta.19](https://github.com/peerigon/configs/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2025-01-27)
 
 ### Features
