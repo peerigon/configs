@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install @peerigon/configs
+npm install eslint @peerigon/configs --save-dev
 ```
 
 Then create a `eslint.config.js` next to your `package.json`:
@@ -46,7 +46,7 @@ Presets bundle all relevant rules into one `import`. They can be imported as `@p
 - `typescript-react`: Rules for React projects written in TypeScript
 - `typescript-node`: Rules for TypeScript apps that are supposed to run in Node.js
 - `typescript`: Rules for all other TypeScript projects
-- `javascript-browser`: Rules for JavaScript apps running in a browser (e.g. in combination with JSDoc type annotations)
+- `javascript-browser`: Rules for JavaScript apps running in a browser (e.g. in combination with [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html))
 - `javascript-node`: Rules for JavaScript apps running in Node.js
 - `javascript`: Rules for all other JavaScript projects
 
@@ -73,20 +73,25 @@ export const NULL = null;
 
 ### `prefer-interface`
 
-[Prefer TypeScript's `interface` over `type`](https://typescript-eslint.io/rules/consistent-type-definitions/).
+Prefer TypeScript's `interface` over `type`:
 
-```js
-    "extends": [
-        "peerigon",
-        "peerigon/typescript",
-        "peerigon/styles/prefer-interface"
-    ],
+```ts
+interface SomeObject {
+  someProp: boolean;
+}
+```
+
+instead of
+
+```ts
+type SomeObject = {
+  someProp: boolean;
+};
 ```
 
 ### `prefer-array-shorthand`
 
-Enforces TypeScript arrays to use the shorthand array-style instead of the generic style.
-It enforces this:
+Enforces TypeScript arrays to use the shorthand array-style instead of the generic style:
 
 ```ts
 const foo: string[] = [];

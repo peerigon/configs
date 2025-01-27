@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install @peerigon/configs
+npm install semantic-release @peerigon/configs --save-dev
 ```
 
 Then create a `.releaserc.json` next to your `package.json`:
@@ -23,11 +23,14 @@ Recommended configuration in your `package.json`:
     "release": "semantic-release"
   },
   "publishConfig": {
-    "access": "public", // only if the package is supposed to be public
+    "//": "only if the package is supposed to be public"
+    "access": "public",
     "provenance": true
   }
 }
 ```
+
+`"provenance": true` will generate [provenance statements](https://docs.npmjs.com/generating-provenance-statements) in case your Github actions has the correct permissions (see below).
 
 Recommended Github action:
 
@@ -61,7 +64,8 @@ jobs:
       # ...
       - name: 🚀 Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN is only necessary if you want to publish to Github
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm run release

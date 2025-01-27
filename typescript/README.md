@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install @peerigon/configs
+npm install typescript @peerigon/configs --save-dev
 ```
 
 Then create a `tsconfig.json` just for type-checking next to your `package.json`:
@@ -55,4 +55,4 @@ We export the following `tsconfig.json` presets. They can be used by extending `
 
 - `typescript`: Recommended base config for all modern TypeScript projects
 - `typescript/lib`: Config for building TS libraries
-- `typescript/js-lib`: Config for building JS libraries with [TS JSDoc annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html).
+- `typescript/js-lib`: Config for building JS libraries with [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html).

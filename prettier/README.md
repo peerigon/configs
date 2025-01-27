@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install @peerigon/configs
+npm install prettier @peerigon/configs --save-dev
 ```
 
 Then create a `prettier.config.js` next to your `package.json`:

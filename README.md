@@ -24,17 +24,30 @@ Also checkout the instructions for each respective config:
 
 ## Philosophy
 
-Our rules aim to prevent as many bugs and security vulnerabilities as possible and make refactoring easier. At the same time, they should stay out of the way as much as possible.
+Linting, formatting and type-checking rules are always a balance between:
+
+- ease of reading
+- ease of refactoring
+- ease of writing.
+
+We think that:
+
+- code is read more often than refactored
+- and refactored more often than written from scratch.
+
+Our configs have been designed with these assumptions in mind.
 
 ### Formatting
 
-Formatting should follow the community standard. Our config is entirely based on Prettier's default config. Besides that, it also:
+Formatting should follow the community standard. Our config is therefore based on Prettier's default config. Besides that it also:
 
 - auto-sorts `import` statements
 - formats JSDoc comments
 - formats `package.json`
 - formats and sorts CSS properties
 - sorts Tailwind CSS class names
+
+This makes git diffs smaller and reviewing them more focussed.
 
 ### Linting
 
