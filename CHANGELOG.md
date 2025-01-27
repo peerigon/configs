@@ -1,3 +1,10 @@
+# [1.0.0-beta.19](https://github.com/peerigon/configs/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2025-01-27)
+
+### Features
+
+- Enable .ts imports ([781a4a9](https://github.com/peerigon/configs/commit/781a4a97e15df6b218959c76c62a2e0893b3c026))
+- Update dependencies ([839e69c](https://github.com/peerigon/configs/commit/839e69cdfef60349772479b7f5a7105c81be9d93))
+
 # [1.0.0-beta.18](https://github.com/peerigon/configs/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2025-01-26)
 
 ### Features
