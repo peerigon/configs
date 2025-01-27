@@ -57,6 +57,8 @@ jobs:
       # Necessary for npm publish --provenance
       # See https://docs.npmjs.com/generating-provenance-statements#example-github-actions-workflow
       id-token: write
+      # packages: write is only necessary if you want to publish to Github
+      packages: write
 
     steps:
       # ...
