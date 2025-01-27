@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Other } from "./Other.tsx";
 
 export const App = (_props: { name: string; count: number }) => {
   for (let index = 0; index < 10; index++) {
@@ -28,6 +29,7 @@ export const App = (_props: { name: string; count: number }) => {
       {"Hello world"}
       {/* eslint-disable-next-line @eslint-react/no-leaked-conditional-rendering */}
       <>{_props.count && <view />}</>
+      <Other />
     </>
   );
 };

@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "checkJs": true,
+    // TODO: Enable erasableSyntaxOnly when TS 5.8 is released
+    // https://www.totaltypescript.com/erasable-syntax-only
+    // "erasableSyntaxOnly": true,
     "esModuleInterop": true,
-    // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
     // by complaining about too much unproblematic code. We may revisit this decision later.
+    // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
     "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -15,13 +19,11 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
+    "rewriteRelativeImportExtensions": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext"
-    // TODO: Turn on the following settings once TS 5.7 is released, see also https://nodejs.org/docs/latest/api/typescript.html#typescript-features
-    // "allowImportingTsExtensions": true,
-    // "rewriteRelativeImportExtensions": true,
-    // "verbatimModuleSyntax": true
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
   },
   "$schema": "https://json.schemastore.org/tsconfig"
 }

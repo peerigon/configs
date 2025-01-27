@@ -1,4 +1,4 @@
-import { getMessage } from "./message.js";
+import { getMessage } from "./message.ts";
 // Check if import attributes are detected and formatted correctly
 import test from "./test.json" with { type: "json" };
 
