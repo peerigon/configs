@@ -1,3 +1,9 @@
+# [1.0.0-beta.21](https://github.com/peerigon/configs/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2025-01-27)
+
+### Bug Fixes
+
+- Missing packages write permission in Github action ([ce0d482](https://github.com/peerigon/configs/commit/ce0d4820e2e75f164f5385e48bd8978c250216f1))
+
 # [1.0.0-beta.20](https://github.com/peerigon/configs/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2025-01-27)
 
 ### Bug Fixes
