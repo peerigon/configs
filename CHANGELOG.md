@@ -1,3 +1,9 @@
+# [1.0.0-beta.22](https://github.com/peerigon/configs/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2025-02-04)
+
+### Features
+
+- Update dependencies ([07d0f37](https://github.com/peerigon/configs/commit/07d0f3781186cc86603444e0c2cf3b5185e3844a))
+
 # [1.0.0-beta.21](https://github.com/peerigon/configs/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2025-01-27)
 
 ### Bug Fixes
