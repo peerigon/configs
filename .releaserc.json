@@ -1,0 +1,3 @@
+{
+  "extends": "./semantic-release/cross-publish.js"
+}
