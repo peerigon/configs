@@ -7,8 +7,6 @@
 [![Monthly downloads on NPM](https://img.shields.io/npm/dm/@peerigon/configs?style=for-the-badge)](https://www.npmjs.com/package/@peerigon/configs)<br>
 [![License](https://img.shields.io/npm/l/@peerigon/configs?style=for-the-badge)](./LICENSE)
 
-This package contains best practice configs and rules for linting, type-checking, formatting and publishing JavaScript and TypeScript code. Use them to kickstart you next awesome web project 🚀!
-
 ## Installation
 
 ```sh
