@@ -19,6 +19,7 @@ Also checkout the instructions for each respective config:
 - [Prettier](/prettier/README.md)
 - [TypeScript](/typescript/README.md)
 - [Semantic release](/semantic-release/README.md)
+- [VSCode](/.vscode/README.md)
 
 ## Philosophy
 
