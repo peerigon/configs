@@ -23,7 +23,7 @@ Recommended configuration in your `package.json`:
     "release": "semantic-release"
   },
   "publishConfig": {
-    "//": "only if the package is supposed to be public"
+    "//": "only if the package is supposed to be public",
     "access": "public",
     "provenance": true
   }
