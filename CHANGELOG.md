@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/peerigon/configs/compare/v2.0.0...v2.0.1) (2025-02-08)
+
+### Bug Fixes
+
+- Type errors ([5ec3ee8](https://github.com/peerigon/configs/commit/5ec3ee8fdb4ff45fb63e67cc791e499bac8917ce))
+
 # [2.0.0](https://github.com/peerigon/configs/compare/v1.1.0...v2.0.0) (2025-02-08)
 
 ### Bug Fixes
