@@ -1,28 +1,37 @@
 {
+  // Inspired by https://www.totaltypescript.com/tsconfig-cheat-sheet
+  // and https://2ality.com/2025/01/tsconfig-json.html
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "checkJs": true,
-    // TODO: Enable erasableSyntaxOnly when TS 5.8 is released
-    // https://www.totaltypescript.com/erasable-syntax-only
-    // "erasableSyntaxOnly": true,
-    "esModuleInterop": true,
-    // by complaining about too much unproblematic code. We may revisit this decision later.
-    // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
-    "exactOptionalPropertyTypes": false,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "lib": ["DOM", "ESNext"],
-    "module": "NodeNext",
-    "noEmit": true,
+    // == Target and module settings ==
+    // Deliberately not using ESNext/NodeNext here to avoid breaking changes just by updating TypeScript.
+    "target": "ES2022",
+    "module": "Node16",
+    "lib": ["ES2022"],
+
+    // == Strictness settings ==
+    "strict": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "noFallthroughCasesInSwitch": true,
+    // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
+    // by complaining about too much unproblematic code. We may revisit this decision later.
+    "exactOptionalPropertyTypes": false,
+
+    // == Module resolution settings ==
     "resolveJsonModule": true,
     "rewriteRelativeImportExtensions": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext",
+    "allowImportingTsExtensions": true,
+
+    // == Other settings ==
+    "forceConsistentCasingInFileNames": true,
+    // Using noEmit true here because you should have a separate build config anyway
+    "noEmit": true,
+    "noPropertyAccessFromIndexSignature": true,
+    // Not setting skipLibCheck: true for now because it can hide type conflicts in dependencies
+    // You can override this in your app if you can't fix it with your package manager.
+    "skipLibCheck": false,
     "verbatimModuleSyntax": true
   },
   "$schema": "https://json.schemastore.org/tsconfig"
