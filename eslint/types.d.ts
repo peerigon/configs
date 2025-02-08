@@ -5,14 +5,16 @@ declare module "eslint-plugin-react" {
     languageOptions: { [name: string]: any };
   };
 
-  export default {
+  const configs: {
     configs: {
       flat: {
-        recommended: config,
-        ["jsx-runtime"]: config,
-      },
-    },
+        recommended: typeof config;
+        ["jsx-runtime"]: typeof config;
+      };
+    };
   };
+
+  export default configs;
 }
 
 declare module "eslint-plugin-prefer-arrow" {
