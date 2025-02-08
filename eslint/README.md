@@ -27,7 +27,7 @@ export default [
 ];
 ```
 
-Recommended configuration in your `package.json` (using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all)):
+Recommended configuration in your `package.json` (using [`npm-run-all2`](https://www.npmjs.com/package/npm-run-all2)):
 
 ```json
 {
