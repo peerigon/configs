@@ -2,7 +2,7 @@
 export const noDefaultExport = [
   {
     // Config files often have a single default export
-    ignores: ["*.config.js"],
+    ignores: ["*.config.{js,ts}"],
     rules: {
       "no-restricted-syntax": [
         "error",
