@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/peerigon/configs/compare/v1.1.0...v2.0.0) (2025-02-08)
+
+### Bug Fixes
+
+- Add missing checkJs: true to TypeScript base config ([6dbd0dc](https://github.com/peerigon/configs/commit/6dbd0dcfa9eaf43efe7d8dac74bcf5e4ca4929ae))
+
+### Features
+
+- Update TypeScript base config ([60843de](https://github.com/peerigon/configs/commit/60843de02fa0a5fc751a15d310e9f5afe0fad055))
+
+### BREAKING CHANGES
+
+- Added noFallthroughCasesInSwitch: true
+- Switched skipLibCheck to false
+
 # [1.1.0](https://github.com/peerigon/configs/compare/v1.0.1...v1.1.0) (2025-02-08)
 
 ### Bug Fixes
