@@ -146,6 +146,8 @@ export const javascript = [
     rules: {
       // Top-level await might slow down the test suite start up
       "unicorn/prefer-top-level-await": "off",
+      // Nesting is pretty common in tests when you group tests
+      "max-nested-callbacks": "off",
     },
   },
 ];
