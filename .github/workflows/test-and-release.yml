@@ -35,7 +35,7 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # pin@main
       - name: ⎔ Setup node
-        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # pin@main
+        uses: actions/setup-node@802632921f8532d2409ae6eac3313b6f81f11122 # pin@main
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
@@ -54,6 +54,10 @@ jobs:
           npm test
         env:
           CI: true
+      - name: 🚀 Release preview
+        if: ${{ matrix.node-version == '22.x' }}
+        run: |
+          npx pkg-pr-new publish
       - name: 🚀 Release on npm
         if: ${{ contains(' refs/heads/main refs/heads/beta ', github.ref) && matrix.node-version == '22.x' }}
         env:
