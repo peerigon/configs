@@ -25,6 +25,7 @@
     "allowImportingTsExtensions": true,
 
     // == Other settings ==
+    "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     // Using noEmit true here because you should have a separate build config anyway
     "noEmit": true,
