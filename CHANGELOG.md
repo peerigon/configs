@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/peerigon/configs/compare/v1.0.1...v1.1.0) (2025-02-08)
+
+### Bug Fixes
+
+- Do not complain about export default in config.ts files ([1e8b762](https://github.com/peerigon/configs/commit/1e8b762a6afe362f75e9095d25962864d10c3565))
+
+### Features
+
+- Disable "max-nested-callbacks" in tests ([1690ac4](https://github.com/peerigon/configs/commit/1690ac493cdc0ed55b91f4c83a73c4b713bd3a6b))
+
 ## [1.0.1](https://github.com/peerigon/configs/compare/v1.0.0...v1.0.1) (2025-02-04)
 
 ### Bug Fixes
