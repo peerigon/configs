@@ -98,7 +98,7 @@
     "README.md"
   ],
   "scripts": {
-    "test": "run-p test:presets:* test:styles:*",
+    "test": "run-p test:*",
     "test:presets:javascript": "cd eslint/presets/javascript.test; eslint --max-warnings 0 .",
     "test:presets:typescript": "cd eslint/presets/typescript.test; eslint --max-warnings 0 .",
     "test:presets:typescript-react": "cd eslint/presets/typescript-react.test; eslint --max-warnings 0 .",
