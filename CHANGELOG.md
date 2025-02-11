@@ -1,3 +1,9 @@
+## [2.0.2](https://github.com/peerigon/configs/compare/v2.0.1...v2.0.2) (2025-02-11)
+
+### Bug Fixes
+
+- Refactor module settings in tsconfig ([4bce2f2](https://github.com/peerigon/configs/commit/4bce2f21317463625e27f5b47077db215f19af9d))
+
 ## [2.0.1](https://github.com/peerigon/configs/compare/v2.0.0...v2.0.1) (2025-02-08)
 
 ### Bug Fixes
