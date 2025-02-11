@@ -5,7 +5,8 @@
     // == Target and module settings ==
     // Deliberately not using ESNext/NodeNext here to avoid breaking changes just by updating TypeScript.
     "target": "ES2022",
-    "module": "Node16",
+    "module": "Preserve",
+    "moduleDetection": "force",
     "lib": ["ES2022"],
 
     // == Strictness settings ==
