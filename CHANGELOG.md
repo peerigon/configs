@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/peerigon/configs/compare/v2.0.2...v3.0.0) (2025-02-24)
+
+### Features
+
+- Update to eslint-plugin-unicorn@57.0.0 ([f5521ee](https://github.com/peerigon/configs/commit/f5521eeb05fd81a3928ed70f44b2d9959534e004))
+
+### BREAKING CHANGES
+
+- eslint-plugin-unicorn introduced new recommended rules (https://github.com/sindresorhus/eslint-plugin-unicorn/releases/tag/v57.0.0) that might cause linting errors in your project.
+
 ## [2.0.2](https://github.com/peerigon/configs/compare/v2.0.1...v2.0.2) (2025-02-11)
 
 ### Bug Fixes
