@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/peerigon/configs/compare/v3.0.0...v3.1.0) (2025-03-03)
+
+### Features
+
+- bump eslint-plugin-react-compiler from 19.0.0-beta-e552027-20250112 to 19.0.0-beta-714736e-20250131 ([c27c0e5](https://github.com/peerigon/configs/commit/c27c0e57556c2321c022ca0198c666bd01fb3a6d))
+- bump eslint-plugin-react-hooks from 5.1.0 to 5.2.0 ([9c2328f](https://github.com/peerigon/configs/commit/9c2328f4fe7cb430f944f863773156516e7d8420))
+- bump prettier-plugin-packagejson from 2.5.8 to 2.5.10 ([157df20](https://github.com/peerigon/configs/commit/157df203566c5d64154ba31f14234334f4110210))
+
 # [3.0.0](https://github.com/peerigon/configs/compare/v2.0.2...v3.0.0) (2025-02-24)
 
 ### Features
