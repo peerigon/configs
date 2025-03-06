@@ -3,4 +3,12 @@ import { base } from "../rules/base.js";
 import { javascript } from "../rules/javascript.js";
 import { typescript } from "../rules/typescript.js";
 
-export default [...base, ...javascript, ...typescript, eslintConfigPrettier];
+/** @type {import("eslint").Linter.Config[]} */
+export const typescriptPreset = [
+  ...base,
+  ...javascript,
+  ...typescript,
+  eslintConfigPrettier,
+];
+
+export default typescriptPreset;

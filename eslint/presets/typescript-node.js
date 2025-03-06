@@ -4,10 +4,13 @@ import { javascript } from "../rules/javascript.js";
 import { node } from "../rules/node.js";
 import { typescript } from "../rules/typescript.js";
 
-export default [
+/** @type {import("eslint").Linter.Config[]} */
+export const typescriptNodePreset = [
   ...base,
   ...javascript,
   ...typescript,
   ...node,
   eslintConfigPrettier,
 ];
+
+export default typescriptNodePreset;

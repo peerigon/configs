@@ -5,7 +5,8 @@ import { javascript } from "../rules/javascript.js";
 import { react } from "../rules/react.js";
 import { typescript } from "../rules/typescript.js";
 
-export default [
+/** @type {import("eslint").Linter.Config[]} */
+export const typescriptReactPreset = [
   ...base,
   ...javascript,
   ...typescript,
@@ -13,3 +14,5 @@ export default [
   ...browser,
   eslintConfigPrettier,
 ];
+
+export default typescriptReactPreset;
