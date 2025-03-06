@@ -1,3 +1,15 @@
+# [3.2.0](https://github.com/peerigon/configs/compare/v3.1.0...v3.2.0) (2025-03-06)
+
+### Bug Fixes
+
+- Incorrect types returned by presets ([5744961](https://github.com/peerigon/configs/commit/5744961bb760c48738a4a74e8ae0d4f2bfe0abe5))
+- Turn off consistent-return rule in TypeScript files ([0830152](https://github.com/peerigon/configs/commit/08301524f081fc2223c2ad72bf6cb630735ac712))
+- Turn off no-new for tests ([26bc778](https://github.com/peerigon/configs/commit/26bc778ff2239cc61acb21825b72ca15ee3c1ef3))
+
+### Features
+
+- Improve base tsconfig ([392b0ff](https://github.com/peerigon/configs/commit/392b0ff6b552e926c3ff77867952627e63f6a496))
+
 # [3.1.0](https://github.com/peerigon/configs/compare/v3.0.0...v3.1.0) (2025-03-03)
 
 ### Features
