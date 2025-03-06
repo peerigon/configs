@@ -12,6 +12,8 @@
     // == Strictness settings ==
     "strict": true,
     "noImplicitOverride": true,
+    // Warns about functions with implicit returns where other code paths return a value.
+    // This option is basically the same as ESLint's `consistent-return` rule.
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUncheckedSideEffectImports": true,

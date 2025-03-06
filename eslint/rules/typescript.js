@@ -126,6 +126,8 @@ export const typescript =
               allowNumber: true,
             },
           ],
+          // TS' noImplicitReturns catches this already more effectively
+          "consistent-return": "off",
           "no-return-await": "off",
           "@typescript-eslint/return-await": ["warn", "in-try-catch"], // https://typescript-eslint.io/rules/return-await
           "@typescript-eslint/switch-exhaustiveness-check": [

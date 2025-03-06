@@ -33,3 +33,10 @@ type SomeType = {
 };
 
 console.log(getMessage(), SomeClass, snake_case, test);
+
+/* @ts-expect-error Inconsistent returns should be caught by TypeScript */
+(() => {
+  if (Math.random() > 0.5) {
+    return true;
+  }
+})();
