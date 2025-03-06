@@ -10,7 +10,7 @@
 ## Installation
 
 ```sh
-npm install @peerigon/configs
+npm install @peerigon/configs  --save-dev
 ```
 
 Also checkout the instructions for each respective config:
