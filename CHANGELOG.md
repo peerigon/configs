@@ -1,3 +1,13 @@
+# [4.0.0](https://github.com/peerigon/configs/compare/v3.2.0...v4.0.0) (2025-03-06)
+
+### Features
+
+- Update dependencies ([37d1288](https://github.com/peerigon/configs/commit/37d1288e614ebcb0c3dc5b59d88aaa48ef40ebd3))
+
+### BREAKING CHANGES
+
+- Updated some peerDependencies
+
 # [3.2.0](https://github.com/peerigon/configs/compare/v3.1.0...v3.2.0) (2025-03-06)
 
 ### Bug Fixes
