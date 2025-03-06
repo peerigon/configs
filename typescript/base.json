@@ -26,6 +26,7 @@
     "allowImportingTsExtensions": true,
 
     // == Other settings ==
+    "allowJs": true,
     "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     // Using noEmit true here because you should have a separate build config anyway
@@ -36,5 +37,6 @@
     "skipLibCheck": false,
     "verbatimModuleSyntax": true
   },
+  "exclude": ["dist"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
