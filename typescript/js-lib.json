@@ -1,7 +1,6 @@
 {
   "extends": "./lib.json",
   "compilerOptions": {
-    "allowJs": true,
     "emitDeclarationOnly": true,
     "outDir": "${configDir}/types"
   },
