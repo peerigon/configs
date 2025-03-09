@@ -1,3 +1,9 @@
+## [4.0.1](https://github.com/peerigon/configs/compare/v4.0.0...v4.0.1) (2025-03-09)
+
+### Bug Fixes
+
+- **typescript:** Incorrect dist path in base config ([4d06e5f](https://github.com/peerigon/configs/commit/4d06e5f116af9fba3751092c807e69a919220434))
+
 # [4.0.0](https://github.com/peerigon/configs/compare/v3.2.0...v4.0.0) (2025-03-06)
 
 ### Features
