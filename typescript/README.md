@@ -8,9 +8,14 @@ npm install typescript @peerigon/configs --save-dev
 
 Then create a `tsconfig.json` just for type-checking next to your `package.json`:
 
-```json
+```jsonc
 {
-  "extends": "@peerigon/configs/typescript"
+  "extends": "@peerigon/configs/typescript",
+  "compilerOptions": {
+    // Our config sets only "lib": ["es2022"].
+    // Depending on your project, you might need to add DOM (and more).
+    "lib": ["es2022", "dom"],
+  },
 }
 ```
 
@@ -32,7 +37,7 @@ In case you're developing a library with a dedicated build process, we recommend
 {
   "extends": ["./tsconfig.json", "@peerigon/configs/typescript/lib"],
   "include": ["src"],
-  "exclude": ["src/**/*.test.ts", "src/tests/**/*.ts"]
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/tests/**/*"]
 }
 ```
 
