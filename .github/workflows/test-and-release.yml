@@ -13,12 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
 
-    strategy:
-      matrix:
-        node-version: [22.x]
-
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.node-version }}
+      group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
 
     permissions:
@@ -32,34 +28,46 @@ jobs:
       packages: write
 
     steps:
-      - name: ⬇️ Checkout repo
+      - name: 📥 Checkout repository
         uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # pin@main
-      - name: ⎔ Setup node
+
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@802632921f8532d2409ae6eac3313b6f81f11122 # pin@main
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: ".nvmrc"
           cache: "npm"
+
       - name: 🗄 Cache node_modules
         id: cache-node_modules
-        uses: actions/cache@36f1e144e1c8edb0a652766b484448563d8baf46 # pin@main
+        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # pin@main
         with:
           path: "**/node_modules"
           key: node_modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-      - name: 📥 Install dependencies
+
+      - name: 🗄 Cache .eslintcache
+        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # pin@main
+        with:
+          path: .eslintcache
+          key: eslintcache-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: 🔍 Install dependencies
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: |
-          npm ci --ignore-scripts
-      - name: 🧪 Test
+          npm ci --ignore-scripts --prefer-offline --no-audit
+
+      - name: 🧪 Run tests
         run: |
           npm test
         env:
           CI: true
+
       - name: 🚀 Release preview
-        if: ${{ matrix.node-version == '22.x' }}
+        if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/beta' }}
         run: |
           npx pkg-pr-new publish
+
       - name: 🚀 Release on npm
-        if: ${{ contains(' refs/heads/main refs/heads/beta ', github.ref) && matrix.node-version == '22.x' }}
+        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
