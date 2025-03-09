@@ -39,6 +39,6 @@
     "skipLibCheck": false,
     "verbatimModuleSyntax": true
   },
-  "exclude": ["dist"],
+  "exclude": ["${configDir}/dist"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
