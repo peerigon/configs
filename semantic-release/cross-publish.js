@@ -1,11 +1,21 @@
 import { config as baseConfig } from "./base.js";
 
-/** @type {import("semantic-release").Options} */
-export const config = {
-  ...baseConfig,
-  plugins: [
-    ...(baseConfig.plugins ?? []),
-    [
+/**
+ * @param {{ github: boolean; jsr: boolean }} options?
+ * @returns {import("semantic-release").Options}
+ */
+export const config = (
+  { github = false, jsr = false } = { github: true, jsr: true },
+) => {
+  /** @type {import("semantic-release").PluginSpec[]} */
+  const plugins = [];
+
+  if (baseConfig.plugins) {
+    plugins.push(...baseConfig.plugins);
+  }
+
+  if (github) {
+    plugins.push([
       "@semantic-release/exec",
       {
         verifyConditionsCmd:
@@ -15,8 +25,17 @@ export const config = {
         successCmd: "rm /tmp/github.npmrc",
         failCmd: "rm /tmp/github.npmrc",
       },
-    ],
-  ],
+    ]);
+  }
+
+  if (jsr) {
+    plugins.push("@sebbo2002/semantic-release-jsr");
+  }
+
+  return {
+    ...baseConfig,
+    plugins,
+  };
 };
 
-export default config;
+export default config();

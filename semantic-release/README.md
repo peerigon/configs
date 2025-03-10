@@ -16,17 +16,17 @@ Then create a `.releaserc.json` next to your `package.json`:
 
 Recommended configuration in your `package.json`:
 
-```json
+```jsonc
 {
   "type": "module",
   "scripts": {
-    "release": "semantic-release"
+    "release": "semantic-release",
   },
   "publishConfig": {
-    "//": "only if the package is supposed to be public",
+    // Only if the package is supposed to be public
     "access": "public",
-    "provenance": true
-  }
+    "provenance": true,
+  },
 }
 ```
 
@@ -78,4 +78,4 @@ jobs:
 We export the following `.releaserc.json` presets. They can be used by extending `@peerigon/configs/<preset-name>`:
 
 - `semantic-release`: Recommended config for publishing a library to a single registry (according to your `.npmrc`).
-- `semantic-release/cross-publish`: Config for publishing a library both to NPM _and_ Github
+- `semantic-release/cross-publish`: Config for publishing a library both to NPM, JSR _and_ Github
