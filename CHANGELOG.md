@@ -1,3 +1,9 @@
+# [4.1.0](https://github.com/peerigon/configs/compare/v4.0.1...v4.1.0) (2025-03-10)
+
+### Features
+
+- **semantic-release:** Add JSR as cross-publish registry ([bd5d42d](https://github.com/peerigon/configs/commit/bd5d42d5f9998b88db6709ddbb5f45a493831275))
+
 ## [4.0.1](https://github.com/peerigon/configs/compare/v4.0.0...v4.0.1) (2025-03-09)
 
 ### Bug Fixes
