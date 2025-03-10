@@ -21,15 +21,17 @@
     "./typescript/lib": "./typescript/lib.json",
     "./typescript/js-lib": "./typescript/js-lib.json"
   },
-  "include": [
-    "docs",
-    "eslint",
-    "prettier",
-    "semantic-release",
-    "types",
-    "typescript",
-    "CHANGELOG.md",
-    "README.md"
-  ],
+  "publish": {
+    "include": [
+      "docs",
+      "eslint",
+      "prettier",
+      "semantic-release",
+      "types",
+      "typescript",
+      "CHANGELOG.md",
+      "README.md"
+    ]
+  },
   "$schema": "https://jsr.io/schema/config-file.v1.json"
 }
