@@ -1,3 +1,11 @@
+# [4.2.0](https://github.com/peerigon/configs/compare/v4.1.0...v4.2.0) (2025-03-10)
+
+### Features
+
+- **eslint:** bump @eslint-react/eslint-plugin from 1.30.2 to 1.31.0 ([#30](https://github.com/peerigon/configs/issues/30)) ([1008a87](https://github.com/peerigon/configs/commit/1008a87a8c3e343c07f742aeb357dabcdaf38709))
+- **prettier:** bump eslint-config-prettier from 10.0.2 to 10.1.1 ([#27](https://github.com/peerigon/configs/issues/27)) ([c27fc02](https://github.com/peerigon/configs/commit/c27fc027df9dcfd7cdbf580878a5f42ce9bda93a))
+- **react:** bump eslint-plugin-react-compiler from 19.0.0-beta-e552027-20250112 to 19.0.0-beta-714736e-20250131 ([#29](https://github.com/peerigon/configs/issues/29)) ([042a398](https://github.com/peerigon/configs/commit/042a398e77de01d6506247454699c12508b78882))
+
 # [4.1.0](https://github.com/peerigon/configs/compare/v4.0.1...v4.1.0) (2025-03-10)
 
 ### Features
