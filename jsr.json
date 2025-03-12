@@ -3,35 +3,26 @@
   "version": "0.0.0-semantically-released",
   "license": "MIT",
   "exports": {
-    "./eslint/presets/javascript-browser": "./eslint/presets/javascript-browser.js",
-    "./eslint/presets/javascript-node": "./eslint/presets/javascript-node.js",
-    "./eslint/presets/javascript": "./eslint/presets/javascript.js",
-    "./eslint/presets/typescript-node": "./eslint/presets/typescript-node.js",
-    "./eslint/presets/typescript-react": "./eslint/presets/typescript-react.js",
-    "./eslint/presets/typescript": "./eslint/presets/typescript.js",
-    "./eslint/styles/jsx-no-literals": "./eslint/styles/jsx-no-literals.js",
-    "./eslint/styles/no-default-export": "./eslint/styles/no-default-export.js",
-    "./eslint/styles/no-null": "./eslint/styles/no-null.js",
-    "./eslint/styles/prefer-array-shorthand": "./eslint/styles/prefer-array-shorthand.js",
-    "./eslint/styles/prefer-interface": "./eslint/styles/prefer-interface.js",
-    "./prettier": "./prettier/base.js",
-    "./semantic-release": "./semantic-release/base.js",
-    "./semantic-release/cross-publish": "./semantic-release/cross-publish.js",
-    "./typescript": "./typescript/base.json",
-    "./typescript/lib": "./typescript/lib.json",
-    "./typescript/js-lib": "./typescript/js-lib.json"
+    "./eslint/presets/javascript-browser": "./dist/eslint/presets/javascript-browser.js",
+    "./eslint/presets/javascript-node": "./dist/eslint/presets/javascript-node.js",
+    "./eslint/presets/javascript": "./dist/eslint/presets/javascript.js",
+    "./eslint/presets/typescript-node": "./dist/eslint/presets/typescript-node.js",
+    "./eslint/presets/typescript-react": "./dist/eslint/presets/typescript-react.js",
+    "./eslint/presets/typescript": "./dist/eslint/presets/typescript.js",
+    "./eslint/styles/jsx-no-literals": "./dist/eslint/styles/jsx-no-literals.js",
+    "./eslint/styles/no-default-export": "./dist/eslint/styles/no-default-export.js",
+    "./eslint/styles/no-null": "./dist/eslint/styles/no-null.js",
+    "./eslint/styles/prefer-array-shorthand": "./dist/eslint/styles/prefer-array-shorthand.js",
+    "./eslint/styles/prefer-interface": "./dist/eslint/styles/prefer-interface.js",
+    "./prettier": "./dist/prettier/base.js",
+    "./semantic-release": "./dist/semantic-release/base.js",
+    "./semantic-release/cross-publish": "./dist/semantic-release/cross-publish.js",
+    "./typescript": "./dist/typescript/base.json",
+    "./typescript/lib": "./dist/typescript/lib.json",
+    "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
   "publish": {
-    "include": [
-      "docs",
-      "eslint",
-      "prettier",
-      "semantic-release",
-      "types",
-      "typescript",
-      "CHANGELOG.md",
-      "README.md"
-    ]
+    "include": ["dist", "CHANGELOG.md", "README.md"]
   },
   "$schema": "https://jsr.io/schema/config-file.v1.json"
 }
