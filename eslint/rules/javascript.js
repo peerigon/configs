@@ -29,6 +29,10 @@ export const javascript = [
       // It makes sense to use Promise.all() with a single promise when we expect more to be added later.
       // In that case we don't want to refactor the code, but just add the new promise.
       "unicorn/no-single-promise-in-promise-methods": "off",
+      // This rule also complains about the object when we already use destructuring.
+      // E.g. it would complain about the following pattern which is perfectly fine:
+      // { github = false, jsr = false } = { github: true, jsr: true }
+      "unicorn/no-object-as-default-parameter": "off",
     },
   },
   {

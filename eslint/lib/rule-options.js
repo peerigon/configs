@@ -5,17 +5,17 @@ const camelcase = {
 };
 
 export const ruleOptions = {
-  ["camelcase"]: camelcase,
-  ["max-lines"]: {
+  camelcase,
+  "max-lines": {
     max: 700,
     skipBlankLines: true,
     skipComments: true,
   },
-  ["no-unused-expressions"]: {
+  "no-unused-expressions": {
     allowShortCircuit: true,
     allowTernary: true,
   },
-  ["no-unused-vars"]: {
+  "no-unused-vars": {
     vars: "all",
     varsIgnorePattern: "^_",
     args: "after-used",
@@ -25,7 +25,7 @@ export const ruleOptions = {
     // This pattern is pretty common
     ignoreRestSiblings: true,
   },
-  ["@typescript-eslint/naming-convention"]: (() => {
+  "@typescript-eslint/naming-convention": (() => {
     const options = {
       default: {
         selector: "default",

@@ -54,6 +54,7 @@
     "test:styles:no-null": "cd eslint/styles/no-null.test; eslint --max-warnings 0 .",
     "test:styles:prefer-array-shorthand": "cd eslint/styles/prefer-array-shorthand.test; eslint --max-warnings 0 .",
     "test:styles:prefer-interface": "cd eslint/styles/prefer-interface.test; eslint --max-warnings 0 .",
+    "test:lint": "eslint --max-warnings 0 .",
     "test:types": "tsc --noEmit",
     "test:prettier": "prettier --check .",
     "build": "run-s build:*",

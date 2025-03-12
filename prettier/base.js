@@ -42,11 +42,11 @@
  * @param {string} id
  * @returns {string}
  */
-const safeResolve = (id) => {
+function safeResolve(id) {
   return "resolve" in import.meta
     ? import.meta.resolve(id).slice("file://".length)
     : id;
-};
+}
 
 // Using safeResolve() here because the plugins might not be installed in the parent app/module
 // and we don't want to rely on the package manager to hoist the dependencies.
