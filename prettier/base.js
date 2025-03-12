@@ -1,4 +1,44 @@
 /**
+ * ## Installation
+ *
+ * ```sh
+ * npm install prettier @peerigon/configs --save-dev
+ * ```
+ *
+ * Then create a `prettier.config.js` next to your `package.json`:
+ *
+ * ```js
+ * export { default } from "@peerigon/configs/prettier";
+ * ```
+ *
+ * Recommended configuration in your `package.json` (using
+ * [`npm-run-all2`](https://www.npmjs.com/package/npm-run-all2)):
+ *
+ * ```json
+ * {
+ *   "type": "module",
+ *   "scripts": {
+ *     "test": "run-p test:*",
+ *     "test:format": "prettier --check ."
+ *   }
+ * }
+ * ```
+ *
+ * ## Configuration
+ *
+ * Our config is entirely based on Prettier's default config. Besides that, it
+ * also:
+ *
+ * - Auto-sorts `import` statements
+ * - Formats JSDoc comments
+ * - Formats `package.json`
+ * - Formats and sorts CSS properties
+ * - Sorts Tailwind CSS class names
+ *
+ * @module prettier
+ */
+
+/**
  * @param {string} id
  * @returns {string}
  */
@@ -18,7 +58,11 @@ const plugins = await Promise.all([
   safeResolve("prettier-plugin-tailwindcss"),
 ]);
 
-/** @type {import("prettier").Config} */
+/**
+ * Base config for Prettier.
+ *
+ * @type {import("prettier").Config}
+ */
 export const config = {
   plugins,
   importOrderParserPlugins: [
