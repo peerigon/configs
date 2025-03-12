@@ -10,7 +10,7 @@
  * - Formats and sorts CSS properties
  * - Sorts Tailwind CSS class names
  *
- * @module prettier
+ * @module prettierConfig
  */
 
 /**
