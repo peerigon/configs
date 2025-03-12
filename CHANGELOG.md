@@ -1,3 +1,9 @@
+# [4.3.0-beta.1](https://github.com/peerigon/configs/compare/v4.2.0...v4.3.0-beta.1) (2025-03-12)
+
+### Features
+
+- Compile JS code instead of just emitDeclarationOnly ([c7d29f7](https://github.com/peerigon/configs/commit/c7d29f700ee53aa6be5b16175b355f000fba778c))
+
 # [4.2.0](https://github.com/peerigon/configs/compare/v4.1.0...v4.2.0) (2025-03-10)
 
 ### Features
