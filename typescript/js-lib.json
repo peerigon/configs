@@ -1,8 +1,9 @@
 {
-  "extends": "./lib.json",
+  "extends": "./base.json",
   "compilerOptions": {
-    "emitDeclarationOnly": true,
-    "outDir": "${configDir}/types"
+    "declaration": true,
+    "noEmit": false,
+    "outDir": "${configDir}/dist"
   },
   "$schema": "https://json.schemastore.org/tsconfig"
 }
