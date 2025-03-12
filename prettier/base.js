@@ -1,33 +1,8 @@
 /**
- * ## Installation
+ * ## Base config for Prettier.
  *
- * ```sh
- * npm install prettier @peerigon/configs --save-dev
- * ```
- *
- * Then create a `prettier.config.js` next to your `package.json`:
- *
- * ```js
- * export { default } from "@peerigon/configs/prettier";
- * ```
- *
- * Recommended configuration in your `package.json` (using
- * [`npm-run-all2`](https://www.npmjs.com/package/npm-run-all2)):
- *
- * ```json
- * {
- *   "type": "module",
- *   "scripts": {
- *     "test": "run-p test:*",
- *     "test:format": "prettier --check ."
- *   }
- * }
- * ```
- *
- * ## Configuration
- *
- * Our config is entirely based on Prettier's default config. Besides that, it
- * also:
+ * Our base config is entirely based on Prettier's default config. Besides that,
+ * it also:
  *
  * - Auto-sorts `import` statements
  * - Formats JSDoc comments
@@ -59,7 +34,8 @@ const plugins = await Promise.all([
 ]);
 
 /**
- * Base config for Prettier.
+ * Provides the default configuration for Prettier with customized plugins and
+ * sorting rules.
  *
  * @type {import("prettier").Config}
  */
@@ -76,4 +52,8 @@ export const config = {
   cssDeclarationSorterKeepOverrides: false,
 };
 
+/**
+ * @type {import("prettier").Config}
+ * @see {config}
+ */
 export default config;
