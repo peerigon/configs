@@ -23,6 +23,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "typescript.tsdk": "./node_modules/typescript/lib",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.preferences.importModuleSpecifier": "shortest",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
