@@ -13,26 +13,20 @@ export const javascript = [
       // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/896
       "unicorn/prevent-abbreviations": "off",
       "unicorn/filename-case": "off",
-      // The default of import-style is highly subjective and not always the best choice.
-      // E.g. bundlers are able to tree-shake named imports easier than default imports.
-      "unicorn/import-style": "off",
       "unicorn/no-nested-ternary": "off",
       "unicorn/no-null": "off",
       "unicorn/no-useless-undefined": "off",
       "unicorn/prefer-query-selector": "off",
       // Also turn off the following rules because they're too opinionated
-      "unicorn/require-array-join-separator": "off",
+      "unicorn/consistent-function-scoping": "off", // This rule forces to move arrow functions up the scope where it is often more readable to keep the function in the scope where it is used called.
+      "unicorn/import-style": "off", // The default of import-style is highly subjective and not always the best choice. E.g. bundlers are able to tree-shake named imports easier than default imports.
       "unicorn/no-array-for-each": "off",
       "unicorn/no-array-reduce": "off",
+      "unicorn/no-object-as-default-parameter": "off", // This rule also complains about the object when we already use destructuring. E.g. it would complain about the following pattern which is perfectly fine: { github = false, jsr = false } = { github: true, jsr: true }
+      "unicorn/no-single-promise-in-promise-methods": "off", // It makes sense to use Promise.all() with a single promise when we expect more to be added later. In that case we don't want to refactor the code, but just add the new promise.
       "unicorn/prefer-global-this": "off", // Too many false positives
       "unicorn/prefer-ternary": "off",
-      // It makes sense to use Promise.all() with a single promise when we expect more to be added later.
-      // In that case we don't want to refactor the code, but just add the new promise.
-      "unicorn/no-single-promise-in-promise-methods": "off",
-      // This rule also complains about the object when we already use destructuring.
-      // E.g. it would complain about the following pattern which is perfectly fine:
-      // { github = false, jsr = false } = { github: true, jsr: true }
-      "unicorn/no-object-as-default-parameter": "off",
+      "unicorn/require-array-join-separator": "off",
     },
   },
   {
