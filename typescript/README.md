@@ -12,9 +12,15 @@ Then create a `tsconfig.json` just for type-checking next to your `package.json`
 {
   "extends": "@peerigon/configs/typescript",
   "compilerOptions": {
-    // Our config sets only "lib": ["es2022"].
+    // Our config sets only "lib": ["es2024"].
     // Depending on your project, you might need to add DOM (and more).
-    "lib": ["es2022", "dom"],
+    "lib": ["es2024", "dom"],
+    // Our base config doesn't set skipLibCheck because it might hide
+    // important type errors.
+    // Unfortunately it's required in a lot of cases where library types
+    // are conflicting. If you want to learn more about the trade-offs,
+    // see https://www.testim.io/blog/typescript-skiplibcheck/
+    "skipLibCheck": true,
   },
 }
 ```

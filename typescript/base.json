@@ -4,10 +4,10 @@
   "compilerOptions": {
     // == Target and module settings ==
     // Deliberately not using ESNext/NodeNext here to avoid breaking changes just by updating TypeScript.
-    "target": "es2022",
+    "target": "es2024",
     "module": "Preserve",
     "moduleDetection": "force",
-    "lib": ["es2022"],
+    "lib": ["es2024"],
 
     // == Strictness settings ==
     "strict": true,
@@ -34,8 +34,10 @@
     // Using noEmit true here because you should have a separate build config anyway
     "noEmit": true,
     "noPropertyAccessFromIndexSignature": true,
-    // Not setting skipLibCheck: true for now because it can hide type conflicts in dependencies
+    // Not setting skipLibCheck: true for now because it can hide type conflicts in dependencies.
     // You can override this in your app if you can't fix it with your package manager.
+    // If you want to learn more about the trade-offs,
+    // see https://www.testim.io/blog/typescript-skiplibcheck/
     "skipLibCheck": false,
     "verbatimModuleSyntax": true
   },
