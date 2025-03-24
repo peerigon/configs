@@ -26,7 +26,7 @@ export const typescript =
           globPatterns.typescriptJsx,
         ],
         plugins: {
-          ["prefer-arrow"]: preferArrow,
+          "prefer-arrow": preferArrow,
         },
         rules: {
           "@typescript-eslint/array-type": ["warn", { default: "generic" }],

@@ -1,14 +1,7 @@
-import { fixupConfigRules } from "@eslint/compat";
-import pluginJs from "@eslint/js";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
+import javascriptNodePreset from "./eslint/presets/javascript-node.js";
+import tsconfig from "./tsconfig.json" with { type: "json" };
 
-export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...fixupConfigRules(pluginReactConfig),
-];
+export default javascriptNodePreset.map((config) => ({
+  ...config,
+  ignores: [...(config.ignores ?? []), ...tsconfig.exclude],
+}));

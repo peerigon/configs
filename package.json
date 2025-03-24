@@ -21,79 +21,26 @@
   "author": "Peerigon GmbH <hello@peerigon.com>",
   "type": "module",
   "exports": {
-    "./eslint/presets/javascript-browser": {
-      "types": "./types/eslint/presets/javascript-browser.d.ts",
-      "default": "./eslint/presets/javascript-browser.js"
-    },
-    "./eslint/presets/javascript-node": {
-      "types": "./types/eslint/presets/javascript-node.d.ts",
-      "default": "./eslint/presets/javascript-node.js"
-    },
-    "./eslint/presets/javascript": {
-      "types": "./types/eslint/presets/javascript.d.ts",
-      "default": "./eslint/presets/javascript.js"
-    },
-    "./eslint/presets/typescript-node": {
-      "types": "./types/eslint/presets/typescript-node.d.ts",
-      "default": "./eslint/presets/typescript-node.js"
-    },
-    "./eslint/presets/typescript-react": {
-      "types": "./types/eslint/presets/typescript-react.d.ts",
-      "default": "./eslint/presets/typescript-react.js"
-    },
-    "./eslint/presets/typescript": {
-      "types": "./types/eslint/presets/typescript.d.ts",
-      "default": "./eslint/presets/typescript.js"
-    },
-    "./eslint/styles/jsx-no-literals": {
-      "types": "./types/eslint/styles/jsx-no-literals.d.ts",
-      "default": "./eslint/styles/jsx-no-literals.js"
-    },
-    "./eslint/styles/no-default-export": {
-      "types": "./types/eslint/styles/no-default-export.d.ts",
-      "default": "./eslint/styles/no-default-export.js"
-    },
-    "./eslint/styles/no-null": {
-      "types": "./types/eslint/styles/no-null.d.ts",
-      "default": "./eslint/styles/no-null.js"
-    },
-    "./eslint/styles/prefer-array-shorthand": {
-      "types": "./types/eslint/styles/prefer-array-shorthand.d.ts",
-      "default": "./eslint/styles/prefer-array-shorthand.js"
-    },
-    "./eslint/styles/prefer-interface": {
-      "types": "./types/eslint/styles/prefer-interface.d.ts",
-      "default": "./eslint/styles/prefer-interface.js"
-    },
-    "./prettier": {
-      "types": "./types/prettier/base.d.ts",
-      "default": "./prettier/base.js"
-    },
-    "./semantic-release": {
-      "types": "./types/semantic-release/base.d.ts",
-      "default": "./semantic-release/base.js"
-    },
-    "./semantic-release/cross-publish": {
-      "types": "./types/semantic-release/cross-publish.d.ts",
-      "default": "./semantic-release/cross-publish.js"
-    },
-    "./typescript": {
-      "default": "./typescript/base.json"
-    },
-    "./typescript/lib": {
-      "default": "./typescript/lib.json"
-    },
-    "./typescript/js-lib": {
-      "default": "./typescript/js-lib.json"
-    }
+    "./eslint/presets/javascript-browser": "./dist/eslint/presets/javascript-browser.js",
+    "./eslint/presets/javascript-node": "./dist/eslint/presets/javascript-node.js",
+    "./eslint/presets/javascript": "./dist/eslint/presets/javascript.js",
+    "./eslint/presets/typescript-node": "./dist/eslint/presets/typescript-node.js",
+    "./eslint/presets/typescript-react": "./dist/eslint/presets/typescript-react.js",
+    "./eslint/presets/typescript": "./dist/eslint/presets/typescript.js",
+    "./eslint/styles/jsx-no-literals": "./dist/eslint/styles/jsx-no-literals.js",
+    "./eslint/styles/no-default-export": "./dist/eslint/styles/no-default-export.js",
+    "./eslint/styles/no-null": "./dist/eslint/styles/no-null.js",
+    "./eslint/styles/prefer-array-shorthand": "./dist/eslint/styles/prefer-array-shorthand.js",
+    "./eslint/styles/prefer-interface": "./dist/eslint/styles/prefer-interface.js",
+    "./prettier": "./dist/prettier/base.js",
+    "./semantic-release": "./dist/semantic-release/base.js",
+    "./semantic-release/cross-publish": "./dist/semantic-release/cross-publish.js",
+    "./typescript": "./dist/typescript/base.json",
+    "./typescript/lib": "./dist/typescript/lib.json",
+    "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
   "files": [
-    "docs",
-    "eslint",
-    "prettier",
-    "semantic-release",
-    "types",
-    "typescript",
+    "dist",
     "CHANGELOG.md",
     "README.md"
   ],
@@ -107,10 +54,12 @@
     "test:styles:no-null": "cd eslint/styles/no-null.test; eslint --max-warnings 0 .",
     "test:styles:prefer-array-shorthand": "cd eslint/styles/prefer-array-shorthand.test; eslint --max-warnings 0 .",
     "test:styles:prefer-interface": "cd eslint/styles/prefer-interface.test; eslint --max-warnings 0 .",
+    "test:lint": "eslint --max-warnings 0 .",
     "test:types": "tsc --noEmit",
-    "test:prettier": "prettier --check .",
+    "test:format": "prettier --check .",
     "build": "run-s build:*",
-    "build:types": "tsc",
+    "build:clear": "rimraf dist",
+    "build:tsc": "tsc",
     "prepublishOnly": "npm run build",
     "prepare": "husky",
     "release": "semantic-release"
@@ -152,6 +101,7 @@
     "pin-github-action": "^2.1.1",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
+    "rimraf": "^6.0.1",
     "semantic-release": "^24.2.3",
     "typescript": "^5.8.2"
   },

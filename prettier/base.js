@@ -1,12 +1,27 @@
 /**
+ * ## Base config for Prettier.
+ *
+ * Our base config is entirely based on Prettier's default config. Besides that,
+ * it also:
+ *
+ * - Auto-sorts `import` statements
+ * - Formats JSDoc comments
+ * - Formats `package.json`
+ * - Formats and sorts CSS properties
+ * - Sorts Tailwind CSS class names
+ *
+ * @module prettierConfig
+ */
+
+/**
  * @param {string} id
  * @returns {string}
  */
-const safeResolve = (id) => {
+function safeResolve(id) {
   return "resolve" in import.meta
     ? import.meta.resolve(id).slice("file://".length)
     : id;
-};
+}
 
 // Using safeResolve() here because the plugins might not be installed in the parent app/module
 // and we don't want to rely on the package manager to hoist the dependencies.
@@ -18,7 +33,12 @@ const plugins = await Promise.all([
   safeResolve("prettier-plugin-tailwindcss"),
 ]);
 
-/** @type {import("prettier").Config} */
+/**
+ * Provides the default configuration for Prettier with customized plugins and
+ * sorting rules.
+ *
+ * @type {import("prettier").Config}
+ */
 export const config = {
   plugins,
   importOrderParserPlugins: [
@@ -32,4 +52,8 @@ export const config = {
   cssDeclarationSorterKeepOverrides: false,
 };
 
+/**
+ * @type {import("prettier").Config}
+ * @see {config}
+ */
 export default config;
