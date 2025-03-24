@@ -1,3 +1,14 @@
+# [4.3.0](https://github.com/peerigon/configs/compare/v4.2.0...v4.3.0) (2025-03-24)
+
+### Bug Fixes
+
+- **eslint:** Turn of unicorn/consistent-function-scoping ([6570db3](https://github.com/peerigon/configs/commit/6570db32a4037f0e00d99cfacc95a024f9892b95))
+
+### Features
+
+- Compile JS code instead of just emitDeclarationOnly ([c7d29f7](https://github.com/peerigon/configs/commit/c7d29f700ee53aa6be5b16175b355f000fba778c))
+- **typescript:** Change base target to es2024 ([58b217a](https://github.com/peerigon/configs/commit/58b217ab0e4d64b7b969f1dbda748886f11009c5))
+
 # [4.3.0-beta.2](https://github.com/peerigon/configs/compare/v4.3.0-beta.1...v4.3.0-beta.2) (2025-03-23)
 
 ### Bug Fixes
