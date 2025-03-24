@@ -20,7 +20,7 @@ Then create a `tsconfig.json` just for type-checking next to your `package.json`
     // Unfortunately it's required in a lot of cases where library types
     // are conflicting. If you want to learn more about the trade-offs,
     // see https://www.testim.io/blog/typescript-skiplibcheck/
-    "skipLibCheck": true,
+    // "skipLibCheck": true,
   },
 }
 ```
@@ -39,11 +39,18 @@ Recommended configuration in your `package.json` (using [`npm-run-all2`](https:/
 
 In case you're developing a library with a dedicated build process, we recommend to create a separate `tsconfig.build.json`:
 
-```json
+```jsonc
 {
-  "extends": ["./tsconfig.json", "@peerigon/configs/typescript/lib"],
+  "extends": [
+    // First extend your own config so that project specific configs are taken into account...
+    "./tsconfig.json",
+    // ...then apply the lib config partial
+    "@peerigon/configs/typescript/lib",
+    // ...or js-lib if you want to combine JSDoc type annotations with .js files
+    // "@peerigon/configs/typescript/js-lib"
+  ],
   "include": ["src"],
-  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/tests/**/*"]
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/tests/**/*"],
 }
 ```
 
@@ -65,5 +72,5 @@ with the following `package.json` `scripts`:
 We export the following `tsconfig.json` presets. They can be used by extending `@peerigon/configs/<preset-name>`:
 
 - `typescript`: Recommended base config for all modern TypeScript projects
-- `typescript/lib`: Config for building TS libraries
-- `typescript/js-lib`: Config for building JS libraries with [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html).
+- `typescript/lib`: Config partial for building TS libraries. Combine it with the `typescript` base config using [`extends`](https://www.typescriptlang.org/tsconfig/#extends).
+- `typescript/js-lib`: Config partial for building JS libraries with [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html). Combine it with the `typescript` base config using [`extends`](https://www.typescriptlang.org/tsconfig/#extends).
