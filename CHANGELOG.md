@@ -1,3 +1,9 @@
+## [4.4.1](https://github.com/peerigon/configs/compare/v4.4.0...v4.4.1) (2025-03-24)
+
+### Bug Fixes
+
+- **typescript:** Turn lib configs into config partials ([295e617](https://github.com/peerigon/configs/commit/295e61777b9622ecf887c956c4539d8a027790b6))
+
 # [4.4.0](https://github.com/peerigon/configs/compare/v4.3.0...v4.4.0) (2025-03-24)
 
 ### Features
