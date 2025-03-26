@@ -8,4 +8,5 @@ export const globPatterns = {
     "**/*.{test,spec,stories}.{js,mjs,cjs,ts,cts,mts,jsx,tsx}",
     "**/test{s,}/**/*.{js,mjs,cjs,ts,cts,mts,jsx,tsx}",
   ],
+  configs: ["**/*.config.*", "**/.eslintrc.*", "**/.prettierrc.*"],
 };
