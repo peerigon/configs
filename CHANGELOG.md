@@ -1,3 +1,9 @@
+## [4.4.2](https://github.com/peerigon/configs/compare/v4.4.1...v4.4.2) (2025-03-26)
+
+### Bug Fixes
+
+- **eslint:** Ignore noDefaultExport in config files ([ae8c3ea](https://github.com/peerigon/configs/commit/ae8c3ea86066d5cde34eac0edd5415dd617a4e43))
+
 ## [4.4.1](https://github.com/peerigon/configs/compare/v4.4.0...v4.4.1) (2025-03-24)
 
 ### Bug Fixes
