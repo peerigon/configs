@@ -1,3 +1,13 @@
+# [5.0.0](https://github.com/peerigon/configs/compare/v4.4.2...v5.0.0) (2025-03-31)
+
+### Features
+
+- bump eslint-plugin-unicorn from 57.0.0 to 58.0.0 ([#46](https://github.com/peerigon/configs/issues/46)) ([199ebe8](https://github.com/peerigon/configs/commit/199ebe8317ddfa8a4bf6bf90b36e35eccd71c295))
+
+### BREAKING CHANGES
+
+- See eslint-plugin-unicorn release notes
+
 ## [4.4.2](https://github.com/peerigon/configs/compare/v4.4.1...v4.4.2) (2025-03-26)
 
 ### Bug Fixes
