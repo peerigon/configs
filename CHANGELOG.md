@@ -1,3 +1,9 @@
+# [5.3.0](https://github.com/peerigon/configs/compare/v5.2.0...v5.3.0) (2025-04-16)
+
+### Features
+
+- **eslint:** bump @eslint-react/eslint-plugin from 1.40.4 to 1.47.2 ([#51](https://github.com/peerigon/configs/issues/51)) ([b138f19](https://github.com/peerigon/configs/commit/b138f19a72c4874fc89f3c7b47c95d92235f057d))
+
 # [5.2.0](https://github.com/peerigon/configs/compare/v5.1.0...v5.2.0) (2025-04-16)
 
 ### Features
