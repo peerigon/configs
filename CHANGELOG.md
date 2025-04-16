@@ -1,3 +1,9 @@
+# [5.2.0](https://github.com/peerigon/configs/compare/v5.1.0...v5.2.0) (2025-04-16)
+
+### Features
+
+- **eslint:** bump typescript-eslint from 8.26.0 to 8.29.1 ([#55](https://github.com/peerigon/configs/issues/55)) ([f37f2cf](https://github.com/peerigon/configs/commit/f37f2cf5258c9603cee6313469b20584518ee9a3))
+
 # [5.1.0](https://github.com/peerigon/configs/compare/v5.0.0...v5.1.0) (2025-04-07)
 
 ### Features
