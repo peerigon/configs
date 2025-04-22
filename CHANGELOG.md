@@ -1,3 +1,11 @@
+# [5.4.0](https://github.com/peerigon/configs/compare/v5.3.0...v5.4.0) (2025-04-22)
+
+### Features
+
+- **eslint:** bump @eslint/compat from 1.2.7 to 1.2.8 ([#56](https://github.com/peerigon/configs/issues/56)) ([5cec583](https://github.com/peerigon/configs/commit/5cec583c7a3808b21e7ba7649a5bca92525194de))
+- **eslint:** bump eslint-plugin-react from 7.37.4 to 7.37.5 ([#60](https://github.com/peerigon/configs/issues/60)) ([61b16e2](https://github.com/peerigon/configs/commit/61b16e2c7ed619f2e0a3f2fcfcefd65165fece8f))
+- **eslint:** bump typescript-eslint from 8.29.1 to 8.30.1 ([#59](https://github.com/peerigon/configs/issues/59)) ([a949c91](https://github.com/peerigon/configs/commit/a949c91c04122e2f76543c961d4ea64194c8e2d0))
+
 # [5.3.0](https://github.com/peerigon/configs/compare/v5.2.0...v5.3.0) (2025-04-16)
 
 ### Features
