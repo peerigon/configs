@@ -1,3 +1,9 @@
+# [5.5.0](https://github.com/peerigon/configs/compare/v5.4.0...v5.5.0) (2025-04-28)
+
+### Features
+
+- **eslint:** bump @eslint/js from 9.25.0 to 9.25.1 ([#62](https://github.com/peerigon/configs/issues/62)) ([1b4f297](https://github.com/peerigon/configs/commit/1b4f297d0b8896fc7bd58f211bef1a66e56dde69))
+
 # [5.4.0](https://github.com/peerigon/configs/compare/v5.3.0...v5.4.0) (2025-04-22)
 
 ### Features
