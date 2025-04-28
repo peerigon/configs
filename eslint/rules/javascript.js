@@ -27,6 +27,7 @@ export const javascript = [
       "unicorn/prefer-global-this": "off", // Too many false positives
       "unicorn/prefer-ternary": "off",
       "unicorn/require-array-join-separator": "off",
+      "unicorn/prefer-import-meta-properties": "error",
     },
   },
   {

@@ -1,3 +1,5 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 //@ts-nocheck
 // prettier-ignore
 import { a } from "./other.js";
@@ -60,3 +62,6 @@ let c = 1;
   // eslint-disable-next-line require-atomic-updates
   c += await c;
 })();
+
+// eslint-disable-next-line unicorn/prefer-import-meta-properties
+const _dirname = path.dirname(fileURLToPath(import.meta.url));
