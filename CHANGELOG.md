@@ -1,3 +1,9 @@
+## [6.0.1](https://github.com/peerigon/configs/compare/v6.0.0...v6.0.1) (2025-05-02)
+
+### Bug Fixes
+
+- **eslint:** Allow await in loops in tests ([5f7da87](https://github.com/peerigon/configs/commit/5f7da87275958ae1e5e82dfaa66b9fbfe684e374))
+
 # [6.0.0](https://github.com/peerigon/configs/compare/v5.5.0...v6.0.0) (2025-04-30)
 
 ### Features
