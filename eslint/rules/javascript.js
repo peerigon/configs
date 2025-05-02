@@ -147,6 +147,8 @@ export const javascript = [
       "unicorn/prefer-top-level-await": "off",
       // Nesting is pretty common in tests when you group tests
       "max-nested-callbacks": "off",
+      // await in loops is pretty common in Playwright tests
+      "no-await-in-loop": "off",
       // In case you want to test errors thrown by a constructor
       "no-new": "off",
     },
