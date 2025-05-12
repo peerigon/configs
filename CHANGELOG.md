@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/peerigon/configs/compare/v6.1.0...v6.2.0) (2025-05-12)
+
+### Features
+
+- **esint:** bump eslint-plugin-unicorn from 59.0.0 to 59.0.1 ([#75](https://github.com/peerigon/configs/issues/75)) ([2d6bcd0](https://github.com/peerigon/configs/commit/2d6bcd03fc6d4a28293358ed77f8c7897662fd88))
+- **eslint:** bump eslint-plugin-react-refresh from 0.4.19 to 0.4.20 ([#74](https://github.com/peerigon/configs/issues/74)) ([a76f44c](https://github.com/peerigon/configs/commit/a76f44ca066550a8762acb5bc2642bc47114b88f))
+
 # [6.1.0](https://github.com/peerigon/configs/compare/v6.0.1...v6.1.0) (2025-05-05)
 
 ### Features
