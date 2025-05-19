@@ -1,3 +1,24 @@
+# [6.3.0](https://github.com/peerigon/configs/compare/v6.2.0...v6.3.0) (2025-05-19)
+
+### Features
+
+- add linting rule to check for accidental test.only ([#76](https://github.com/peerigon/configs/issues/76)) ([25e8f17](https://github.com/peerigon/configs/commit/25e8f17d184efefff7767e68079e971a471ca11c))
+
+# [6.2.0](https://github.com/peerigon/configs/compare/v6.1.0...v6.2.0) (2025-05-12)
+
+### Features
+
+- **esint:** bump eslint-plugin-unicorn from 59.0.0 to 59.0.1 ([#75](https://github.com/peerigon/configs/issues/75)) ([2d6bcd0](https://github.com/peerigon/configs/commit/2d6bcd03fc6d4a28293358ed77f8c7897662fd88))
+- **eslint:** bump eslint-plugin-react-refresh from 0.4.19 to 0.4.20 ([#74](https://github.com/peerigon/configs/issues/74)) ([a76f44c](https://github.com/peerigon/configs/commit/a76f44ca066550a8762acb5bc2642bc47114b88f))
+
+# [6.1.0](https://github.com/peerigon/configs/compare/v6.0.1...v6.1.0) (2025-05-05)
+
+### Features
+
+- **eslint:** bump @eslint/compat from 1.2.8 to 1.2.9 ([#70](https://github.com/peerigon/configs/issues/70)) ([27aed65](https://github.com/peerigon/configs/commit/27aed650fbb1d9e1ba0b8d09e771742ecf003b9b))
+- **eslint:** bump @eslint/js from 9.25.1 to 9.26.0 ([#67](https://github.com/peerigon/configs/issues/67)) ([4eb269d](https://github.com/peerigon/configs/commit/4eb269d9ec17326ce5cc052589dc5a4f779db999))
+- **eslint:** bump typescript-eslint from 8.30.1 to 8.31.1 ([#68](https://github.com/peerigon/configs/issues/68)) ([f5a4335](https://github.com/peerigon/configs/commit/f5a4335457936a5e56878dcd02b5f87c03ca8877))
+
 ## [6.0.1](https://github.com/peerigon/configs/compare/v6.0.0...v6.0.1) (2025-05-02)
 
 ### Bug Fixes
