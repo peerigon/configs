@@ -1,3 +1,9 @@
+# [6.3.0](https://github.com/peerigon/configs/compare/v6.2.0...v6.3.0) (2025-05-19)
+
+### Features
+
+- add linting rule to check for accidental test.only ([#76](https://github.com/peerigon/configs/issues/76)) ([25e8f17](https://github.com/peerigon/configs/commit/25e8f17d184efefff7767e68079e971a471ca11c))
+
 # [6.2.0](https://github.com/peerigon/configs/compare/v6.1.0...v6.2.0) (2025-05-12)
 
 ### Features
