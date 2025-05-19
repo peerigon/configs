@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import noOnlyTests from "eslint-plugin-no-only-tests";
 import unicornPlugin from "eslint-plugin-unicorn";
 import { globPatterns } from "../lib/glob-patterns.js";
 import { ruleOptions } from "../lib/rule-options.js";
@@ -142,6 +143,9 @@ export const javascript = [
   },
   {
     files: globPatterns.tests,
+    plugins: {
+      "no-only-tests": noOnlyTests,
+    },
     rules: {
       // Top-level await might slow down the test suite start up
       "unicorn/prefer-top-level-await": "off",
@@ -151,6 +155,8 @@ export const javascript = [
       "no-await-in-loop": "off",
       // In case you want to test errors thrown by a constructor
       "no-new": "off",
+      // should show a warning when a test is focussed
+      "no-only-tests/no-only-tests": "error",
     },
   },
 ];
