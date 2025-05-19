@@ -48,3 +48,11 @@ declare module "eslint-plugin-react-refresh" {
 
   export default config;
 }
+
+declare module "eslint-plugin-no-only-tests" {
+  const config: {
+    rules: { [name: string]: any };
+  };
+
+  export default config;
+}
