@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/peerigon/configs/compare/v6.3.0...v6.4.0) (2025-05-26)
+
+### Features
+
+- **eslint:** bump @eslint-react/eslint-plugin from 1.48.1 to 1.49.0 ([#69](https://github.com/peerigon/configs/issues/69)) ([059b3e3](https://github.com/peerigon/configs/commit/059b3e313151983b818cb9dfed771d8304dba711))
+- **prettier:** bump prettier-plugin-packagejson from 2.5.10 to 2.5.14 ([#82](https://github.com/peerigon/configs/issues/82)) ([0d5be7d](https://github.com/peerigon/configs/commit/0d5be7dd22e47e1c810dc6e138993106e8327fe9))
+
 # [6.3.0](https://github.com/peerigon/configs/compare/v6.2.0...v6.3.0) (2025-05-19)
 
 ### Features
