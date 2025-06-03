@@ -1,3 +1,11 @@
+# [6.5.0](https://github.com/peerigon/configs/compare/v6.4.0...v6.5.0) (2025-06-03)
+
+### Features
+
+- **eslint:** bump @eslint/js from 9.27.0 to 9.28.0 ([#87](https://github.com/peerigon/configs/issues/87)) ([566c18a](https://github.com/peerigon/configs/commit/566c18a6e63f9cdd07bb24c332c83b2502d358ac))
+- **eslint:** bump @semantic-release/exec from 7.0.3 to 7.1.0 ([#85](https://github.com/peerigon/configs/issues/85)) ([1f53ebb](https://github.com/peerigon/configs/commit/1f53ebb28ddd5f8f8623a0627465da77c2a7c3f0))
+- **eslint:** bump globals from 16.0.0 to 16.2.0 ([#88](https://github.com/peerigon/configs/issues/88)) ([3a45c31](https://github.com/peerigon/configs/commit/3a45c319dca5c3199344d01636205420cba9c857))
+
 # [6.4.0](https://github.com/peerigon/configs/compare/v6.3.0...v6.4.0) (2025-05-26)
 
 ### Features
