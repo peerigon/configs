@@ -1,3 +1,9 @@
+# [6.6.0](https://github.com/peerigon/configs/compare/v6.5.0...v6.6.0) (2025-06-10)
+
+### Features
+
+- **prettier:** bump @ianvs/prettier-plugin-sort-imports from 4.4.1 to 4.4.2 ([#93](https://github.com/peerigon/configs/issues/93)) ([219e289](https://github.com/peerigon/configs/commit/219e28941649a839ea47039d57cea4b6251b7fff))
+
 # [6.5.0](https://github.com/peerigon/configs/compare/v6.4.0...v6.5.0) (2025-06-03)
 
 ### Features
