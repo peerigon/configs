@@ -1,3 +1,11 @@
+# [6.7.0](https://github.com/peerigon/configs/compare/v6.6.0...v6.7.0) (2025-06-10)
+
+### Features
+
+- **eslint:** bump @eslint-react/eslint-plugin from 1.50.0 to 1.51.2 ([#91](https://github.com/peerigon/configs/issues/91)) ([d06b852](https://github.com/peerigon/configs/commit/d06b852d09c5dc221a476890891c85a6d60c8441))
+- **prettier:** bump prettier-plugin-tailwindcss from 0.6.11 to 0.6.12 ([#90](https://github.com/peerigon/configs/issues/90)) ([596e09e](https://github.com/peerigon/configs/commit/596e09e5b09da5df2d1a939897fb615d1561e5f7))
+- **semantic-release:** bump @sebbo2002/semantic-release-jsr from 2.0.5 to 3.0.0 ([#92](https://github.com/peerigon/configs/issues/92)) ([a6bd038](https://github.com/peerigon/configs/commit/a6bd038229523a492df56d7299c6dd8745200595))
+
 # [6.6.0](https://github.com/peerigon/configs/compare/v6.5.0...v6.6.0) (2025-06-10)
 
 ### Features
