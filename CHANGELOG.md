@@ -1,3 +1,11 @@
+# [6.8.0](https://github.com/peerigon/configs/compare/v6.7.0...v6.8.0) (2025-06-30)
+
+### Features
+
+- **eslint:** bump @eslint/compat from 1.3.0 to 1.3.1 ([#104](https://github.com/peerigon/configs/issues/104)) ([7e6dcdb](https://github.com/peerigon/configs/commit/7e6dcdbca4615ce9d0e3ef099f41631fa6420578))
+- **eslint:** bump typescript-eslint from 8.34.1 to 8.35.0 ([#103](https://github.com/peerigon/configs/issues/103)) ([0076545](https://github.com/peerigon/configs/commit/0076545d4da43cb0fea61e27a2815bf028913794))
+- **prettier:** bump prettier-plugin-tailwindcss from 0.6.12 to 0.6.13 ([#106](https://github.com/peerigon/configs/issues/106)) ([61765d7](https://github.com/peerigon/configs/commit/61765d717fdecb8edc067672092ce4dd09f6dd90))
+
 # [6.7.0](https://github.com/peerigon/configs/compare/v6.6.0...v6.7.0) (2025-06-10)
 
 ### Features
