@@ -1,3 +1,10 @@
+# [6.9.0](https://github.com/peerigon/configs/compare/v6.8.0...v6.9.0) (2025-07-07)
+
+### Features
+
+- **prettier:** bump prettier-plugin-jsdoc from 1.3.2 to 1.3.3 ([#118](https://github.com/peerigon/configs/issues/118)) ([d14d847](https://github.com/peerigon/configs/commit/d14d8471c2be76e544e15278789a19f5c826285a))
+- **prettier:** bump prettier-plugin-packagejson from 2.5.15 to 2.5.18 ([#117](https://github.com/peerigon/configs/issues/117)) ([c6c2af4](https://github.com/peerigon/configs/commit/c6c2af49e67d98b4ee6f20ea9094c3d5f3f7d288))
+
 # [6.8.0](https://github.com/peerigon/configs/compare/v6.7.0...v6.8.0) (2025-06-30)
 
 ### Features
