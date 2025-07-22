@@ -26,6 +26,7 @@ function safeResolve(id) {
 // Using safeResolve() here because the plugins might not be installed in the parent app/module
 // and we don't want to rely on the package manager to hoist the dependencies.
 const plugins = await Promise.all([
+  safeResolve("@prettier/plugin-oxc"),
   safeResolve("@ianvs/prettier-plugin-sort-imports"),
   safeResolve("prettier-plugin-jsdoc"),
   safeResolve("prettier-plugin-packagejson"),
