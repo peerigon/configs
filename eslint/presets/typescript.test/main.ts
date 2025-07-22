@@ -40,3 +40,6 @@ console.log(getMessage(), SomeClass, snake_case, test);
     return true;
   }
 })();
+
+// @ts-expect-error enums are not supported in erasableSyntaxOnly
+enum SomeEnum {}

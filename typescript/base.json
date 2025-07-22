@@ -21,6 +21,7 @@
     // We decided to turn off `exactOptionalPropertyTypes` because it's too strict
     // by complaining about too much unproblematic code. We may revisit this decision later.
     "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": true,
 
     // == Module resolution settings ==
     "resolveJsonModule": true,
@@ -33,13 +34,15 @@
     "forceConsistentCasingInFileNames": true,
     // Using noEmit true here because you should have a separate build config anyway
     "noEmit": true,
-    "noPropertyAccessFromIndexSignature": true,
     // Not setting skipLibCheck: true for now because it can hide type conflicts in dependencies.
     // You can override this in your app if you can't fix it with your package manager.
     // If you want to learn more about the trade-offs,
     // see https://www.testim.io/blog/typescript-skiplibcheck/
     "skipLibCheck": false,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    // Recommended for new projects.
+    // Disable this if you already have an existing codebase that uses non-erasable syntax.
+    "erasableSyntaxOnly": true
   },
   "exclude": ["${configDir}/dist"],
   "$schema": "https://json.schemastore.org/tsconfig"
