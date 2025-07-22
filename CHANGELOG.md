@@ -1,3 +1,16 @@
+# [7.0.0](https://github.com/peerigon/configs/compare/v6.10.0...v7.0.0) (2025-07-22)
+
+### Features
+
+- **prettier:** Use @prettier/plugin-oxc ([ff3223f](https://github.com/peerigon/configs/commit/ff3223f6ffd32783f9f1207dcdf8ff165491a53d))
+- **typescript:** Add erasableSyntaxOnly to base tsconfig ([f3d4468](https://github.com/peerigon/configs/commit/f3d4468c01a0655b0d4e5819822267b0c6e9c5b8))
+- Update all dependencies ([3880e58](https://github.com/peerigon/configs/commit/3880e58db3471688316b4503a475872c98a68574))
+
+### BREAKING CHANGES
+
+- **typescript:** We set erasableSyntaxOnly: true as tsconfig default. You might need to disable this in your existing project.
+- Updates eslint-plugin-unicorn@60.0.0 which introduces new eslint rules
+
 # [6.10.0](https://github.com/peerigon/configs/compare/v6.9.0...v6.10.0) (2025-07-14)
 
 ### Features
