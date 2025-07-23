@@ -3,6 +3,7 @@
 **Best practice configs for [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/) & friends. By [Peerigon](https://www.peerigon.com/).**
 
 [![Version on NPM](https://img.shields.io/npm/v/@peerigon/configs?style=for-the-badge)](https://www.npmjs.com/package/@peerigon/configs)
+[![Version on JSR](https://img.shields.io/jsr/v/@peerigon/configs?style=for-the-badge)](https://jsr.io/@peerigon/configs)
 [![Semantically released](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-release)
 [![Monthly downloads on NPM](https://img.shields.io/npm/dm/@peerigon/configs?style=for-the-badge)](https://www.npmjs.com/package/@peerigon/configs)<br>
 [![License](https://img.shields.io/npm/l/@peerigon/configs?style=for-the-badge)](./LICENSE)
