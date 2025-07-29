@@ -1,3 +1,9 @@
+## [7.0.1](https://github.com/peerigon/configs/compare/v7.0.0...v7.0.1) (2025-07-29)
+
+### Bug Fixes
+
+- **typescript:** Exclude common build directories ([cf1f657](https://github.com/peerigon/configs/commit/cf1f657b4595837c685b91fb1b0253f69a2fc3f8))
+
 # [7.0.0](https://github.com/peerigon/configs/compare/v6.10.0...v7.0.0) (2025-07-22)
 
 ### Features
