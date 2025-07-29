@@ -41,9 +41,9 @@ Our configs have been designed with these assumptions in mind.
 
 Formatting should follow the community standard. Our config is therefore based on Prettier's default config. Besides that it also:
 
-- auto-sorts `import` statements
+- sorts `import` statements
 - formats JSDoc comments
-- formats `package.json`
+- formats and sorts `package.json` fields
 - formats and sorts CSS properties
 - sorts Tailwind CSS class names
 
