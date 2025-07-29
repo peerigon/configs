@@ -44,6 +44,14 @@
     // Disable this if you already have an existing codebase that uses non-erasable syntax.
     "erasableSyntaxOnly": true
   },
-  "exclude": ["${configDir}/dist"],
+  "exclude": [
+    "${configDir}/dist",
+    "${configDir}/coverage",
+    "${configDir}/node_modules",
+    "${configDir}/build",
+    "${configDir}/.next",
+    "${configDir}/.nuxt",
+    "${configDir}/.vercel"
+  ],
   "$schema": "https://json.schemastore.org/tsconfig"
 }
