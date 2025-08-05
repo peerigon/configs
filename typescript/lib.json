@@ -6,7 +6,9 @@
     "declarationMap": true,
     "noEmit": false,
     "outDir": "${configDir}/dist",
-    "sourceMap": true
+    "sourceMap": true,
+    // Use inlineSources: true because often we only publish the dist folder on npm
+    "inlineSources": true
   },
   "$schema": "https://json.schemastore.org/tsconfig"
 }
