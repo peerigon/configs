@@ -1,3 +1,9 @@
+## [7.0.2](https://github.com/peerigon/configs/compare/v7.0.1...v7.0.2) (2025-08-05)
+
+### Bug Fixes
+
+- **typescript:** Add inlineSources: true for lib tsconfigs ([d25c418](https://github.com/peerigon/configs/commit/d25c41814836a342b2958a2338c9f438fdf3b11e))
+
 ## [7.0.1](https://github.com/peerigon/configs/compare/v7.0.0...v7.0.1) (2025-07-29)
 
 ### Bug Fixes
