@@ -68,10 +68,15 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use strict mode
 - Only use `interface` for interfaces that are intended to be implemented by a `class`
 - Use `type` for all other cases, especially object types
-- Prefer `unknown` over `any`
+- Do not use `any` to fix type errors. Search for a better alternative.
+- If you have to use `any`, try with `unknown` first
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). Lift types into higher-level, special types as soon as they have been parsed (e.g. prefer explicit string literals over just `string`)
 - Infer types (using type utilities like `Pick`, `Omit`, ...) instead of duplicating them
 - Prefer `satisfies` over type declarations
 - Use explicit return types for functions when the function is exported and the return type is not a literal or when it has high cyclomatic complexity
 - Use erasable syntax only
 - **Important**: Use descriptive type parameter names in generic types, do not use single letter type parameter names
+
+## Testing
+
+See [Coding Styleguide Testing](./coding-styleguide-testing.mdc)

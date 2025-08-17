@@ -1,0 +1,46 @@
+---
+description: Best practices and conventions for testing JavaScript and TypeScript code
+globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
+---
+
+# Testing
+
+## General principle
+
+**Important**: Write as less tests as possible while covering all relevant scenarios. Focus on testing the behavior of the code rather than implementation details.
+
+## Structure & Organization
+
+- Hierarchical grouping: Use nested describe() blocks - outer for function/class, inner for scenarios
+- Logical categorization: Group by behavior, input type, or state (e.g., "with valid input", "error handling")
+- Each it() should test a single behavior
+
+## Test Coverage
+
+- Happy path: Test expected behavior with typical inputs
+- Edge cases: Test boundaries, empty values, maximum/minimum values
+- Error scenarios: Test all failure modes with proper error type/message validation
+- Type variations: Test all relevant data types (primitives, objects, arrays, functions)
+- Falsy values: Explicitly test null, undefined, 0, "", false, NaN
+
+## Type Safety
+
+- Type annotations: Include explicit types in test variables to verify inference
+- Compile-time checks: Some tests exist just to verify type compatibility
+
+## Best Practices
+
+- Descriptive names: Use clear it() descriptions stating expected behavior
+- Avoid "should" phrasing in it(): Use verbs like "does" or "returns" to describe behavior
+- Isolation: Each test should be independent and not rely on others
+- Arrange-Act-Assert: Follow AAA pattern for test structure
+- DRY with helpers: Extract repetitive setup into helper functions
+- Use real-life examples and descriptive names for test data
+
+## Assertions
+
+- Prefer `.toMatchObject()` over `.toEqual()` for object/array content checks
+- Do not over-assert: Only include relevant data into the expected value using `.toMatchObject()`
+- Check for reference equality only if it matters for the test
+- Multiple assertions: Group related checks in single test when testing same behavior
+- Use `.toThrowErrorMatchingInlineSnapshot()` for exact error messages
