@@ -29,23 +29,23 @@ jobs:
 
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # pin@main
+        uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # main
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@802632921f8532d2409ae6eac3313b6f81f11122 # pin@main
+        uses: actions/setup-node@5e2628c959b9ade56971c0afcebbe5332d44b398 # main
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
 
       - name: 🗄 Cache node_modules
         id: cache-node_modules
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # pin@main
+        uses: actions/cache@638ed79f9dc94c1de1baef91bcab5edaa19451f4 # main
         with:
           path: "**/node_modules"
           key: node_modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: 🗄 Cache .eslintcache
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # pin@main
+        uses: actions/cache@638ed79f9dc94c1de1baef91bcab5edaa19451f4 # main
         with:
           path: .eslintcache
           key: eslintcache-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -63,7 +63,9 @@ jobs:
 
       - name: 🚀 Release preview
         if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/beta' }}
+        # Call to npm publish --dry-run is currently necessary, see https://github.com/stackblitz-labs/pkg.pr.new/issues/320
         run: |
+          npm publish --dry-run
           npx pkg-pr-new publish
 
       - name: 🚀 Release on npm
