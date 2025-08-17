@@ -1,0 +1,160 @@
+---
+description: HTML and CSS best practices with accessibility focus
+globs: **/*.html, **/*.htm, **/*.css, **/*.scss, **/*.sass, **/*.less, **/*.tsx, **/*.jsx, **/*.vue
+---
+
+# HTML & CSS
+
+## HTML
+
+### Semantic Elements
+
+Use semantic elements like `header`, `nav`, `main`, `article`, `section`, `aside`, `footer`, `figure`, `time` when content has inherent meaning:
+
+```html
+<article>
+  <h1>Breaking News</h1>
+  <time datetime="2025-01-15">January 15, 2025</time>
+</article>
+```
+
+### Form Labels
+
+Every input requires an associated label. Prefer wrapping the `input` with `label`. Otherwise use `for`/`id` (when using React, call `useId()`):
+
+```html
+<!-- Good -->
+<label for="user-email">Email Address</label>
+<input type="email" id="user-email" name="email" />
+
+<!-- Better -->
+<label>
+  Email Address:
+  <input type="email" name="email" />
+</label>
+```
+
+### Buttons vs. Links
+
+Use buttons for actions, links for navigation:
+
+```html
+<button type="button" onclick="saveData()">Save</button>
+<a href="/next">Next</a>
+```
+
+### Image Alt Text
+
+Provide descriptive alt text for content images, empty alt for decorative images:
+
+```html
+<img src="chart.png" alt="Sales increased 23% in Q4 2024" />
+<img src="decoration.png" alt="" />
+```
+
+## CSS
+
+### Selectors and naming
+
+Use purpose-based named classes for styling with a maximum of 3 levels specificity.
+
+```css
+.site-header {
+}
+.card {
+}
+.error-message {
+}
+.feature-highlight {
+}
+```
+
+Check what styling solution (CSS Modules, BEM, Tailwind, ...) is used in the project and follow its conventions.
+
+### Units
+
+Use typography units like `rem`, `ch`, ... for typography-related spacing:
+
+```css
+font-size: 1.125rem;
+```
+
+Use `px` for everything else:
+
+```css
+border: 1px solid #ccc;
+```
+
+## Accessibility
+
+### Focus Indicators
+
+Provide visible focus for all interactive elements:
+
+```css
+button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+```
+
+### Color Information
+
+Never use color alone to convey information. Use text labels or patterns to supplement color.
+
+### Motion Preferences
+
+Respect reduced motion preferences:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+### ARIA Usage
+
+- Only use ARIA when HTML semantics are insufficient.
+- Use ARIA for custom components without HTML equivalents.
+- Use `aria-label` when visible text is insufficient:
+
+```html
+<button aria-label="Close dialog">×</button>
+```
+
+Use `aria-describedby` for help text:
+
+```html
+<input type="password" aria-describedby="password-help" />
+<div id="password-help">Must be at least 8 characters</div>
+```
+
+### Screen Reader Content
+
+Use visually hidden class for screen reader only content:
+
+```css
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+```
+
+### Font Loading
+
+Use `font-display: swap` for web fonts:
+
+```css
+@font-face {
+  src: url("font.woff2") format("woff2");
+  font-family: "CustomFont";
+  font-display: swap;
+}
+```

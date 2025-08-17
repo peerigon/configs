@@ -22,7 +22,7 @@
     "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
   "publish": {
-    "include": ["dist", "CHANGELOG.md", "README.md"]
+    "include": ["dist", "ai", "CHANGELOG.md", "README.md"]
   },
   "$schema": "https://jsr.io/schema/config-file.v1.json"
 }

@@ -1,0 +1,41 @@
+---
+description: Rules for coding agents to follow
+globs: **/*
+alwaysApply: true
+---
+
+# Coding Styleguide
+
+## Universal Principles
+
+- Write idiomatic, self-documenting code with clear, descriptive names
+- Optimize for readability
+- Use names consistently
+- Prefer explicit over implicit
+- Keep code close together that belongs together
+
+## JavaScript & TypeScript
+
+See [Coding Styleguide JavaScript & TypeScript](./coding-styleguide-js-ts.mdc)
+
+## HTML & CSS
+
+See [Coding Styleguide HTML & CSS](./coding-styleguide-html-css.mdc)
+
+## React
+
+See [Coding Styleguide React](./coding-styleguide-react.mdc)
+
+## Shell scripts
+
+See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
+
+## Development Practices
+
+- Breakdown complex tasks into smaller, manageable todos and write them down to a dedicated TODO file
+- Aim for small pull-requests. Each TODO should be a single pull-request. Use stacked PRs.
+- Write unit tests for simple, pure functions
+- Unit test files are colocated with source files (*.test.ts)
+- Write integration or e2e tests for more complex functions/classes/components
+- Run the linter and type checker only once after the implementation is complete and the tests are passing
+- Adjust documentation both in comments and md files once you're done
