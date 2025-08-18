@@ -68,6 +68,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use strict mode
 - Only use `interface` for interfaces that are intended to be implemented by a `class`
 - Use `type` for all other cases, especially object types
+- Use the generic notation for types (e.g. `Array<string>` instead of `string[]`)
 - Do not use `any` to fix type errors. Search for a better alternative.
 - If you have to use `any`, try with `unknown` first
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). Lift types into higher-level, special types as soon as they have been parsed (e.g. prefer explicit string literals over just `string`)
