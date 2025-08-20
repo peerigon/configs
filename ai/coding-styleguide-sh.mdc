@@ -1,0 +1,17 @@
+---
+description: Shell scripting best practices
+globs: **/*.sh, **/*.bash, **/*.zsh
+---
+
+# Shell scripts
+
+- Prepend all shell scripts with
+
+```sh
+set -o errexit  # exit when there was a single error
+set -o pipefail # fail when there was a pipe error
+set -o nounset  # fail when an env variable is not set
+```
+
+- Make sure that shell scripts also work when file names contain spaces
+- Prefer commands that work on Linux, MacOS and Windows WSL

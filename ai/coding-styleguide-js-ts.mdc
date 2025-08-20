@@ -1,0 +1,83 @@
+---
+description: JavaScript and TypeScript best practices and conventions
+globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
+---
+
+# JavaScript & TypeScript
+
+- Use TypeScript. If .js files are requested, use JSDoc type annotations
+- Prefer functional over imperative
+- Prefer immutability
+
+## Formatting
+
+- Use Prettier's default formatting
+
+## Imports & exports
+
+- Use ESM unless you're editing a CommonJS file
+- Use file extensions in import specifiers. Use .ts extension in TypeScript files.
+- Avoid default imports and default exports
+- Avoid barrel files (index files that only re-export) unless its a package entry file
+
+## Naming Conventions
+
+- `camelCase` for variables, functions, methods
+- `PascalCase` for classes, enums and React components
+- `SCREAMING_SNAKE_CASE` for build-time constants
+- `kebab-case` for file names, CSS classes and DOM ids
+- Stick to existing naming conventions if present (e.g. `camelCase` and `PascalCase` for file names)
+- Use specific names instead of unspecific abbreviations like `obj`, `arr` and `err`
+- Only use abbreviations when they are widely used like `Api`
+- Abbreviations should be treated as separate words (e.g. `Api` instead of `API`)
+- Use short names when the variable or function is private and only accessible in the current file
+- Use longer and more specific names when the variable or function is exported and visible across the whole project
+- Use auxiliary verbs (e.g., isLoading, hasError) for boolean variables and type guards
+
+## Syntax
+
+- Use `const` by default, `let` when necessary
+- Use template literals for string interpolation
+- Prefer `undefined` over `null`
+- Destructure objects and arrays, especially when using default values
+- Use optional chaining (`?.`) and nullish coalescing (`??`) instead of `||`
+
+## Control flow
+
+- Use early returns to eliminate error and edge cases
+- Use assert functions to assert assumptions
+- Prefer simple if statements and avoid negated if statements where possible
+- Keep indentation level low and avoid more than 5 levels of nesting
+
+## Error handling
+
+- Write descriptive error messages and include error context (e.g. actual vs. expected values)
+- Use try-catch blocks sparingly and only when you can actually handle the error
+- Consider using Result types for operations that can fail
+
+## Functions
+
+- Use arrow functions unless there is no appropriate syntax like function overloads or generators
+- Use objects as parameters when there are more than 2 parameters
+- Keep functions small and focused on single responsibility
+- Write pure functions when possible
+- Optimize function names for readability on the call side
+
+## Types
+
+- Use strict mode
+- Only use `interface` for interfaces that are intended to be implemented by a `class`
+- Use `type` for all other cases, especially object types
+- Use the generic notation for types (e.g. `Array<string>` instead of `string[]`)
+- Do not use `any` to fix type errors. Search for a better alternative.
+- If you have to use `any`, try with `unknown` first
+- [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). Lift types into higher-level, special types as soon as they have been parsed (e.g. prefer explicit string literals over just `string`)
+- Infer types (using type utilities like `Pick`, `Omit`, ...) instead of duplicating them
+- Prefer `satisfies` over type declarations
+- Use explicit return types for functions when the function is exported and the return type is not a literal or when it has high cyclomatic complexity
+- Use erasable syntax only
+- **Important**: Use descriptive type parameter names in generic types, do not use single letter type parameter names
+
+## Testing
+
+See [Coding Styleguide Testing](./coding-styleguide-testing.mdc)

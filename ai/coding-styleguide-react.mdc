@@ -1,0 +1,14 @@
+---
+description: React best practices and patterns
+globs: **/*.tsx, **/*.jsx
+---
+
+# React
+
+- Use arrow functions for components
+- Inline component props next to the component prop argument
+- Derive state where possible
+- Avoid unnecessary `useState` and `useEffect`
+- `useEffect` **must** contain an async function call (unless it's a synchronous browser api like `localStorage`)
+- Avoid `useMemo` and `useCallback` unless its absolutely necessary
+- Create a story for each React component if Storybook is used
