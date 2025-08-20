@@ -38,4 +38,4 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Unit test files are colocated with source files (*.test.ts)
 - Write integration or e2e tests for more complex functions/classes/components
 - Run the linter and type checker only once after the implementation is complete and the tests are passing
-- Adjust documentation both in comments and md files once you're done
+- Adjust documentation both in comments and markdown files once you're done

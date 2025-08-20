@@ -22,6 +22,16 @@ Also checkout the instructions for each respective config:
 - [Semantic release](/semantic-release/README.md)
 - [VSCode](/.vscode/README.md)
 
+### AI
+
+Furthermore, this package also contains [rules and instructions for AI coding agents](./ai/README.md) that are based on the configurations.
+
+If you want your AI coding agent to stick to our configs and coding principles, put this in your project-specific rules file (like `CLAUDE.md`, `.cursor/rules.mdc`, etc.):
+
+```md
+**Important**: You **must** follow [these rules](./node_modules/@peerigon/configs/ai/rules.mdc) and its language-specific rules referenced in that file.
+```
+
 ## Philosophy
 
 Linting, formatting and type-checking rules are always a balance between:
