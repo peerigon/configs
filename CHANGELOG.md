@@ -1,3 +1,9 @@
+# [7.1.0](https://github.com/peerigon/configs/compare/v7.0.2...v7.1.0) (2025-08-20)
+
+### Features
+
+- Add rules and instructions for AI coding agents ([#146](https://github.com/peerigon/configs/issues/146)) ([4fda35c](https://github.com/peerigon/configs/commit/4fda35c49ee8fe92559a88ffacc4dbce198fb32c)), closes [/#diff-31d17094bc63f56f4b4cc27a6e7d78e7b0a33b2a7d810f06a77f5f5814a32223R1-R77](https://github.com///issues/diff-31d17094bc63f56f4b4cc27a6e7d78e7b0a33b2a7d810f06a77f5f5814a32223R1-R77) [/#diff-687239070a6068b383fc9aab0bfacfc80b3ff2c1df6055e7f0273328b597e6d0R1-R160](https://github.com///issues/diff-687239070a6068b383fc9aab0bfacfc80b3ff2c1df6055e7f0273328b597e6d0R1-R160) [/#diff-f8bfdc4142ab84261ba9c23bfc9afeff1f98ee71da689ef951311cd54130f928R1-R14](https://github.com///issues/diff-f8bfdc4142ab84261ba9c23bfc9afeff1f98ee71da689ef951311cd54130f928R1-R14) [/#diff-97953bd7f578928372e273b64f032d3bb832202e334ea65cc2926ae1c3c27534R1-R17](https://github.com///issues/diff-97953bd7f578928372e273b64f032d3bb832202e334ea65cc2926ae1c3c27534R1-R17) [/#diff-5193a148ebdd2baf23b4f0a1c1add7ea02a8b92fb022e3a5780e886509d06693L25-R25](https://github.com///issues/diff-5193a148ebdd2baf23b4f0a1c1add7ea02a8b92fb022e3a5780e886509d06693L25-R25) [/#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519R44](https://github.com///issues/diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519R44)
+
 ## [7.0.2](https://github.com/peerigon/configs/compare/v7.0.1...v7.0.2) (2025-08-05)
 
 ### Bug Fixes
