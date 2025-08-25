@@ -96,7 +96,7 @@
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.2.1",
-    "@types/react": "^19.1.9",
+    "@types/react": "^19.1.11",
     "@types/signale": "^1.4.7",
     "eslint": "^9.33.0",
     "husky": "^9.1.7",
