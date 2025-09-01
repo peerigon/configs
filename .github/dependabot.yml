@@ -11,7 +11,7 @@ updates:
     directory: "/"
     # Check the npm registry for updates once a week
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     # Without versioning-strategy increase, the package-lock.json of the consuming
     # package would prevent updates of our dependencies. By also increasing the package.json
     # we make sure that the package-lock of the consuming package is also updating.
