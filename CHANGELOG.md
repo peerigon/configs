@@ -1,3 +1,9 @@
+# [7.3.0](https://github.com/peerigon/configs/compare/v7.2.0...v7.3.0) (2025-09-12)
+
+### Features
+
+- **eslint:** bump typescript-eslint from 8.39.1 to 8.41.0 ([#160](https://github.com/peerigon/configs/issues/160)) ([2e93592](https://github.com/peerigon/configs/commit/2e935923e94c1e7480305b8fcf0422061e14deb1))
+
 # [7.2.0](https://github.com/peerigon/configs/compare/v7.1.0...v7.2.0) (2025-09-02)
 
 ### Features
