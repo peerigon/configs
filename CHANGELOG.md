@@ -1,3 +1,13 @@
+# [7.4.0](https://github.com/peerigon/configs/compare/v7.3.0...v7.4.0) (2025-09-30)
+
+### Bug Fixes
+
+- Add **important** to some agent instructions ([257ef95](https://github.com/peerigon/configs/commit/257ef954b1fc490622cac65225cffeeae2b54a85))
+
+### Features
+
+- Introduce vitest specific rules ([ac7b0c7](https://github.com/peerigon/configs/commit/ac7b0c7745ae73c68b6b3841f58cf40616fb047c)), closes [#164](https://github.com/peerigon/configs/issues/164)
+
 # [7.3.0](https://github.com/peerigon/configs/compare/v7.2.0...v7.3.0) (2025-09-12)
 
 ### Features
