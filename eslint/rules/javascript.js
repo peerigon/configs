@@ -155,7 +155,7 @@ export const javascript = [
       "no-await-in-loop": "off",
       // In case you want to test errors thrown by a constructor
       "no-new": "off",
-      // should show a warning when a test is focussed
+      // should show a warning when a test is focussed (overridden to off when using vitest config)
       "no-only-tests/no-only-tests": "error",
     },
   },
