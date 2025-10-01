@@ -4,6 +4,7 @@ import reactPlugin from "eslint-plugin-react";
 import reactCompilerPlugin from "eslint-plugin-react-compiler";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
+import reactYouMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
 import { globPatterns } from "../lib/glob-patterns.js";
 
 const files = [globPatterns.jsx, globPatterns.typescriptJsx];
@@ -90,6 +91,10 @@ export const react = [
     rules: {
       "react-compiler/react-compiler": "error",
     },
+  },
+  {
+    files,
+    ...reactYouMightNotNeedAnEffect.configs.recommended,
   },
   {
     files,

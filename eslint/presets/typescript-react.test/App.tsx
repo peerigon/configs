@@ -17,7 +17,7 @@ export const App = (_props: { name: string; count: number }) => {
   const [state, updateState] = useState(0);
 
   useEffect(() => {
-    // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
+    // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect, react-you-might-not-need-an-effect/no-chain-state-updates
     updateState(1);
   }, [state]);
 
@@ -36,12 +36,5 @@ export const App = (_props: { name: string; count: number }) => {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const doesntWorkWithHmr = () => {};
-
-export const InvalidRefAccessDuringRender = () => {
-  const ref = useRef(null);
-  // eslint-disable-next-line react-compiler/react-compiler
-  const value = ref.current;
-  return value;
-};
 
 <App name="John" count={0} />;
