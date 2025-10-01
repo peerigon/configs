@@ -1,3 +1,13 @@
+# [8.0.0](https://github.com/peerigon/configs/compare/v7.4.0...v8.0.0) (2025-10-01)
+
+### Features
+
+- **eslint:** Add eslint-plugin-react-you-might-not-need-an-effect ([1985951](https://github.com/peerigon/configs/commit/19859517f38b4f6a5b2b39119a1440b63cebcbde))
+
+### BREAKING CHANGES
+
+- **eslint:** Our React rules got a lot stricter about useEffect, see https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect
+
 # [7.4.0](https://github.com/peerigon/configs/compare/v7.3.0...v7.4.0) (2025-09-30)
 
 ### Bug Fixes
