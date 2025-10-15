@@ -1,3 +1,10 @@
+# [8.1.0](https://github.com/peerigon/configs/compare/v8.0.0...v8.1.0) (2025-10-15)
+
+### Features
+
+- Introduce tanstack query specific rules ([3cdfbd9](https://github.com/peerigon/configs/commit/3cdfbd9d5f9883b7577fc8539102d397d177d9a0))
+- Introduce tanstack query specific rules ([#172](https://github.com/peerigon/configs/issues/172)) ([caeb816](https://github.com/peerigon/configs/commit/caeb81653f9d7da9a7d9ec5a203a281dfe629738)), closes [#166](https://github.com/peerigon/configs/issues/166)
+
 # [8.0.0](https://github.com/peerigon/configs/compare/v7.4.0...v8.0.0) (2025-10-01)
 
 ### Features
