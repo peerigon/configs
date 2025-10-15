@@ -1,3 +1,21 @@
+# [9.0.0](https://github.com/peerigon/configs/compare/v8.1.0...v9.0.0) (2025-10-15)
+
+### Bug Fixes
+
+- remove fixed [@ts-expect-error](https://github.com/ts-expect-error) directives ([213325d](https://github.com/peerigon/configs/commit/213325d3102e9d72ffee6118822b52c7d22128e0))
+
+### Features
+
+- **react:** bump @eslint-react/eslint-plugin from 1.52.6 to 2.0.4 ([#171](https://github.com/peerigon/configs/issues/171)) ([ec855ad](https://github.com/peerigon/configs/commit/ec855ad8d553a0b5870e34e883cd3a32bfc52b45))
+
+### BREAKING CHANGES
+
+- **react:** Potentially breaking change for React users, see https://github.com/Rel1cx/eslint-react/blob/main/CHANGELOG.md#v200-2025-09-26
+
+Bumps
+[@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react/tree/HEAD/packages/plugins/eslint-plugin)
+from 1.52.6 to 2.0.4.
+
 # [8.1.0](https://github.com/peerigon/configs/compare/v8.0.0...v8.1.0) (2025-10-15)
 
 ### Features
