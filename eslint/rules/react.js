@@ -27,12 +27,10 @@ export const react = [
     ...reactPlugin.configs.flat["jsx-runtime"],
     files,
   },
-  // @ts-expect-error Seems like reactPlugin2's types are broken
   {
     ...reactPlugin2.configs.recommended,
     files,
   },
-  // @ts-expect-error Seems like reactPlugin2's types are broken
   {
     ...reactPlugin2.configs["recommended-type-checked"],
     files,
