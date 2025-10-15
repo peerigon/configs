@@ -145,3 +145,12 @@ import vitest from "@peerigon/configs/eslint/rules/vitest";
 
 export default [...typescript, ...vitest];
 ```
+
+- [@tanstack/query](https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query)
+
+```js
+import typescriptReact from "@peerigon/configs/eslint/presets/typescript-react";
+import tanstackQuery from "@peerigon/configs/eslint/rules/tanstack-query";
+
+export default [...typescriptReact, ...tanstackQuery];
+```
