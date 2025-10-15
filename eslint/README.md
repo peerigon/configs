@@ -150,7 +150,7 @@ export default [...typescript, ...vitest];
 
 ```js
 import typescriptReact from "@peerigon/configs/eslint/presets/typescript-react";
-import query from "@peerigon/configs/eslint/rules/query";
+import tanstackQuery from "@peerigon/configs/eslint/rules/tanstack-query";
 
-export default [...typescriptReact, ...query];
+export default [...typescriptReact, ...tanstackQuery];
 ```
