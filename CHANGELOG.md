@@ -1,3 +1,10 @@
+# [9.1.0](https://github.com/peerigon/configs/compare/v9.0.0...v9.1.0) (2025-10-16)
+
+### Features
+
+- Introduce Playwright specific rules ([aae64ed](https://github.com/peerigon/configs/commit/aae64ed01e83e2424ae417942cdcce32a297165f))
+- Introduce Playwright specific rules ([#174](https://github.com/peerigon/configs/issues/174)) ([b92db4f](https://github.com/peerigon/configs/commit/b92db4f9fbbbcdf8f9841a29f641e945e37a30bb)), closes [#173](https://github.com/peerigon/configs/issues/173)
+
 # [9.0.0](https://github.com/peerigon/configs/compare/v8.1.0...v9.0.0) (2025-10-15)
 
 ### Bug Fixes
