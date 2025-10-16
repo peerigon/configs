@@ -9,6 +9,7 @@
     "./eslint/presets/typescript-node": "./dist/eslint/presets/typescript-node.js",
     "./eslint/presets/typescript-react": "./dist/eslint/presets/typescript-react.js",
     "./eslint/presets/typescript": "./dist/eslint/presets/typescript.js",
+    "./eslint/rules/playwright": "./dist/eslint/rules/playwright.js",
     "./eslint/rules/tanstack-query": "./dist/eslint/rules/tanstack-query.js",
     "./eslint/rules/vitest": "./dist/eslint/rules/vitest.js",
     "./eslint/styles/jsx-no-literals": "./dist/eslint/styles/jsx-no-literals.js",

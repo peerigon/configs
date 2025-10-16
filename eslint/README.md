@@ -146,6 +146,15 @@ import vitest from "@peerigon/configs/eslint/rules/vitest";
 export default [...typescript, ...vitest];
 ```
 
+- [Playwright](https://github.com/mskelton/eslint-plugin-playwright)
+
+```js
+import typescript from "@peerigon/configs/eslint/presets/typescript";
+import playwright from "@peerigon/configs/eslint/rules/playwright";
+
+export default [...typescript, ...playwright];
+```
+
 - [@tanstack/query](https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query)
 
 ```js
