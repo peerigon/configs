@@ -1,3 +1,24 @@
+# [10.0.0](https://github.com/peerigon/configs/compare/v9.1.0...v10.0.0) (2025-10-27)
+
+### Features
+
+- Update dependencies with breaking changes ([0cc5f8c](https://github.com/peerigon/configs/commit/0cc5f8c0891d5a95c5698a0518817b4a08fc7e69))
+
+### BREAKING CHANGES
+
+- Major version bumps in:
+
+* eslint-plugin-react-hooks: ^5.2.0 → ^7.0.1
+* eslint-plugin-unicorn: ^60.0.0 → ^62.0.0
+* prettier-plugin-tailwindcss: ^0.6.14 → ^0.7.1
+* semantic-release: ^24.2.9 → ^25.0.1
+
+Other updates:
+
+- Update Node.js to v22.21.0
+- Update various ESLint plugins and dependencies
+- Update TypeScript and React types
+
 # [9.1.0](https://github.com/peerigon/configs/compare/v9.0.0...v9.1.0) (2025-10-16)
 
 ### Features
