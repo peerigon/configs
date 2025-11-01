@@ -71,7 +71,7 @@
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^2.2.4",
-    "@eslint/compat": "^1.4.0",
+    "@eslint/compat": "^1.4.1",
     "@eslint/js": "^9.38.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@prettier/plugin-oxc": "^0.0.4",
