@@ -106,7 +106,7 @@
     "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "@types/signale": "^1.4.7",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "npm-run-all2": "^8.0.4",
