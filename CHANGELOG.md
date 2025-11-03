@@ -1,3 +1,9 @@
+## [11.0.2](https://github.com/peerigon/configs/compare/v11.0.1...v11.0.2) (2025-11-03)
+
+### Bug Fixes
+
+- update eslint to version 9.38.0 in package.json and package-lock.json ([41e8d47](https://github.com/peerigon/configs/commit/41e8d47564f161c363e463657187a0fc503e170b))
+
 ## [11.0.1](https://github.com/peerigon/configs/compare/v11.0.0...v11.0.1) (2025-11-03)
 
 ### Bug Fixes
