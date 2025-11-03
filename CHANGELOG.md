@@ -1,3 +1,9 @@
+## [11.0.1](https://github.com/peerigon/configs/compare/v11.0.0...v11.0.1) (2025-11-03)
+
+### Bug Fixes
+
+- Downgrade ESLint peer dependency to 9.36.0 ([351cfc5](https://github.com/peerigon/configs/commit/351cfc55ec2c852ac1df48c0d5b289c9dd6e3b13))
+
 # [11.0.0](https://github.com/peerigon/configs/compare/v10.0.0...v11.0.0) (2025-11-03)
 
 ### chore
