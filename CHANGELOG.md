@@ -1,3 +1,31 @@
+# [11.0.0](https://github.com/peerigon/configs/compare/v10.0.0...v11.0.0) (2025-11-03)
+
+### chore
+
+- update dependencies in package.json and package-lock.json ([e1b7d17](https://github.com/peerigon/configs/commit/e1b7d176770e143a14fc2e9c9e7aa022a98c0284))
+
+### BREAKING CHANGES
+
+- There might be new recommended ESLint rules that might
+  break your build.
+
+* Bump versions for several dependencies including:
+  - @eslint-react/eslint-plugin: ^2.2.4 → ^2.3.1
+  - @eslint/compat: ^1.4.0 → ^1.4.1
+  - @eslint/js: ^9.38.0 → ^9.39.0
+  - @sebbo2002/semantic-release-jsr: ^3.0.1 → ^3.1.0
+  - @tanstack/eslint-plugin-query: ^5.91.1 → ^5.91.2
+  - @vitest/eslint-plugin: ^1.3.25 → ^1.4.0
+  - eslint-plugin-playwright: ^2.2.2 → ^2.3.0
+  - eslint-plugin-react-you-might-not-need-an-effect: ^0.6.1 → ^0.7.0
+  - globals: ^16.4.0 → ^16.5.0
+  - prettier-plugin-jsdoc: ^1.3.3 → ^1.5.0
+  - @types/node: ^24.9.1 → ^24.10.0
+  - eslint: ^9.38.0 → ^9.39.0
+  - rimraf: ^6.0.1 → ^6.1.0
+* Update peer dependencies to match the latest versions.
+* Fix: semantic-release peer dependency is optional now
+
 # [10.0.0](https://github.com/peerigon/configs/compare/v9.1.0...v10.0.0) (2025-10-27)
 
 ### Features
