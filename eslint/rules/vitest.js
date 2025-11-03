@@ -8,7 +8,6 @@ export const vitest = [
   {
     files,
     plugins: {
-      // @ts-expect-error Vitest plugin seems to have incorrect types
       vitest: vitestPlugin,
     },
     rules: {
