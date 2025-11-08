@@ -1,8 +1,9 @@
 # AGENTS
 
 1. Install deps: `npm i` (project uses npm). Build: `npm run build` (clears + tsc).
-2. Full test suite: `npm test` (runs lint/style/type + all ESLint preset/style tests). Run single ESLint preset/style test: `npm run test:presets:javascript` (or any other listed script) inside repo. Type check only: `npm run test:types`. Formatting check: `npm run test:format`. Lint whole repo: `npm run test:lint`.
+2. Full test suite: `npm test` (runs lint/style/type + all ESLint preset/style tests). Run single ESLint preset/style test: `npm run test:presets:javascript` (or any other listed script) inside repo. Type check only: `npm run test:types`. Formatting check: `npm run test:format`. Lint whole repo: `npm run test:lint`. Exports validation: `npm run test:exports`.
 3. For an individual style rule directory test: `cd eslint/styles/<rule>.test; eslint --max-warnings 0 .` (same pattern for presets under `eslint/presets/*/*.test`).
+   3a. `package.json.test.js` validates all package.json exports are correctly configured. When adding new exports to package.json, ensure they work with wildcard patterns or add explicit test cases if needed.
 4. Prefer small, stacked PRs; break work into explicit TODOs (see ai/rules.mdc). Co-locate unit tests as `*.test.ts[x]` next to sources.
 5. Formatting: Prettier defaults; imports auto-sorted; JSDoc, package.json. Do not hand-format—run Prettier.
 6. Imports: ESM; include file extensions (`.ts`); avoid default exports/imports and barrel re-export files (unless package entry). Prefer named exports.
