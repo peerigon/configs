@@ -103,7 +103,7 @@
     "pin-github-action": "^3.4.0",
     "prettier": "^3.6.2",
     "react": "^19.2.0",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "semantic-release": "^25.0.1",
     "typescript": "^5.9.3"
   },
