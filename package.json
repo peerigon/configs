@@ -96,7 +96,7 @@
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/signale": "^1.4.7",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "npm-run-all2": "^8.0.4",
@@ -108,7 +108,7 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.1",
     "prettier": "^3.6.2",
     "semantic-release": "^25.0.1",
     "typescript": "^5.9.3"
