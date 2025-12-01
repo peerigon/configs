@@ -64,7 +64,7 @@
     "@eslint/compat": "^1.4.1",
     "@eslint/js": "^9.39.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-    "@prettier/plugin-oxc": "^0.0.4",
+    "@prettier/plugin-oxc": "^0.1.2",
     "@sebbo2002/semantic-release-jsr": "^3.1.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
