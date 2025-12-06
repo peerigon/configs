@@ -1,4 +1,4 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 /** Test all exports from package.json to ensure they're configured correctly */
@@ -25,14 +25,6 @@ async function testExport(exportPath, description) {
   }
 }
 
-/** Get all .js files from a directory (excluding .d.ts files) */
-async function getJsFiles(dirPath) {
-  const files = await readdir(dirPath);
-  return files
-    .filter((file) => file.endsWith(".js"))
-    .map((file) => file.replace(/\.js$/, ""));
-}
-
 /** Main test function */
 async function runTests() {
   console.log("Testing package.json exports...\n");
@@ -43,74 +35,77 @@ async function runTests() {
     await readFile(join(import.meta.dirname, "package.json"), "utf8"),
   );
 
-  console.log("\n📦 Wildcard Exports\n");
+  console.log("\n📦 Testing All Exports\n");
 
-  // Test ESLint Presets (wildcard exports)
-  console.log("Testing ESLint Presets:");
-  const presets = await getJsFiles(
-    join(import.meta.dirname, "dist/eslint/presets"),
+  // Test all exports from package.json
+  const exports = packageJson.exports;
+  const exportEntries = Object.entries(exports);
+
+  // Group exports by category for better output
+  const eslintPresets = exportEntries.filter(([key]) =>
+    key.startsWith("./eslint/presets/"),
   );
-  for (const preset of presets) {
-    await testExport(
-      `@peerigon/configs/eslint/presets/${preset}`,
-      `  Preset "${preset}"`,
-    );
+  const eslintRules = exportEntries.filter(([key]) =>
+    key.startsWith("./eslint/rules/"),
+  );
+  const eslintStyles = exportEntries.filter(([key]) =>
+    key.startsWith("./eslint/styles/"),
+  );
+  const otherExports = exportEntries.filter(
+    ([key]) => !key.startsWith("./eslint/") && !key.startsWith("./typescript"),
+  );
+  const typescriptExports = exportEntries.filter(([key]) =>
+    key.startsWith("./typescript"),
+  );
+
+  if (eslintPresets.length > 0) {
+    console.log("Testing ESLint Presets:");
+    for (const [exportPath] of eslintPresets) {
+      const name = exportPath.replace("./eslint/presets/", "");
+      const importPath = `@peerigon/configs${exportPath.replace("./", "/")}`;
+      await testExport(importPath, `  Preset "${name}"`);
+    }
   }
 
-  console.log("\nTesting ESLint Rules:");
-  const rules = await getJsFiles(
-    join(import.meta.dirname, "dist/eslint/rules"),
-  );
-  for (const rule of rules) {
-    await testExport(
-      `@peerigon/configs/eslint/rules/${rule}`,
-      `  Rule "${rule}"`,
-    );
+  if (eslintRules.length > 0) {
+    console.log("\nTesting ESLint Rules:");
+    for (const [exportPath] of eslintRules) {
+      const name = exportPath.replace("./eslint/rules/", "");
+      const importPath = `@peerigon/configs${exportPath.replace("./", "/")}`;
+      await testExport(importPath, `  Rule "${name}"`);
+    }
   }
 
-  console.log("\nTesting ESLint Styles:");
-  const styles = await getJsFiles(
-    join(import.meta.dirname, "dist/eslint/styles"),
-  );
-  for (const style of styles) {
-    await testExport(
-      `@peerigon/configs/eslint/styles/${style}`,
-      `  Style "${style}"`,
-    );
+  if (eslintStyles.length > 0) {
+    console.log("\nTesting ESLint Styles:");
+    for (const [exportPath] of eslintStyles) {
+      const name = exportPath.replace("./eslint/styles/", "");
+      const importPath = `@peerigon/configs${exportPath.replace("./", "/")}`;
+      await testExport(importPath, `  Style "${name}"`);
+    }
   }
 
-  // Test explicit exports (non-wildcard)
-  console.log("\n📋 Explicit Exports\n");
-
-  const explicitExports = [
-    { path: "@peerigon/configs/prettier", name: "Prettier" },
-    { path: "@peerigon/configs/semantic-release", name: "Semantic Release" },
-    {
-      path: "@peerigon/configs/semantic-release/cross-publish",
-      name: "Semantic Release Cross-Publish",
-    },
-  ];
-
-  for (const { path, name } of explicitExports) {
-    await testExport(path, `  ${name}`);
+  if (otherExports.length > 0) {
+    console.log("\nTesting Other Exports:");
+    for (const [exportPath] of otherExports) {
+      const name = exportPath.replace("./", "").replaceAll("/", " ");
+      const importPath = `@peerigon/configs${exportPath.replace("./", "/")}`;
+      await testExport(importPath, `  ${name}`);
+    }
   }
 
   // Note: TypeScript .json exports require import assertions which aren't easily testable
   // in this way, but we verify they exist in package.json
-  console.log("\n📄 JSON Exports (verified in package.json):\n");
-  const jsonExports = [
-    "./typescript",
-    "./typescript/lib",
-    "./typescript/js-lib",
-  ];
-
-  for (const jsonExport of jsonExports) {
-    if (packageJson.exports[jsonExport]) {
-      console.log(`✅   ${jsonExport}: ${packageJson.exports[jsonExport]}`);
-      testResults.passed++;
-    } else {
-      console.log(`❌   ${jsonExport}: Not found in package.json exports`);
-      testResults.failed++;
+  if (typescriptExports.length > 0) {
+    console.log("\n📄 JSON Exports (verified in package.json):\n");
+    for (const [exportPath, exportValue] of typescriptExports) {
+      if (packageJson.exports[exportPath]) {
+        console.log(`✅   ${exportPath}: ${exportValue}`);
+        testResults.passed++;
+      } else {
+        console.log(`❌   ${exportPath}: Not found in package.json exports`);
+        testResults.failed++;
+      }
     }
   }
 
