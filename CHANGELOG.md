@@ -1,3 +1,19 @@
+# [12.0.0](https://github.com/peerigon/configs/compare/v11.0.2...v12.0.0) (2025-12-06)
+
+### Bug Fixes
+
+- **eslint:** Missing exports of eslint rules ([6e97b40](https://github.com/peerigon/configs/commit/6e97b4063efa2d70ba5e7d5aa3cfc0cbdc5e588b))
+- Remove wildcard exports again ([1a610c5](https://github.com/peerigon/configs/commit/1a610c56e89c478076b333129d8dca9a54fdd13c))
+- Temporarily disable @prettier/plugin-oxc ([120f12f](https://github.com/peerigon/configs/commit/120f12ffd4434a2ab49e80543c599aa52ee7e5e9))
+
+### Features
+
+- Update dependencies ([6992989](https://github.com/peerigon/configs/commit/6992989b60ae045245fd5dd61a9dfda029f7600e))
+
+### BREAKING CHANGES
+
+- There's a small chance that some of these updates break linting
+
 ## [11.0.2](https://github.com/peerigon/configs/compare/v11.0.1...v11.0.2) (2025-11-03)
 
 ### Bug Fixes
