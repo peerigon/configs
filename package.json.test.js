@@ -1,9 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-/**
- * Test all exports from package.json to ensure they're configured correctly
- */
+/** Test all exports from package.json to ensure they're configured correctly */
 
 const testResults = {
   passed: 0,
@@ -11,9 +9,7 @@ const testResults = {
   errors: [],
 };
 
-/**
- * Test a single export path
- */
+/** Test a single export path */
 async function testExport(exportPath, description) {
   try {
     await import(exportPath);
@@ -29,9 +25,7 @@ async function testExport(exportPath, description) {
   }
 }
 
-/**
- * Get all .js files from a directory (excluding .d.ts files)
- */
+/** Get all .js files from a directory (excluding .d.ts files) */
 async function getJsFiles(dirPath) {
   const files = await readdir(dirPath);
   return files
@@ -39,9 +33,7 @@ async function getJsFiles(dirPath) {
     .map((file) => file.replace(/\.js$/, ""));
 }
 
-/**
- * Main test function
- */
+/** Main test function */
 async function runTests() {
   console.log("Testing package.json exports...\n");
   console.log("=".repeat(70));
