@@ -110,7 +110,7 @@
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.1.0",
     "@types/react": "^19.2.7",
     "@types/signale": "^1.4.7",
     "eslint": "^9.39.1",
