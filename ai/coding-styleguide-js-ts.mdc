@@ -78,6 +78,11 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use erasable syntax only
 - **Important**: Use descriptive type parameter names in generic types, do not use single letter type parameter names
 
+## Comments
+
+- Use JSDoc comments and its tags where appropriate
+- When generating new files, include a `@file` overview at the top of the file (**not** for test files or config files)
+
 ## Testing
 
 See [Coding Styleguide Testing](./coding-styleguide-testing.mdc)
