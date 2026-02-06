@@ -1,3 +1,9 @@
+# [12.1.0](https://github.com/peerigon/configs/compare/v12.0.0...v12.1.0) (2026-02-06)
+
+### Features
+
+- add script to sync Node version from package.json to version files ([7e6ea75](https://github.com/peerigon/configs/commit/7e6ea75246f4c97f68d4b112bc474dc06502ebcc))
+
 # [12.0.0](https://github.com/peerigon/configs/compare/v11.0.2...v12.0.0) (2025-12-06)
 
 ### Bug Fixes
