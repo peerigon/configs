@@ -78,6 +78,14 @@ Type-checking should be rather strict because it is the foundation for safe and 
 
 For highly dynamic code or incompatible types, local exceptions to type safety and escape hatches need to be possible.
 
+## Scripts
+
+This package also contains useful scripts for general project setups:
+
+- [sync-node-version.js](/scripts/sync-node-version.js) - Syncs the Node version from `package.json` (`@types/node`) into existing version files so they stay in sync.
+
+See [Scripts](/scripts/README.md) for more details.
+
 ## License
 
 MIT

@@ -1,6 +1,12 @@
 {
   "extends": ["./typescript/base.json", "./typescript/js-lib.json"],
-  "include": ["eslint", "prettier", "typescript", "semantic-release"],
+  "include": [
+    "eslint",
+    "prettier",
+    "typescript",
+    "semantic-release",
+    "scripts"
+  ],
   "exclude": [
     "eslint/presets/*.test",
     "eslint/styles/*.test",
