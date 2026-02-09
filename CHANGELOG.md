@@ -1,3 +1,20 @@
+# [14.0.0](https://github.com/peerigon/configs/compare/v13.0.0...v14.0.0) (2026-02-09)
+
+### chore
+
+- **deps:** update eslint-related dependencies and globals version ([9bbb072](https://github.com/peerigon/configs/commit/9bbb07226f92a0b07b4d3b1faa93c8bfcdc758ad))
+
+### Features
+
+- Update non-breaking dependencies ([0846964](https://github.com/peerigon/configs/commit/0846964618e0715d19794a3d9255a6d12bdcc5f1))
+
+### BREAKING CHANGES
+
+- **deps:** Updated `eslint-plugin-react-refresh` to version 0.5.0.
+- **deps:** Updated `eslint-plugin-react-you-might-not-need-an-effect` to version 0.8.5.
+- **deps:** Updated `globals` to version 17.3.0.
+- **deps:** Updated `prettier-plugin-packagejson` to version 3.0.0.
+
 # [13.0.0](https://github.com/peerigon/configs/compare/v12.1.0...v13.0.0) (2026-02-09)
 
 ### Features
