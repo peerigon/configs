@@ -1,3 +1,13 @@
+# [13.0.0](https://github.com/peerigon/configs/compare/v12.1.0...v13.0.0) (2026-02-09)
+
+### Features
+
+- Remove scripts again ([b95a99f](https://github.com/peerigon/configs/commit/b95a99f000f1352bede328062a189ca9131cc310))
+
+### BREAKING CHANGES
+
+- Removed sync-node-version script as it was built on an incorrect assumption. The version numbers between @types/node and Node.js are not aligned.
+
 # [12.1.0](https://github.com/peerigon/configs/compare/v12.0.0...v12.1.0) (2026-02-06)
 
 ### Features
