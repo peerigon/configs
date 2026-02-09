@@ -55,8 +55,17 @@
     "README.md"
   ],
   "scripts": {
+    "build": "run-s build:*",
+    "build:clear": "rimraf dist",
+    "build:tsc": "tsc",
+    "build:jsr-typescript-configs": "node typescript/build-jsr-configs.js",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build",
+    "release": "semantic-release",
     "test": "run-p test:*",
     "test:exports": "node package.json.test.js",
+    "test:format": "prettier --check .",
+    "test:lint": "eslint --max-warnings 0 .",
     "test:presets:javascript": "cd eslint/presets/javascript.test; eslint --max-warnings 0 .",
     "test:presets:typescript": "cd eslint/presets/typescript.test; eslint --max-warnings 0 .",
     "test:presets:typescript-react": "cd eslint/presets/typescript-react.test; eslint --max-warnings 0 .",
@@ -66,15 +75,7 @@
     "test:styles:no-null": "cd eslint/styles/no-null.test; eslint --max-warnings 0 .",
     "test:styles:prefer-array-shorthand": "cd eslint/styles/prefer-array-shorthand.test; eslint --max-warnings 0 .",
     "test:styles:prefer-interface": "cd eslint/styles/prefer-interface.test; eslint --max-warnings 0 .",
-    "test:lint": "eslint --max-warnings 0 .",
-    "test:types": "tsc --noEmit",
-    "test:format": "prettier --check .",
-    "build": "run-s build:*",
-    "build:clear": "rimraf dist",
-    "build:tsc": "tsc",
-    "prepublishOnly": "npm run build",
-    "prepare": "husky",
-    "release": "semantic-release"
+    "test:types": "tsc --noEmit"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^2.12.2",

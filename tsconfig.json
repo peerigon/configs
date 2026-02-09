@@ -4,6 +4,7 @@
   "exclude": [
     "eslint/presets/*.test",
     "eslint/styles/*.test",
-    "eslint/rules/*.test"
+    "eslint/rules/*.test",
+    "typescript/build-jsr-configs.js"
   ]
 }
