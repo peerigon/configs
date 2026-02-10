@@ -3,7 +3,32 @@
   "version": "0.0.0-semantically-released",
   "license": "MIT",
   "exports": {
-    "./eslint/presets/javascript": "./dist/eslint/presets/javascript.js"
+    "./eslint/presets/javascript": "./dist/eslint/presets/javascript.js",
+    "./eslint/presets/javascript-browser": "./dist/eslint/presets/javascript-browser.js",
+    "./eslint/presets/javascript-node": "./dist/eslint/presets/javascript-node.js",
+    "./eslint/presets/typescript": "./dist/eslint/presets/typescript.js",
+    "./eslint/presets/typescript-node": "./dist/eslint/presets/typescript-node.js",
+    "./eslint/presets/typescript-react": "./dist/eslint/presets/typescript-react.js",
+    "./eslint/rules/base": "./dist/eslint/rules/base.js",
+    "./eslint/rules/browser": "./dist/eslint/rules/browser.js",
+    "./eslint/rules/javascript": "./dist/eslint/rules/javascript.js",
+    "./eslint/rules/node": "./dist/eslint/rules/node.js",
+    "./eslint/rules/playwright": "./dist/eslint/rules/playwright.js",
+    "./eslint/rules/react": "./dist/eslint/rules/react.js",
+    "./eslint/rules/tanstack-query": "./dist/eslint/rules/tanstack-query.js",
+    "./eslint/rules/typescript": "./dist/eslint/rules/typescript.js",
+    "./eslint/rules/vitest": "./dist/eslint/rules/vitest.js",
+    "./eslint/styles/jsx-no-literals": "./dist/eslint/styles/jsx-no-literals.js",
+    "./eslint/styles/no-default-export": "./dist/eslint/styles/no-default-export.js",
+    "./eslint/styles/no-null": "./dist/eslint/styles/no-null.js",
+    "./eslint/styles/prefer-array-shorthand": "./dist/eslint/styles/prefer-array-shorthand.js",
+    "./eslint/styles/prefer-interface": "./dist/eslint/styles/prefer-interface.js",
+    "./prettier": "./dist/prettier/base.js",
+    "./semantic-release": "./dist/semantic-release/base.js",
+    "./semantic-release/cross-publish": "./dist/semantic-release/cross-publish.js",
+    "./typescript": "./dist/typescript/base.json",
+    "./typescript/lib": "./dist/typescript/lib.json",
+    "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
   "publish": {
     "include": ["dist", "ai", "CHANGELOG.md", "README.md"]
