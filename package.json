@@ -58,7 +58,7 @@
     "build": "run-s build:*",
     "build:clear": "rimraf dist",
     "build:tsc": "tsc",
-    "build:jsr-typescript-configs": "node typescript/build-jsr-configs.js",
+    "build:jsr-typescript-configs": "node tools/prepare-jsr-publish-assets.js",
     "prepare": "husky",
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
