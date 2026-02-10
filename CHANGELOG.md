@@ -1,3 +1,9 @@
+## [14.0.7](https://github.com/peerigon/configs/compare/v14.0.6...v14.0.7) (2026-02-10)
+
+### Bug Fixes
+
+- Test JSR publish ([4883d0f](https://github.com/peerigon/configs/commit/4883d0f2f14dc1728fe3effba96f0bdd290cdffd))
+
 ## [14.0.6](https://github.com/peerigon/configs/compare/v14.0.5...v14.0.6) (2026-02-10)
 
 ### Bug Fixes
