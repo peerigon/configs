@@ -1,3 +1,9 @@
+## [14.0.1](https://github.com/peerigon/configs/compare/v14.0.0...v14.0.1) (2026-02-10)
+
+### Bug Fixes
+
+- jsr publish ([08b7a7b](https://github.com/peerigon/configs/commit/08b7a7bdec9a55a76bb6504910b094235e6782bc))
+
 # [14.0.0](https://github.com/peerigon/configs/compare/v13.0.0...v14.0.0) (2026-02-09)
 
 ### chore
