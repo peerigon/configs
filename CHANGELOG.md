@@ -1,3 +1,9 @@
+## [14.0.4](https://github.com/peerigon/configs/compare/v14.0.3...v14.0.4) (2026-02-10)
+
+### Bug Fixes
+
+- JSR provenance test deploy ([9191f5c](https://github.com/peerigon/configs/commit/9191f5cb067ee7c348768cf39da5e68b6d8261d9))
+
 ## [14.0.3](https://github.com/peerigon/configs/compare/v14.0.2...v14.0.3) (2026-02-10)
 
 ### Bug Fixes
