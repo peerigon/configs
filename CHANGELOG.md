@@ -1,3 +1,9 @@
+## [14.0.6](https://github.com/peerigon/configs/compare/v14.0.5...v14.0.6) (2026-02-10)
+
+### Bug Fixes
+
+- Downgrade deno ([ccb9e61](https://github.com/peerigon/configs/commit/ccb9e6154c83918fb1f7e428f40c9a3168d46697))
+
 ## [14.0.5](https://github.com/peerigon/configs/compare/v14.0.4...v14.0.5) (2026-02-10)
 
 ### Bug Fixes
