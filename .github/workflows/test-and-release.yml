@@ -81,7 +81,7 @@ jobs:
           npm publish --dry-run
           npx pkg-pr-new publish
 
-      - name: 🚀 Release on npm
+      - name: 🚀 Release on npm and jsr
         if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
