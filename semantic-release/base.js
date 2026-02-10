@@ -1,4 +1,16 @@
-/** @type {import("semantic-release").Options} */
+/**
+ * Generic semantic-release config shape for portable declaration output.
+ *
+ * We intentionally avoid `import("semantic-release")` JSDoc types here, because
+ * those generate declaration symbols that break JSR's API symbol parser.
+ *
+ * @typedef {Record<string, unknown> & {
+ *   branches?: Record<string, unknown>[];
+ *   plugins?: unknown[];
+ * }} SemanticReleaseConfig
+ */
+
+/** @type {SemanticReleaseConfig} */
 export const config = {
   branches: [
     {

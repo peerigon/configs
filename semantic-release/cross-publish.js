@@ -1,13 +1,22 @@
 import { config as baseConfig } from "./base.js";
 
 /**
+ * Generic semantic-release config shape for portable declaration output.
+ *
+ * @typedef {Record<string, unknown> & {
+ *   branches?: Record<string, unknown>[];
+ *   plugins?: unknown[];
+ * }} SemanticReleaseConfig
+ */
+
+/**
  * @param {{ github: boolean; jsr: boolean }} options?
- * @returns {import("semantic-release").Options}
+ * @returns {SemanticReleaseConfig}
  */
 export function config(
   { github = false, jsr = false } = { github: true, jsr: true },
 ) {
-  /** @type {import("semantic-release").PluginSpec[]} */
+  /** @type {unknown[]} */
   const plugins = [];
 
   if (baseConfig.plugins) {
