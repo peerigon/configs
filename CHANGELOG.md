@@ -1,3 +1,9 @@
+## [14.0.2](https://github.com/peerigon/configs/compare/v14.0.1...v14.0.2) (2026-02-10)
+
+### Bug Fixes
+
+- Improve jsr score ([a616300](https://github.com/peerigon/configs/commit/a616300b3fe4c489232ebd81944f7b6089143fc6))
+
 ## [14.0.1](https://github.com/peerigon/configs/compare/v14.0.0...v14.0.1) (2026-02-10)
 
 ### Bug Fixes
