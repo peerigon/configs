@@ -37,6 +37,15 @@ jobs:
           node-version-file: ".tool-versions"
           cache: "npm"
 
+      - name: 🦕 Setup Deno
+        uses: denoland/setup-deno@11b63cf76cfcafb4e43f97b6cad24d8e8438f62d # v1
+        with:
+          deno-version-file: .tool-versions
+
+      - name: 🔗 Use workflow Deno for JSR publish
+        run: |
+          echo "DENO_BIN_PATH=$(which deno)" >> "$GITHUB_ENV"
+
       - name: 🗄 Cache node_modules
         id: cache-node_modules
         uses: actions/cache@b7e8d49f17405cc70c1c120101943203c98d3a4b # main
