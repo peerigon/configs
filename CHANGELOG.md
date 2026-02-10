@@ -1,3 +1,9 @@
+## [14.0.5](https://github.com/peerigon/configs/compare/v14.0.4...v14.0.5) (2026-02-10)
+
+### Bug Fixes
+
+- Remove semantic-release types from semantic-release configs ([93bf6bb](https://github.com/peerigon/configs/commit/93bf6bb411d9f1b47261dd3d1fc9cbf56a75a0bd))
+
 ## [14.0.4](https://github.com/peerigon/configs/compare/v14.0.3...v14.0.4) (2026-02-10)
 
 ### Bug Fixes
