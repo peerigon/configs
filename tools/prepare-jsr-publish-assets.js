@@ -55,20 +55,20 @@ const jsEntryPoints = Object.values(jsrConfig.exports).filter(
   (exportPath) => typeof exportPath === "string" && exportPath.endsWith(".js"),
 );
 
-// await Promise.all(
-//   jsEntryPoints.map(async (jsEntryPoint) => {
-//     const outputPath = join(import.meta.dirname, "..", jsEntryPoint);
-//     const declarationFilename = basename(jsEntryPoint).replace(
-//       /\.js$/,
-//       ".d.ts",
-//     );
-//     const selfTypesPragma = `// @ts-self-types="./${declarationFilename}"`;
-//     const sourceContent = await readFile(outputPath, "utf8");
+await Promise.all(
+  jsEntryPoints.map(async (jsEntryPoint) => {
+    const outputPath = join(import.meta.dirname, "..", jsEntryPoint);
+    const declarationFilename = basename(jsEntryPoint).replace(
+      /\.js$/,
+      ".d.ts",
+    );
+    const selfTypesPragma = `// @ts-self-types="./${declarationFilename}"`;
+    const sourceContent = await readFile(outputPath, "utf8");
 
-//     if (sourceContent.startsWith(selfTypesPragma)) {
-//       return;
-//     }
+    if (sourceContent.startsWith(selfTypesPragma)) {
+      return;
+    }
 
-//     await writeFile(outputPath, `${selfTypesPragma}\n${sourceContent}`, "utf8");
-//   }),
-// );
+    await writeFile(outputPath, `${selfTypesPragma}\n${sourceContent}`, "utf8");
+  }),
+);
