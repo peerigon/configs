@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { config as baseConfig } from "./base.js";
 
 /**
@@ -14,7 +16,10 @@ import { config as baseConfig } from "./base.js";
  * @returns {SemanticReleaseConfig}
  */
 export function config(
-  { github = false, jsr = false } = { github: true, jsr: true },
+  { github = defaultGithub, jsr = false } = {
+    github: defaultGithub,
+    jsr: true,
+  },
 ) {
   /** @type {unknown[]} */
   const plugins = [];
@@ -48,5 +53,23 @@ export function config(
     plugins,
   };
 }
+
+const defaultGithub = (() => {
+  try {
+    const packageJsonPath = resolve(process.cwd(), "package.json");
+    const packageJsonContent = readFileSync(packageJsonPath, "utf8");
+    const packageJson = JSON.parse(packageJsonContent);
+    if (typeof packageJson !== "object" || packageJson === null) {
+      return false;
+    }
+
+    const typedPackageJson = /** @type {{ name?: unknown }} */ (packageJson);
+    const name = typedPackageJson.name;
+
+    return typeof name === "string" && name.startsWith("@");
+  } catch {
+    return false;
+  }
+})();
 
 export default config();

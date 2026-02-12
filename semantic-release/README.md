@@ -79,3 +79,8 @@ We export the following `.releaserc.json` presets. They can be used by extending
 
 - `semantic-release`: Recommended config for publishing a library to a single registry (according to your `.npmrc`).
 - `semantic-release/cross-publish`: Config for publishing a library both to NPM, JSR _and_ Github
+
+For `semantic-release/cross-publish`, Github publishing defaults to:
+
+- `true` for scoped packages (`${process.cwd()}/package.json` name starts with `@`)
+- `false` for unscoped packages
