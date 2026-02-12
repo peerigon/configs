@@ -30,21 +30,17 @@ jobs:
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # main
+        with:
+          # Fetches 20 commits.
+          # This is trade-off between checkout speed and ability to create an accurate CHANGELOG.md
+          # See https://github.com/peerigon/template-public-package/issues/2
+          fetch-depth: 20
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # main
+        uses: actions/setup-node@d02c89dce7e1ba9ef629ce0680989b3a1cc72edb # main
         with:
           node-version-file: ".tool-versions"
           cache: "npm"
-
-      - name: 🦕 Setup Deno
-        uses: denoland/setup-deno@11b63cf76cfcafb4e43f97b6cad24d8e8438f62d # v1
-        with:
-          deno-version-file: .tool-versions
-
-      - name: 🔗 Use workflow Deno for JSR publish
-        run: |
-          echo "DENO_BIN_PATH=$(which deno)" >> "$GITHUB_ENV"
 
       - name: 🗄 Cache node_modules
         id: cache-node_modules
@@ -67,12 +63,11 @@ jobs:
       - name: 📦 Build
         run: |
           npm run build
-
       - name: 🧪 Run tests
-        run: |
-          npm test
         env:
           CI: true
+        run: |
+          npm test
 
       - name: 🚀 Release preview
         if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/beta' }}
