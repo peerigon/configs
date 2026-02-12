@@ -1,3 +1,11 @@
+## [14.0.8](https://github.com/peerigon/configs/compare/v14.0.7...v14.0.8) (2026-02-12)
+
+### Bug Fixes
+
+- Do not try to publish unscoped packages on Github ([99c5846](https://github.com/peerigon/configs/commit/99c5846a7b130e6e8355781a82bc4f1cc1b4daca))
+- Remove [@ts-self-types](https://github.com/ts-self-types) annotation ([9590c6f](https://github.com/peerigon/configs/commit/9590c6f12a434f17eb9c71d9096a7698e83b0212))
+- Restore original jsr.json config ([7c3e1d5](https://github.com/peerigon/configs/commit/7c3e1d568b8f783ed8afad8d4894a64aa30a9f27))
+
 ## [14.0.7](https://github.com/peerigon/configs/compare/v14.0.6...v14.0.7) (2026-02-10)
 
 ### Bug Fixes
