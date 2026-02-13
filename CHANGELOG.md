@@ -1,3 +1,9 @@
+# [14.1.0](https://github.com/peerigon/configs/compare/v14.0.8...v14.1.0) (2026-02-13)
+
+### Features
+
+- Add file and class structure to coding style guidelines ([265c438](https://github.com/peerigon/configs/commit/265c4383d95cd4748d9c94fd6266cf3b3b54cad7))
+
 ## [14.0.8](https://github.com/peerigon/configs/compare/v14.0.7...v14.0.8) (2026-02-12)
 
 ### Bug Fixes
