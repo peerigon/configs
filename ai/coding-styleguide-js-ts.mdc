@@ -20,6 +20,15 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Avoid default imports and default exports
 - Avoid barrel files (index files that only re-export) unless its a package entry file
 
+## File structure
+
+- Begin with a `@file` overview JSDoc comment (**not** for test or config files)
+- Then imports
+- Then important top-level constants or variables
+- Then order by importance (in relation to the file purpose): the most important classes/functions of the file should be at the beginning
+- Unimportant helper functions and variables should be at the bottom of the file
+- Exception: when module execution requires a function to be defined before it is used, define it earlier
+
 ## Naming Conventions
 
 - `camelCase` for variables, functions, methods
@@ -63,6 +72,12 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Write pure functions when possible
 - Optimize function names for readability on the call side
 
+## Class structure
+
+- Constructor **must** be at the top of the class
+- Then properties: public first, then private; order by importance in relation to the class purpose
+- Then methods: public first, then private; order by importance in relation to the class purpose
+
 ## Types
 
 - Use strict mode
@@ -81,7 +96,6 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 ## Comments
 
 - Use JSDoc comments and its tags where appropriate
-- When generating new files, include a `@file` overview at the top of the file (**not** for test files or config files)
 
 ## Testing
 
