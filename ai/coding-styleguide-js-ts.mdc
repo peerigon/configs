@@ -22,7 +22,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 ## File structure
 
-- Begin with a `@file` overview JSDoc comment (**not** for test or config files)
+- Begin with a `@module` overview JSDoc comment (**not** for test or config files)
 - Then imports
 - Then important top-level constants or variables
 - Then order by importance (in relation to the file purpose): the most important classes/functions of the file should be at the beginning
