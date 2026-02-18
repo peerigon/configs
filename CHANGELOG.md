@@ -1,3 +1,9 @@
+## [14.1.1](https://github.com/peerigon/configs/compare/v14.1.0...v14.1.1) (2026-02-18)
+
+### Bug Fixes
+
+- **ai:** Replace [@file](https://github.com/file) with [@module](https://github.com/module) ([e528889](https://github.com/peerigon/configs/commit/e5288892d487bd7cdb3d6626e70535056ce9510d))
+
 # [14.1.0](https://github.com/peerigon/configs/compare/v14.0.8...v14.1.0) (2026-02-13)
 
 ### Features
