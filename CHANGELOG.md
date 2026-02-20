@@ -1,3 +1,9 @@
+# [14.2.0](https://github.com/peerigon/configs/compare/v14.1.1...v14.2.0) (2026-02-20)
+
+### Features
+
+- **deps:** update dependencies in package.json and package-lock.json ([5c437a4](https://github.com/peerigon/configs/commit/5c437a4a6c3814a82008ef113e297c4460105052))
+
 ## [14.1.1](https://github.com/peerigon/configs/compare/v14.1.0...v14.1.1) (2026-02-18)
 
 ### Bug Fixes
