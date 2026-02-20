@@ -78,7 +78,7 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^2.12.2",
+    "@eslint-react/eslint-plugin": "^2.13.0",
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
