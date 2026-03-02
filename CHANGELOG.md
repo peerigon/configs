@@ -1,3 +1,11 @@
+# [14.3.0](https://github.com/peerigon/configs/compare/v14.2.0...v14.3.0) (2026-03-02)
+
+### Features
+
+- **eslint:** bump eslint-plugin-playwright from 2.7.0 to 2.8.0 ([#203](https://github.com/peerigon/configs/issues/203)) ([f3b9794](https://github.com/peerigon/configs/commit/f3b97943db59358bb27660f0285499cecc5b881d))
+- **eslint:** bump eslint-plugin-react-refresh from 0.5.0 to 0.5.2 ([#204](https://github.com/peerigon/configs/issues/204)) ([0e47e54](https://github.com/peerigon/configs/commit/0e47e54eb2009e481ecec42dd33bd320b06b9386))
+- **eslint:** bump globals from 17.3.0 to 17.4.0 ([#202](https://github.com/peerigon/configs/issues/202)) ([90f4171](https://github.com/peerigon/configs/commit/90f4171a5062e88b0d7f4a43497db75431ae7912))
+
 # [14.2.0](https://github.com/peerigon/configs/compare/v14.1.1...v14.2.0) (2026-02-20)
 
 ### Features
