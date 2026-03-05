@@ -1,3 +1,10 @@
+# [14.4.0](https://github.com/peerigon/configs/compare/v14.3.0...v14.4.0) (2026-03-05)
+
+### Features
+
+- **eslint:** Ignore _.generated._ files ([2fa45ae](https://github.com/peerigon/configs/commit/2fa45ae1cfd0a94679113c917f574cf73780265c))
+- **prettier:** Ignore _.generated._ files ([aae8730](https://github.com/peerigon/configs/commit/aae8730871d4d37942eadc91f03fb036a171dc81))
+
 # [14.3.0](https://github.com/peerigon/configs/compare/v14.2.0...v14.3.0) (2026-03-02)
 
 ### Features
