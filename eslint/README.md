@@ -39,6 +39,10 @@ Recommended configuration in your `package.json` (using [`npm-run-all2`](https:/
 }
 ```
 
+## Ignored files
+
+All presets ignore files matching `**/*.generated.*`.
+
 ## Presets
 
 Presets bundle all relevant rules into one `import`. They can be imported as `@peerigon/configs/eslint/presets/<preset-name>`. They **should not** be combined with each other.

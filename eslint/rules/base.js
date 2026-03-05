@@ -8,6 +8,7 @@ const gitignoreExists = fs.existsSync(gitignorePath);
 /** @type {import("eslint").Linter.Config[]} */
 export const base = [
   gitignoreExists ? includeIgnoreFile(gitignorePath) : {},
+  { ignores: ["**/*.generated.*"] },
   {
     linterOptions: {
       reportUnusedDisableDirectives: "warn",
