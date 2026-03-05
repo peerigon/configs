@@ -33,3 +33,7 @@ Our config is entirely based on Prettier's default config. Besides that, it also
 - formats `package.json`
 - formats and sorts CSS properties
 - sorts Tailwind CSS class names
+
+## Ignoring files
+
+Files matching `**/*.generated.*` are ignored. Prettier does not support ignoring files by config but you can use this [.prettierignore](../.prettierignore) as a template.
