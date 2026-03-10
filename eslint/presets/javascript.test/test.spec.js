@@ -2,3 +2,9 @@ import { test } from "jest";
 
 // eslint-disable-next-line no-only-tests/no-only-tests
 test.only("this is an empty test", () => {});
+
+// require-yield is disabled in tests – generator without yield
+function* testHelper() {
+  return 42;
+}
+void testHelper;
