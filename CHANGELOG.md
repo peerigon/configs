@@ -1,3 +1,9 @@
+# [14.5.0](https://github.com/peerigon/configs/compare/v14.4.0...v14.5.0) (2026-03-10)
+
+### Features
+
+- **eslint:** disable require-yield for tests ([e326f8f](https://github.com/peerigon/configs/commit/e326f8f2045df0247ff43f7b61ad37791d5a3fad))
+
 # [14.4.0](https://github.com/peerigon/configs/compare/v14.3.0...v14.4.0) (2026-03-05)
 
 ### Features
