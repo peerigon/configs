@@ -8,6 +8,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use TypeScript. If .js files are requested, use JSDoc type annotations
 - Prefer functional over imperative
 - Prefer immutability
+- **Priority rule (MUST)**: order every file by importance. Start with the primary logic and keep less important helpers/details at the end.
 
 ## Formatting
 
@@ -25,8 +26,8 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Begin with a `@module` overview JSDoc comment (**not** for test or config files)
 - Then imports
 - Then important top-level constants or variables
-- Then order by importance (in relation to the file purpose): the most important classes/functions of the file should be at the beginning
-- Unimportant helper functions and variables should be at the bottom of the file
+- Then order by importance (in relation to the file purpose): the file **must** start with its most important classes/functions
+- Move unimportant helper functions, variables, and secondary details to the bottom of the file
 - Exception: when module execution requires a function to be defined before it is used, define it earlier
 
 ## Naming Conventions
