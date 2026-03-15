@@ -3,12 +3,10 @@ import { Other } from "./Other.tsx";
 
 export const App = (_props: { name: string; count: number }) => {
   for (let index = 0; index < 10; index++) {
-    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       void index;
 
-      // eslint-disable-next-line react-compiler/react-compiler
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   }

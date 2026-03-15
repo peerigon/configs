@@ -1,7 +1,6 @@
 import reactPlugin2 from "@eslint-react/eslint-plugin";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
-import reactCompilerPlugin from "eslint-plugin-react-compiler";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import reactYouMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
@@ -67,28 +66,9 @@ export const react = [
       ],
     },
   },
-  // There's currently no official recommended flat config for react-hooks.
-  // TODO: Use recommended config when it's available.
   {
     files,
-    plugins: {
-      "react-hooks": reactHooksPlugin,
-    },
-    rules: {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-    },
-  },
-  // There's currently no official recommended flat config for react-compiler.
-  // TODO: Use recommended config when it's available.
-  {
-    files,
-    plugins: {
-      "react-compiler": reactCompilerPlugin,
-    },
-    rules: {
-      "react-compiler/react-compiler": "error",
-    },
+    ...reactHooksPlugin.configs.flat.recommended,
   },
   {
     files,
