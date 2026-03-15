@@ -9,6 +9,10 @@ const snake_case = 123;
 // we're using TS's noPropertyAccessFromIndexSignature
 process.env["SOME_ENV_VAR"] = "test";
 
+// Bracket notation on index type should not show dot-notation error
+const indexObj: Record<string, string> = { foo: "bar" };
+const _indexValue = indexObj["foo"];
+
 class SomeClass {
   #someProp = true;
   private someEventHandler = () => {
@@ -42,4 +46,5 @@ console.log(getMessage(), SomeClass, snake_case, test);
 })();
 
 // @ts-expect-error enums are not supported in erasableSyntaxOnly
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 enum SomeEnum {}
