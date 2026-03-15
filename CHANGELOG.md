@@ -1,3 +1,9 @@
+# [14.6.0](https://github.com/peerigon/configs/compare/v14.5.0...v14.6.0) (2026-03-15)
+
+### Features
+
+- **eslint:** Disable no-unreachable-loop in tests ([4638cb2](https://github.com/peerigon/configs/commit/4638cb20ca44cd2455319138141b51ef08299e55))
+
 # [14.5.0](https://github.com/peerigon/configs/compare/v14.4.0...v14.5.0) (2026-03-10)
 
 ### Features
