@@ -153,6 +153,8 @@ export const javascript = [
       "max-nested-callbacks": "off",
       // await in loops is pretty common in Playwright tests
       "no-await-in-loop": "off",
+      // Unreachable loops are sometimes used in tests to assert loop body runs at most once
+      "no-unreachable-loop": "off",
       // In case you want to test errors thrown by a constructor
       "no-new": "off",
       // Generators without yield are common in test helpers/setup
