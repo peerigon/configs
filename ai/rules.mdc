@@ -33,9 +33,34 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 ## Development Practices
 
 - Breakdown complex tasks into smaller, manageable todos and write them down to a dedicated TODO file
-- Aim for small pull-requests. Each TODO should be a single pull-request. Use stacked PRs.
+- Aim for small, reviewable pull-requests. Split work into logical units, and use stacked PRs when scope or risk justifies incremental review.
 - Write unit tests for simple, pure functions
-- Unit test files are colocated with source files (*.test.ts)
+- Unit test files are colocated with source files (\*.test.ts)
 - Write integration or e2e tests for more complex functions/classes/components
 - Run the linter and type checker only once after the implementation is complete and the tests are passing
 - Adjust documentation both in comments and markdown files once you're done
+
+## Consumer-repo uncertainty protocol
+
+Some guidance depends on the consuming repository's runtime and toolchain (module resolution, transpilation, bundler, test runner).
+
+- First infer conventions from local evidence:
+  - nearby files and existing import style
+  - tsconfig compiler options
+  - eslint and import rules
+  - package scripts and build tooling
+- If evidence is insufficient or conflicting, ask one concise question before changing conventions.
+- Do not silently introduce a new convention in a mixed or unknown setup.
+- If no answer is possible, follow the closest existing local convention and explicitly document the assumption.
+
+## Repo-level routing system
+
+To reduce exploration cost in large repositories, use a repo-level routing document.
+
+- Preferred path in consuming repositories: `docs/agent-routing.md` (or the nearest existing equivalent).
+- Use `@peerigon/configs/ai/agent-routing.example.md` as a starting structure and adapt it to the consuming repository.
+- At task start, check whether routing exists.
+- If routing is missing and the task is non-trivial, create an initial routing file before implementation. If local policy may restrict docs changes, ask one concise question first.
+- Use routing-first navigation: read the relevant routing section before broad codebase exploration.
+- Keep routing concise and practical. Update it when better entrypoints, caveats, or validation commands are discovered.
+- Do not duplicate full architecture docs. Routing should be an index for fast task orientation.

@@ -17,13 +17,17 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 ## Imports & exports
 
 - Use ESM unless you're editing a CommonJS file
-- Use file extensions in import specifiers. Use .ts extension in TypeScript files.
+- Follow the consuming repository's established import-specifier convention (extensions vs extensionless; `.js` vs `.ts` in TypeScript source files)
+- Determine convention from nearby files and configuration before introducing new imports
+- Keep import style consistent within a module/package; avoid mixed styles unless already established
+- If conventions are unclear or conflicting, ask the user before changing or introducing import-specifier style
 - Avoid default imports and default exports
 - Avoid barrel files (index files that only re-export) unless its a package entry file
 
 ## File structure
 
-- Begin with a `@module` overview JSDoc comment (**not** for test or config files)
+- Do not add a file header comment by default
+- For complex or high-impact files only, add a short context comment near the top (3-6 lines) that explains purpose, where to start reading, and non-obvious caveats
 - Then imports
 - Then important top-level constants or variables
 - Then order by importance (in relation to the file purpose): the file **must** start with its most important classes/functions
