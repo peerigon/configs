@@ -1,19 +1,135 @@
-# AGENTS
+# AGENTS.md
 
-1. Install deps: `npm i` (project uses npm). Build: `npm run build` (clears + tsc).
-2. Full test suite: `npm test` (runs lint/style/type + all ESLint preset/style tests). Run single ESLint preset/style test: `npm run test:presets:javascript` (or any other listed script) inside repo. Type check only: `npm run test:types`. Formatting check: `npm run test:format`. Lint whole repo: `npm run test:lint`. Exports validation: `npm run test:exports`.
-3. For an individual style rule directory test: `cd eslint/styles/<rule>.test; eslint --max-warnings 0 .` (same pattern for presets under `eslint/presets/*/*.test`).
-   3a. `package.json.test.js` validates all package.json exports are correctly configured. When adding new exports to package.json, ensure they work with wildcard patterns or add explicit test cases if needed.
-4. Prefer small, stacked PRs; break work into explicit TODOs (see ai/rules.mdc). Co-locate unit tests as `*.test.ts[x]` next to sources.
-5. Formatting: Prettier defaults; imports auto-sorted; JSDoc, package.json. Do not hand-format—run Prettier.
-6. Imports: ESM; include file extensions (`.ts`); avoid default exports/imports and barrel re-export files (unless package entry). Prefer named exports.
-7. Naming: camelCase (vars/functions), PascalCase (classes/enums/React components), SCREAMING_SNAKE_CASE (build-time consts), kebab-case (files, CSS classes, ids). Use descriptive names; abbreviations only when common (Api). Treat abbreviations as words (ApiClient, not APIClient).
-8. Types: Strict TS; prefer `type` over `interface` except for classes; explicit return types for exported non-trivial functions; prefer `Array<Item>` over `Item[]`; use `unknown` before `any`; use descriptive generic parameter names (not single letters); prefer `satisfies` and inferred utility types.
-9. Syntax: Prefer `const`; functional & immutable style; prefer `undefined` over `null`; use optional chaining `?.` and `??`; early returns to reduce nesting.
-10. Functions: Arrow functions by default; use object params when >2 params; keep pure and focused.
-11. Error handling: Descriptive errors with context (actual vs expected); minimal try/catch—only where you can act; consider Result types for recoverable failures.
-12. Testing: Write as few tests as necessary while covering behavior: happy path, edges, errors. Each `it()` tests one behavior. Prefer `.toMatchObject()`; use inline snapshot for error messages. Type-focused tests allowed for inference checks.
-13. Prefer explicit over implicit; colocate related code; keep logical units together (see ai/rules.mdc universal principles).
-14. Do not disable lint rules broadly; use local, minimal overrides when justified with comments.
-15. After changes: run `npm run test:lint && npm run test:types && npm run test:format`; fix before commit. Pre-commit hooks run automatically (husky + lint-staged).
-16. Never introduce default exports, `any` without justification, or stylistic churn; preserve existing conventions and update docs/tests alongside code.
+## Purpose of this repository
+
+`@peerigon/configs` is a publishable package of shared development configs and guidance:
+
+- ESLint presets, optional style packs, and library-specific rule sets
+- Prettier configuration plus plugins for import sorting, JSDoc, package.json, CSS, and Tailwind ordering
+- TypeScript base and library-focused `tsconfig` presets
+- Semantic-release presets (including cross-publish)
+- VSCode settings reference
+- AI coding-agent rules and migration docs aligned with the same coding philosophy
+
+The package philosophy is:
+
+- optimize for readability first, refactorability second, writing convenience third
+- keep formatting convention-driven and deterministic
+- keep linting focused on correctness, security, modern idioms, and a11y
+- keep type-checking strict enough for safe refactoring, while allowing local escape hatches when necessary
+
+## Source of truth by folder
+
+- `eslint/`: preset and rule composition source files
+- `prettier/`: exported Prettier config
+- `typescript/`: exported tsconfig JSON presets and helper glue
+- `semantic-release/`: release preset exports
+- `ai/`: agent styleguide/rules and migration guidance
+- `.vscode/`: reference workspace/editor settings
+- `tools/`: release/build helper scripts
+
+Do not edit `dist/` manually (it is build output).
+
+## How to work in this repo
+
+### Package and runtime assumptions
+
+- Package manager: `npm`
+- Module format: ESM (`"type": "module"`)
+- Main artifact model: source configs are authored in repo folders and exported via `package.json` `exports`
+
+### Coding and change principles
+
+- Keep changes minimal, localized, and backwards compatible unless breaking behavior is explicitly requested.
+- Preserve published export paths and config names unless migration is clearly part of the task.
+- Prefer extending recommended rule sets over bespoke one-off logic when possible.
+- Align changes with repo philosophy: objective linting/type-safety improvements over subjective style churn.
+- Keep examples/tests realistic and focused on expected diagnostics.
+
+### Ignoring and generated files
+
+- ESLint and Prettier conventions treat `**/*.generated.*` as ignored/generated.
+- Do not hand-edit generated/demo artifacts unless the task is specifically about those artifacts.
+
+## Validation workflow
+
+Run targeted checks for touched scope first, then broader checks before finishing.
+
+- Full validation:
+  - `npm test`
+  - `npm run build`
+- Common focused checks:
+  - `npm run test:lint`
+  - `npm run test:format`
+  - `npm run test:types`
+  - `npm run test:exports`
+- ESLint preset/style/rule fixture checks (if relevant):
+  - `npm run test:presets:javascript`
+  - `npm run test:presets:typescript`
+  - `npm run test:presets:typescript-react`
+  - `npm run test:styles:no-default-export`
+  - `npm run test:styles:no-null`
+  - `npm run test:styles:prefer-array-shorthand`
+  - `npm run test:styles:prefer-interface`
+  - `npm run test:styles:jsx-no-literals`
+  - `npm run test:rules:vitest`
+
+If your change affects publishing behavior, also verify:
+
+- `.releaserc.json` preset extension behavior
+- workflow expectations in `.github/workflows/test-and-release.yml`
+
+## Editing guidance by area
+
+### ESLint changes (`eslint/`)
+
+- Keep presets composable and avoid combining multiple presets into one consumer entrypoint by default.
+- If you change or add ESLint rules, add or update tests for them whenever possible.
+- Ensure fixture tests in matching `*.test` folders demonstrate intended pass/fail cases.
+- For style rules (`eslint/styles/*`), document trade-offs in comments/docs when behavior is opinionated.
+- Preserve test relaxations where intended; strictness is context-dependent (app code vs tests).
+
+### Prettier changes (`prettier/`)
+
+- Stay close to Prettier defaults unless there is strong objective value.
+- Any plugin/order change must be deterministic and reduce review noise.
+
+### TypeScript config changes (`typescript/`, root `tsconfig.json`)
+
+- Keep base configs strict and modern.
+- Treat `skipLibCheck` and similar loosening options as explicit trade-offs, not defaults.
+- Maintain clear separation between base checking config and library build partials.
+
+### Semantic-release changes (`semantic-release/`, `.releaserc.json`)
+
+- Preserve cross-publish behavior unless task explicitly changes release targets.
+- Keep CI release permissions and provenance expectations in sync with preset behavior.
+
+### AI guidance changes (`ai/`)
+
+- Keep AI guidance consistent with coding/linting/type-checking philosophy in root README.
+- Prefer concise, enforceable rules over long ambiguous prose.
+
+## Documentation expectations
+
+When behavior changes, update the nearest relevant README:
+
+- root `README.md` for package-level behavior/philosophy
+- area README (`eslint/README.md`, `prettier/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
+
+Keep docs practical and copy-paste friendly.
+
+## Release and CI context
+
+- CI builds and tests on PR/push.
+- Releases are branch-gated (`main`/`beta`) and semantic-release-driven.
+- Prefer conventional commit messages when asked to prepare commits for release automation.
+
+## Quick task checklist for agents
+
+- Understand which config area is affected.
+- Implement the smallest correct change.
+- Update/extend fixtures/tests for behavioral changes.
+- Run focused checks, then full checks if impact is broad.
+- Update relevant README(s) when behavior/setup changes.
+- Leave repository in a releasable state.
