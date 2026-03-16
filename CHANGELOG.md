@@ -1,3 +1,10 @@
+# [14.7.0](https://github.com/peerigon/configs/compare/v14.6.0...v14.7.0) (2026-03-16)
+
+### Features
+
+- **ai:** Improve agent instructions for large repos ([89e8298](https://github.com/peerigon/configs/commit/89e82983d9a13439cc75e90b41cc2f13c345b5c8))
+- Update dependencies ([ee6e1ed](https://github.com/peerigon/configs/commit/ee6e1ed3fc64563792437ab102e0dacbc9e6ca24))
+
 # [14.6.0](https://github.com/peerigon/configs/compare/v14.5.0...v14.6.0) (2026-03-15)
 
 ### Features
