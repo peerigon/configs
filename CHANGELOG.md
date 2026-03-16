@@ -1,3 +1,9 @@
+# [14.8.0](https://github.com/peerigon/configs/compare/v14.7.0...v14.8.0) (2026-03-16)
+
+### Features
+
+- **ai:** Apply best practices from "A Philosophy of Software Design" ([ad5f17d](https://github.com/peerigon/configs/commit/ad5f17dfc6534196fb65813682a2a429f7eb0495))
+
 # [14.7.0](https://github.com/peerigon/configs/compare/v14.6.0...v14.7.0) (2026-03-16)
 
 ### Features
