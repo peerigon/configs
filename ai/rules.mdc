@@ -14,6 +14,12 @@ alwaysApply: true
 - Prefer explicit over implicit
 - Keep code close together that belongs together
 
+## Complexity and module design
+
+- Treat complexity as the primary enemy. Prefer designs that reduce mental load, special cases, and cross-module coupling.
+- Prefer deep modules with shallow interfaces: expose minimal API surface and hide implementation details by default.
+- Avoid pass-through abstractions that add layers but do not hide meaningful complexity.
+
 ## JavaScript & TypeScript
 
 See [Coding Styleguide JavaScript & TypeScript](./coding-styleguide-js-ts.mdc)
@@ -37,7 +43,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Write unit tests for simple, pure functions
 - Unit test files are colocated with source files (\*.test.ts)
 - Write integration or e2e tests for more complex functions/classes/components
-- Run the linter and type checker only once after the implementation is complete and the tests are passing
+- Prefer staged validation for non-trivial tasks: run focused checks after meaningful changes, then run broader lint/type/test checks before handoff. For trivial tasks, a single final validation is acceptable.
 - Adjust documentation both in comments and markdown files once you're done
 
 ## Consumer-repo uncertainty protocol

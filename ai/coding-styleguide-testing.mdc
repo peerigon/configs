@@ -7,7 +7,7 @@ globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
 
 ## General principle
 
-**Important**: Write as less tests as possible while covering all relevant scenarios. Focus on testing the behavior of the code rather than implementation details.
+**Important**: Aim for the smallest high-value test set that protects behavior, interface contracts, invariants, and regression-prone paths. Focus on testing behavior rather than implementation details.
 
 ## Structure & Organization
 

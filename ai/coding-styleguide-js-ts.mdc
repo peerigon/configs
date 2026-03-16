@@ -100,7 +100,9 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 ## Comments
 
-- Use JSDoc comments and its tags where appropriate
+- Use comments to explain why, invariants, constraints, and non-obvious trade-offs
+- Do not write comments that only restate what the code already makes obvious
+- Add short contract comments only for complex or high-impact exports. Focus on purpose, guarantees, and important caveats.
 
 ## Testing
 
