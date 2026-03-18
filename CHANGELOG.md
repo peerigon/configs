@@ -1,3 +1,9 @@
+# [14.9.0](https://github.com/peerigon/configs/compare/v14.8.0...v14.9.0) (2026-03-18)
+
+### Features
+
+- **ai:** Improve testing styleguide ([cc07dfd](https://github.com/peerigon/configs/commit/cc07dfd46e24f747ad06b3fc2f79e923872f6c94))
+
 # [14.8.0](https://github.com/peerigon/configs/compare/v14.7.0...v14.8.0) (2026-03-16)
 
 ### Features
