@@ -11,6 +11,8 @@ globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
 
 ## Structure & Organization
 
+- Order of tests: Match the order of tests to the order of symbols in the source file
+- One describe per export: Provide a describe block for each exported symbol (function, class, constant)
 - Hierarchical grouping: Use nested describe() blocks - outer for function/class, inner for scenarios
 - Logical categorization: Group by behavior, input type, or state (e.g., "with valid input", "error handling")
 - Each it() should test a single behavior
@@ -27,6 +29,7 @@ globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
 
 - Type annotations: Include explicit types in test variables to verify inference
 - Compile-time checks: Some tests exist just to verify type compatibility
+- Type tests for generics: Add type tests for generic functions, classes, etc. Use the test runner's type testing tool when available (e.g. with Vitest: `expectTypeOf`)
 
 ## Best Practices
 
