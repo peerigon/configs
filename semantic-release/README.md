@@ -84,3 +84,14 @@ For `semantic-release/cross-publish`, Github publishing defaults to:
 
 - `true` for scoped packages (`${process.cwd()}/package.json` name starts with `@`)
 - `false` for unscoped packages
+
+## Notes
+
+This preset follows semantic-release best practices and does not commit release artifacts
+back to the repository (for example, no `CHANGELOG.md` commit during release).
+We used to commit `CHANGELOG.md`, but that adds significant complexity for projects
+with branch protection rules.
+
+To prevent stale changelogs, releases fail when a `CHANGELOG.md` file exists in the
+repository. You can bypass this check by setting
+`SEMANTIC_RELEASE_ALLOW_CHANGELOG=true`.
