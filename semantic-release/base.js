@@ -20,21 +20,19 @@ export const config = {
     { name: "beta", prerelease: true },
   ],
   plugins: [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
+    // We used to commit CHANGELOG.md, but that adds significant complexity for
+    // projects with branch protection rules.
+    // To avoid stale release artifacts in git, we no longer update/commit it.
+    // Consumers can bypass this by setting SEMANTIC_RELEASE_ALLOW_CHANGELOG=true.
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "npx -y prettier --write CHANGELOG.md",
+        verifyConditionsCmd:
+          "node -e \"const fs=require('node:fs'); if (process.env.SEMANTIC_RELEASE_ALLOW_CHANGELOG === 'true') process.exit(0); if (fs.existsSync('CHANGELOG.md')) { console.error('Release aborted: CHANGELOG.md is present. Remove it or set SEMANTIC_RELEASE_ALLOW_CHANGELOG=true to bypass this check.'); process.exit(1); }\"",
       },
     ],
-    [
-      "@semantic-release/git",
-      {
-        assets: ["CHANGELOG.md"],
-      },
-    ],
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
     [
       "@semantic-release/npm",
       {
