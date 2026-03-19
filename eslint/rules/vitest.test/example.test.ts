@@ -73,7 +73,7 @@ test("with return statement", () => {
   return undefined;
 });
 
-// eslint-disable-next-line vitest/prefer-todo, vitest/expect-expect
+// eslint-disable-next-line vitest/prefer-todo, vitest/expect-expect, vitest/no-disabled-tests
 test("foo");
 
 describe("level 1", () => {

@@ -61,7 +61,7 @@
     "prepare": "husky",
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
-    "test": "run-p test:*",
+    "test": "run-p test:* test:presets:* test:rules:* test:styles:*",
     "test:exports": "node package.json.test.js",
     "test:format": "prettier --check .",
     "test:lint": "eslint --max-warnings 0 .",

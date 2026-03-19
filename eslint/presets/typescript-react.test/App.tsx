@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Other } from "./Other.tsx";
 
 export const App = (_props: { name: string; count: number }) => {
