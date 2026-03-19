@@ -3,8 +3,12 @@ import { globPatterns } from "../lib/glob-patterns.js";
 /** @type {import("eslint").Linter.Config[]} */
 export const noDefaultExport = [
   {
-    // Config files often have a single default export
-    ignores: globPatterns.configs,
+    ignores: [
+      // Config files often have a single default export
+      ...globPatterns.configs,
+      // d.ts files often contain default exports
+      ...globPatterns.typescriptAmbient,
+    ],
     rules: {
       "no-restricted-syntax": [
         "error",
