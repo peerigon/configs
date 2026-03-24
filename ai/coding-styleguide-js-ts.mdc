@@ -81,6 +81,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 - Constructor **must** be at the top of the class
 - Then properties: public first, then private; order by importance in relation to the class purpose
+- Public class properties should be `readonly` when the value is not reassigned after construction or is only changed within the class. If the value needs internal mutation but should stay stable to consumers, expose it via a getter backed by a private property.
 - Then methods: public first, then private; order by importance in relation to the class purpose
 
 ## Types
