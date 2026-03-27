@@ -147,6 +147,14 @@ export const react = [
       "@eslint-react/no-leaked-conditional-rendering": "warn", // https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
     },
   },
+  {
+    files: globPatterns.tests,
+    rules: {
+      "react-hooks/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
+      "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
+      "react/display-name": "off", // Anonymous inline components are common in tests.
+    },
+  },
 ];
 
 export default react;

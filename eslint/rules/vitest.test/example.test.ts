@@ -18,7 +18,6 @@ test.only("focused test", () => {
 });
 
 test("conditional expect", () => {
-  // eslint-disable-next-line no-constant-condition, @typescript-eslint/no-unnecessary-condition
   if (true) {
     // eslint-disable-next-line vitest/no-conditional-expect
     expect(true).toBe(true);

@@ -147,20 +147,18 @@ export const javascript = [
       "no-only-tests": noOnlyTests,
     },
     rules: {
-      // Top-level await might slow down the test suite start up
-      "unicorn/prefer-top-level-await": "off",
-      // Nesting is pretty common in tests when you group tests
-      "max-nested-callbacks": "off",
-      // await in loops is pretty common in Playwright tests
-      "no-await-in-loop": "off",
-      // Unreachable loops are sometimes used in tests to assert loop body runs at most once
-      "no-unreachable-loop": "off",
-      // In case you want to test errors thrown by a constructor
-      "no-new": "off",
-      // Generators without yield are common in test helpers/setup
-      "require-yield": "off",
-      // should show a warning when a test is focussed (overridden to off when using vitest config)
-      "no-only-tests/no-only-tests": "error",
+      camelcase: "off", // Mock payloads often mirror external casing conventions.
+      "max-depth": "off", // Nested describe blocks are often the clearest structure.
+      "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
+      "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
+      "no-new": "off", // Constructor side effects are often asserted directly in tests.
+      "no-only-tests/no-only-tests": "error", // Should show a warning when a test is focussed (overridden to off when using vitest config).
+      "no-constant-condition": "off", // Constants are often used in tests to assert loop body runs at most once.
+      "no-unreachable-loop": "off", // Unreachable loops are sometimes used in tests to assert loop body runs at most once.
+      "no-unused-expressions": "off", // Assertion styles (e.g. chai) use expression statements.
+      "prefer-arrow-callback": "off", // Function callbacks are needed for this-binding tests.
+      "require-yield": "off", // Generators without yield are common in test helpers/setup.
+      "unicorn/prefer-top-level-await": "off", // Top-level await might slow down the test suite start up.
     },
   },
 ];

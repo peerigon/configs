@@ -192,6 +192,7 @@ export const typescript =
           // We allow any to be used in tests, so returning it is ok
           "@typescript-eslint/no-unsafe-return": "off", // https://typescript-eslint.io/rules/no-unsafe-return
           // chai uses these as assertions
+          "@typescript-eslint/no-unnecessary-condition": "off", // https://typescript-eslint.io/rules/no-unnecessary-condition
           "@typescript-eslint/no-unused-expressions": "off", // https://typescript-eslint.io/rules/no-unused-expressions
           // It's uncommon to use async/await in Cypress tests
           // https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Commands-Are-Asynchronous
