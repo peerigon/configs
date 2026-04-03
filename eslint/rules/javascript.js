@@ -158,6 +158,7 @@ export const javascript = [
       "no-unused-expressions": "off", // Assertion styles (e.g. chai) use expression statements.
       "prefer-arrow-callback": "off", // Function callbacks are needed for this-binding tests.
       "require-yield": "off", // Generators without yield are common in test helpers/setup.
+      "unicorn/prefer-single-call": "off", // Multiple `Array#push()` / `classList` calls are often clearer in test setup than one merged call.
       "unicorn/prefer-top-level-await": "off", // Top-level await might slow down the test suite start up.
     },
   },

@@ -8,3 +8,17 @@ function* testHelper() {
   return 42;
 }
 void testHelper;
+
+// prefer-single-call is disabled in tests – multiple `classList.add()` calls are sometimes clearer than one merged call
+function createStubElement() {
+  return {
+    classList: {
+      add() {},
+      remove() {},
+    },
+  };
+}
+const element = createStubElement();
+element.classList.add("a");
+element.classList.add("b");
+void element;
