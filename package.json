@@ -84,7 +84,7 @@
     "@prettier/plugin-oxc": "^0.1.3",
     "@sebbo2002/semantic-release-jsr": "^3.2.1",
     "@semantic-release/exec": "^7.1.0",
-    "@tanstack/eslint-plugin-query": "^5.95.2",
+    "@tanstack/eslint-plugin-query": "^5.96.1",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@vitest/eslint-plugin": "^1.6.14",
