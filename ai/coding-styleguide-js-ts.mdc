@@ -94,6 +94,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - If you have to use `any`, try with `unknown` first
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). Lift types into higher-level, special types as soon as they have been parsed (e.g. prefer explicit string literals over just `string`)
 - Infer types (using type utilities like `Pick`, `Omit`, ...) instead of duplicating them
+- Do not apply TypeScript generics explicitly unless necessary (prefer inference; use explicit type arguments when inference is wrong, ambiguous, or a type parameter cannot be inferred)
 - Prefer `satisfies` over type declarations
 - Use explicit return types for functions when the function is exported and the return type is not a literal or when it has high cyclomatic complexity
 - Use erasable syntax only
