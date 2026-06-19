@@ -1,7 +1,8 @@
 {
   "extends": ["./typescript/base.json", "./typescript/js-lib.json"],
   "compilerOptions": {
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": ["eslint", "prettier", "typescript", "semantic-release"],
   "exclude": [

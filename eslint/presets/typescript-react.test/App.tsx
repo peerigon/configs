@@ -11,11 +11,11 @@ export const App = (_props: { name: string; count: number }) => {
     }, []);
   }
 
-  // eslint-disable-next-line @eslint-react/naming-convention/use-state
+  // eslint-disable-next-line @eslint-react/use-state
   const [state, updateState] = useState(0);
 
   useEffect(() => {
-    // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect, react-you-might-not-need-an-effect/no-chain-state-updates
+    // eslint-disable-next-line @eslint-react/set-state-in-effect, react-you-might-not-need-an-effect/no-chain-state-updates
     updateState(1);
   }, [state]);
 

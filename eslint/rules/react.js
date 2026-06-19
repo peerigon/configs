@@ -89,7 +89,7 @@ export const react = [
           checkContextTypes: true,
         },
       ],
-      // Superseded by @eslint-react/naming-convention/use-state because it handles
+      // Superseded by @eslint-react/use-state because it handles
       // [, setState] = useState() as well.
       "react/hook-use-state": ["off", { allowDestructuredState: true }], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/hook-use-state.md
       "react/iframe-missing-sandbox": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/iframe-missing-sandbox.md
@@ -143,8 +143,12 @@ export const react = [
       "react/self-closing-comp": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
       "react/style-prop-object": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
       "react/void-dom-elements-no-children": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
-      "@eslint-react/naming-convention/use-state": "warn", // https://eslint-react.xyz/docs/rules/naming-convention-use-state
+      // We keep eslint-plugin-react-hooks as the source of truth for hook ordering and dependencies.
+      "@eslint-react/exhaustive-deps": "off",
+      "@eslint-react/rules-of-hooks": "off",
+      "@eslint-react/use-state": "warn", // https://eslint-react.xyz/docs/rules/use-state
       "@eslint-react/no-leaked-conditional-rendering": "warn", // https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
+      "@eslint-react/set-state-in-effect": "warn", // https://eslint-react.xyz/docs/rules/set-state-in-effect
     },
   },
   {
