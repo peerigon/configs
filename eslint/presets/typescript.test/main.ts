@@ -9,6 +9,11 @@ const snake_case = 123;
 const indexObj: Record<string, string> = { foo: "bar" };
 const _indexValue = indexObj["foo"];
 
+type EnvLike = Record<string, string | undefined>;
+const envLike: EnvLike = { SOME_ENV_VAR: "test" };
+// Env var style access without loaded Node types should not complain about missing dot-notation.
+const _envValue = envLike["SOME_ENV_VAR"];
+
 class SomeClass {
   #someProp = true;
   private someEventHandler = () => {
