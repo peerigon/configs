@@ -67,8 +67,8 @@ export const react = [
     },
   },
   {
-    files,
     ...reactHooksPlugin.configs.flat.recommended,
+    files,
   },
   {
     // @eslint-react is the source of truth wherever it ships an equivalent rule.
@@ -76,12 +76,12 @@ export const react = [
     // for those. Several disabled rules only have equivalents that are off by default
     // or live in @eslint-react/kit; we re-enable the built-in equivalents below and
     // keep the few eslint-plugin-react rules whose only replacement would require kit.
-    files,
     ...reactPlugin2.configs["disable-conflict-eslint-plugin-react"],
+    files,
   },
   {
-    files,
     ...reactYouMightNotNeedAnEffect.configs.recommended,
+    files,
   },
   {
     files,

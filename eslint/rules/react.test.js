@@ -49,3 +49,18 @@ assert.deepEqual(
   conflictReactRules,
   "react config should let @eslint-react win by mirroring its disable-conflict-eslint-plugin-react preset",
 );
+
+// The @eslint-react replacement rules must stay enabled so coverage dropped by the
+// conflict preset is restored. Guard one representative rule against accidental removal.
+const replacementConfigs = react.filter(
+  (config) =>
+    config.rules &&
+    typeof config.rules === "object" &&
+    config.rules["@eslint-react/dom/no-missing-button-type"] === "warn",
+);
+
+assert.equal(
+  replacementConfigs.length,
+  1,
+  "react config should re-enable the @eslint-react replacement rules exactly once",
+);
