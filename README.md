@@ -14,6 +14,8 @@
 npm install @peerigon/configs  --save-dev
 ```
 
+This package requires Node.js 22 or newer.
+
 Also checkout the instructions for each respective config:
 
 - [ESLint](/eslint/README.md)

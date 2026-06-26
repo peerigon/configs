@@ -56,7 +56,7 @@ const replacementConfigs = react.filter(
   (config) =>
     config.rules &&
     typeof config.rules === "object" &&
-    config.rules["@eslint-react/dom/no-missing-button-type"] === "warn",
+    config.rules["@eslint-react/dom-no-missing-button-type"] === "warn",
 );
 
 assert.equal(

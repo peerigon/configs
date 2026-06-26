@@ -138,22 +138,28 @@ export const react = [
       "react/style-prop-object": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
       // @eslint-react equivalents that replace eslint-plugin-react rules disabled by the
       // conflict preset above but are not enabled by @eslint-react's recommended presets.
-      "@eslint-react/dom/no-missing-button-type": "warn", // replaces react/button-has-type
-      "@eslint-react/dom/no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
-      "@eslint-react/dom/no-unknown-property": "warn", // replaces react/no-unknown-property
-      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn", // replaces react-hooks/set-state-in-effect overlap
-      "@eslint-react/naming-convention/use-state": "warn", // replaces react/hook-use-state. https://eslint-react.xyz/docs/rules/naming-convention-use-state
-      "@eslint-react/no-leaked-conditional-rendering": "warn", // replaces react/jsx-no-leaked-render. https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
+      // (use-state, set-state-in-effect and no-leaked-conditional-rendering are already on
+      // via recommended, so they are not re-listed here.)
+      "@eslint-react/dom-no-missing-button-type": "warn", // replaces react/button-has-type
+      "@eslint-react/dom-no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
+      "@eslint-react/dom-no-unknown-property": "warn", // replaces react/no-unknown-property
       "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name
       "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
       "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
       "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state
+      // @eslint-react is the source of truth for hooks too, so turn off the overlapping
+      // eslint-plugin-react-hooks rules. The remaining react-hooks rules (React Compiler
+      // checks like use-memo, purity and immutability) have no @eslint-react equivalent
+      // and stay enabled.
+      "react-hooks/exhaustive-deps": "off",
+      "react-hooks/rules-of-hooks": "off",
+      "react-hooks/set-state-in-effect": "off",
     },
   },
   {
     files: globPatterns.tests,
     rules: {
-      "react-hooks/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
+      "@eslint-react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
       "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
       "@eslint-react/no-missing-component-display-name": "off", // Anonymous inline components are common in tests.
     },
