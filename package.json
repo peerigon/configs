@@ -125,7 +125,7 @@
     "eslint": "^9.38.0",
     "prettier": "^3.6.2",
     "semantic-release": "^25.0.1",
-    "typescript": "^5.9.3 || >=6.0.0 <6.1.0"
+    "typescript": ">=6.0.0"
   },
   "peerDependenciesMeta": {
     "eslint": {
