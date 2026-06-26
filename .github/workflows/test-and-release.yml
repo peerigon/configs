@@ -29,23 +29,23 @@ jobs:
 
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # main
+        uses: actions/checkout@b9e0990d219a03df7633c93f6f005a8fecbcab22 # main
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # main
+        uses: actions/setup-node@6a61c0375d66246de94630495909f12cf8dac84d # main
         with:
-          node-version-file: ".tool-versions"
+          node-version-file: "package.json"
           cache: "npm"
 
       - name: 🗄 Cache node_modules
         id: cache-node_modules
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # main
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # main
         with:
           path: "**/node_modules"
           key: node_modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: 🗄 Cache .eslintcache
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # main
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # main
         with:
           path: .eslintcache
           key: eslintcache-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -71,10 +71,19 @@ jobs:
           npm publish --dry-run --tag test-release
           npx pkg-pr-new publish
 
+      - name: 🦕 Setup Deno
+        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
+        uses: denoland/setup-deno@ff4860f9d7236f320afa0f82b7e6457384805d05 # main
+        with:
+          deno-version-file: ".deno-version"
+
       - name: 🚀 Release on npm and jsr
         if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Make @sebbo2002/semantic-release-jsr use the Deno binary set up above
+          # instead of the version bundled with the jsr npm package.
+          DENO_BIN_PATH: deno
           # Optional escape hatch for legacy repos with an existing CHANGELOG.md.
           # SEMANTIC_RELEASE_ALLOW_CHANGELOG: "true"
         # Fetch the last 30 commits to ensure semantic-release has a sufficient history
