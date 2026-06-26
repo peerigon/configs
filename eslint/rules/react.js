@@ -71,32 +71,40 @@ export const react = [
     ...reactHooksPlugin.configs.flat.recommended,
   },
   {
+    // @eslint-react is the source of truth wherever it ships an equivalent rule.
+    // This preset turns off overlapping eslint-plugin-react rules so @eslint-react wins
+    // for those. Several disabled rules only have equivalents that are off by default
+    // or live in @eslint-react/kit; we re-enable the built-in equivalents below and
+    // keep the few eslint-plugin-react rules whose only replacement would require kit.
+    files,
+    ...reactPlugin2.configs["disable-conflict-eslint-plugin-react"],
+  },
+  {
     files,
     ...reactYouMightNotNeedAnEffect.configs.recommended,
   },
   {
     files,
     rules: {
-      "react/button-has-type": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md
+      // eslint-plugin-react rules kept on: disable-conflict-eslint-plugin-react does not
+      // touch these (no overlapping @eslint-react rule), or its only equivalent lives in
+      // @eslint-react/kit, which we avoid as an extra dependency. The latter group
+      // (jsx-boolean-value, jsx-filename-extension, jsx-pascal-case, forbid-prop-types)
+      // is re-asserted here so it overrides the conflict preset above.
       "react/default-props-match-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/default-props-match-prop-types.md
-      "react/display-name": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/display-name.md
       "react/forbid-foreign-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
       "react/forbid-prop-types": [
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
+        // No @eslint-react equivalent (propTypes are legacy). https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
         "warn",
         {
           checkChildContextTypes: true,
           checkContextTypes: true,
         },
       ],
-      // Superseded by @eslint-react/naming-convention/use-state because it handles
-      // [, setState] = useState() as well.
-      "react/hook-use-state": ["off", { allowDestructuredState: true }], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/hook-use-state.md
-      "react/iframe-missing-sandbox": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/iframe-missing-sandbox.md
-      "react/jsx-boolean-value": ["warn", "never"], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
+      "react/jsx-boolean-value": ["warn", "never"], // Equivalent only in @eslint-react/kit. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
       "react/jsx-curly-brace-presence": ["warn", "never"], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
       "react/jsx-filename-extension": [
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+        // No @eslint-react equivalent. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
         "warn",
         {
           extensions: [".jsx", ".tsx"],
@@ -110,28 +118,14 @@ export const react = [
           eventHandlerPropPrefix: "on",
         },
       ],
-      "react/jsx-key": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
-      "react/jsx-no-constructed-context-values": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
-      // Superseded by @eslint-react/no-leaked-conditional-rendering because it's more
-      // accurate by using type information.
-      "react/jsx-no-leaked-render": "off", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-leaked-render.md
-      "react/jsx-no-script-url": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md
       "react/jsx-no-undef": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md
-      "react/jsx-pascal-case": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
+      "react/jsx-pascal-case": "warn", // Equivalent only in @eslint-react/kit. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
       "react/jsx-props-no-spread-multi": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spread-multi.md
-      "react/no-access-state-in-setstate": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md
-      "react/no-array-index-key": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
-      "react/no-danger": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger.md
-      "react/no-did-mount-set-state": ["warn", "disallow-in-func"], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md
-      "react/no-did-update-set-state": ["warn", "disallow-in-func"], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
       "react/no-invalid-html-attribute": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md
       "react/no-redundant-should-component-update": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md
       "react/no-this-in-sfc": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md
       "react/no-typos": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-typos.md
-      "react/no-unstable-nested-components": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md
       "react/no-unused-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
-      "react/no-unused-state": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unused-state.md
-      "react/no-will-update-set-state": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
       "react/prefer-es6-class": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
       "react/prefer-stateless-function": [
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
@@ -142,9 +136,18 @@ export const react = [
       ],
       "react/self-closing-comp": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
       "react/style-prop-object": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
-      "react/void-dom-elements-no-children": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md
-      "@eslint-react/naming-convention/use-state": "warn", // https://eslint-react.xyz/docs/rules/naming-convention-use-state
-      "@eslint-react/no-leaked-conditional-rendering": "warn", // https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
+      // @eslint-react equivalents that replace eslint-plugin-react rules disabled by the
+      // conflict preset above but are not enabled by @eslint-react's recommended presets.
+      "@eslint-react/dom/no-missing-button-type": "warn", // replaces react/button-has-type
+      "@eslint-react/dom/no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
+      "@eslint-react/dom/no-unknown-property": "warn", // replaces react/no-unknown-property
+      "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn", // replaces react-hooks/set-state-in-effect overlap
+      "@eslint-react/naming-convention/use-state": "warn", // replaces react/hook-use-state. https://eslint-react.xyz/docs/rules/naming-convention-use-state
+      "@eslint-react/no-leaked-conditional-rendering": "warn", // replaces react/jsx-no-leaked-render. https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
+      "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name
+      "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
+      "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
+      "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state
     },
   },
   {
@@ -152,7 +155,7 @@ export const react = [
     rules: {
       "react-hooks/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
       "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
-      "react/display-name": "off", // Anonymous inline components are common in tests.
+      "@eslint-react/no-missing-component-display-name": "off", // Anonymous inline components are common in tests.
     },
   },
 ];
