@@ -75,7 +75,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
         uses: denoland/setup-deno@ff4860f9d7236f320afa0f82b7e6457384805d05 # main
         with:
-          deno-version-file: ".dvmrc"
+          deno-version-file: ".deno-version"
 
       - name: 🚀 Release on npm and jsr
         if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
