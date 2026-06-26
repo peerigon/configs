@@ -5,14 +5,13 @@ import test from "./test.json" with { type: "json" };
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const snake_case = 123;
 
+// Should not complain about missing dot-notation here since
+// we're using TS's noPropertyAccessFromIndexSignature
+process.env["SOME_ENV_VAR"] = "test";
+
 // Bracket notation on index type should not show dot-notation error
 const indexObj: Record<string, string> = { foo: "bar" };
 const _indexValue = indexObj["foo"];
-
-type EnvLike = Record<string, string | undefined>;
-const envLike: EnvLike = { SOME_ENV_VAR: "test" };
-// Env var style access without loaded Node types should not complain about missing dot-notation.
-const _envValue = envLike["SOME_ENV_VAR"];
 
 class SomeClass {
   #someProp = true;
