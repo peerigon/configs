@@ -80,6 +80,15 @@ export const react = [
     files,
   },
   {
+    // Same idea for hooks: @eslint-react owns every hook/React-Compiler rule it ships an
+    // equivalent for, so this preset turns off the overlapping eslint-plugin-react-hooks
+    // rules. The react-hooks rules without an @eslint-react equivalent (void-use-memo,
+    // preserve-manual-memoization, incompatible-library, config, gating) stay enabled as
+    // the fallback. Two gaps this preset leaves are patched in the rules block below.
+    ...reactPlugin2.configs["disable-conflict-eslint-plugin-react-hooks"],
+    files,
+  },
+  {
     ...reactYouMightNotNeedAnEffect.configs.recommended,
     files,
   },
@@ -147,13 +156,15 @@ export const react = [
       "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
       "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
       "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state
-      // @eslint-react is the source of truth for hooks too, so turn off the overlapping
-      // eslint-plugin-react-hooks rules. The remaining react-hooks rules (React Compiler
-      // checks like use-memo, purity and immutability) have no @eslint-react equivalent
-      // and stay enabled.
-      "react-hooks/exhaustive-deps": "off",
-      "react-hooks/rules-of-hooks": "off",
-      "react-hooks/set-state-in-effect": "off",
+      // disable-conflict-eslint-plugin-react-hooks misses this pair, so turn off the
+      // react-hooks version explicitly to keep @eslint-react/static-components the only one.
+      "react-hooks/static-components": "off",
+      // @eslint-react equivalents the conflict preset disabled in react-hooks but that
+      // @eslint-react's recommended presets do not enable, re-asserted here so we keep the
+      // coverage via @eslint-react rather than losing it.
+      "@eslint-react/globals": "warn", // replaces react-hooks/globals
+      "@eslint-react/immutability": "warn", // replaces react-hooks/immutability
+      "@eslint-react/refs": "warn", // replaces react-hooks/refs
     },
   },
   {
