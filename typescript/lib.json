@@ -6,6 +6,7 @@
     "declarationMap": true,
     "noEmit": false,
     "outDir": "${configDir}/dist",
+    "rootDir": "${configDir}/src",
     "sourceMap": true,
     // Use inlineSources: true because often we only publish the dist folder on npm
     "inlineSources": true
