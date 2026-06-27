@@ -10,6 +10,12 @@
  * }} SemanticReleaseConfig
  */
 
+import { fileURLToPath } from "node:url";
+
+const verifyPublishableScript = fileURLToPath(
+  new URL("verify-publishable.js", import.meta.url),
+);
+
 /** @type {SemanticReleaseConfig} */
 export const config = {
   branches: [
@@ -28,7 +34,8 @@ export const config = {
       "@semantic-release/exec",
       {
         verifyConditionsCmd:
-          "node -e \"const fs=require('node:fs'); if (process.env.SEMANTIC_RELEASE_ALLOW_CHANGELOG === 'true') process.exit(0); if (fs.existsSync('CHANGELOG.md')) { console.error('Release aborted: CHANGELOG.md is present. Remove it or set SEMANTIC_RELEASE_ALLOW_CHANGELOG=true to bypass this check.'); process.exit(1); }\"",
+          "node -e \"const fs=require('node:fs'); if (process.env.SEMANTIC_RELEASE_ALLOW_CHANGELOG === 'true') process.exit(0); if (fs.existsSync('CHANGELOG.md')) { console.error('Release aborted: CHANGELOG.md is present. Remove it or set SEMANTIC_RELEASE_ALLOW_CHANGELOG=true to bypass this check.'); process.exit(1); }\"" +
+          ` && node "${verifyPublishableScript}"`,
       },
     ],
     "@semantic-release/commit-analyzer",

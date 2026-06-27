@@ -48,6 +48,9 @@
     "./typescript/lib": "./dist/typescript/lib.json",
     "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
+  "bin": {
+    "verify-publishable": "./dist/semantic-release/verify-publishable.js"
+  },
   "files": [
     "dist",
     "ai",
@@ -62,9 +65,9 @@
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
     "test": "run-p test:* test:presets:* test:rules:* test:styles:*",
-    "test:exports": "node package.json.test.js",
     "test:format": "prettier --check .",
     "test:lint": "eslint --max-warnings 0 .",
+    "test:publishable": "node ./semantic-release/verify-publishable.js",
     "test:presets:javascript": "cd eslint/presets/javascript.test; eslint --max-warnings 0 .",
     "test:presets:typescript": "cd eslint/presets/typescript.test; eslint --max-warnings 0 .",
     "test:presets:typescript-react": "cd eslint/presets/typescript-react.test; eslint --max-warnings 0 .",
@@ -77,6 +80,7 @@
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
+    "@arethetypeswrong/cli": "^0.18.3",
     "@eslint-react/eslint-plugin": "^5.9.5",
     "@eslint/compat": "^2.0.3",
     "@eslint/js": "^9.39.1",
@@ -103,6 +107,7 @@
     "prettier-plugin-jsdoc": "^1.8.0",
     "prettier-plugin-packagejson": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "publint": "^0.3.21",
     "typescript-eslint": "^8.61.1"
   },
   "devDependencies": {
