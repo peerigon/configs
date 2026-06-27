@@ -49,7 +49,7 @@
     "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
   "bin": {
-    "verify-publishable": "./dist/semantic-release/verify-publishable.js"
+    "verify-publishable": "dist/semantic-release/verify-publishable.js"
   },
   "files": [
     "dist",
