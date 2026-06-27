@@ -62,6 +62,8 @@ In case you're developing a library with a dedicated build process, we recommend
 }
 ```
 
+The lib partials set `rootDir` to `./src` so build output lands in `dist/` without an extra `src/` segment (required since TypeScript 6.0). Override `rootDir` in your build config if your sources live elsewhere.
+
 with the following `package.json` `scripts`:
 
 ```json

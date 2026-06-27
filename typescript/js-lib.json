@@ -4,7 +4,8 @@
     "lib": ["es2022"],
     "declaration": true,
     "noEmit": false,
-    "outDir": "${configDir}/dist"
+    "outDir": "${configDir}/dist",
+    "rootDir": "${configDir}/src"
   },
   "$schema": "https://json.schemastore.org/tsconfig"
 }
