@@ -62,7 +62,7 @@ Run targeted checks for touched scope first, then broader checks before finishin
   - `npm run test:lint`
   - `npm run test:format`
   - `npm run test:types`
-  - `npm run test:exports`
+  - `npm run test:publint` (requires `dist/` — run `npm run build` first)
 - ESLint preset/style/rule fixture checks (if relevant):
   - `npm run test:presets:javascript`
   - `npm run test:presets:typescript`
