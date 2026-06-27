@@ -48,6 +48,9 @@
     "./typescript/lib": "./dist/typescript/lib.json",
     "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
+  "bin": {
+    "verify-publishable": "./dist/semantic-release/verify-publishable.js"
+  },
   "files": [
     "dist",
     "ai",
@@ -64,7 +67,7 @@
     "test": "run-p test:* test:presets:* test:rules:* test:styles:*",
     "test:format": "prettier --check .",
     "test:lint": "eslint --max-warnings 0 .",
-    "test:publint": "publint",
+    "test:publishable": "node ./semantic-release/verify-publishable.js",
     "test:presets:javascript": "cd eslint/presets/javascript.test; eslint --max-warnings 0 .",
     "test:presets:typescript": "cd eslint/presets/typescript.test; eslint --max-warnings 0 .",
     "test:presets:typescript-react": "cd eslint/presets/typescript-react.test; eslint --max-warnings 0 .",

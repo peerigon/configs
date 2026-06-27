@@ -85,6 +85,26 @@ For `semantic-release/cross-publish`, Github publishing defaults to:
 - `true` for scoped packages (`${process.cwd()}/package.json` name starts with `@`)
 - `false` for unscoped packages
 
+## Verifying the publishable package
+
+During `verifyConditions`, the preset checks that your package is correctly
+configured for publishing before anything is tagged or published. It runs
+[`publint`](https://publint.dev/) (validates `package.json` entries, `exports`,
+`files`, …) and [`@arethetypeswrong/cli`](https://arethetypeswrong.github.io/)
+(validates that exports resolve to correct type declarations).
+
+The exact same check is exposed as the `verify-publishable` bin, so you
+can run it as part of your own test suite. It operates on the built package, so
+make sure `dist/` (or whatever you publish) exists first:
+
+```jsonc
+{
+  "scripts": {
+    "test:publishable": "verify-publishable",
+  },
+}
+```
+
 ## Notes
 
 This preset follows semantic-release best practices and does not commit release artifacts
