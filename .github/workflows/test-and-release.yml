@@ -30,12 +30,13 @@ jobs:
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@b9e0990d219a03df7633c93f6f005a8fecbcab22 # main
+        with:
+          persist-credentials: false
 
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@6a61c0375d66246de94630495909f12cf8dac84d # main
         with:
           node-version-file: "package.json"
-          cache: "npm"
 
       - name: 🗄 Cache node_modules
         id: cache-node_modules
@@ -58,6 +59,7 @@ jobs:
       - name: 📦 Build
         run: |
           npm run build
+
       - name: 🧪 Run tests
         env:
           CI: true
