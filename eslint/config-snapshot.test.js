@@ -97,24 +97,45 @@ function snapshotParse(text) {
   });
 }
 
-/** @param {import("eslint").Linter.Config[]} preset @param {string} filePath */
-async function resolveRules(preset, filePath) {
-  const eslint = new ESLint({
-    overrideConfigFile: true,
-    baseConfig: preset,
-  });
+/** @param {string} snapshotPath @param {string} presetName */
+async function readSnapshot(snapshotPath, presetName) {
+  try {
+    return await readFile(snapshotPath, "utf8");
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      /** @type {NodeJS.ErrnoException} */ (error).code === "ENOENT"
+    ) {
+      throw new Error(
+        `Missing snapshot for preset "${presetName}" at ${snapshotPath}; run npm run test:snapshot:update to create it`,
+        { cause: error },
+      );
+    }
 
+    throw error;
+  }
+}
+
+/** @param {import("eslint").ESLint} eslint @param {string} filePath */
+async function resolveRules(eslint, filePath) {
   const { rules } = await eslint.calculateConfigForFile(filePath);
   return normalizeForSnapshot(sortRules(rules));
 }
 
 /** @param {string} presetName @param {import("eslint").Linter.Config[]} preset @param {readonly string[]} files */
 async function snapshotPreset(presetName, preset, files) {
+  // One ESLint instance per preset is enough; reuse it for every file so the
+  // plugin/config loading only happens once per preset.
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    baseConfig: preset,
+  });
+
   /** @type {Record<string, Record<string, unknown>>} */
   const snapshot = {};
 
   for (const filePath of files) {
-    snapshot[filePath] = await resolveRules(preset, filePath);
+    snapshot[filePath] = await resolveRules(eslint, filePath);
   }
 
   const snapshotPath = join(snapshotsDirectory, `${presetName}.json`);
@@ -126,7 +147,7 @@ async function snapshotPreset(presetName, preset, files) {
     return;
   }
 
-  const expected = snapshotParse(await readFile(snapshotPath, "utf8"));
+  const expected = snapshotParse(await readSnapshot(snapshotPath, presetName));
 
   for (const filePath of files) {
     assert.deepEqual(
