@@ -68,6 +68,8 @@
     "test:format": "prettier --check .",
     "test:lint": "eslint --cache --max-warnings 0 .",
     "test:publishable": "node ./semantic-release/verify-publishable.js",
+    "test:snapshot": "node eslint/config-snapshot.test.js",
+    "test:snapshot:update": "node eslint/config-snapshot.test.js --update",
     "test:presets:javascript": "cd eslint/presets/javascript.test; eslint --cache --max-warnings 0 .",
     "test:presets:typescript": "cd eslint/presets/typescript.test; eslint --cache --max-warnings 0 .",
     "test:presets:typescript-react": "cd eslint/presets/typescript-react.test; eslint --cache --max-warnings 0 .",
