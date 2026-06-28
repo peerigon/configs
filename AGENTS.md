@@ -73,6 +73,7 @@ Run targeted checks for touched scope first, then broader checks before finishin
   - `npm run test:styles:prefer-interface`
   - `npm run test:styles:jsx-no-literals`
   - `npm run test:rules:vitest`
+  - `npm run test:snapshot` — if this fails, follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md)
 
 If your change affects publishing behavior, also verify:
 
@@ -88,6 +89,7 @@ If your change affects publishing behavior, also verify:
 - Ensure fixture tests in matching `*.test` folders demonstrate intended pass/fail cases.
 - For style rules (`eslint/styles/*`), document trade-offs in comments/docs when behavior is opinionated.
 - Preserve test relaxations where intended; strictness is context-dependent (app code vs tests).
+- When [`config-snapshot.test.js`](./eslint/config-snapshot.test.js) fails (often after a dependency upgrade), follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md): update snapshots, review the diff, adjust rule sources if needed, and ask the user for final judgement before committing.
 
 ### Prettier changes (`prettier/`)
 

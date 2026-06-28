@@ -55,7 +55,6 @@ export const typescript =
             "warn",
             ...ruleOptions["@typescript-eslint/naming-convention"].defaultRules,
           ],
-          "@typescript-eslint/no-base-to-string": "off", // https://typescript-eslint.io/rules/no-base-to-string
           "@typescript-eslint/no-confusing-void-expression": [
             // https://typescript-eslint.io/rules/no-confusing-void-expression
             "off",
@@ -116,7 +115,20 @@ export const typescript =
             },
           ],
           "@typescript-eslint/require-await": "off", // https://typescript-eslint.io/rules/require-await
-          "@typescript-eslint/restrict-plus-operands": "off", // https://typescript-eslint.io/rules/restrict-plus-operands
+          "@typescript-eslint/restrict-plus-operands": [
+            // https://typescript-eslint.io/rules/restrict-plus-operands
+            "error",
+            {
+              // Concatenating a string with a number is unproblematic and ergonomic.
+              // The other operands are kept strict (the rule's own schema defaults
+              // are permissive, so they must be spelled out as false explicitly).
+              allowAny: false,
+              allowBoolean: false,
+              allowNullish: false,
+              allowNumberAndString: true,
+              allowRegExp: false,
+            },
+          ],
           "@typescript-eslint/restrict-template-expressions": [
             // https://typescript-eslint.io/rules/restrict-template-expressions
             "off",
