@@ -1,5 +1,5 @@
 import reactPlugin2 from "@eslint-react/eslint-plugin";
-import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y-x";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
@@ -35,11 +35,11 @@ export const react = [
     files,
   },
   {
-    ...jsxA11yPlugin.flatConfigs.recommended,
+    ...jsxA11yPlugin.configs.recommended,
     files,
   },
   {
-    ...jsxA11yPlugin.flatConfigs.strict,
+    ...jsxA11yPlugin.configs.strict,
     files,
   },
   {

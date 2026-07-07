@@ -744,20 +744,55 @@
     "implicit-arrow-linebreak": [0],
     "indent": [0],
     "indent-legacy": [0],
-    "jsx-a11y/alt-text": [2],
-    "jsx-a11y/anchor-ambiguous-text": [0],
-    "jsx-a11y/anchor-has-content": [2],
-    "jsx-a11y/anchor-is-valid": [2],
-    "jsx-a11y/aria-activedescendant-has-tabindex": [2],
-    "jsx-a11y/aria-props": [2],
-    "jsx-a11y/aria-proptypes": [2],
-    "jsx-a11y/aria-role": [2],
-    "jsx-a11y/aria-unsupported-elements": [2],
-    "jsx-a11y/autocomplete-valid": [2],
-    "jsx-a11y/click-events-have-key-events": [2],
-    "jsx-a11y/control-has-associated-label": [
+    "jsx-a11y-x/alt-text": [
+      2,
+      {
+        "elements": ["img", "object", "area", "input[type=\"image\"]"]
+      }
+    ],
+    "jsx-a11y-x/anchor-ambiguous-text": [
       0,
       {
+        "words": ["click here", "here", "link", "a link", "learn more"]
+      }
+    ],
+    "jsx-a11y-x/anchor-has-content": [
+      2,
+      {
+        "components": []
+      }
+    ],
+    "jsx-a11y-x/anchor-is-valid": [
+      2,
+      {
+        "components": [],
+        "specialLink": [],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y-x/aria-activedescendant-has-tabindex": [2],
+    "jsx-a11y-x/aria-props": [2],
+    "jsx-a11y-x/aria-proptypes": [2],
+    "jsx-a11y-x/aria-role": [
+      2,
+      {
+        "allowedInvalidRoles": [],
+        "ignoreNonDOM": false
+      }
+    ],
+    "jsx-a11y-x/aria-unsupported-elements": [2],
+    "jsx-a11y-x/autocomplete-valid": [
+      2,
+      {
+        "inputComponents": []
+      }
+    ],
+    "jsx-a11y-x/click-events-have-key-events": [2],
+    "jsx-a11y-x/control-has-associated-label": [
+      0,
+      {
+        "labelAttributes": [],
+        "controlComponents": [],
         "ignoreElements": [
           "audio",
           "canvas",
@@ -782,11 +817,22 @@
         "includeRoles": ["alert", "dialog"]
       }
     ],
-    "jsx-a11y/heading-has-content": [2],
-    "jsx-a11y/html-has-lang": [2],
-    "jsx-a11y/iframe-has-title": [2],
-    "jsx-a11y/img-redundant-alt": [2],
-    "jsx-a11y/interactive-supports-focus": [
+    "jsx-a11y-x/heading-has-content": [
+      2,
+      {
+        "components": []
+      }
+    ],
+    "jsx-a11y-x/html-has-lang": [2],
+    "jsx-a11y-x/iframe-has-title": [2],
+    "jsx-a11y-x/img-redundant-alt": [
+      2,
+      {
+        "components": [],
+        "words": []
+      }
+    ],
+    "jsx-a11y-x/interactive-supports-focus": [
       2,
       {
         "tabbable": [
@@ -802,29 +848,89 @@
         ]
       }
     ],
-    "jsx-a11y/label-has-associated-control": [2],
-    "jsx-a11y/label-has-for": [0],
-    "jsx-a11y/media-has-caption": [2],
-    "jsx-a11y/mouse-events-have-key-events": [2],
-    "jsx-a11y/no-access-key": [2],
-    "jsx-a11y/no-autofocus": [2],
-    "jsx-a11y/no-distracting-elements": [2],
-    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+    "jsx-a11y-x/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": [],
+        "labelAttributes": [],
+        "controlComponents": [],
+        "assert": "either",
+        "depth": 2
+      }
+    ],
+    "jsx-a11y-x/label-has-for": [0],
+    "jsx-a11y-x/media-has-caption": [
+      2,
+      {
+        "audio": [],
+        "video": [],
+        "track": []
+      }
+    ],
+    "jsx-a11y-x/mouse-events-have-key-events": [
+      2,
+      {
+        "hoverInHandlers": ["onMouseOver"],
+        "hoverOutHandlers": ["onMouseOut"]
+      }
+    ],
+    "jsx-a11y-x/no-access-key": [2],
+    "jsx-a11y-x/no-autofocus": [
+      2,
+      {
+        "ignoreNonDOM": false
+      }
+    ],
+    "jsx-a11y-x/no-distracting-elements": [
+      2,
+      {
+        "elements": ["marquee", "blink"]
+      }
+    ],
+    "jsx-a11y-x/no-interactive-element-to-noninteractive-role": [
       2,
       {
         "tr": ["none", "presentation"],
         "canvas": ["img"]
       }
     ],
-    "jsx-a11y/no-noninteractive-element-interactions": [
+    "jsx-a11y-x/no-noninteractive-element-interactions": [
       2,
       {
+        "handlers": [
+          "onFocus",
+          "onBlur",
+          "onLoad",
+          "onError",
+          "onKeyDown",
+          "onKeyPress",
+          "onKeyUp",
+          "onClick",
+          "onContextMenu",
+          "onDblClick",
+          "onDoubleClick",
+          "onDrag",
+          "onDragEnd",
+          "onDragEnter",
+          "onDragExit",
+          "onDragLeave",
+          "onDragOver",
+          "onDragStart",
+          "onDrop",
+          "onMouseDown",
+          "onMouseEnter",
+          "onMouseLeave",
+          "onMouseMove",
+          "onMouseOut",
+          "onMouseOver",
+          "onMouseUp"
+        ],
         "body": ["onError", "onLoad"],
         "iframe": ["onError", "onLoad"],
         "img": ["onError", "onLoad"]
       }
     ],
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+    "jsx-a11y-x/no-noninteractive-element-to-interactive-role": [
       2,
       {
         "ul": [
@@ -859,19 +965,18 @@
         "fieldset": ["radiogroup", "presentation"]
       }
     ],
-    "jsx-a11y/no-noninteractive-tabindex": [
+    "jsx-a11y-x/no-noninteractive-tabindex": [
       2,
       {
-        "tags": [],
         "roles": ["tabpanel"],
+        "tags": [],
         "allowExpressionValues": true
       }
     ],
-    "jsx-a11y/no-redundant-roles": [2],
-    "jsx-a11y/no-static-element-interactions": [
+    "jsx-a11y-x/no-redundant-roles": [2, {}],
+    "jsx-a11y-x/no-static-element-interactions": [
       2,
       {
-        "allowExpressionValues": true,
         "handlers": [
           "onClick",
           "onMouseDown",
@@ -879,13 +984,14 @@
           "onKeyPress",
           "onKeyDown",
           "onKeyUp"
-        ]
+        ],
+        "allowExpressionValues": true
       }
     ],
-    "jsx-a11y/role-has-required-aria-props": [2],
-    "jsx-a11y/role-supports-aria-props": [2],
-    "jsx-a11y/scope": [2],
-    "jsx-a11y/tabindex-no-positive": [2],
+    "jsx-a11y-x/role-has-required-aria-props": [2],
+    "jsx-a11y-x/role-supports-aria-props": [2],
+    "jsx-a11y-x/scope": [2],
+    "jsx-a11y-x/tabindex-no-positive": [2],
     "jsx-quotes": [0],
     "key-spacing": [0],
     "keyword-spacing": [0],
@@ -4241,20 +4347,55 @@
     "implicit-arrow-linebreak": [0],
     "indent": [0],
     "indent-legacy": [0],
-    "jsx-a11y/alt-text": [2],
-    "jsx-a11y/anchor-ambiguous-text": [0],
-    "jsx-a11y/anchor-has-content": [2],
-    "jsx-a11y/anchor-is-valid": [2],
-    "jsx-a11y/aria-activedescendant-has-tabindex": [2],
-    "jsx-a11y/aria-props": [2],
-    "jsx-a11y/aria-proptypes": [2],
-    "jsx-a11y/aria-role": [2],
-    "jsx-a11y/aria-unsupported-elements": [2],
-    "jsx-a11y/autocomplete-valid": [2],
-    "jsx-a11y/click-events-have-key-events": [2],
-    "jsx-a11y/control-has-associated-label": [
+    "jsx-a11y-x/alt-text": [
+      2,
+      {
+        "elements": ["img", "object", "area", "input[type=\"image\"]"]
+      }
+    ],
+    "jsx-a11y-x/anchor-ambiguous-text": [
       0,
       {
+        "words": ["click here", "here", "link", "a link", "learn more"]
+      }
+    ],
+    "jsx-a11y-x/anchor-has-content": [
+      2,
+      {
+        "components": []
+      }
+    ],
+    "jsx-a11y-x/anchor-is-valid": [
+      2,
+      {
+        "components": [],
+        "specialLink": [],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y-x/aria-activedescendant-has-tabindex": [2],
+    "jsx-a11y-x/aria-props": [2],
+    "jsx-a11y-x/aria-proptypes": [2],
+    "jsx-a11y-x/aria-role": [
+      2,
+      {
+        "allowedInvalidRoles": [],
+        "ignoreNonDOM": false
+      }
+    ],
+    "jsx-a11y-x/aria-unsupported-elements": [2],
+    "jsx-a11y-x/autocomplete-valid": [
+      2,
+      {
+        "inputComponents": []
+      }
+    ],
+    "jsx-a11y-x/click-events-have-key-events": [2],
+    "jsx-a11y-x/control-has-associated-label": [
+      0,
+      {
+        "labelAttributes": [],
+        "controlComponents": [],
         "ignoreElements": [
           "audio",
           "canvas",
@@ -4279,11 +4420,22 @@
         "includeRoles": ["alert", "dialog"]
       }
     ],
-    "jsx-a11y/heading-has-content": [2],
-    "jsx-a11y/html-has-lang": [2],
-    "jsx-a11y/iframe-has-title": [2],
-    "jsx-a11y/img-redundant-alt": [2],
-    "jsx-a11y/interactive-supports-focus": [
+    "jsx-a11y-x/heading-has-content": [
+      2,
+      {
+        "components": []
+      }
+    ],
+    "jsx-a11y-x/html-has-lang": [2],
+    "jsx-a11y-x/iframe-has-title": [2],
+    "jsx-a11y-x/img-redundant-alt": [
+      2,
+      {
+        "components": [],
+        "words": []
+      }
+    ],
+    "jsx-a11y-x/interactive-supports-focus": [
       2,
       {
         "tabbable": [
@@ -4299,29 +4451,89 @@
         ]
       }
     ],
-    "jsx-a11y/label-has-associated-control": [2],
-    "jsx-a11y/label-has-for": [0],
-    "jsx-a11y/media-has-caption": [2],
-    "jsx-a11y/mouse-events-have-key-events": [2],
-    "jsx-a11y/no-access-key": [2],
-    "jsx-a11y/no-autofocus": [2],
-    "jsx-a11y/no-distracting-elements": [2],
-    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+    "jsx-a11y-x/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": [],
+        "labelAttributes": [],
+        "controlComponents": [],
+        "assert": "either",
+        "depth": 2
+      }
+    ],
+    "jsx-a11y-x/label-has-for": [0],
+    "jsx-a11y-x/media-has-caption": [
+      2,
+      {
+        "audio": [],
+        "video": [],
+        "track": []
+      }
+    ],
+    "jsx-a11y-x/mouse-events-have-key-events": [
+      2,
+      {
+        "hoverInHandlers": ["onMouseOver"],
+        "hoverOutHandlers": ["onMouseOut"]
+      }
+    ],
+    "jsx-a11y-x/no-access-key": [2],
+    "jsx-a11y-x/no-autofocus": [
+      2,
+      {
+        "ignoreNonDOM": false
+      }
+    ],
+    "jsx-a11y-x/no-distracting-elements": [
+      2,
+      {
+        "elements": ["marquee", "blink"]
+      }
+    ],
+    "jsx-a11y-x/no-interactive-element-to-noninteractive-role": [
       2,
       {
         "tr": ["none", "presentation"],
         "canvas": ["img"]
       }
     ],
-    "jsx-a11y/no-noninteractive-element-interactions": [
+    "jsx-a11y-x/no-noninteractive-element-interactions": [
       2,
       {
+        "handlers": [
+          "onFocus",
+          "onBlur",
+          "onLoad",
+          "onError",
+          "onKeyDown",
+          "onKeyPress",
+          "onKeyUp",
+          "onClick",
+          "onContextMenu",
+          "onDblClick",
+          "onDoubleClick",
+          "onDrag",
+          "onDragEnd",
+          "onDragEnter",
+          "onDragExit",
+          "onDragLeave",
+          "onDragOver",
+          "onDragStart",
+          "onDrop",
+          "onMouseDown",
+          "onMouseEnter",
+          "onMouseLeave",
+          "onMouseMove",
+          "onMouseOut",
+          "onMouseOver",
+          "onMouseUp"
+        ],
         "body": ["onError", "onLoad"],
         "iframe": ["onError", "onLoad"],
         "img": ["onError", "onLoad"]
       }
     ],
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+    "jsx-a11y-x/no-noninteractive-element-to-interactive-role": [
       2,
       {
         "ul": [
@@ -4356,19 +4568,18 @@
         "fieldset": ["radiogroup", "presentation"]
       }
     ],
-    "jsx-a11y/no-noninteractive-tabindex": [
+    "jsx-a11y-x/no-noninteractive-tabindex": [
       2,
       {
-        "tags": [],
         "roles": ["tabpanel"],
+        "tags": [],
         "allowExpressionValues": true
       }
     ],
-    "jsx-a11y/no-redundant-roles": [2],
-    "jsx-a11y/no-static-element-interactions": [
+    "jsx-a11y-x/no-redundant-roles": [2, {}],
+    "jsx-a11y-x/no-static-element-interactions": [
       2,
       {
-        "allowExpressionValues": true,
         "handlers": [
           "onClick",
           "onMouseDown",
@@ -4376,13 +4587,14 @@
           "onKeyPress",
           "onKeyDown",
           "onKeyUp"
-        ]
+        ],
+        "allowExpressionValues": true
       }
     ],
-    "jsx-a11y/role-has-required-aria-props": [2],
-    "jsx-a11y/role-supports-aria-props": [2],
-    "jsx-a11y/scope": [2],
-    "jsx-a11y/tabindex-no-positive": [2],
+    "jsx-a11y-x/role-has-required-aria-props": [2],
+    "jsx-a11y-x/role-supports-aria-props": [2],
+    "jsx-a11y-x/scope": [2],
+    "jsx-a11y-x/tabindex-no-positive": [2],
     "jsx-quotes": [0],
     "key-spacing": [0],
     "keyword-spacing": [0],

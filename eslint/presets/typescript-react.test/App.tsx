@@ -21,7 +21,7 @@ export const App = (_props: { name: string; count: number }) => {
 
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      {/* eslint-disable-next-line jsx-a11y-x/alt-text */}
       <img src="some-image.jpg" />
       {/* eslint-disable-next-line react/jsx-curly-brace-presence */}
       {"Hello world"}
