@@ -46,6 +46,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Prefer staged validation for non-trivial tasks: run focused checks after meaningful changes, then run broader lint/type/test checks before handoff. For trivial tasks, a single final validation is acceptable.
 - Adjust documentation both in comments and markdown files once you're done
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
+- **Important**: For breaking changes, do not rely on the `!` shorthand (e.g. `feat!:`). This repo's semantic-release config uses the default `conventional-changelog-angular` preset, whose header parser does not recognize `!` — such commits are silently ignored (not even counted as a `feat`/`fix` release). Always add a `BREAKING CHANGE:` footer describing the change instead.
 
 ## Consumer-repo uncertainty protocol
 
