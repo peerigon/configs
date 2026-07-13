@@ -105,6 +105,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use comments to explain why, invariants, constraints, and non-obvious trade-offs
 - Do not write comments that only restate what the code already makes obvious
 - Add short contract comments only for complex or high-impact exports. Focus on purpose, guarantees, and important caveats.
+- **Comments:** no bare `/* */` block comments. Use `//` for inline notes; use JSDoc (`/** */`) for file-level comments (with `@file`) and when documenting an exported symbol, prop, or function.
 
 ## Testing
 

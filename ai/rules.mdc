@@ -45,6 +45,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Write integration or e2e tests for more complex functions/classes/components
 - Prefer staged validation for non-trivial tasks: run focused checks after meaningful changes, then run broader lint/type/test checks before handoff. For trivial tasks, a single final validation is acceptable.
 - Adjust documentation both in comments and markdown files once you're done
+- Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
 
 ## Consumer-repo uncertainty protocol
 
