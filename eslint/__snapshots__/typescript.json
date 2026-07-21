@@ -225,6 +225,7 @@
         }
       }
     ],
+    "@typescript-eslint/explicit-module-boundary-types": [1],
     "@typescript-eslint/func-call-spacing": [0],
     "@typescript-eslint/indent": [0],
     "@typescript-eslint/key-spacing": [0],
@@ -1803,6 +1804,7 @@
         }
       }
     ],
+    "@typescript-eslint/explicit-module-boundary-types": [1],
     "@typescript-eslint/func-call-spacing": [0],
     "@typescript-eslint/indent": [0],
     "@typescript-eslint/key-spacing": [0],
@@ -3383,6 +3385,7 @@
         }
       }
     ],
+    "@typescript-eslint/explicit-module-boundary-types": [1],
     "@typescript-eslint/func-call-spacing": [0],
     "@typescript-eslint/indent": [0],
     "@typescript-eslint/key-spacing": [0],

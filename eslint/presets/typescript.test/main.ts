@@ -36,7 +36,21 @@ type SomeType = {
   someMethod(): void;
 };
 
-console.log(getMessage(), SomeClass, snake_case, test);
+// Exported functions should carry an explicit return type as a contract for consumers
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const untypedExport = (value: string) => value;
+
+// Internal (non-exported) functions are fine without an explicit return type
+const inferredInternal = (value: string) => value;
+
+console.log(
+  getMessage(),
+  SomeClass,
+  snake_case,
+  test,
+  untypedExport,
+  inferredInternal,
+);
 
 /* @ts-expect-error Inconsistent returns should be caught by TypeScript */
 (() => {

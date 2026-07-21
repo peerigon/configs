@@ -165,6 +165,9 @@ export const react = [
       "@eslint-react/globals": "warn", // replaces react-hooks/globals
       "@eslint-react/immutability": "warn", // replaces react-hooks/immutability
       "@eslint-react/refs": "warn", // replaces react-hooks/refs
+      // Component return types (JSX.Element vs ReactNode vs React.ReactElement) are noisy,
+      // version-dependent, and don't add the same contract value as a typed utility function.
+      "@typescript-eslint/explicit-module-boundary-types": "off",
     },
   },
   {

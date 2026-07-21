@@ -49,6 +49,9 @@ export const typescript =
               },
             },
           ],
+          // Only exported functions need an explicit return type as a contract for consumers.
+          // Internal functions should infer their return type to keep diffs small.
+          "@typescript-eslint/explicit-module-boundary-types": "warn", // https://typescript-eslint.io/rules/explicit-module-boundary-types
           "@typescript-eslint/method-signature-style": ["warn", "property"], // https://typescript-eslint.io/rules/method-signature-style
           "@typescript-eslint/naming-convention": [
             // https://typescript-eslint.io/rules/naming-convention
