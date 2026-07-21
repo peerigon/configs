@@ -18,3 +18,7 @@ You can start from [`agent-routing.example.md`](./agent-routing.example.md) and 
 ## Migration Guide
 
 [`migrate-to.md`](./migrate-to.md) provides step-by-step instructions for coding agents for migrating projects to use `@peerigon/configs`.
+
+## Oxlint parity
+
+When improving Oxlint configs toward ESLint parity, agents should follow [`../oxlint/improve-parity.prompt.md`](../oxlint/improve-parity.prompt.md) and update [`../oxlint/GAPS.md`](../oxlint/GAPS.md).

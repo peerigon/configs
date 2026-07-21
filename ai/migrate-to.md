@@ -1,6 +1,7 @@
 I want to migrate this module to use @peerigon/configs. Follow the instructions to install the configs:
 
 - [ESLint](https://github.com/peerigon/configs/blob/main/eslint/README.md)
+- [Oxlint](https://github.com/peerigon/configs/blob/main/oxlint/README.md) (optional; best-effort alternative to ESLint — ask before switching)
 - [Prettier](https://github.com/peerigon/configs/blob/main/prettier/README.md)
 - [TypeScript](https://github.com/peerigon/configs/blob/main/typescript/README.md)
 - [Semantic release](https://github.com/peerigon/configs/blob/main/semantic-release/README.md)
@@ -23,3 +24,7 @@ Read https://github.com/peerigon/configs/blob/main/prettier/README.md for instru
 ## Step 4: Migrate ESLint and TypeScript
 
 Read https://github.com/peerigon/configs/blob/main/typescript/README.md for instructions how to configure TypeScript. Run a type check after configuring TypeScript correctly. Read https://github.com/peerigon/configs/blob/main/eslint/README.md for instructions how to configure ESLint. Run the linter after configuring ESLint correctly.
+
+## Step 5 (optional): Oxlint
+
+Only if the user asked to try Oxlint. Read https://github.com/peerigon/configs/blob/main/oxlint/README.md and https://github.com/peerigon/configs/blob/main/oxlint/GAPS.md. Install `oxlint` and `oxlint-tsgolint`, add an `oxlint.config.js` that extends a preset, and keep ESLint until gaps are acceptable.

@@ -1,6 +1,6 @@
 # configs
 
-**Best practice configs for [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/) & friends. By [Peerigon](https://www.peerigon.com/).**
+**Best practice configs for [ESLint](https://eslint.org/), [Oxlint](https://oxc.rs/docs/guide/usage/linter), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/) & friends. By [Peerigon](https://www.peerigon.com/).**
 
 [![Version on NPM](https://img.shields.io/npm/v/@peerigon/configs?style=for-the-badge)](https://www.npmjs.com/package/@peerigon/configs)
 [![Version on JSR](https://img.shields.io/jsr/v/@peerigon/configs?style=for-the-badge)](https://jsr.io/@peerigon/configs)
@@ -19,6 +19,7 @@ This package requires Node.js 22 or newer.
 Also checkout the instructions for each respective config:
 
 - [ESLint](/eslint/README.md)
+- [Oxlint](/oxlint/README.md) (best-effort opt-in alternative; see also [GAPS](/oxlint/GAPS.md))
 - [Prettier](/prettier/README.md)
 - [TypeScript](/typescript/README.md)
 - [Semantic release](/semantic-release/README.md)

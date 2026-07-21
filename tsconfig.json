@@ -6,10 +6,12 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
-  "include": ["eslint", "prettier", "typescript", "semantic-release"],
+  "include": ["eslint", "oxlint", "prettier", "typescript", "semantic-release"],
   "exclude": [
     "eslint/presets/*.test",
     "eslint/styles/*.test",
-    "eslint/rules/*.test"
+    "eslint/rules/*.test",
+    "oxlint/presets/*.test",
+    "oxlint/styles/*.test"
   ]
 }

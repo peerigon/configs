@@ -5,6 +5,7 @@
 `@peerigon/configs` is a publishable package of shared development configs and guidance:
 
 - ESLint presets, optional style packs, and library-specific rule sets
+- Oxlint presets (best-effort ESLint parity; opt-in alongside or instead of ESLint)
 - Prettier configuration plus plugins for import sorting, JSDoc, package.json, CSS, and Tailwind ordering
 - TypeScript base and library-focused `tsconfig` presets
 - Semantic-release presets (including cross-publish)
@@ -21,6 +22,7 @@ The package philosophy is:
 ## Source of truth by folder
 
 - `eslint/`: preset and rule composition source files
+- `oxlint/`: best-effort Oxlint presets/rules/styles (see `oxlint/GAPS.md` and `oxlint/improve-parity.prompt.md`)
 - `prettier/`: exported Prettier config
 - `typescript/`: exported tsconfig JSON presets and helper glue
 - `semantic-release/`: release preset exports
@@ -74,6 +76,12 @@ Run targeted checks for touched scope first, then broader checks before finishin
   - `npm run test:styles:jsx-no-literals`
   - `npm run test:rules:vitest`
   - `npm run test:snapshot` — if this fails, follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md)
+- Oxlint fixture checks (if relevant):
+  - `npm run test:oxlint:typescript`
+  - `npm run test:oxlint:typescript-react`
+  - `npm run test:oxlint:no-default-export`
+  - `npm run test:oxlint:snapshot` — if this fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md)
+  - When closing ESLint↔Oxlint gaps after an Oxlint upgrade, follow [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md)
 
 If your change affects publishing behavior, also verify:
 
@@ -82,7 +90,7 @@ If your change affects publishing behavior, also verify:
 
 ## Editing guidance by area
 
-### ESLint changes (`eslint/`)
+### `eslint/`
 
 - Keep presets composable and avoid combining multiple presets into one consumer entrypoint by default.
 - If you change or add ESLint rules, add or update tests for them whenever possible.
@@ -90,6 +98,12 @@ If your change affects publishing behavior, also verify:
 - For style rules (`eslint/styles/*`), document trade-offs in comments/docs when behavior is opinionated.
 - Preserve test relaxations where intended; strictness is context-dependent (app code vs tests).
 - When [`config-snapshot.test.js`](./eslint/config-snapshot.test.js) fails (often after a dependency upgrade), follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md): update snapshots, review the diff, adjust rule sources if needed, and ask the user for final judgement before committing.
+
+### `oxlint/`
+
+- Best-effort mirror of `eslint/`; prefer native rules, then JS plugins.
+- Keep [`oxlint/GAPS.md`](./oxlint/GAPS.md) current; use [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md) after Oxlint upgrades.
+- When [`config-snapshot.test.js`](./oxlint/config-snapshot.test.js) fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md).
 
 ### Prettier changes (`prettier/`)
 
@@ -117,7 +131,7 @@ If your change affects publishing behavior, also verify:
 When behavior changes, update the nearest relevant README:
 
 - root `README.md` for package-level behavior/philosophy
-- area README (`eslint/README.md`, `prettier/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
+- area README (`eslint/README.md`, `oxlint/README.md`, `prettier/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
 
 Keep docs practical and copy-paste friendly.
 
