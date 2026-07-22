@@ -7,6 +7,7 @@
 - ESLint presets, optional style packs, and library-specific rule sets
 - Oxlint presets (best-effort ESLint parity; opt-in alongside or instead of ESLint)
 - Prettier configuration plus plugins for import sorting, JSDoc, package.json, CSS, and Tailwind ordering
+- Oxfmt config (best-effort Prettier parity; opt-in _instead of_ Prettier — do not run both)
 - TypeScript base and library-focused `tsconfig` presets
 - Semantic-release presets (including cross-publish)
 - VSCode settings reference
@@ -24,6 +25,7 @@ The package philosophy is:
 - `eslint/`: preset and rule composition source files
 - `oxlint/`: best-effort Oxlint presets/rules/styles (see `oxlint/GAPS.md` and `oxlint/improve-parity.prompt.md`)
 - `prettier/`: exported Prettier config
+- `oxfmt/`: exported Oxfmt config (best-effort Prettier parity; pick one formatter — see `oxfmt/GAPS.md`)
 - `typescript/`: exported tsconfig JSON presets and helper glue
 - `semantic-release/`: release preset exports
 - `ai/`: agent styleguide/rules and migration guidance
@@ -82,6 +84,8 @@ Run targeted checks for touched scope first, then broader checks before finishin
   - `npm run test:oxlint:no-default-export`
   - `npm run test:oxlint:snapshot` — if this fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md)
   - When closing ESLint↔Oxlint gaps after an Oxlint upgrade, follow [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md)
+- Oxfmt fixture check (if relevant):
+  - `npm run test:oxfmt`
 
 If your change affects publishing behavior, also verify:
 
@@ -110,6 +114,13 @@ If your change affects publishing behavior, also verify:
 - Stay close to Prettier defaults unless there is strong objective value.
 - Any plugin/order change must be deterministic and reduce review noise.
 
+### `oxfmt/`
+
+- Best-effort mirror of `prettier/`; keep output as close to the Prettier config as Oxfmt allows.
+- Do not dual-run Prettier and Oxfmt — consumers pick one (Oxfmt uses its default `printWidth: 100`).
+- Keep [`oxfmt/GAPS.md`](./oxfmt/GAPS.md) (and the summary in [`oxfmt/README.md`](./oxfmt/README.md)) current when Oxfmt gains or loses parity.
+- Update the `oxfmt/base.test` fixture when the config changes, then re-run `npm run test:oxfmt`.
+
 ### TypeScript config changes (`typescript/`, root `tsconfig.json`)
 
 - Keep base configs strict and modern.
@@ -131,7 +142,7 @@ If your change affects publishing behavior, also verify:
 When behavior changes, update the nearest relevant README:
 
 - root `README.md` for package-level behavior/philosophy
-- area README (`eslint/README.md`, `oxlint/README.md`, `prettier/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
+- area README (`eslint/README.md`, `oxlint/README.md`, `prettier/README.md`, `oxfmt/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
 
 Keep docs practical and copy-paste friendly.
 

@@ -1,6 +1,6 @@
 # configs
 
-**Best practice configs for [ESLint](https://eslint.org/), [Oxlint](https://oxc.rs/docs/guide/usage/linter), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/) & friends. By [Peerigon](https://www.peerigon.com/).**
+**Best practice configs for [ESLint](https://eslint.org/), [Oxlint](https://oxc.rs/docs/guide/usage/linter), [Prettier](https://prettier.io/), [Oxfmt](https://oxc.rs/docs/guide/usage/formatter), [TypeScript](https://www.typescriptlang.org/) & friends. By [Peerigon](https://www.peerigon.com/).**
 
 [![Version on NPM](https://img.shields.io/npm/v/@peerigon/configs?style=for-the-badge)](https://www.npmjs.com/package/@peerigon/configs)
 [![Version on JSR](https://img.shields.io/jsr/v/@peerigon/configs?style=for-the-badge)](https://jsr.io/@peerigon/configs)
@@ -21,6 +21,7 @@ Also checkout the instructions for each respective config:
 - [ESLint](/eslint/README.md)
 - [Oxlint](/oxlint/README.md) (best-effort opt-in alternative; see also [GAPS](/oxlint/GAPS.md))
 - [Prettier](/prettier/README.md)
+- [Oxfmt](/oxfmt/README.md) (best-effort opt-in alternative to Prettier — pick one; see also [GAPS](/oxfmt/GAPS.md))
 - [TypeScript](/typescript/README.md)
 - [Semantic release](/semantic-release/README.md)
 - [VSCode](/.vscode/README.md)
@@ -61,6 +62,8 @@ Formatting should follow the community standard. Our config is therefore based o
 - sorts Tailwind CSS class names
 
 This makes git diffs smaller and reviewing them more focussed.
+
+[Oxfmt](/oxfmt/README.md) is available as a best-effort, opt-in alternative to Prettier. Pick one formatter per project — do not run both (defaults and plugin coverage differ; see [oxfmt/GAPS.md](/oxfmt/GAPS.md)).
 
 ### Linting
 

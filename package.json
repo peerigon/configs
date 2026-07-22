@@ -1,14 +1,15 @@
 {
   "name": "@peerigon/configs",
   "version": "0.0.0-semantically-released",
-  "description": "Configs for ESLint, Oxlint, Prettier, TypeScript & friends",
+  "description": "Configs for ESLint, Oxlint, Prettier, Oxfmt, TypeScript & friends",
   "keywords": [
     "eslint",
     "oxlint",
     "peerigon",
     "configs",
     "typescript",
-    "prettier"
+    "prettier",
+    "oxfmt"
   ],
   "homepage": "https://github.com/peerigon/configs#readme",
   "bugs": {
@@ -62,6 +63,7 @@
     "./oxlint/styles/no-null": "./dist/oxlint/styles/no-null.js",
     "./oxlint/styles/prefer-array-shorthand": "./dist/oxlint/styles/prefer-array-shorthand.js",
     "./oxlint/styles/prefer-interface": "./dist/oxlint/styles/prefer-interface.js",
+    "./oxfmt": "./dist/oxfmt/base.js",
     "./prettier": "./dist/prettier/base.js",
     "./semantic-release": "./dist/semantic-release/base.js",
     "./semantic-release/cross-publish": "./dist/semantic-release/cross-publish.js",
@@ -105,6 +107,7 @@
     "test:oxlint:no-default-export": "cd oxlint/styles/no-default-export.test; oxlint -c oxlint.config.js --deny-warnings .",
     "test:oxlint:snapshot": "node oxlint/config-snapshot.test.js",
     "test:oxlint:snapshot:update": "node oxlint/config-snapshot.test.js --update",
+    "test:oxfmt": "cd oxfmt/base.test; oxfmt --check .",
     "test:types": "tsc --noEmit"
   },
   "dependencies": {
@@ -147,6 +150,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "npm-run-all2": "^9.0.2",
+    "oxfmt": "^0.59.0",
     "oxlint": "^1.73.0",
     "oxlint-tsgolint": "^0.24.0",
     "pin-github-action": "^3.4.0",
@@ -158,6 +162,7 @@
   },
   "peerDependencies": {
     "eslint": "^9.38.0",
+    "oxfmt": "^0.59.0",
     "oxlint": "^1.73.0",
     "oxlint-tsgolint": "^0.24.0",
     "prettier": "^3.6.2",
@@ -166,6 +171,9 @@
   },
   "peerDependenciesMeta": {
     "eslint": {
+      "optional": true
+    },
+    "oxfmt": {
       "optional": true
     },
     "oxlint": {

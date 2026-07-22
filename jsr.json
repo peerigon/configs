@@ -43,6 +43,7 @@
     "./oxlint/styles/no-null": "./dist/oxlint/styles/no-null.js",
     "./oxlint/styles/prefer-array-shorthand": "./dist/oxlint/styles/prefer-array-shorthand.js",
     "./oxlint/styles/prefer-interface": "./dist/oxlint/styles/prefer-interface.js",
+    "./oxfmt": "./dist/oxfmt/base.js",
     "./prettier": "./dist/prettier/base.js",
     "./semantic-release": "./dist/semantic-release/base.js",
     "./semantic-release/cross-publish": "./dist/semantic-release/cross-publish.js",

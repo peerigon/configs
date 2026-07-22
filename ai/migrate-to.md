@@ -3,6 +3,7 @@ I want to migrate this module to use @peerigon/configs. Follow the instructions 
 - [ESLint](https://github.com/peerigon/configs/blob/main/eslint/README.md)
 - [Oxlint](https://github.com/peerigon/configs/blob/main/oxlint/README.md) (optional; best-effort alternative to ESLint — ask before switching)
 - [Prettier](https://github.com/peerigon/configs/blob/main/prettier/README.md)
+- [Oxfmt](https://github.com/peerigon/configs/blob/main/oxfmt/README.md) (optional; best-effort _replacement_ for Prettier — ask before switching; do not run both)
 - [TypeScript](https://github.com/peerigon/configs/blob/main/typescript/README.md)
 - [Semantic release](https://github.com/peerigon/configs/blob/main/semantic-release/README.md)
 - [VSCode](https://github.com/peerigon/configs/blob/main/.vscode/README.md)
@@ -28,3 +29,7 @@ Read https://github.com/peerigon/configs/blob/main/typescript/README.md for inst
 ## Step 5 (optional): Oxlint
 
 Only if the user asked to try Oxlint. Read https://github.com/peerigon/configs/blob/main/oxlint/README.md and https://github.com/peerigon/configs/blob/main/oxlint/GAPS.md. Install `oxlint` and `oxlint-tsgolint`, add an `oxlint.config.js` that extends a preset, and keep ESLint until gaps are acceptable.
+
+## Step 6 (optional): Oxfmt
+
+Only if the user asked to switch to Oxfmt. Read https://github.com/peerigon/configs/blob/main/oxfmt/README.md and https://github.com/peerigon/configs/blob/main/oxfmt/GAPS.md. Install `oxfmt`, add an `oxfmt.config.mts` that re-exports the config, remove Prettier (and its config), and point `test:format` at `oxfmt --check .`. Do not run Prettier and Oxfmt together.
