@@ -4,7 +4,9 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { promisify } from "node:util";
+
 import picomatch from "picomatch";
+
 import { javascriptBrowserPreset } from "./presets/javascript-browser.js";
 import { javascriptNodePreset } from "./presets/javascript-node.js";
 import { javascriptPreset } from "./presets/javascript.js";
@@ -14,14 +16,8 @@ import { typescriptPreset } from "./presets/typescript.js";
 
 const execFileAsync = promisify(execFile);
 const require = createRequire(import.meta.url);
-const oxlintBin = join(
-  dirname(require.resolve("oxlint/package.json")),
-  "bin/oxlint",
-);
-const prettierBin = join(
-  dirname(require.resolve("prettier/package.json")),
-  "bin/prettier.cjs",
-);
+const oxlintBin = join(dirname(require.resolve("oxlint/package.json")), "bin/oxlint");
+const oxfmtBin = join(dirname(require.resolve("oxfmt/package.json")), "bin/oxfmt");
 
 const updateSnapshots = process.argv.includes("--update");
 const snapshotsDirectory = join(import.meta.dirname, "__snapshots__");
@@ -75,10 +71,8 @@ void [
 function sortRules(rules) {
   return Object.fromEntries(
     Object.entries(rules ?? {}).toSorted(
-      (
-        /** @type {[string, unknown]} */ [left],
-        /** @type {[string, unknown]} */ [right],
-      ) => left.localeCompare(right),
+      (/** @type {[string, unknown]} */ [left], /** @type {[string, unknown]} */ [right]) =>
+        left.localeCompare(right),
     ),
   );
 }
@@ -98,10 +92,7 @@ async function readSnapshot(snapshotPath, presetName) {
   try {
     return await readFile(snapshotPath, "utf8");
   } catch (error) {
-    if (
-      error instanceof Error &&
-      /** @type {NodeJS.ErrnoException} */ (error).code === "ENOENT"
-    ) {
+    if (error instanceof Error && /** @type {NodeJS.ErrnoException} */ (error).code === "ENOENT") {
       throw new Error(
         `Missing snapshot for preset "${presetName}" at ${snapshotPath}; run npm run test:oxlint:snapshot:update to create it`,
         { cause: error },
@@ -126,10 +117,17 @@ function matchesGlobs(globs, filePath) {
 }
 
 /**
- * Oxlint `--print-config` dumps the root config (with overrides still separate).
- * Apply matching overrides to approximate per-file resolution like ESLint.
+ * Oxlint `--print-config` dumps the root config (with overrides still separate). Apply matching
+ * overrides to approximate per-file resolution like ESLint.
  *
- * @param {{ rules?: Record<string, unknown>; overrides?: Array<{ files?: string | string[]; excludeFiles?: string | string[]; rules?: Record<string, unknown> }> }} printed
+ * @param {{
+ *   rules?: Record<string, unknown>;
+ *   overrides?: {
+ *     files?: string | string[];
+ *     excludeFiles?: string | string[];
+ *     rules?: Record<string, unknown>;
+ *   }[];
+ * }} printed
  * @param {string} filePath
  */
 function resolveRulesForFile(printed, filePath) {
@@ -141,10 +139,7 @@ function resolveRulesForFile(printed, filePath) {
       continue;
     }
 
-    if (
-      override.excludeFiles !== undefined &&
-      matchesGlobs(override.excludeFiles, filePath)
-    ) {
+    if (override.excludeFiles !== undefined && matchesGlobs(override.excludeFiles, filePath)) {
       continue;
     }
 
@@ -174,14 +169,13 @@ async function printOxlintConfig(presetPath) {
   }
 
   try {
-    return /** @type {{ rules?: Record<string, unknown>; overrides?: Array<Record<string, unknown>> }} */ (
+    return /** @type {{ rules?: Record<string, unknown>; overrides?: Record<string, unknown>[] }} */ (
       JSON.parse(stdout)
     );
   } catch (error) {
-    throw new Error(
-      `Failed to parse oxlint --print-config output for ${presetPath}:\n${stdout}`,
-      { cause: error },
-    );
+    throw new Error(`Failed to parse oxlint --print-config output for ${presetPath}:\n${stdout}`, {
+      cause: error,
+    });
   }
 }
 
@@ -201,13 +195,9 @@ async function snapshotPreset(presetName, presetPath, files) {
   if (updateSnapshots) {
     await mkdir(snapshotsDirectory, { recursive: true });
     await writeFile(snapshotPath, snapshotStringify(snapshot));
-    await execFileAsync(
-      process.execPath,
-      [prettierBin, "--write", snapshotPath],
-      {
-        cwd: packageRoot,
-      },
-    );
+    await execFileAsync(process.execPath, [oxfmtBin, "--write", snapshotPath], {
+      cwd: packageRoot,
+    });
     console.log(`updated ${snapshotPath}`);
     return;
   }

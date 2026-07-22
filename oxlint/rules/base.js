@@ -1,7 +1,4 @@
-/**
- * Base Oxlint options shared by all presets.
- * .gitignore is respected by Oxlint automatically.
- */
+/** Base Oxlint options shared by all presets. .gitignore is respected by Oxlint automatically. */
 export const base = {
   ignorePatterns: ["**/*.generated.*"],
   options: {

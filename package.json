@@ -3,24 +3,32 @@
   "version": "0.0.0-semantically-released",
   "description": "Configs for ESLint, Oxlint, Prettier, Oxfmt, TypeScript & friends",
   "keywords": [
+    "configs",
     "eslint",
+    "oxfmt",
     "oxlint",
     "peerigon",
-    "configs",
-    "typescript",
     "prettier",
-    "oxfmt"
+    "typescript"
   ],
   "homepage": "https://github.com/peerigon/configs#readme",
   "bugs": {
     "url": "https://github.com/peerigon/configs/issues"
   },
+  "license": "MIT",
+  "author": "Peerigon GmbH <hello@peerigon.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peerigon/configs.git"
   },
-  "license": "MIT",
-  "author": "Peerigon GmbH <hello@peerigon.com>",
+  "bin": {
+    "verify-publishable": "dist/semantic-release/verify-publishable.js"
+  },
+  "files": [
+    "dist",
+    "ai",
+    "README.md"
+  ],
   "type": "module",
   "exports": {
     "./eslint/presets/javascript": "./dist/eslint/presets/javascript.js",
@@ -71,14 +79,10 @@
     "./typescript/lib": "./dist/typescript/lib.json",
     "./typescript/js-lib": "./dist/typescript/js-lib.json"
   },
-  "bin": {
-    "verify-publishable": "dist/semantic-release/verify-publishable.js"
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
-  "files": [
-    "dist",
-    "ai",
-    "README.md"
-  ],
   "scripts": {
     "build": "run-s build:*",
     "build:clear": "rimraf dist",
@@ -88,7 +92,7 @@
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
     "test": "run-p test:* test:presets:* test:rules:* test:styles:* test:oxlint:*",
-    "test:format": "prettier --check .",
+    "test:format": "oxfmt --check .",
     "test:lint": "eslint --cache --max-warnings 0 .",
     "test:publishable": "node ./semantic-release/verify-publishable.js",
     "test:snapshot": "node eslint/config-snapshot.test.js",
@@ -192,9 +196,6 @@
       "optional": true
     }
   },
-  "engines": {
-    "node": ">=22.0.0"
-  },
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -202,8 +203,7 @@
       "onFail": "error"
     }
   },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

@@ -1,8 +1,7 @@
 /**
  * ## Base config for Prettier.
  *
- * Our base config is entirely based on Prettier's default config. Besides that,
- * it also:
+ * Our base config is entirely based on Prettier's default config. Besides that, it also:
  *
  * - Auto-sorts `import` statements
  * - Formats JSDoc comments
@@ -18,9 +17,7 @@
  * @returns {string}
  */
 function safeResolve(id) {
-  return "resolve" in import.meta
-    ? import.meta.resolve(id).slice("file://".length)
-    : id;
+  return "resolve" in import.meta ? import.meta.resolve(id).slice("file://".length) : id;
 }
 
 // Using safeResolve() here because the plugins might not be installed in the parent app/module
@@ -35,19 +32,13 @@ const plugins = await Promise.all([
 ]);
 
 /**
- * Provides the default configuration for Prettier with customized plugins and
- * sorting rules.
+ * Provides the default configuration for Prettier with customized plugins and sorting rules.
  *
  * @type {import("prettier").Config}
  */
 export const config = {
   plugins,
-  importOrderParserPlugins: [
-    "typescript",
-    "jsx",
-    "decorators",
-    "importAttributes",
-  ],
+  importOrderParserPlugins: ["typescript", "jsx", "decorators", "importAttributes"],
   importOrderTypeScriptVersion: "5.0.0",
   cssDeclarationSorterOrder: "smacss",
   cssDeclarationSorterKeepOverrides: false,

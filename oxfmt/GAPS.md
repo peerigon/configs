@@ -36,7 +36,7 @@ Generic Prettier plugins are [not supported](https://oxc.rs/docs/guide/usage/for
 ## Intentional non-goals (for now)
 
 - Running Prettier and Oxfmt on the same codebase (different `printWidth` and plugin gaps make dual use impractical).
-- Replacing Prettier with Oxfmt in this package — Oxfmt is an opt-in alternative; this repo still dogfoods Prettier.
+- Dropping the published Prettier config — this repo dogfoods Oxfmt locally, but still ships `@peerigon/configs/prettier` for consumers.
 - Byte-for-byte output parity with Prettier + plugins.
 
 ## How to verify a gap is closed

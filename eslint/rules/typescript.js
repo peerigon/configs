@@ -1,5 +1,6 @@
 import preferArrow from "eslint-plugin-prefer-arrow";
 import tsEslint from "typescript-eslint";
+
 import { globPatterns } from "../lib/glob-patterns.js";
 import { ruleOptions } from "../lib/rule-options.js";
 

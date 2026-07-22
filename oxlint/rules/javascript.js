@@ -3,8 +3,8 @@ import { eslintJsPlugin } from "../lib/plugins.js";
 import { ruleOptions } from "../lib/rule-options.js";
 
 /**
- * JavaScript + unicorn rule pack (best-effort port of eslint/rules/javascript.js).
- * Presets must set `plugins` to include eslint, unicorn, oxc.
+ * JavaScript + unicorn rule pack (best-effort port of eslint/rules/javascript.js). Presets must set
+ * `plugins` to include eslint, unicorn, oxc.
  */
 export const javascript = {
   jsPlugins: [eslintJsPlugin, "eslint-plugin-no-only-tests"],

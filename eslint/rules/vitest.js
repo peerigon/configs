@@ -1,4 +1,5 @@
 import vitestPlugin from "@vitest/eslint-plugin";
+
 import { globPatterns } from "../lib/glob-patterns.js";
 
 const files = globPatterns.tests;

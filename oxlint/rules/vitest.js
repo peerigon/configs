@@ -1,11 +1,9 @@
 import { globPatterns } from "../lib/glob-patterns.js";
 
 /**
- * Vitest rule pack.
- * When extending this pack, add `"vitest"` to your root `plugins` array
- * (setting `plugins` replaces Oxlint defaults — include eslint/unicorn/etc.).
- * Do not set `plugins` on the override — Oxlint replaces (does not merge)
- * the plugin set for matched files.
+ * Vitest rule pack. When extending this pack, add `"vitest"` to your root `plugins` array (setting
+ * `plugins` replaces Oxlint defaults — include eslint/unicorn/etc.). Do not set `plugins` on the
+ * override — Oxlint replaces (does not merge) the plugin set for matched files.
  */
 export const vitest = {
   settings: {

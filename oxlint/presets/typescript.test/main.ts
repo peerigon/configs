@@ -30,10 +30,4 @@ type SomeType = {
   someMethod(): void;
 };
 
-console.log(
-  getMessage(),
-  SomeClass,
-  snake_case,
-  untypedExport,
-  inferredInternal,
-);
+console.log(getMessage(), SomeClass, snake_case, untypedExport, inferredInternal);

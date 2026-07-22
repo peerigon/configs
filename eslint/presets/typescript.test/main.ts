@@ -43,14 +43,7 @@ export const untypedExport = (value: string) => value;
 // Internal (non-exported) functions are fine without an explicit return type
 const inferredInternal = (value: string) => value;
 
-console.log(
-  getMessage(),
-  SomeClass,
-  snake_case,
-  test,
-  untypedExport,
-  inferredInternal,
-);
+console.log(getMessage(), SomeClass, snake_case, test, untypedExport, inferredInternal);
 
 /* @ts-expect-error Inconsistent returns should be caught by TypeScript */
 (() => {

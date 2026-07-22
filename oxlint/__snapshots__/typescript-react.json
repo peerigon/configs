@@ -288,14 +288,7 @@
       [
         {
           "allowConstantExport": true,
-          "allowExportNames": [
-            "getServerSideProps",
-            "meta",
-            "links",
-            "headers",
-            "loader",
-            "action"
-          ]
+          "allowExportNames": ["getServerSideProps", "meta", "links", "headers", "loader", "action"]
         }
       ]
     ],
@@ -762,14 +755,7 @@
       [
         {
           "allowConstantExport": true,
-          "allowExportNames": [
-            "getServerSideProps",
-            "meta",
-            "links",
-            "headers",
-            "loader",
-            "action"
-          ]
+          "allowExportNames": ["getServerSideProps", "meta", "links", "headers", "loader", "action"]
         }
       ]
     ],

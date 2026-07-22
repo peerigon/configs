@@ -1,9 +1,8 @@
 import { globPatterns } from "../lib/glob-patterns.js";
 
 /**
- * Native React + jsx-a11y + Compiler (best-effort stand-in for @eslint-react).
- * Presets must include plugins: react, jsx-a11y.
- * See GAPS.md for @eslint-react parity gaps.
+ * Native React + jsx-a11y + Compiler (best-effort stand-in for @eslint-react). Presets must include
+ * plugins: react, jsx-a11y. See GAPS.md for @eslint-react parity gaps.
  */
 export const react = {
   jsPlugins: ["eslint-plugin-react-you-might-not-need-an-effect"],
@@ -74,8 +73,7 @@ export const react = {
     "react-you-might-not-need-an-effect/no-chain-state-updates": "warn",
     "react-you-might-not-need-an-effect/no-event-handler": "warn",
     "react-you-might-not-need-an-effect/no-adjust-state-on-prop-change": "warn",
-    "react-you-might-not-need-an-effect/no-reset-all-state-on-prop-change":
-      "warn",
+    "react-you-might-not-need-an-effect/no-reset-all-state-on-prop-change": "warn",
     "react-you-might-not-need-an-effect/no-pass-live-state-to-parent": "warn",
     "react-you-might-not-need-an-effect/no-pass-data-to-parent": "warn",
     "react-you-might-not-need-an-effect/no-external-store-subscription": "warn",

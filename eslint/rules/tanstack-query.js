@@ -1,4 +1,5 @@
 import pluginQuery from "@tanstack/eslint-plugin-query";
+
 import { globPatterns } from "../lib/glob-patterns.js";
 
 const files = [
@@ -9,9 +10,6 @@ const files = [
 ];
 
 /** @type {import("eslint").Linter.Config[]} */
-export const tanstackQuery = [
-  { files },
-  ...pluginQuery.configs["flat/recommended"],
-];
+export const tanstackQuery = [{ files }, ...pluginQuery.configs["flat/recommended"]];
 
 export default tanstackQuery;

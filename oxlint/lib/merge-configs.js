@@ -15,9 +15,9 @@
  */
 
 /**
- * Shallow-merge Oxlint config objects for published presets.
- * Arrays (plugins, jsPlugins, overrides, ignorePatterns) are concatenated;
- * later objects win for scalar/object fields (rules, env, settings, options, categories).
+ * Shallow-merge Oxlint config objects for published presets. Arrays (plugins, jsPlugins, overrides,
+ * ignorePatterns) are concatenated; later objects win for scalar/object fields (rules, env,
+ * settings, options, categories).
  *
  * @param {...OxlintConfig} configs
  * @returns {OxlintConfig}
@@ -26,20 +26,8 @@ export function mergeConfigs(...configs) {
   /** @type {OxlintConfig} */
   const out = {};
 
-  const arrayKeys = new Set([
-    "plugins",
-    "jsPlugins",
-    "overrides",
-    "ignorePatterns",
-  ]);
-  const objectKeys = new Set([
-    "rules",
-    "env",
-    "globals",
-    "settings",
-    "options",
-    "categories",
-  ]);
+  const arrayKeys = new Set(["plugins", "jsPlugins", "overrides", "ignorePatterns"]);
+  const objectKeys = new Set(["rules", "env", "globals", "settings", "options", "categories"]);
 
   for (const config of configs) {
     if (!config) continue;
@@ -76,15 +64,12 @@ export function mergeConfigs(...configs) {
 
   if (Array.isArray(out.jsPlugins)) {
     const seen = new Set();
-    out.jsPlugins = /** @type {unknown[]} */ (out.jsPlugins).filter(
-      (plugin) => {
-        const key =
-          typeof plugin === "string" ? plugin : JSON.stringify(plugin);
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      },
-    );
+    out.jsPlugins = /** @type {unknown[]} */ (out.jsPlugins).filter((plugin) => {
+      const key = typeof plugin === "string" ? plugin : JSON.stringify(plugin);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }
 
   return out;

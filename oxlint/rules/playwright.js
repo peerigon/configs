@@ -1,8 +1,6 @@
 import { globPatterns } from "../lib/glob-patterns.js";
 
-/**
- * Playwright via JS plugin (no native Oxlint playwright plugin).
- */
+/** Playwright via JS plugin (no native Oxlint playwright plugin). */
 export const playwright = {
   jsPlugins: ["eslint-plugin-playwright"],
   overrides: [

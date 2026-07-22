@@ -1,8 +1,8 @@
 /**
  * Generic semantic-release config shape for portable declaration output.
  *
- * We intentionally avoid `import("semantic-release")` JSDoc types here, because
- * those generate declaration symbols that break JSR's API symbol parser.
+ * We intentionally avoid `import("semantic-release")` JSDoc types here, because those generate
+ * declaration symbols that break JSR's API symbol parser.
  *
  * @typedef {Record<string, unknown> & {
  *   branches?: Record<string, unknown>[];
@@ -12,9 +12,7 @@
 
 import { fileURLToPath } from "node:url";
 
-const verifyPublishableScript = fileURLToPath(
-  new URL("verify-publishable.js", import.meta.url),
-);
+const verifyPublishableScript = fileURLToPath(new URL("verify-publishable.js", import.meta.url));
 
 /** @type {SemanticReleaseConfig} */
 export const config = {

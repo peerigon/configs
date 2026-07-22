@@ -2,9 +2,9 @@ import { globPatterns } from "../lib/glob-patterns.js";
 import { ruleOptions } from "../lib/rule-options.js";
 
 /**
- * TypeScript rule pack (best-effort port of eslint/rules/typescript.js).
- * naming-convention → id-match (see GAPS.md).
- * Presets must set plugins to include typescript and options.typeAware: true.
+ * TypeScript rule pack (best-effort port of eslint/rules/typescript.js). naming-convention →
+ * id-match (see GAPS.md). Presets must set plugins to include typescript and options.typeAware:
+ * true.
  */
 export const typescript = {
   jsPlugins: ["eslint-plugin-prefer-arrow"],

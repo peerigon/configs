@@ -1,6 +1,4 @@
-/**
- * TanStack Query via JS plugin (aliased to avoid scoped `/` naming issues).
- */
+/** TanStack Query via JS plugin (aliased to avoid scoped `/` naming issues). */
 export const tanstackQuery = {
   jsPlugins: [
     {

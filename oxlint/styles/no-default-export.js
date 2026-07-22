@@ -2,8 +2,8 @@ import { globPatterns } from "../lib/glob-patterns.js";
 import { eslintJsPlugin } from "../lib/plugins.js";
 
 /**
- * Ban default exports (via eslint-js/no-restricted-syntax).
- * Ignores config files and ambient declarations.
+ * Ban default exports (via eslint-js/no-restricted-syntax). Ignores config files and ambient
+ * declarations.
  */
 export const noDefaultExport = {
   jsPlugins: [eslintJsPlugin],

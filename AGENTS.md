@@ -52,7 +52,7 @@ Do not edit `dist/` manually (it is build output).
 
 ### Ignoring and generated files
 
-- ESLint and Prettier conventions treat `**/*.generated.*` as ignored/generated.
+- ESLint and Oxfmt conventions treat `**/*.generated.*` as ignored/generated.
 - Do not hand-edit generated/demo artifacts unless the task is specifically about those artifacts.
 
 ## Validation workflow
@@ -64,7 +64,7 @@ Run targeted checks for touched scope first, then broader checks before finishin
   - `npm run build`
 - Common focused checks:
   - `npm run test:lint`
-  - `npm run test:format`
+  - `npm run test:format` — Oxfmt (`oxfmt --check .`)
   - `npm run test:types`
   - `npm run test:publishable`
 - ESLint preset/style/rule fixture checks (if relevant):
@@ -117,7 +117,8 @@ If your change affects publishing behavior, also verify:
 ### `oxfmt/`
 
 - Best-effort mirror of `prettier/`; keep output as close to the Prettier config as Oxfmt allows.
-- Do not dual-run Prettier and Oxfmt — consumers pick one (Oxfmt uses its default `printWidth: 100`).
+- This repo dogfoods Oxfmt (root `oxfmt.config.mts`, `test:format`, lint-staged, `.vscode` formatter). Keep publishing the Prettier config for consumers who still use Prettier.
+- Do not dual-run Prettier and Oxfmt in a consumer project — pick one (Oxfmt uses its default `printWidth: 100`).
 - Keep [`oxfmt/GAPS.md`](./oxfmt/GAPS.md) (and the summary in [`oxfmt/README.md`](./oxfmt/README.md)) current when Oxfmt gains or loses parity.
 - Update the `oxfmt/base.test` fixture when the config changes, then re-run `npm run test:oxfmt`.
 

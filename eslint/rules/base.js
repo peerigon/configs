@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+
 import { includeIgnoreFile } from "@eslint/compat";
 
 const gitignorePath = path.resolve(process.cwd(), ".gitignore");

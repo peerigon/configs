@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+
 import reactPlugin2 from "@eslint-react/eslint-plugin";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
+
 import { react } from "./react.js";
 
 const recommendedRules = reactHooksPlugin.configs.flat.recommended.rules;
@@ -28,8 +30,7 @@ assert.deepEqual(
 
 // @eslint-react owns every eslint-plugin-react rule it provides: the conflict-disable
 // preset must turn off the overlapping eslint-plugin-react rules so @eslint-react wins.
-const conflictReactRules =
-  reactPlugin2.configs["disable-conflict-eslint-plugin-react"].rules ?? {};
+const conflictReactRules = reactPlugin2.configs["disable-conflict-eslint-plugin-react"].rules ?? {};
 
 const conflictReactConfigs = react.filter(
   (config) =>

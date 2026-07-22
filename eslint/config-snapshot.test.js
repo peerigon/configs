@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+
 import { ESLint } from "eslint";
+
 import javascriptBrowserPreset from "./presets/javascript-browser.js";
 import javascriptNodePreset from "./presets/javascript-node.js";
 import javascriptPreset from "./presets/javascript.js";
@@ -12,7 +14,13 @@ import typescriptPreset from "./presets/typescript.js";
 const updateSnapshots = process.argv.includes("--update");
 const snapshotsDirectory = join(import.meta.dirname, "__snapshots__");
 
-/** @type {ReadonlyArray<{ name: string; preset: import("eslint").Linter.Config[]; files: readonly string[] }>} */
+/**
+ * @type {ReadonlyArray<{
+ *   name: string;
+ *   preset: import("eslint").Linter.Config[];
+ *   files: readonly string[];
+ * }>}
+ */
 const presetMatrix = [
   {
     name: "javascript",
@@ -50,10 +58,8 @@ const presetMatrix = [
 function sortRules(rules) {
   return Object.fromEntries(
     Object.entries(rules ?? {}).toSorted(
-      (
-        /** @type {[string, unknown]} */ [left],
-        /** @type {[string, unknown]} */ [right],
-      ) => left.localeCompare(right),
+      (/** @type {[string, unknown]} */ [left], /** @type {[string, unknown]} */ [right]) =>
+        left.localeCompare(right),
     ),
   );
 }
@@ -102,10 +108,7 @@ async function readSnapshot(snapshotPath, presetName) {
   try {
     return await readFile(snapshotPath, "utf8");
   } catch (error) {
-    if (
-      error instanceof Error &&
-      /** @type {NodeJS.ErrnoException} */ (error).code === "ENOENT"
-    ) {
+    if (error instanceof Error && /** @type {NodeJS.ErrnoException} */ (error).code === "ENOENT") {
       throw new Error(
         `Missing snapshot for preset "${presetName}" at ${snapshotPath}; run npm run test:snapshot:update to create it`,
         { cause: error },
@@ -122,7 +125,10 @@ async function resolveRules(eslint, filePath) {
   return normalizeForSnapshot(sortRules(rules));
 }
 
-/** @param {string} presetName @param {import("eslint").Linter.Config[]} preset @param {readonly string[]} files */
+/**
+ * @param {string} presetName @param {import("eslint").Linter.Config[]} preset @param {readonly
+ *   string[]} files
+ */
 async function snapshotPreset(presetName, preset, files) {
   // One ESLint instance per preset is enough; reuse it for every file so the
   // plugin/config loading only happens once per preset.

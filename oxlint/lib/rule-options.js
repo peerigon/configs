@@ -1,6 +1,7 @@
 /**
- * Shared rule options for Oxlint configs.
- * id-match approximates @typescript-eslint/naming-convention (see GAPS.md).
+ * Shared rule options for Oxlint configs. id-match approximates
+ *
+ * @typescript-eslint/naming-convention (see GAPS.md).
  */
 export const ruleOptions = {
   "no-unused-vars": {
@@ -17,10 +18,9 @@ export const ruleOptions = {
     allowTernary: true,
   },
   /**
-   * Approximates naming-convention formats:
-   * camelCase | PascalCase | UPPER_CASE, optional leading `_`,
-   * plus `__` / `UNSAFE_` escape hatches.
-   * Does not enforce selector-specific formats (see GAPS.md).
+   * Approximates naming-convention formats: camelCase | PascalCase | UPPER_CASE, optional leading
+   * `_`, plus `__` / `UNSAFE_` escape hatches. Does not enforce selector-specific formats (see
+   * GAPS.md).
    */
   "id-match": [
     "warn",

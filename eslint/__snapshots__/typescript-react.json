@@ -794,15 +794,7 @@
       {
         "labelAttributes": [],
         "controlComponents": [],
-        "ignoreElements": [
-          "audio",
-          "canvas",
-          "embed",
-          "input",
-          "textarea",
-          "tr",
-          "video"
-        ],
+        "ignoreElements": ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
         "ignoreRoles": [
           "grid",
           "listbox",
@@ -934,33 +926,9 @@
     "jsx-a11y-x/no-noninteractive-element-to-interactive-role": [
       2,
       {
-        "ul": [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid"
-        ],
-        "ol": [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid"
-        ],
-        "li": [
-          "menuitem",
-          "menuitemradio",
-          "menuitemcheckbox",
-          "option",
-          "row",
-          "tab",
-          "treeitem"
-        ],
+        "ul": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
+        "ol": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
+        "li": ["menuitem", "menuitemradio", "menuitemcheckbox", "option", "row", "tab", "treeitem"],
         "table": ["grid"],
         "td": ["gridcell"],
         "fieldset": ["radiogroup", "presentation"]
@@ -978,14 +946,7 @@
     "jsx-a11y-x/no-static-element-interactions": [
       2,
       {
-        "handlers": [
-          "onClick",
-          "onMouseDown",
-          "onMouseUp",
-          "onKeyPress",
-          "onKeyDown",
-          "onKeyUp"
-        ],
+        "handlers": ["onClick", "onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"],
         "allowExpressionValues": true
       }
     ],
@@ -1410,14 +1371,7 @@
       1,
       {
         "allowConstantExport": true,
-        "allowExportNames": [
-          "getServerSideProps",
-          "meta",
-          "links",
-          "headers",
-          "loader",
-          "action"
-        ]
+        "allowExportNames": ["getServerSideProps", "meta", "links", "headers", "loader", "action"]
       }
     ],
     "react-you-might-not-need-an-effect/no-adjust-state-on-prop-change": [1],
@@ -4399,15 +4353,7 @@
       {
         "labelAttributes": [],
         "controlComponents": [],
-        "ignoreElements": [
-          "audio",
-          "canvas",
-          "embed",
-          "input",
-          "textarea",
-          "tr",
-          "video"
-        ],
+        "ignoreElements": ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
         "ignoreRoles": [
           "grid",
           "listbox",
@@ -4539,33 +4485,9 @@
     "jsx-a11y-x/no-noninteractive-element-to-interactive-role": [
       2,
       {
-        "ul": [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid"
-        ],
-        "ol": [
-          "listbox",
-          "menu",
-          "menubar",
-          "radiogroup",
-          "tablist",
-          "tree",
-          "treegrid"
-        ],
-        "li": [
-          "menuitem",
-          "menuitemradio",
-          "menuitemcheckbox",
-          "option",
-          "row",
-          "tab",
-          "treeitem"
-        ],
+        "ul": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
+        "ol": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
+        "li": ["menuitem", "menuitemradio", "menuitemcheckbox", "option", "row", "tab", "treeitem"],
         "table": ["grid"],
         "td": ["gridcell"],
         "fieldset": ["radiogroup", "presentation"]
@@ -4583,14 +4505,7 @@
     "jsx-a11y-x/no-static-element-interactions": [
       2,
       {
-        "handlers": [
-          "onClick",
-          "onMouseDown",
-          "onMouseUp",
-          "onKeyPress",
-          "onKeyDown",
-          "onKeyUp"
-        ],
+        "handlers": ["onClick", "onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"],
         "allowExpressionValues": true
       }
     ],
@@ -5016,14 +4931,7 @@
       0,
       {
         "allowConstantExport": true,
-        "allowExportNames": [
-          "getServerSideProps",
-          "meta",
-          "links",
-          "headers",
-          "loader",
-          "action"
-        ]
+        "allowExportNames": ["getServerSideProps", "meta", "links", "headers", "loader", "action"]
       }
     ],
     "react-you-might-not-need-an-effect/no-adjust-state-on-prop-change": [1],

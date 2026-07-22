@@ -1,4 +1,1 @@
 **/*.generated.*
-
-# Formatted by Oxfmt (see oxfmt/base.test), not Prettier
-oxfmt/base.test/

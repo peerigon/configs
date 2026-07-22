@@ -1,4 +1,1 @@
-export {
-  typescriptNodePreset,
-  typescriptNodePreset as default,
-} from "../lib/presets.js";
+export { typescriptNodePreset, typescriptNodePreset as default } from "../lib/presets.js";

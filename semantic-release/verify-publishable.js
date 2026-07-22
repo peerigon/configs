@@ -1,18 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * @file Verifies that the package in the current working directory is correctly
- *   configured for publishing.
- *
- *   It runs `publint` (validates `package.json` entries, `exports`, `files`,
- *   etc.) and `@arethetypeswrong/cli` (validates that exports resolve to correct
- *   type declarations). Both tools are resolved from this package's own
- *   dependency tree and executed via `node`, so consumers never trigger an
- *   `npx` download and always run the pinned, installed versions.
- *
- *   This is used by the semantic-release `verifyConditionsCmd` and is also
- *   exposed as the `peerigon-verify-publishable` bin so consumers can run the
- *   exact same check as part of their own test suite.
+ * @file Verifies that the package in the current working directory is correctly configured for
+ *   publishing. It runs `publint` (validates `package.json` entries, `exports`, `files`, etc.) and
+ *   `@arethetypeswrong/cli` (validates that exports resolve to correct type declarations). Both
+ *   tools are resolved from this package's own dependency tree and executed via `node`, so
+ *   consumers never trigger an `npx` download and always run the pinned, installed versions. This
+ *   is used by the semantic-release `verifyConditionsCmd` and is also exposed as the
+ *   `peerigon-verify-publishable` bin so consumers can run the exact same check as part of their
+ *   own test suite.
  */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
@@ -22,8 +18,8 @@ import { dirname, join } from "node:path";
 const requireFromHere = createRequire(import.meta.url);
 
 /**
- * Resolves a package's bin script from this package's dependency tree so the
- * checks run the installed copy and never trigger an npx download.
+ * Resolves a package's bin script from this package's dependency tree so the checks run the
+ * installed copy and never trigger an npx download.
  *
  * @param {string} pkg
  * @param {string} [binName]
@@ -34,10 +30,7 @@ function resolveBin(pkg, binName = pkg) {
     const pkgJsonPath = join(base, pkg, "package.json");
     try {
       const { bin } = JSON.parse(readFileSync(pkgJsonPath, "utf8"));
-      return join(
-        dirname(pkgJsonPath),
-        typeof bin === "string" ? bin : bin[binName],
-      );
+      return join(dirname(pkgJsonPath), typeof bin === "string" ? bin : bin[binName]);
     } catch {
       // not in this node_modules dir, try the next candidate
     }

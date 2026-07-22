@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import noOnlyTests from "eslint-plugin-no-only-tests";
 import unicornPlugin from "eslint-plugin-unicorn";
+
 import { globPatterns } from "../lib/glob-patterns.js";
 import { ruleOptions } from "../lib/rule-options.js";
 
