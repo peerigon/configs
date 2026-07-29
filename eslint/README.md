@@ -6,6 +6,8 @@
 npm install eslint @peerigon/configs --save-dev
 ```
 
+TypeScript projects need a `typescript` package. Our ESLint presets use typescript-eslint, which still needs the 6.x compiler API under the name `typescript`. For TypeScript 7’s native `tsc`, use the side-by-side install — see [TypeScript 7](../typescript/README.md#typescript-7).
+
 Then create a `eslint.config.js` next to your `package.json`:
 
 ```js

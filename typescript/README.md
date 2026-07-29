@@ -6,6 +6,8 @@
 npm install typescript @peerigon/configs --save-dev
 ```
 
+Requires TypeScript 6 or newer. How you install TypeScript 7 depends on whether you use ESLint — see [TypeScript 7](#typescript-7).
+
 Then create a `tsconfig.json` just for type-checking next to your `package.json`:
 
 ```jsonc
@@ -76,6 +78,41 @@ With the following `package.json` `scripts`:
   }
 }
 ```
+
+## TypeScript 7
+
+Our `tsconfig` presets work with TypeScript 7. Install path depends on your linter:
+
+### Oxlint only (no ESLint)
+
+Type-aware Oxlint uses `oxlint-tsgolint`, which embeds typescript-go and does **not** import the project’s `typescript` package. You can install TypeScript 7 normally:
+
+```sh
+npm install -D typescript@^7 oxlint oxlint-tsgolint@^7 @peerigon/configs
+```
+
+See also the [Oxlint setup](../oxlint/README.md).
+
+### ESLint (with or without Oxlint)
+
+TypeScript 7 does not ship a public compiler API yet, and [typescript-eslint](https://typescript-eslint.io/) still needs the 6.x API. Use Microsoft’s [side-by-side install](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6-0): keep the 6.x API under the name `typescript`, and add TS 7 for `tsc`:
+
+```json
+{
+  "devDependencies": {
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}
+```
+
+- `npx tsc` / `test:types` / `build` use TypeScript 7 via `@typescript/native`
+- `import "typescript"` (ESLint / typescript-eslint) still resolves to the 6.x API
+- Oxlint type-aware linting still uses embedded typescript-go; install `oxlint-tsgolint@^7` as usual
+
+Do not install bare `typescript@7` as the only TypeScript package if you use our ESLint presets — typescript-eslint will fail without the 6.x API.
+
+If you use [`typescript/js-lib`](#presets) with JSDoc/`checkJs`, TypeScript 7 tightened some JavaScript analysis rules compared to 6.x. Expect a few new diagnostics when you first switch `tsc` to 7; see the [TypeScript 7 announcement](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#javascript-differences).
 
 ## Presets
 

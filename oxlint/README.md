@@ -7,10 +7,13 @@ Best-effort Oxlint presets that mirror the ESLint configs in this package. Consu
 ## Installation
 
 ```sh
-npm install oxlint oxlint-tsgolint @peerigon/configs --save-dev
+npm install oxlint oxlint-tsgolint@^7 @peerigon/configs --save-dev
 ```
 
-Type-aware TypeScript rules require `oxlint-tsgolint`.
+Type-aware TypeScript rules require `oxlint-tsgolint` **7.x** (embeds typescript-go / TypeScript 7). Your project’s `typescript` package is not used for type-aware linting.
+
+- **Oxlint only:** install bare `typescript@^7` (see [TypeScript 7](../typescript/README.md#oxlint-only-no-eslint)).
+- **Also using ESLint:** keep the 6.x API under the name `typescript` and add TS 7 via an alias (see [TypeScript 7](../typescript/README.md#eslint-with-or-without-oxlint)).
 
 Create `oxlint.config.ts` next to your `package.json`:
 
