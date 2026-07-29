@@ -39,10 +39,19 @@ export const RefInRender = () => {
 };
 
 // @eslint-react/immutability re-enabled in react.js (same reasoning as refs).
-export const MutateProps = (props: { items: Array<number> }) => {
-  // eslint-disable-next-line @eslint-react/immutability
-  props.items.push(1);
-  return <p>{props.items.length}</p>;
+// Flags mutating locals captured into JSX/hook frozen contexts.
+export const MutateCapturedLocal = () => {
+  const items = [1];
+
+  return (
+    <button
+      type="button"
+      // eslint-disable-next-line @eslint-react/immutability
+      onClick={() => items.push(2)}
+    >
+      {items.length}
+    </button>
+  );
 };
 
 // @eslint-react/globals re-enabled in react.js (same reasoning as refs).
