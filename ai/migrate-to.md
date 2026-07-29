@@ -28,8 +28,8 @@ Read https://github.com/peerigon/configs/blob/main/typescript/README.md for inst
 
 ## Step 5 (optional): Oxlint
 
-Only if the user asked to try Oxlint. Read https://github.com/peerigon/configs/blob/main/oxlint/README.md and https://github.com/peerigon/configs/blob/main/oxlint/GAPS.md. Install `oxlint` and `oxlint-tsgolint`, add an `oxlint.config.js` that extends a preset, and keep ESLint until gaps are acceptable.
+Only if the user asked to try Oxlint. Read https://github.com/peerigon/configs/blob/main/oxlint/README.md and https://github.com/peerigon/configs/blob/main/oxlint/GAPS.md. Install `oxlint` and `oxlint-tsgolint`, add an `oxlint.config.ts` that extends a preset, and keep ESLint until gaps are acceptable.
 
 ## Step 6 (optional): Oxfmt
 
-Only if the user asked to switch to Oxfmt. Read https://github.com/peerigon/configs/blob/main/oxfmt/README.md and https://github.com/peerigon/configs/blob/main/oxfmt/GAPS.md. Install `oxfmt`, add an `oxfmt.config.mts` that re-exports the config, remove Prettier (and its config), and point `test:format` at `oxfmt --check .`. Do not run Prettier and Oxfmt together.
+Only if the user asked to switch to Oxfmt. Read https://github.com/peerigon/configs/blob/main/oxfmt/README.md and https://github.com/peerigon/configs/blob/main/oxfmt/GAPS.md. Install `oxfmt`, add an `oxfmt.config.ts` that re-exports the config, remove Prettier (and its config), and point `test:format` at `oxfmt --check .`. Do not run Prettier and Oxfmt together.

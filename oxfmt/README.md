@@ -12,7 +12,7 @@ Best-effort Oxfmt config that mirrors the [Prettier config](../prettier/README.m
 npm install oxfmt @peerigon/configs --save-dev
 ```
 
-Remove Prettier (and `prettier.config.*` / `.prettierrc*`) from the project, then create an `oxfmt.config.mts` next to your `package.json`:
+Remove Prettier (and `prettier.config.*` / `.prettierrc*`) from the project, then create an `oxfmt.config.ts` next to your `package.json`:
 
 ```ts
 export { default } from "@peerigon/configs/oxfmt";
@@ -30,7 +30,7 @@ Recommended configuration in your `package.json` (using [`npm-run-all2`](https:/
 }
 ```
 
-> Oxfmt auto-discovers `oxfmt.config.ts` / `oxfmt.config.mts` (and `.oxfmtrc.json`), so you don't need to pass `-c`. Use an `.mts`/`.ts` config to re-export ours.
+> Oxfmt auto-discovers `oxfmt.config.ts` (and `.oxfmtrc.json`), so you don't need to pass `-c`.
 
 ## Configuration
 

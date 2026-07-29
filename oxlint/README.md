@@ -27,12 +27,13 @@ export default defineConfig({
 });
 ```
 
-Recommended `package.json` scripts:
+Recommended configuration in your `package.json`:
 
 ```json
 {
+  "type": "module",
   "scripts": {
-    "test:lint": "oxlint -c oxlint.config.js --deny-warnings ."
+    "test:lint": "oxlint -c oxlint.config.ts --deny-warnings ."
   }
 }
 ```
