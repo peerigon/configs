@@ -14,6 +14,28 @@ alwaysApply: true
 - Prefer explicit over implicit
 - Keep code close together that belongs together
 
+## File order (MUST)
+
+Do **not** follow "define before call". In JS/TS (and most modern languages), functions may call helpers declared later in the file as long as they are not invoked during module init before those bindings exist.
+
+Order every file by importance so a reader hits the interesting part first:
+
+1. Imports (and required module-level side effects)
+2. Primary export / main entry (the reason the file exists)
+3. Supporting types, constants, and private helpers at the bottom
+
+```ts
+// Bad — scroll past helpers to find the API
+const normalize = (name: string) => name.trim().toLowerCase();
+export const createUser = (name: string) => ({ name: normalize(name) });
+
+// Good — API first, details below
+export const createUser = (name: string) => ({ name: normalize(name) });
+const normalize = (name: string) => name.trim().toLowerCase();
+```
+
+Exception: define earlier only when module-level execution (TDZ / load-time init) requires it. When editing an existing file, preserve this order; when rewriting or adding substantial logic, fix inverted helper-first layout.
+
 ## Complexity and module design
 
 - Treat complexity as the primary enemy. Prefer designs that reduce mental load, special cases, and cross-module coupling.

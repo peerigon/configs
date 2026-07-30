@@ -7,6 +7,7 @@ globs: **/*.tsx, **/*.jsx
 
 - Use arrow functions for components
 - Inline component props next to the component prop argument
+- **File order (MUST)**: put the main component (and its exported API) first; keep local helpers, secondary types, and minor constants below it — same rule as the JS/TS styleguide
 - Derive state where possible
 - Avoid unnecessary `useState` and `useEffect`
 - Use `useEffect` only when synchronizing with external systems (for example browser APIs, subscriptions, timers, network interactions)

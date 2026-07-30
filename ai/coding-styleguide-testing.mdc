@@ -16,6 +16,7 @@ globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
 - Hierarchical grouping: Use nested describe() blocks - outer for function/class, inner for scenarios
 - Logical categorization: Group by behavior, input type, or state (e.g., "with valid input", "error handling")
 - Each it() should test a single behavior
+- Put setup hooks and test cases first; keep local helper functions and fixtures at the bottom of the file
 
 ## Test Coverage
 
