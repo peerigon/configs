@@ -63,11 +63,104 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Prefer simple if statements and avoid negated if statements where possible
 - Keep indentation level low and avoid more than 5 levels of nesting
 
+### `@peerigon/typescript-toolkit` helpers
+
+If `@peerigon/typescript-toolkit` is not yet in the project's dependencies and one of the patterns below applies, **ask the user whether they want to add it** before proceeding.
+
+When it is installed, prefer these helpers over the equivalent inline patterns — they remove control-flow noise and keep business logic readable. When calling their generic functions explicitly, use descriptive type parameter names (`need<User>()`, not `need<T>()`) — see [Types](#types) below.
+
+**`need` — assert non-null and return the value**
+
+```ts
+import { need } from "@peerigon/typescript-toolkit/need";
+
+// Instead of:
+if (maybeUser == null) throw new Error("User is required");
+const user = maybeUser;
+
+// Write:
+const user = need(maybeUser, "User is required");
+```
+
+**`assert` — assert a condition in-place (no return value)**
+
+```ts
+import { assert } from "@peerigon/typescript-toolkit/assert";
+
+// Instead of:
+if (session == null) throw new Error("Must be logged in");
+
+// Write:
+assert(session, "Must be logged in");
+
+// Use assert.truthy for broader falsy checks or custom conditions:
+assert.truthy(count > 0, "count must be positive");
+```
+
+**`match` — exhaustive pattern matching over a union or enum**
+
+```ts
+import { match } from "@peerigon/typescript-toolkit/match";
+
+// Instead of a switch or if-else chain:
+const label = match(status).case([
+  ["active", "Active"],
+  ["inactive", "Inactive"],
+  ["pending", "Pending"],
+]);
+```
+
+TypeScript enforces exhaustiveness at compile time — a missing case is a type error. Use `match.default` for a deliberate fallback, `match.catch` to handle unexpected runtime values without throwing.
+
+**`enums` — string enums compatible with `erasableSyntaxOnly`**
+
+```ts
+import { enums, type Enums } from "@peerigon/typescript-toolkit/enums";
+
+// Instead of a TypeScript enum or a plain object + union type:
+const Status = enums.define({ Active: true, Inactive: true, Pending: true });
+type Status = Enums<typeof Status>;
+```
+
+Pairs with `match` for exhaustive case handling.
+
 ## Error handling
 
 - Write descriptive error messages and include error context (e.g. actual vs. expected values)
 - Use try-catch blocks sparingly and only when you can actually handle the error
 - Consider using Result types for operations that can fail
+
+### `result` and `unwrap` (when installed)
+
+Prefer `result` over try-catch for operations that are expected to fail:
+
+```ts
+import { result, type Result } from "@peerigon/typescript-toolkit/result";
+import { unwrap } from "@peerigon/typescript-toolkit/unwrap";
+
+// Instead of:
+let user: User;
+try {
+  user = await fetchUser(id);
+} catch (error) {
+  return { error };
+}
+
+// Write:
+const userResult: Result<User> = await result.from(() => fetchUser(id));
+
+// Handle states explicitly:
+const label = result(userResult).case({
+  pending: () => "Loading…",
+  success: (user) => user.name,
+  error: (error) => `Error: ${error.message}`,
+});
+
+// Or unwrap when the caller should propagate the error:
+const user = unwrap(userResult);
+```
+
+`result` is structurally compatible with TanStack Query — pass a `useQuery()` return value directly wherever `Result<T>` is expected.
 
 ## Functions
 
