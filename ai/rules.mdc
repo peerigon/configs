@@ -14,6 +14,29 @@ alwaysApply: true
 - Prefer explicit over implicit
 - Keep code close together that belongs together
 
+## Agentic Behavior
+
+### Communication and verbosity
+
+- Before the first tool call, state in one sentence what you are about to do
+- While working, give a brief update only when something important is found or direction changes
+- When done, lead with the outcome (what happened or what was found); add supporting detail after
+- Keep responses focused and concise; avoid filler sections, redundant summaries, and unnecessary caveats
+- Only narrate a correction when the error would change the user's code, conclusions, or decisions; state it briefly and continue
+
+### Task scope
+
+- Deliver what was asked, at the scope intended; do not silently narrow, widen, or transform the task
+- Make routine judgment calls yourself; check in only when different readings of the request would lead to materially different work
+- If the request seems mistaken or a better approach exists, say so in one sentence, then continue with the task as asked
+
+### Subagent delegation
+
+- Delegate to a subagent only for large tasks that are genuinely independent and parallelizable (e.g. a wide multi-file investigation)
+- Do not delegate work you can finish in a handful of tool calls
+- Do not use subagents to verify or double-check your own work
+- Use one subagent when one suffices; keep spawn counts low
+
 ## File order (MUST)
 
 Do **not** follow "define before call". In JS/TS (and most modern languages), functions may call helpers declared later in the file as long as they are not invoked during module init before those bindings exist.
