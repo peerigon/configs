@@ -60,18 +60,18 @@ Presets bundle all relevant rules into one `import`. They can be imported as `@p
 
 We acknowledge that there are certain rules where there are no actual pros and cons or where there is no clear winner. You just have to decide for one style and stick with it. We also know that some rules make sense in one project, but don't make sense in another project. Pick these rules if they make sense for you in your project. They can be imported as `@peerigon/configs/eslint/styles/<style-name>`.
 
-### `no-default-export`
-
 <details>
+<summary><code>no-default-export</code></summary>
+
 Forbids usage of `export default`. When using default exports, it becomes harder to name classes or functions consistently throughout the codebase since every module can pick its own name for the imported thing. Nicholas C. Zakas, the creator of ESLint, wrote [an article with more compelling arguments why he stopped using `export default`](https://humanwhocodes.com/blog/2019/01/stop-using-default-exports-javascript-module/).
 
 You may want to disable this rule in situations where a default export is required, for instance when using [React's `lazy()`](https://react.dev/reference/react/lazy).
 
 </details>
 
-### `no-null`
-
 <details>
+<summary><code>no-null</code></summary>
+
 Forbids the usage of `null`. In a codebase it's often better to use a single non-value to represent _the absence of a value_. With the rise of default parameters and destructuring defaults, JavaScript developed a clear tendency towards `undefined`. [This issue](https://github.com/peerigon/eslint-config-peerigon/issues/71) summarizes the arguments (and trade-offs) of **null vs. undefined**.
 
 **👉 Hint:** If you use this rule, you will probably still need a single `null` value which you can refer to whenever you need to use `null` because of third-party code:
@@ -83,9 +83,9 @@ export const NULL = null;
 
 </details>
 
-### `prefer-interface`
-
 <details>
+<summary><code>prefer-interface</code></summary>
+
 Prefer TypeScript's `interface` over `type`:
 
 ```ts
@@ -104,9 +104,9 @@ type SomeObject = {
 
 </details>
 
-### `prefer-array-shorthand`
-
 <details>
+<summary><code>prefer-array-shorthand</code></summary>
+
 Enforces TypeScript arrays to use the shorthand array-style instead of the generic style:
 
 ```ts
@@ -121,9 +121,9 @@ const foo: Array<string> = [];
 
 </details>
 
-### `jsx-no-literals`
-
 <details>
+<summary><code>jsx-no-literals</code></summary>
+
 Use this style if you're using i18n. It prevents people from putting raw strings in components.
 It disallows this:
 
