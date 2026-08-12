@@ -47,6 +47,15 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use short names when the variable or function is private and only accessible in the current file
 - Use longer and more specific names when the variable or function is exported and visible across the whole project
 - Use auxiliary verbs (e.g., isLoading, hasError) for boolean variables and type guards
+- Name variables and parameters after their type, unless there is a good reason not to (e.g. multiple instances of the same type in scope, or a more meaningful domain name)
+
+  ```ts
+  // Good
+  const taskCoordinator = new TaskCoordinator();
+
+  // Bad
+  const coordinator = new TaskCoordinator();
+  ```
 
 ## Syntax
 
