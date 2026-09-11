@@ -1,6 +1,6 @@
 import reactPlugin2 from "@eslint-react/eslint-plugin";
+import stylisticPlugin from "@stylistic/eslint-plugin";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y-x";
-import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import reactYouMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
@@ -11,22 +11,6 @@ const files = [globPatterns.jsx, globPatterns.typescriptJsx];
 
 /** @type {import("eslint").Linter.Config[]} */
 export const react = [
-  {
-    ...reactPlugin.configs.flat.recommended,
-    files,
-    languageOptions: {
-      ...reactPlugin.configs.flat.recommended.languageOptions,
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
-  {
-    ...reactPlugin.configs.flat["jsx-runtime"],
-    files,
-  },
   {
     ...reactPlugin2.configs.recommended,
     files,
@@ -72,16 +56,7 @@ export const react = [
     files,
   },
   {
-    // @eslint-react is the source of truth wherever it ships an equivalent rule.
-    // This preset turns off overlapping eslint-plugin-react rules so @eslint-react wins
-    // for those. Several disabled rules only have equivalents that are off by default
-    // or live in @eslint-react/kit; we re-enable the built-in equivalents below and
-    // keep the few eslint-plugin-react rules whose only replacement would require kit.
-    ...reactPlugin2.configs["disable-conflict-eslint-plugin-react"],
-    files,
-  },
-  {
-    // Same idea for hooks: @eslint-react owns every hook/React-Compiler rule it ships an
+    // @eslint-react owns every hook/React-Compiler rule it ships an
     // equivalent for, so this preset turns off the overlapping eslint-plugin-react-hooks
     // rules. The react-hooks rules without an @eslint-react equivalent (void-use-memo,
     // preserve-manual-memoization, incompatible-library, config, gating) stay enabled as
@@ -94,60 +69,34 @@ export const react = [
     files,
   },
   {
+    // eslint-plugin-react was removed (unmaintained, incompatible with ESLint 10). Most of
+    // its rules are dropped as known gaps rather than replaced 1:1:
+    // - jsx-uses-vars: core no-unused-vars / @typescript-eslint/no-unused-vars already
+    //   track JSX references (eslint-scope tracks JSX since ESLint 9).
+    // - jsx-no-duplicate-props, jsx-no-undef: TypeScript already reports these
+    //   (TS17001 / TS2304) for .tsx; plain .jsx loses this coverage.
+    // - default-props-match-prop-types, forbid-foreign-prop-types, forbid-prop-types,
+    //   no-unused-prop-types, prefer-es6-class, prefer-stateless-function, no-is-mounted,
+    //   no-redundant-should-component-update, no-this-in-sfc, no-typos,
+    //   require-render-return: legacy class-component / propTypes rules, irrelevant with
+    //   TypeScript + function components.
+    // - jsx-boolean-value, jsx-props-no-spread-multi, jsx-filename-extension,
+    //   jsx-handler-names, no-unescaped-entities: dropped, no replacement (would require
+    //   @eslint-react/kit as an extra dependency, or no equivalent exists).
     files,
+    plugins: {
+      "@stylistic": stylisticPlugin,
+    },
     rules: {
-      // eslint-plugin-react rules kept on: disable-conflict-eslint-plugin-react does not
-      // touch these (no overlapping @eslint-react rule), or its only equivalent lives in
-      // @eslint-react/kit, which we avoid as an extra dependency. The latter group
-      // (jsx-boolean-value, jsx-filename-extension, jsx-pascal-case, forbid-prop-types)
-      // is re-asserted here so it overrides the conflict preset above.
-      "react/default-props-match-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/default-props-match-prop-types.md
-      "react/forbid-foreign-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
-      "react/forbid-prop-types": [
-        // No @eslint-react equivalent (propTypes are legacy). https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
-        "warn",
-        {
-          checkChildContextTypes: true,
-          checkContextTypes: true,
-        },
-      ],
-      "react/jsx-boolean-value": ["warn", "never"], // Equivalent only in @eslint-react/kit. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
-      "react/jsx-curly-brace-presence": ["warn", "never"], // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
-      "react/jsx-filename-extension": [
-        // No @eslint-react equivalent. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
-        "warn",
-        {
-          extensions: [".jsx", ".tsx"],
-        },
-      ],
-      "react/jsx-handler-names": [
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md
-        "warn",
-        {
-          eventHandlerPrefix: "handle",
-          eventHandlerPropPrefix: "on",
-        },
-      ],
-      "react/jsx-no-undef": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md
-      "react/jsx-pascal-case": "warn", // Equivalent only in @eslint-react/kit. https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
-      "react/jsx-props-no-spread-multi": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spread-multi.md
-      "react/no-invalid-html-attribute": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md
-      "react/no-redundant-should-component-update": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md
-      "react/no-this-in-sfc": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md
-      "react/no-typos": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-typos.md
-      "react/no-unused-prop-types": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
-      "react/prefer-es6-class": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
-      "react/prefer-stateless-function": [
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
-        "warn",
-        {
-          ignorePureComponents: true,
-        },
-      ],
-      "react/self-closing-comp": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
-      "react/style-prop-object": "warn", // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
-      // @eslint-react equivalents that replace eslint-plugin-react rules disabled by the
-      // conflict preset above but are not enabled by @eslint-react's recommended presets.
+      // self-closing-comp, jsx-curly-brace-presence and jsx-pascal-case moved to
+      // @stylistic/eslint-plugin, same options as their eslint-plugin-react equivalents.
+      "@stylistic/jsx-self-closing-comp": "warn", // https://eslint.style/rules/jsx-self-closing-comp
+      "@stylistic/jsx-curly-brace-presence": ["warn", "never"], // https://eslint.style/rules/jsx-curly-brace-presence
+      "@stylistic/jsx-pascal-case": "warn", // https://eslint.style/rules/jsx-pascal-case
+      "@eslint-react/dom-no-string-style-prop": "warn", // replaces react/style-prop-object
+      "@eslint-react/dom-no-unsafe-target-blank": "warn", // replaces react/no-invalid-html-attribute (the rel="noopener noreferrer" case)
+      // @eslint-react equivalents that replace eslint-plugin-react rules but are not
+      // enabled by @eslint-react's recommended presets.
       // (use-state, set-state-in-effect and no-leaked-conditional-rendering are already on
       // via recommended, so they are not re-listed here.)
       "@eslint-react/dom-no-missing-button-type": "warn", // replaces react/button-has-type
