@@ -6,7 +6,7 @@ export const App = (_props: { name: string; count: number }) => {
   for (let index = 0; index < 10; index++) {
     // eslint-disable-next-line @eslint-react/rules-of-hooks
     useEffect(() => {
-      void index;
+      index.toString();
 
       // eslint-disable-next-line @eslint-react/exhaustive-deps
     }, []);

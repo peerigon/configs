@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const App = (_props: { name: string; count: number }) => {
   for (let index = 0; index < 10; index++) {
-    // oxlint-disable-next-line react/rules-of-hooks, react/react-compiler
+    // oxlint-disable-next-line react/rules-of-hooks
     useEffect(() => {
       void index;
     }, []);
@@ -11,7 +11,7 @@ export const App = (_props: { name: string; count: number }) => {
   const [state, setState] = useState(0);
 
   useEffect(() => {
-    // oxlint-disable-next-line react/react-compiler, react-you-might-not-need-an-effect/no-chain-state-updates
+    // oxlint-disable-next-line react-you-might-not-need-an-effect/no-chain-state-updates
     setState(1);
   }, [state]);
 
