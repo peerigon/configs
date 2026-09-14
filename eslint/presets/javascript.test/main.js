@@ -59,7 +59,7 @@ try {
 let c = 1;
 // eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
-  // eslint-disable-next-line require-atomic-updates
+  // eslint-disable-next-line require-atomic-updates, unicorn/no-top-level-assignment-in-function
   c += await c;
 })();
 

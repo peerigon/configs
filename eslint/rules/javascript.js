@@ -13,7 +13,7 @@ export const javascript = [
     rules: {
       // Turn of too opinionated rules
       // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/896
-      "unicorn/prevent-abbreviations": "off",
+      "unicorn/name-replacements": "off", // Renamed from unicorn/prevent-abbreviations
       "unicorn/filename-case": "off",
       "unicorn/no-nested-ternary": "off",
       "unicorn/no-null": "off",
@@ -24,11 +24,15 @@ export const javascript = [
       "unicorn/import-style": "off", // The default of import-style is highly subjective and not always the best choice. E.g. bundlers are able to tree-shake named imports easier than default imports.
       "unicorn/no-array-for-each": "off",
       "unicorn/no-array-reduce": "off",
+      "unicorn/no-break-in-nested-loop": "off", // Forces extracting any nested loop body into a function just to use continue/break, even when the target is unambiguous.
+      "unicorn/no-computed-property-existence-check": "off", // Only correct for true key-presence checks; misfires on `value && typeof value === "object"` truthiness guards, whose Object.hasOwn() "fix" changes behavior.
+      "unicorn/no-unreadable-for-of-expression": "off", // Flags common idioms like `for (const x of foo() ?? [])` as too complex, forcing an extra variable for no readability gain.
       "unicorn/no-object-as-default-parameter": "off", // This rule also complains about the object when we already use destructuring. E.g. it would complain about the following pattern which is perfectly fine: { github = false, jsr = false } = { github: true, jsr: true }
       "unicorn/no-single-promise-in-promise-methods": "off", // It makes sense to use Promise.all() with a single promise when we expect more to be added later. In that case we don't want to refactor the code, but just add the new promise.
       "unicorn/prefer-global-this": "off", // Too many false positives
       "unicorn/prefer-ternary": "off",
       "unicorn/require-array-join-separator": "off",
+      "unicorn/single-line-block-comment-style": "off", // Would force every single-line JSDoc annotation (e.g. `/** @type {...} */`) into multiline form, contradicting standard JSDoc convention.
       "unicorn/prefer-import-meta-properties": "error",
     },
   },
