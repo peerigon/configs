@@ -49,7 +49,7 @@ All presets ignore files matching `**/*.generated.*`.
 
 Presets bundle all relevant rules into one `import`. They can be imported as `@peerigon/configs/eslint/presets/<preset-name>`. They **should not** be combined with each other.
 
-- `typescript-react`: Rules for React projects written in TypeScript
+- `typescript-react`: Rules for React projects written in TypeScript (powered by [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react) and [`@stylistic/eslint-plugin`](https://eslint.style/) for JSX formatting)
 - `typescript-node`: Rules for TypeScript apps that are supposed to run in Node.js
 - `typescript`: Rules for all other TypeScript projects
 - `javascript-browser`: Rules for JavaScript apps running in a browser (e.g. in combination with [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html))
@@ -124,7 +124,8 @@ const foo: Array<string> = [];
 <details>
 <summary><code>jsx-no-literals</code></summary>
 
-Use this style if you're using i18n. It prevents people from putting raw strings in components.
+Use this style if you're using i18n. It prevents people from putting raw strings in components. Powered by [`eslint-plugin-i18next`](https://github.com/edvardchen/eslint-plugin-i18next)'s `no-literal-string` rule (in `mode: "jsx-text-only"`, so it only checks JSX text, not other string literals).
+
 It disallows this:
 
 ```jsx

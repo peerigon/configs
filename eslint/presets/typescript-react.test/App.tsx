@@ -24,11 +24,14 @@ export const App = (_props: { name: string; count: number }) => {
     <>
       {/* eslint-disable-next-line jsx-a11y-x/alt-text */}
       <img src="some-image.jpg" />
-      {/* eslint-disable-next-line react/jsx-curly-brace-presence */}
+      {/* eslint-disable-next-line @stylistic/jsx-curly-brace-presence */}
       {"Hello world"}
       {/* eslint-disable-next-line @eslint-react/no-leaked-conditional-rendering */}
       <>{_props.count && <view />}</>
-      <Other />
+      {/* eslint-disable-next-line @eslint-react/dom-no-string-style-prop */}
+      <div style="color: red" />
+      {/* eslint-disable-next-line @stylistic/jsx-self-closing-comp */}
+      <Other></Other>
     </>
   );
 };
