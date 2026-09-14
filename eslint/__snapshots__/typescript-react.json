@@ -12,8 +12,10 @@
     "@eslint-react/dom-no-render": [2],
     "@eslint-react/dom-no-render-return-value": [2],
     "@eslint-react/dom-no-script-url": [1],
+    "@eslint-react/dom-no-string-style-prop": [1],
     "@eslint-react/dom-no-unknown-property": [1],
     "@eslint-react/dom-no-unsafe-iframe-sandbox": [1],
+    "@eslint-react/dom-no-unsafe-target-blank": [1],
     "@eslint-react/dom-no-use-form-state": [2],
     "@eslint-react/dom-no-void-elements-with-children": [2],
     "@eslint-react/error-boundaries": [2],
@@ -79,26 +81,64 @@
     "@eslint-react/web-api-no-leaked-resize-observer": [1],
     "@eslint-react/web-api-no-leaked-timeout": [1],
     "@stylistic/array-bracket-newline": [0],
-    "@stylistic/array-bracket-spacing": [0],
+    "@stylistic/array-bracket-spacing": [0, "never"],
     "@stylistic/array-element-newline": [0],
-    "@stylistic/arrow-parens": [0],
-    "@stylistic/arrow-spacing": [0],
-    "@stylistic/block-spacing": [0],
-    "@stylistic/brace-style": [0],
-    "@stylistic/comma-dangle": [0],
-    "@stylistic/comma-spacing": [0],
-    "@stylistic/comma-style": [0],
-    "@stylistic/computed-property-spacing": [0],
-    "@stylistic/dot-location": [0],
-    "@stylistic/eol-last": [0],
+    "@stylistic/arrow-parens": [0, "always"],
+    "@stylistic/arrow-spacing": [
+      0,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "@stylistic/block-spacing": [0, "always"],
+    "@stylistic/brace-style": [
+      0,
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+    "@stylistic/comma-dangle": [0, "never"],
+    "@stylistic/comma-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/comma-style": [0, "last"],
+    "@stylistic/computed-property-spacing": [
+      0,
+      "never",
+      {
+        "enforceForClassMembers": true
+      }
+    ],
+    "@stylistic/dot-location": [0, "object"],
+    "@stylistic/eol-last": [0, "always"],
     "@stylistic/func-call-spacing": [0],
-    "@stylistic/function-call-argument-newline": [0],
-    "@stylistic/function-call-spacing": [0],
-    "@stylistic/function-paren-newline": [0],
-    "@stylistic/generator-star-spacing": [0],
-    "@stylistic/implicit-arrow-linebreak": [0],
-    "@stylistic/indent": [0],
-    "@stylistic/indent-binary-ops": [0],
+    "@stylistic/function-call-argument-newline": [0, "always"],
+    "@stylistic/function-call-spacing": [0, "never"],
+    "@stylistic/function-paren-newline": [0, "multiline"],
+    "@stylistic/generator-star-spacing": [
+      0,
+      {
+        "before": true,
+        "after": false
+      }
+    ],
+    "@stylistic/implicit-arrow-linebreak": [0, "beside"],
+    "@stylistic/indent": [
+      0,
+      4,
+      {
+        "SwitchCase": 1,
+        "flatTernaryExpressions": false,
+        "ignoredNodes": []
+      }
+    ],
+    "@stylistic/indent-binary-ops": [0, 2],
     "@stylistic/js/array-bracket-newline": [0],
     "@stylistic/js/array-bracket-spacing": [0],
     "@stylistic/js/array-element-newline": [0],
@@ -165,21 +205,79 @@
     "@stylistic/js/wrap-regex": [0],
     "@stylistic/js/yield-star-spacing": [0],
     "@stylistic/jsx-child-element-spacing": [0],
-    "@stylistic/jsx-closing-bracket-location": [0],
-    "@stylistic/jsx-closing-tag-location": [0],
-    "@stylistic/jsx-curly-newline": [0],
-    "@stylistic/jsx-curly-spacing": [0],
-    "@stylistic/jsx-equals-spacing": [0],
-    "@stylistic/jsx-first-prop-new-line": [0],
-    "@stylistic/jsx-indent": [0],
-    "@stylistic/jsx-indent-props": [0],
-    "@stylistic/jsx-max-props-per-line": [0],
-    "@stylistic/jsx-newline": [0],
-    "@stylistic/jsx-one-expression-per-line": [0],
+    "@stylistic/jsx-closing-bracket-location": [0, "tag-aligned"],
+    "@stylistic/jsx-closing-tag-location": [0, "tag-aligned"],
+    "@stylistic/jsx-curly-brace-presence": [1, "never"],
+    "@stylistic/jsx-curly-newline": [0, "consistent"],
+    "@stylistic/jsx-curly-spacing": [
+      0,
+      {
+        "when": "never",
+        "allowMultiline": true
+      }
+    ],
+    "@stylistic/jsx-equals-spacing": [0, "never"],
+    "@stylistic/jsx-first-prop-new-line": [0, "multiline-multiprop"],
+    "@stylistic/jsx-indent": [0, 4],
+    "@stylistic/jsx-indent-props": [0, 4],
+    "@stylistic/jsx-max-props-per-line": [
+      0,
+      {
+        "maximum": 1
+      }
+    ],
+    "@stylistic/jsx-newline": [
+      0,
+      {
+        "prevent": false,
+        "allowMultilines": false
+      }
+    ],
+    "@stylistic/jsx-one-expression-per-line": [
+      0,
+      {
+        "allow": "none"
+      }
+    ],
+    "@stylistic/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": false,
+        "allowLeadingUnderscore": false,
+        "allowNamespace": false
+      }
+    ],
     "@stylistic/jsx-props-no-multi-spaces": [0],
-    "@stylistic/jsx-quotes": [0],
-    "@stylistic/jsx-tag-spacing": [0],
-    "@stylistic/jsx-wrap-multilines": [0],
+    "@stylistic/jsx-quotes": [0, "prefer-double"],
+    "@stylistic/jsx-self-closing-comp": [
+      1,
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "@stylistic/jsx-tag-spacing": [
+      0,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "allow"
+      }
+    ],
+    "@stylistic/jsx-wrap-multilines": [
+      0,
+      {
+        "declaration": "parens",
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore",
+        "propertyValue": "ignore"
+      }
+    ],
     "@stylistic/jsx/jsx-child-element-spacing": [0],
     "@stylistic/jsx/jsx-closing-bracket-location": [0],
     "@stylistic/jsx/jsx-closing-tag-location": [0],
@@ -190,48 +288,176 @@
     "@stylistic/jsx/jsx-indent": [0],
     "@stylistic/jsx/jsx-indent-props": [0],
     "@stylistic/jsx/jsx-max-props-per-line": [0],
-    "@stylistic/key-spacing": [0],
-    "@stylistic/keyword-spacing": [0],
-    "@stylistic/linebreak-style": [0],
-    "@stylistic/lines-around-comment": [0],
-    "@stylistic/max-len": [0],
-    "@stylistic/max-statements-per-line": [0],
-    "@stylistic/member-delimiter-style": [0],
-    "@stylistic/multiline-ternary": [0],
-    "@stylistic/new-parens": [0],
-    "@stylistic/newline-per-chained-call": [0],
-    "@stylistic/no-confusing-arrow": [0],
-    "@stylistic/no-extra-parens": [0],
+    "@stylistic/key-spacing": [0, {}],
+    "@stylistic/keyword-spacing": [
+      0,
+      {
+        "before": true,
+        "after": true,
+        "overrides": {}
+      }
+    ],
+    "@stylistic/linebreak-style": [0, "unix"],
+    "@stylistic/lines-around-comment": [
+      0,
+      {
+        "beforeBlockComment": true
+      }
+    ],
+    "@stylistic/max-len": [
+      0,
+      {
+        "code": 80,
+        "tabWidth": 4
+      }
+    ],
+    "@stylistic/max-statements-per-line": [
+      0,
+      {
+        "max": 1
+      }
+    ],
+    "@stylistic/member-delimiter-style": [
+      0,
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multilineDetection": "brackets"
+      }
+    ],
+    "@stylistic/multiline-ternary": [0, "always"],
+    "@stylistic/new-parens": [0, "always"],
+    "@stylistic/newline-per-chained-call": [
+      0,
+      {
+        "ignoreChainWithDepth": 2
+      }
+    ],
+    "@stylistic/no-confusing-arrow": [
+      0,
+      {
+        "allowParens": true,
+        "onlyOneSimpleParam": false
+      }
+    ],
+    "@stylistic/no-extra-parens": [0, "all"],
     "@stylistic/no-extra-semi": [0],
     "@stylistic/no-floating-decimal": [0],
-    "@stylistic/no-mixed-operators": [0],
-    "@stylistic/no-mixed-spaces-and-tabs": [0],
-    "@stylistic/no-multi-spaces": [0],
-    "@stylistic/no-multiple-empty-lines": [0],
-    "@stylistic/no-tabs": [0],
-    "@stylistic/no-trailing-spaces": [0],
+    "@stylistic/no-mixed-operators": [
+      0,
+      {
+        "groups": [
+          ["+", "-", "*", "/", "%", "**"],
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ],
+        "allowSamePrecedence": true
+      }
+    ],
+    "@stylistic/no-mixed-spaces-and-tabs": [0, false],
+    "@stylistic/no-multi-spaces": [
+      0,
+      {
+        "exceptions": {
+          "Property": true,
+          "ImportAttribute": true
+        },
+        "ignoreEOLComments": false,
+        "includeTabs": true
+      }
+    ],
+    "@stylistic/no-multiple-empty-lines": [
+      0,
+      {
+        "max": 2
+      }
+    ],
+    "@stylistic/no-tabs": [
+      0,
+      {
+        "allowIndentationTabs": false
+      }
+    ],
+    "@stylistic/no-trailing-spaces": [
+      0,
+      {
+        "skipBlankLines": false,
+        "ignoreComments": false
+      }
+    ],
     "@stylistic/no-whitespace-before-property": [0],
-    "@stylistic/nonblock-statement-body-position": [0],
+    "@stylistic/nonblock-statement-body-position": [0, "beside"],
     "@stylistic/object-curly-newline": [0],
-    "@stylistic/object-curly-spacing": [0],
-    "@stylistic/object-property-newline": [0],
-    "@stylistic/one-var-declaration-per-line": [0],
+    "@stylistic/object-curly-spacing": [0, "never"],
+    "@stylistic/object-property-newline": [
+      0,
+      {
+        "allowAllPropertiesOnSameLine": false
+      }
+    ],
+    "@stylistic/one-var-declaration-per-line": [0, "initializations"],
     "@stylistic/operator-linebreak": [0],
-    "@stylistic/padded-blocks": [0],
-    "@stylistic/quote-props": [0],
-    "@stylistic/quotes": [0],
-    "@stylistic/rest-spread-spacing": [0],
-    "@stylistic/semi": [0],
-    "@stylistic/semi-spacing": [0],
-    "@stylistic/semi-style": [0],
-    "@stylistic/space-before-blocks": [0],
-    "@stylistic/space-before-function-paren": [0],
-    "@stylistic/space-in-parens": [0],
-    "@stylistic/space-infix-ops": [0],
-    "@stylistic/space-unary-ops": [0],
-    "@stylistic/switch-colon-spacing": [0],
-    "@stylistic/template-curly-spacing": [0],
-    "@stylistic/template-tag-spacing": [0],
+    "@stylistic/padded-blocks": [
+      0,
+      "always",
+      {
+        "allowSingleLineBlocks": false
+      }
+    ],
+    "@stylistic/quote-props": [0, "always"],
+    "@stylistic/quotes": [
+      0,
+      "double",
+      {
+        "allowTemplateLiterals": "never",
+        "avoidEscape": false,
+        "ignoreStringLiterals": false
+      }
+    ],
+    "@stylistic/rest-spread-spacing": [0, "never"],
+    "@stylistic/semi": [0, "always"],
+    "@stylistic/semi-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/semi-style": [0, "last"],
+    "@stylistic/space-before-blocks": [0, "always"],
+    "@stylistic/space-before-function-paren": [0, "always"],
+    "@stylistic/space-in-parens": [0, "never"],
+    "@stylistic/space-infix-ops": [
+      0,
+      {
+        "int32Hint": false,
+        "ignoreTypes": false
+      }
+    ],
+    "@stylistic/space-unary-ops": [
+      0,
+      {
+        "words": true,
+        "nonwords": false
+      }
+    ],
+    "@stylistic/switch-colon-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/template-curly-spacing": [0, "never"],
+    "@stylistic/template-tag-spacing": [0, "never"],
     "@stylistic/ts/block-spacing": [0],
     "@stylistic/ts/brace-style": [0],
     "@stylistic/ts/comma-dangle": [0],
@@ -252,12 +478,18 @@
     "@stylistic/ts/space-before-function-paren": [0],
     "@stylistic/ts/space-infix-ops": [0],
     "@stylistic/ts/type-annotation-spacing": [0],
-    "@stylistic/type-annotation-spacing": [0],
+    "@stylistic/type-annotation-spacing": [0, {}],
     "@stylistic/type-generic-spacing": [0],
     "@stylistic/type-named-tuple-spacing": [0],
-    "@stylistic/wrap-iife": [0],
+    "@stylistic/wrap-iife": [
+      0,
+      "outside",
+      {
+        "functionPrototypeMethods": false
+      }
+    ],
     "@stylistic/wrap-regex": [0],
-    "@stylistic/yield-star-spacing": [0],
+    "@stylistic/yield-star-spacing": [0, "after"],
     "@typescript-eslint/adjacent-overload-signatures": [2],
     "@typescript-eslint/array-type": [
       1,
@@ -1383,106 +1615,22 @@
     "react-you-might-not-need-an-effect/no-pass-data-to-parent": [1],
     "react-you-might-not-need-an-effect/no-pass-live-state-to-parent": [1],
     "react-you-might-not-need-an-effect/no-reset-all-state-on-prop-change": [1],
-    "react/button-has-type": [0],
-    "react/default-props-match-prop-types": [1],
-    "react/destructuring-assignment": [0],
-    "react/display-name": [0],
-    "react/forbid-foreign-prop-types": [1],
-    "react/forbid-prop-types": [
-      1,
-      {
-        "checkChildContextTypes": true,
-        "checkContextTypes": true
-      }
-    ],
-    "react/forward-ref-uses-ref": [0],
-    "react/hook-use-state": [0],
-    "react/iframe-missing-sandbox": [0],
-    "react/jsx-boolean-value": [1, "never"],
     "react/jsx-child-element-spacing": [0],
     "react/jsx-closing-bracket-location": [0],
     "react/jsx-closing-tag-location": [0],
-    "react/jsx-curly-brace-presence": [1, "never"],
     "react/jsx-curly-newline": [0],
     "react/jsx-curly-spacing": [0],
     "react/jsx-equals-spacing": [0],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".jsx", ".tsx"]
-      }
-    ],
     "react/jsx-first-prop-new-line": [0],
-    "react/jsx-fragments": [0],
-    "react/jsx-handler-names": [
-      1,
-      {
-        "eventHandlerPrefix": "handle",
-        "eventHandlerPropPrefix": "on"
-      }
-    ],
     "react/jsx-indent": [0],
     "react/jsx-indent-props": [0],
-    "react/jsx-key": [0],
     "react/jsx-max-props-per-line": [0],
     "react/jsx-newline": [0],
-    "react/jsx-no-comment-textnodes": [0],
-    "react/jsx-no-constructed-context-values": [0],
-    "react/jsx-no-duplicate-props": [2],
-    "react/jsx-no-leaked-render": [0],
-    "react/jsx-no-script-url": [0],
-    "react/jsx-no-target-blank": [0],
-    "react/jsx-no-undef": [1],
-    "react/jsx-no-useless-fragment": [0],
     "react/jsx-one-expression-per-line": [0],
-    "react/jsx-pascal-case": [1],
     "react/jsx-props-no-multi-spaces": [0],
-    "react/jsx-props-no-spread-multi": [1],
     "react/jsx-space-before-closing": [0],
     "react/jsx-tag-spacing": [0],
-    "react/jsx-uses-react": [0],
-    "react/jsx-uses-vars": [2],
     "react/jsx-wrap-multilines": [0],
-    "react/no-access-state-in-setstate": [0],
-    "react/no-array-index-key": [0],
-    "react/no-children-prop": [0],
-    "react/no-danger": [0],
-    "react/no-danger-with-children": [0],
-    "react/no-deprecated": [0],
-    "react/no-did-mount-set-state": [0],
-    "react/no-did-update-set-state": [0],
-    "react/no-direct-mutation-state": [0],
-    "react/no-find-dom-node": [0],
-    "react/no-invalid-html-attribute": [1],
-    "react/no-is-mounted": [2],
-    "react/no-namespace": [0],
-    "react/no-object-type-as-default-prop": [0],
-    "react/no-redundant-should-component-update": [1],
-    "react/no-render-return-value": [0],
-    "react/no-string-refs": [0],
-    "react/no-this-in-sfc": [1],
-    "react/no-typos": [1],
-    "react/no-unescaped-entities": [2],
-    "react/no-unknown-property": [0],
-    "react/no-unsafe": [0],
-    "react/no-unstable-nested-components": [0],
-    "react/no-unused-class-component-members": [0],
-    "react/no-unused-prop-types": [1],
-    "react/no-unused-state": [0],
-    "react/no-will-update-set-state": [0],
-    "react/prefer-es6-class": [1],
-    "react/prefer-stateless-function": [
-      1,
-      {
-        "ignorePureComponents": true
-      }
-    ],
-    "react/prop-types": [0],
-    "react/react-in-jsx-scope": [0],
-    "react/require-render-return": [2],
-    "react/self-closing-comp": [1],
-    "react/style-prop-object": [1],
-    "react/void-dom-elements-no-children": [0],
     "require-atomic-updates": [
       1,
       {
@@ -3571,8 +3719,10 @@
     "@eslint-react/dom-no-render": [2],
     "@eslint-react/dom-no-render-return-value": [2],
     "@eslint-react/dom-no-script-url": [1],
+    "@eslint-react/dom-no-string-style-prop": [1],
     "@eslint-react/dom-no-unknown-property": [1],
     "@eslint-react/dom-no-unsafe-iframe-sandbox": [1],
+    "@eslint-react/dom-no-unsafe-target-blank": [1],
     "@eslint-react/dom-no-use-form-state": [2],
     "@eslint-react/dom-no-void-elements-with-children": [2],
     "@eslint-react/error-boundaries": [2],
@@ -3638,26 +3788,64 @@
     "@eslint-react/web-api-no-leaked-resize-observer": [1],
     "@eslint-react/web-api-no-leaked-timeout": [1],
     "@stylistic/array-bracket-newline": [0],
-    "@stylistic/array-bracket-spacing": [0],
+    "@stylistic/array-bracket-spacing": [0, "never"],
     "@stylistic/array-element-newline": [0],
-    "@stylistic/arrow-parens": [0],
-    "@stylistic/arrow-spacing": [0],
-    "@stylistic/block-spacing": [0],
-    "@stylistic/brace-style": [0],
-    "@stylistic/comma-dangle": [0],
-    "@stylistic/comma-spacing": [0],
-    "@stylistic/comma-style": [0],
-    "@stylistic/computed-property-spacing": [0],
-    "@stylistic/dot-location": [0],
-    "@stylistic/eol-last": [0],
+    "@stylistic/arrow-parens": [0, "always"],
+    "@stylistic/arrow-spacing": [
+      0,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "@stylistic/block-spacing": [0, "always"],
+    "@stylistic/brace-style": [
+      0,
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+    "@stylistic/comma-dangle": [0, "never"],
+    "@stylistic/comma-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/comma-style": [0, "last"],
+    "@stylistic/computed-property-spacing": [
+      0,
+      "never",
+      {
+        "enforceForClassMembers": true
+      }
+    ],
+    "@stylistic/dot-location": [0, "object"],
+    "@stylistic/eol-last": [0, "always"],
     "@stylistic/func-call-spacing": [0],
-    "@stylistic/function-call-argument-newline": [0],
-    "@stylistic/function-call-spacing": [0],
-    "@stylistic/function-paren-newline": [0],
-    "@stylistic/generator-star-spacing": [0],
-    "@stylistic/implicit-arrow-linebreak": [0],
-    "@stylistic/indent": [0],
-    "@stylistic/indent-binary-ops": [0],
+    "@stylistic/function-call-argument-newline": [0, "always"],
+    "@stylistic/function-call-spacing": [0, "never"],
+    "@stylistic/function-paren-newline": [0, "multiline"],
+    "@stylistic/generator-star-spacing": [
+      0,
+      {
+        "before": true,
+        "after": false
+      }
+    ],
+    "@stylistic/implicit-arrow-linebreak": [0, "beside"],
+    "@stylistic/indent": [
+      0,
+      4,
+      {
+        "SwitchCase": 1,
+        "flatTernaryExpressions": false,
+        "ignoredNodes": []
+      }
+    ],
+    "@stylistic/indent-binary-ops": [0, 2],
     "@stylistic/js/array-bracket-newline": [0],
     "@stylistic/js/array-bracket-spacing": [0],
     "@stylistic/js/array-element-newline": [0],
@@ -3724,21 +3912,79 @@
     "@stylistic/js/wrap-regex": [0],
     "@stylistic/js/yield-star-spacing": [0],
     "@stylistic/jsx-child-element-spacing": [0],
-    "@stylistic/jsx-closing-bracket-location": [0],
-    "@stylistic/jsx-closing-tag-location": [0],
-    "@stylistic/jsx-curly-newline": [0],
-    "@stylistic/jsx-curly-spacing": [0],
-    "@stylistic/jsx-equals-spacing": [0],
-    "@stylistic/jsx-first-prop-new-line": [0],
-    "@stylistic/jsx-indent": [0],
-    "@stylistic/jsx-indent-props": [0],
-    "@stylistic/jsx-max-props-per-line": [0],
-    "@stylistic/jsx-newline": [0],
-    "@stylistic/jsx-one-expression-per-line": [0],
+    "@stylistic/jsx-closing-bracket-location": [0, "tag-aligned"],
+    "@stylistic/jsx-closing-tag-location": [0, "tag-aligned"],
+    "@stylistic/jsx-curly-brace-presence": [1, "never"],
+    "@stylistic/jsx-curly-newline": [0, "consistent"],
+    "@stylistic/jsx-curly-spacing": [
+      0,
+      {
+        "when": "never",
+        "allowMultiline": true
+      }
+    ],
+    "@stylistic/jsx-equals-spacing": [0, "never"],
+    "@stylistic/jsx-first-prop-new-line": [0, "multiline-multiprop"],
+    "@stylistic/jsx-indent": [0, 4],
+    "@stylistic/jsx-indent-props": [0, 4],
+    "@stylistic/jsx-max-props-per-line": [
+      0,
+      {
+        "maximum": 1
+      }
+    ],
+    "@stylistic/jsx-newline": [
+      0,
+      {
+        "prevent": false,
+        "allowMultilines": false
+      }
+    ],
+    "@stylistic/jsx-one-expression-per-line": [
+      0,
+      {
+        "allow": "none"
+      }
+    ],
+    "@stylistic/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": false,
+        "allowLeadingUnderscore": false,
+        "allowNamespace": false
+      }
+    ],
     "@stylistic/jsx-props-no-multi-spaces": [0],
-    "@stylistic/jsx-quotes": [0],
-    "@stylistic/jsx-tag-spacing": [0],
-    "@stylistic/jsx-wrap-multilines": [0],
+    "@stylistic/jsx-quotes": [0, "prefer-double"],
+    "@stylistic/jsx-self-closing-comp": [
+      1,
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "@stylistic/jsx-tag-spacing": [
+      0,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "allow"
+      }
+    ],
+    "@stylistic/jsx-wrap-multilines": [
+      0,
+      {
+        "declaration": "parens",
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore",
+        "propertyValue": "ignore"
+      }
+    ],
     "@stylistic/jsx/jsx-child-element-spacing": [0],
     "@stylistic/jsx/jsx-closing-bracket-location": [0],
     "@stylistic/jsx/jsx-closing-tag-location": [0],
@@ -3749,48 +3995,176 @@
     "@stylistic/jsx/jsx-indent": [0],
     "@stylistic/jsx/jsx-indent-props": [0],
     "@stylistic/jsx/jsx-max-props-per-line": [0],
-    "@stylistic/key-spacing": [0],
-    "@stylistic/keyword-spacing": [0],
-    "@stylistic/linebreak-style": [0],
-    "@stylistic/lines-around-comment": [0],
-    "@stylistic/max-len": [0],
-    "@stylistic/max-statements-per-line": [0],
-    "@stylistic/member-delimiter-style": [0],
-    "@stylistic/multiline-ternary": [0],
-    "@stylistic/new-parens": [0],
-    "@stylistic/newline-per-chained-call": [0],
-    "@stylistic/no-confusing-arrow": [0],
-    "@stylistic/no-extra-parens": [0],
+    "@stylistic/key-spacing": [0, {}],
+    "@stylistic/keyword-spacing": [
+      0,
+      {
+        "before": true,
+        "after": true,
+        "overrides": {}
+      }
+    ],
+    "@stylistic/linebreak-style": [0, "unix"],
+    "@stylistic/lines-around-comment": [
+      0,
+      {
+        "beforeBlockComment": true
+      }
+    ],
+    "@stylistic/max-len": [
+      0,
+      {
+        "code": 80,
+        "tabWidth": 4
+      }
+    ],
+    "@stylistic/max-statements-per-line": [
+      0,
+      {
+        "max": 1
+      }
+    ],
+    "@stylistic/member-delimiter-style": [
+      0,
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        },
+        "multilineDetection": "brackets"
+      }
+    ],
+    "@stylistic/multiline-ternary": [0, "always"],
+    "@stylistic/new-parens": [0, "always"],
+    "@stylistic/newline-per-chained-call": [
+      0,
+      {
+        "ignoreChainWithDepth": 2
+      }
+    ],
+    "@stylistic/no-confusing-arrow": [
+      0,
+      {
+        "allowParens": true,
+        "onlyOneSimpleParam": false
+      }
+    ],
+    "@stylistic/no-extra-parens": [0, "all"],
     "@stylistic/no-extra-semi": [0],
     "@stylistic/no-floating-decimal": [0],
-    "@stylistic/no-mixed-operators": [0],
-    "@stylistic/no-mixed-spaces-and-tabs": [0],
-    "@stylistic/no-multi-spaces": [0],
-    "@stylistic/no-multiple-empty-lines": [0],
-    "@stylistic/no-tabs": [0],
-    "@stylistic/no-trailing-spaces": [0],
+    "@stylistic/no-mixed-operators": [
+      0,
+      {
+        "groups": [
+          ["+", "-", "*", "/", "%", "**"],
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ],
+        "allowSamePrecedence": true
+      }
+    ],
+    "@stylistic/no-mixed-spaces-and-tabs": [0, false],
+    "@stylistic/no-multi-spaces": [
+      0,
+      {
+        "exceptions": {
+          "Property": true,
+          "ImportAttribute": true
+        },
+        "ignoreEOLComments": false,
+        "includeTabs": true
+      }
+    ],
+    "@stylistic/no-multiple-empty-lines": [
+      0,
+      {
+        "max": 2
+      }
+    ],
+    "@stylistic/no-tabs": [
+      0,
+      {
+        "allowIndentationTabs": false
+      }
+    ],
+    "@stylistic/no-trailing-spaces": [
+      0,
+      {
+        "skipBlankLines": false,
+        "ignoreComments": false
+      }
+    ],
     "@stylistic/no-whitespace-before-property": [0],
-    "@stylistic/nonblock-statement-body-position": [0],
+    "@stylistic/nonblock-statement-body-position": [0, "beside"],
     "@stylistic/object-curly-newline": [0],
-    "@stylistic/object-curly-spacing": [0],
-    "@stylistic/object-property-newline": [0],
-    "@stylistic/one-var-declaration-per-line": [0],
+    "@stylistic/object-curly-spacing": [0, "never"],
+    "@stylistic/object-property-newline": [
+      0,
+      {
+        "allowAllPropertiesOnSameLine": false
+      }
+    ],
+    "@stylistic/one-var-declaration-per-line": [0, "initializations"],
     "@stylistic/operator-linebreak": [0],
-    "@stylistic/padded-blocks": [0],
-    "@stylistic/quote-props": [0],
-    "@stylistic/quotes": [0],
-    "@stylistic/rest-spread-spacing": [0],
-    "@stylistic/semi": [0],
-    "@stylistic/semi-spacing": [0],
-    "@stylistic/semi-style": [0],
-    "@stylistic/space-before-blocks": [0],
-    "@stylistic/space-before-function-paren": [0],
-    "@stylistic/space-in-parens": [0],
-    "@stylistic/space-infix-ops": [0],
-    "@stylistic/space-unary-ops": [0],
-    "@stylistic/switch-colon-spacing": [0],
-    "@stylistic/template-curly-spacing": [0],
-    "@stylistic/template-tag-spacing": [0],
+    "@stylistic/padded-blocks": [
+      0,
+      "always",
+      {
+        "allowSingleLineBlocks": false
+      }
+    ],
+    "@stylistic/quote-props": [0, "always"],
+    "@stylistic/quotes": [
+      0,
+      "double",
+      {
+        "allowTemplateLiterals": "never",
+        "avoidEscape": false,
+        "ignoreStringLiterals": false
+      }
+    ],
+    "@stylistic/rest-spread-spacing": [0, "never"],
+    "@stylistic/semi": [0, "always"],
+    "@stylistic/semi-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/semi-style": [0, "last"],
+    "@stylistic/space-before-blocks": [0, "always"],
+    "@stylistic/space-before-function-paren": [0, "always"],
+    "@stylistic/space-in-parens": [0, "never"],
+    "@stylistic/space-infix-ops": [
+      0,
+      {
+        "int32Hint": false,
+        "ignoreTypes": false
+      }
+    ],
+    "@stylistic/space-unary-ops": [
+      0,
+      {
+        "words": true,
+        "nonwords": false
+      }
+    ],
+    "@stylistic/switch-colon-spacing": [
+      0,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/template-curly-spacing": [0, "never"],
+    "@stylistic/template-tag-spacing": [0, "never"],
     "@stylistic/ts/block-spacing": [0],
     "@stylistic/ts/brace-style": [0],
     "@stylistic/ts/comma-dangle": [0],
@@ -3811,12 +4185,18 @@
     "@stylistic/ts/space-before-function-paren": [0],
     "@stylistic/ts/space-infix-ops": [0],
     "@stylistic/ts/type-annotation-spacing": [0],
-    "@stylistic/type-annotation-spacing": [0],
+    "@stylistic/type-annotation-spacing": [0, {}],
     "@stylistic/type-generic-spacing": [0],
     "@stylistic/type-named-tuple-spacing": [0],
-    "@stylistic/wrap-iife": [0],
+    "@stylistic/wrap-iife": [
+      0,
+      "outside",
+      {
+        "functionPrototypeMethods": false
+      }
+    ],
     "@stylistic/wrap-regex": [0],
-    "@stylistic/yield-star-spacing": [0],
+    "@stylistic/yield-star-spacing": [0, "after"],
     "@typescript-eslint/adjacent-overload-signatures": [2],
     "@typescript-eslint/array-type": [
       1,
@@ -4943,106 +5323,22 @@
     "react-you-might-not-need-an-effect/no-pass-data-to-parent": [1],
     "react-you-might-not-need-an-effect/no-pass-live-state-to-parent": [1],
     "react-you-might-not-need-an-effect/no-reset-all-state-on-prop-change": [1],
-    "react/button-has-type": [0],
-    "react/default-props-match-prop-types": [1],
-    "react/destructuring-assignment": [0],
-    "react/display-name": [0],
-    "react/forbid-foreign-prop-types": [1],
-    "react/forbid-prop-types": [
-      1,
-      {
-        "checkChildContextTypes": true,
-        "checkContextTypes": true
-      }
-    ],
-    "react/forward-ref-uses-ref": [0],
-    "react/hook-use-state": [0],
-    "react/iframe-missing-sandbox": [0],
-    "react/jsx-boolean-value": [1, "never"],
     "react/jsx-child-element-spacing": [0],
     "react/jsx-closing-bracket-location": [0],
     "react/jsx-closing-tag-location": [0],
-    "react/jsx-curly-brace-presence": [1, "never"],
     "react/jsx-curly-newline": [0],
     "react/jsx-curly-spacing": [0],
     "react/jsx-equals-spacing": [0],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".jsx", ".tsx"]
-      }
-    ],
     "react/jsx-first-prop-new-line": [0],
-    "react/jsx-fragments": [0],
-    "react/jsx-handler-names": [
-      1,
-      {
-        "eventHandlerPrefix": "handle",
-        "eventHandlerPropPrefix": "on"
-      }
-    ],
     "react/jsx-indent": [0],
     "react/jsx-indent-props": [0],
-    "react/jsx-key": [0],
     "react/jsx-max-props-per-line": [0],
     "react/jsx-newline": [0],
-    "react/jsx-no-comment-textnodes": [0],
-    "react/jsx-no-constructed-context-values": [0],
-    "react/jsx-no-duplicate-props": [2],
-    "react/jsx-no-leaked-render": [0],
-    "react/jsx-no-script-url": [0],
-    "react/jsx-no-target-blank": [0],
-    "react/jsx-no-undef": [1],
-    "react/jsx-no-useless-fragment": [0],
     "react/jsx-one-expression-per-line": [0],
-    "react/jsx-pascal-case": [1],
     "react/jsx-props-no-multi-spaces": [0],
-    "react/jsx-props-no-spread-multi": [1],
     "react/jsx-space-before-closing": [0],
     "react/jsx-tag-spacing": [0],
-    "react/jsx-uses-react": [0],
-    "react/jsx-uses-vars": [2],
     "react/jsx-wrap-multilines": [0],
-    "react/no-access-state-in-setstate": [0],
-    "react/no-array-index-key": [0],
-    "react/no-children-prop": [0],
-    "react/no-danger": [0],
-    "react/no-danger-with-children": [0],
-    "react/no-deprecated": [0],
-    "react/no-did-mount-set-state": [0],
-    "react/no-did-update-set-state": [0],
-    "react/no-direct-mutation-state": [0],
-    "react/no-find-dom-node": [0],
-    "react/no-invalid-html-attribute": [1],
-    "react/no-is-mounted": [2],
-    "react/no-namespace": [0],
-    "react/no-object-type-as-default-prop": [0],
-    "react/no-redundant-should-component-update": [1],
-    "react/no-render-return-value": [0],
-    "react/no-string-refs": [0],
-    "react/no-this-in-sfc": [1],
-    "react/no-typos": [1],
-    "react/no-unescaped-entities": [2],
-    "react/no-unknown-property": [0],
-    "react/no-unsafe": [0],
-    "react/no-unstable-nested-components": [0],
-    "react/no-unused-class-component-members": [0],
-    "react/no-unused-prop-types": [1],
-    "react/no-unused-state": [0],
-    "react/no-will-update-set-state": [0],
-    "react/prefer-es6-class": [1],
-    "react/prefer-stateless-function": [
-      1,
-      {
-        "ignorePureComponents": true
-      }
-    ],
-    "react/prop-types": [0],
-    "react/react-in-jsx-scope": [0],
-    "react/require-render-return": [2],
-    "react/self-closing-comp": [1],
-    "react/style-prop-object": [1],
-    "react/void-dom-elements-no-children": [0],
     "require-atomic-updates": [
       1,
       {
