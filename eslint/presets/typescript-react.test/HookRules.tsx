@@ -23,6 +23,7 @@ export const SetStateInRender = () => {
 export const VoidUseMemo = () => {
   // eslint-disable-next-line @eslint-react/use-memo
   useMemo(() => {
+    // eslint-disable-next-line unicorn/no-top-level-assignment-in-function
     counter += 1;
   }, []);
   return <p>{counter}</p>;
@@ -47,7 +48,7 @@ export const MutateCapturedLocal = () => {
     <button
       type="button"
       // eslint-disable-next-line @eslint-react/immutability
-      onClick={() => items.push(2)}
+      onClick={() => void items.push(2)}
     >
       {items.length}
     </button>
@@ -58,7 +59,7 @@ export const MutateCapturedLocal = () => {
 export const MutateGlobal = () => {
   const [value] = useState(0);
 
-  // eslint-disable-next-line @eslint-react/globals
+  // eslint-disable-next-line @eslint-react/globals, unicorn/no-top-level-assignment-in-function
   counter = value + 1;
   return <p>{counter}</p>;
 };

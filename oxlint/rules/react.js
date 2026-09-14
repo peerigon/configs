@@ -7,8 +7,35 @@ import { globPatterns } from "../lib/glob-patterns.js";
 export const react = {
   jsPlugins: ["eslint-plugin-react-you-might-not-need-an-effect"],
   rules: {
-    // React Compiler (experimental) — approximate @eslint-react / Compiler coverage
-    "react/react-compiler": "warn",
+    // React Compiler (experimental) — approximate @eslint-react / Compiler coverage.
+    // oxlint 1.81 split the single `react/react-compiler` rule into these category-specific
+    // rules (breaking change in oxc-project/oxc#25500); mirrored here 1:1 at the same severity.
+    // Deliberately excluded: `react/rule-suppression`. Unlike the other split rules, it isn't a
+    // compiler diagnostic category — it fires whenever a hooks-safety rule (observed:
+    // react/rules-of-hooks) is suppressed at all, which the pre-split react/react-compiler rule
+    // never did. That's new opinionated behavior, not a like-for-like mirror; enabling it is a
+    // separate decision.
+    "react/capitalized-calls": "warn",
+    "react/error-boundaries": "warn",
+    "react/exhaustive-effect-dependencies": "warn",
+    "react/globals": "warn",
+    "react/hooks": "warn",
+    "react/immutability": "warn",
+    "react/incompatible-library": "warn",
+    "react/invariant": "warn",
+    "react/memo-dependencies": "warn",
+    "react/no-deriving-state-in-effects": "warn",
+    "react/preserve-manual-memoization": "warn",
+    "react/purity": "warn",
+    "react/refs": "warn",
+    "react/set-state-in-effect": "warn",
+    "react/set-state-in-render": "warn",
+    "react/static-components": "warn",
+    "react/syntax": "warn",
+    "react/todo": "warn",
+    "react/unsupported-syntax": "warn",
+    "react/use-memo": "warn",
+    "react/void-use-memo": "warn",
 
     // Hooks + refresh (native names under react/)
     "react/rules-of-hooks": "error",

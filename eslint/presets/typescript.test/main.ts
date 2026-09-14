@@ -43,9 +43,11 @@ export const untypedExport = (value: string) => value;
 // Internal (non-exported) functions are fine without an explicit return type
 const inferredInternal = (value: string) => value;
 
+// eslint-disable-next-line unicorn/no-top-level-side-effects
 console.log(getMessage(), SomeClass, snake_case, test, untypedExport, inferredInternal);
 
 /* @ts-expect-error Inconsistent returns should be caught by TypeScript */
+// eslint-disable-next-line unicorn/no-top-level-side-effects
 (() => {
   if (Math.random() > 0.5) {
     return true;
