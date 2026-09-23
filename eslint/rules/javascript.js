@@ -21,13 +21,7 @@ export const javascript = [
       "unicorn/prefer-query-selector": "off",
       // Also turn off the following rules because they're too opinionated
       "unicorn/consistent-function-scoping": "off", // This rule forces to move arrow functions up the scope where it is often more readable to keep the function in the scope where it is used called.
-      "unicorn/consistent-boolean-name": [
-        "error",
-        {
-          checkArguments: "never", // Parameters often mirror established React/DOM prop names like `open`, `checked` or `disabled`.
-          checkFunctions: "never", // Predicate functions like `authorize()` or `matches()` read naturally without a boolean prefix.
-        },
-      ],
+      "unicorn/consistent-boolean-name": "off", // Too noisy: flags established React/DOM prop names like `open`, `checked` or `disabled`, and predicate functions like `authorize()` or `matches()` that read naturally without a boolean prefix.
       "unicorn/import-style": "off", // The default of import-style is highly subjective and not always the best choice. E.g. bundlers are able to tree-shake named imports easier than default imports.
       "unicorn/max-nested-calls": "off", // Schema builders (e.g. valibot, zod) nest calls by design: v.object({ a: v.optional(v.array(v.string())) })
       "unicorn/no-array-for-each": "off",
