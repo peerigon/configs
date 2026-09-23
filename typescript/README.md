@@ -15,9 +15,9 @@ Then create a `tsconfig.json` just for type-checking next to your `package.json`
   "extends": "@peerigon/configs/typescript",
   // You might want to adjust the following compilerOptions based on your project
   "compilerOptions": {
-    // Our config only uses "es2024".
+    // Our config only uses "es2025".
     // Depending on your project, you might need to add "dom" (and more).
-    // "lib": ["es2024", "dom"],
+    // "lib": ["es2025", "dom"],
     // -----------------------------------------------------------------
     // Our base config doesn't set skipLibCheck because it might hide
     // important type errors.
