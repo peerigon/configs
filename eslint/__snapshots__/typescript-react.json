@@ -1716,8 +1716,8 @@
       2,
       {
         "checkVariables": "always",
-        "checkArguments": "always",
-        "checkFunctions": "always",
+        "checkArguments": "never",
+        "checkFunctions": "never",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
@@ -1827,7 +1827,7 @@
     "unicorn/iteration-fallback-style": [0, "guard"],
     "unicorn/logical-assignment-operators": [2, "always"],
     "unicorn/max-nested-calls": [
-      2,
+      0,
       {
         "max": 3
       }
@@ -1948,7 +1948,7 @@
     "unicorn/no-new-array": [2],
     "unicorn/no-new-buffer": [2],
     "unicorn/no-non-function-verb-prefix": [
-      2,
+      0,
       {
         "verbs": ["get", "set", "unset", "delete", "add", "remove", "destroy", "create"],
         "ignore": []
@@ -2264,7 +2264,7 @@
     "unicorn/prefer-set-methods": [2],
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
-    "unicorn/prefer-simple-condition-first": [2],
+    "unicorn/prefer-simple-condition-first": [1],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [2],
     "unicorn/prefer-single-array-predicate": [2],
@@ -2314,7 +2314,7 @@
       }
     ],
     "unicorn/prefer-ternary": [0, "always"],
-    "unicorn/prefer-then-catch": [2],
+    "unicorn/prefer-then-catch": [0],
     "unicorn/prefer-toggle-attribute": [2],
     "unicorn/prefer-top-level-await": [2],
     "unicorn/prefer-type-error": [2],
@@ -3633,8 +3633,8 @@
       2,
       {
         "checkVariables": "always",
-        "checkArguments": "always",
-        "checkFunctions": "always",
+        "checkArguments": "never",
+        "checkFunctions": "never",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
@@ -3744,7 +3744,7 @@
     "unicorn/iteration-fallback-style": [0, "guard"],
     "unicorn/logical-assignment-operators": [2, "always"],
     "unicorn/max-nested-calls": [
-      2,
+      0,
       {
         "max": 3
       }
@@ -3865,7 +3865,7 @@
     "unicorn/no-new-array": [2],
     "unicorn/no-new-buffer": [2],
     "unicorn/no-non-function-verb-prefix": [
-      2,
+      0,
       {
         "verbs": ["get", "set", "unset", "delete", "add", "remove", "destroy", "create"],
         "ignore": []
@@ -4181,7 +4181,7 @@
     "unicorn/prefer-set-methods": [2],
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
-    "unicorn/prefer-simple-condition-first": [2],
+    "unicorn/prefer-simple-condition-first": [1],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [2],
     "unicorn/prefer-single-array-predicate": [2],
@@ -4231,7 +4231,7 @@
       }
     ],
     "unicorn/prefer-ternary": [0, "always"],
-    "unicorn/prefer-then-catch": [2],
+    "unicorn/prefer-then-catch": [0],
     "unicorn/prefer-toggle-attribute": [2],
     "unicorn/prefer-top-level-await": [2],
     "unicorn/prefer-type-error": [2],
@@ -6084,8 +6084,8 @@
       2,
       {
         "checkVariables": "always",
-        "checkArguments": "always",
-        "checkFunctions": "always",
+        "checkArguments": "never",
+        "checkFunctions": "never",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
@@ -6195,7 +6195,7 @@
     "unicorn/iteration-fallback-style": [0, "guard"],
     "unicorn/logical-assignment-operators": [2, "always"],
     "unicorn/max-nested-calls": [
-      2,
+      0,
       {
         "max": 3
       }
@@ -6271,7 +6271,7 @@
     "unicorn/no-exports-in-scripts": [2],
     "unicorn/no-for-each": [2],
     "unicorn/no-for-loop": [2],
-    "unicorn/no-global-object-property-assignment": [2],
+    "unicorn/no-global-object-property-assignment": [0],
     "unicorn/no-immediate-mutation": [2],
     "unicorn/no-impossible-length-comparison": [2],
     "unicorn/no-incorrect-query-selector": [2],
@@ -6316,7 +6316,7 @@
     "unicorn/no-new-array": [2],
     "unicorn/no-new-buffer": [2],
     "unicorn/no-non-function-verb-prefix": [
-      2,
+      0,
       {
         "verbs": ["get", "set", "unset", "delete", "add", "remove", "destroy", "create"],
         "ignore": []
@@ -6344,7 +6344,7 @@
     "unicorn/no-thenable": [2],
     "unicorn/no-this-assignment": [2],
     "unicorn/no-this-outside-of-class": [2],
-    "unicorn/no-top-level-assignment-in-function": [2],
+    "unicorn/no-top-level-assignment-in-function": [0],
     "unicorn/no-top-level-side-effects": [2],
     "unicorn/no-transition-all": [2],
     "unicorn/no-typeof-undefined": [
@@ -6361,7 +6361,7 @@
     "unicorn/no-unnecessary-await": [2],
     "unicorn/no-unnecessary-boolean-comparison": [2],
     "unicorn/no-unnecessary-fetch-options": [2],
-    "unicorn/no-unnecessary-global-this": [2],
+    "unicorn/no-unnecessary-global-this": [0],
     "unicorn/no-unnecessary-nested-ternary": [2],
     "unicorn/no-unnecessary-polyfills": [2, {}],
     "unicorn/no-unnecessary-slice-end": [2],
@@ -6632,7 +6632,7 @@
     "unicorn/prefer-set-methods": [2],
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
-    "unicorn/prefer-simple-condition-first": [2],
+    "unicorn/prefer-simple-condition-first": [1],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [2],
     "unicorn/prefer-single-array-predicate": [2],
@@ -6682,7 +6682,7 @@
       }
     ],
     "unicorn/prefer-ternary": [0, "always"],
-    "unicorn/prefer-then-catch": [2],
+    "unicorn/prefer-then-catch": [0],
     "unicorn/prefer-toggle-attribute": [2],
     "unicorn/prefer-top-level-await": [0],
     "unicorn/prefer-type-error": [2],
@@ -8005,8 +8005,8 @@
       2,
       {
         "checkVariables": "always",
-        "checkArguments": "always",
-        "checkFunctions": "always",
+        "checkArguments": "never",
+        "checkFunctions": "never",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
@@ -8116,7 +8116,7 @@
     "unicorn/iteration-fallback-style": [0, "guard"],
     "unicorn/logical-assignment-operators": [2, "always"],
     "unicorn/max-nested-calls": [
-      2,
+      0,
       {
         "max": 3
       }
@@ -8192,7 +8192,7 @@
     "unicorn/no-exports-in-scripts": [2],
     "unicorn/no-for-each": [2],
     "unicorn/no-for-loop": [2],
-    "unicorn/no-global-object-property-assignment": [2],
+    "unicorn/no-global-object-property-assignment": [0],
     "unicorn/no-immediate-mutation": [2],
     "unicorn/no-impossible-length-comparison": [2],
     "unicorn/no-incorrect-query-selector": [2],
@@ -8237,7 +8237,7 @@
     "unicorn/no-new-array": [2],
     "unicorn/no-new-buffer": [2],
     "unicorn/no-non-function-verb-prefix": [
-      2,
+      0,
       {
         "verbs": ["get", "set", "unset", "delete", "add", "remove", "destroy", "create"],
         "ignore": []
@@ -8265,7 +8265,7 @@
     "unicorn/no-thenable": [2],
     "unicorn/no-this-assignment": [2],
     "unicorn/no-this-outside-of-class": [2],
-    "unicorn/no-top-level-assignment-in-function": [2],
+    "unicorn/no-top-level-assignment-in-function": [0],
     "unicorn/no-top-level-side-effects": [2],
     "unicorn/no-transition-all": [2],
     "unicorn/no-typeof-undefined": [
@@ -8282,7 +8282,7 @@
     "unicorn/no-unnecessary-await": [2],
     "unicorn/no-unnecessary-boolean-comparison": [2],
     "unicorn/no-unnecessary-fetch-options": [2],
-    "unicorn/no-unnecessary-global-this": [2],
+    "unicorn/no-unnecessary-global-this": [0],
     "unicorn/no-unnecessary-nested-ternary": [2],
     "unicorn/no-unnecessary-polyfills": [2, {}],
     "unicorn/no-unnecessary-slice-end": [2],
@@ -8553,7 +8553,7 @@
     "unicorn/prefer-set-methods": [2],
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
-    "unicorn/prefer-simple-condition-first": [2],
+    "unicorn/prefer-simple-condition-first": [1],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [2],
     "unicorn/prefer-single-array-predicate": [2],
@@ -8603,7 +8603,7 @@
       }
     ],
     "unicorn/prefer-ternary": [0, "always"],
-    "unicorn/prefer-then-catch": [2],
+    "unicorn/prefer-then-catch": [0],
     "unicorn/prefer-toggle-attribute": [2],
     "unicorn/prefer-top-level-await": [0],
     "unicorn/prefer-type-error": [2],
