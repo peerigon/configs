@@ -21,12 +21,21 @@ export const javascript = [
       "unicorn/prefer-query-selector": "off",
       // Also turn off the following rules because they're too opinionated
       "unicorn/consistent-function-scoping": "off", // This rule forces to move arrow functions up the scope where it is often more readable to keep the function in the scope where it is used called.
+      "unicorn/consistent-boolean-name": [
+        "error",
+        {
+          checkArguments: "never", // Parameters often mirror established React/DOM prop names like `open`, `checked` or `disabled`.
+          checkFunctions: "never", // Predicate functions like `authorize()` or `matches()` read naturally without a boolean prefix.
+        },
+      ],
       "unicorn/import-style": "off", // The default of import-style is highly subjective and not always the best choice. E.g. bundlers are able to tree-shake named imports easier than default imports.
+      "unicorn/max-nested-calls": "off", // Schema builders (e.g. valibot, zod) nest calls by design: v.object({ a: v.optional(v.array(v.string())) })
       "unicorn/no-array-for-each": "off",
       "unicorn/no-array-reduce": "off",
       "unicorn/no-break-in-nested-loop": "off", // Forces extracting any nested loop body into a function just to use continue/break, even when the target is unambiguous.
       "unicorn/no-computed-property-existence-check": "off", // Only correct for true key-presence checks; misfires on `value && typeof value === "object"` truthiness guards, whose Object.hasOwn() "fix" changes behavior.
       "unicorn/no-unreadable-for-of-expression": "off", // Flags common idioms like `for (const x of foo() ?? [])` as too complex, forcing an extra variable for no readability gain.
+      "unicorn/no-non-function-verb-prefix": "off", // Flags common UI names like `createButton` for "the create button" element.
       "unicorn/no-object-as-default-parameter": "off", // This rule also complains about the object when we already use destructuring. E.g. it would complain about the following pattern which is perfectly fine: { github = false, jsr = false } = { github: true, jsr: true }
       "unicorn/no-single-promise-in-promise-methods": "off", // It makes sense to use Promise.all() with a single promise when we expect more to be added later. In that case we don't want to refactor the code, but just add the new promise.
       "unicorn/prefer-global-this": "off", // Too many false positives
@@ -34,6 +43,8 @@ export const javascript = [
       "unicorn/require-array-join-separator": "off",
       "unicorn/single-line-block-comment-style": "off", // Would force every single-line JSDoc annotation (e.g. `/** @type {...} */`) into multiline form, contradicting standard JSDoc convention.
       "unicorn/prefer-import-meta-properties": "error",
+      "unicorn/prefer-simple-condition-first": "warn", // Only a warning because most reports need a manual short-circuit review before reordering.
+      "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
     },
   },
   {
@@ -163,6 +174,9 @@ export const javascript = [
       "no-unused-expressions": "off", // Assertion styles (e.g. chai) use expression statements.
       "prefer-arrow-callback": "off", // Function callbacks are needed for this-binding tests.
       "require-yield": "off", // Generators without yield are common in test helpers/setup.
+      "unicorn/no-global-object-property-assignment": "off", // Test setup often assigns globals on purpose (e.g. `globalThis.window` from jsdom).
+      "unicorn/no-top-level-assignment-in-function": "off", // Tests commonly use `let server; beforeAll(() => { server = … })`.
+      "unicorn/no-unnecessary-global-this": "off", // Test setup often uses `globalThis` explicitly to make global access obvious.
       "unicorn/prefer-single-call": "off", // Multiple `Array#push()` / `classList` calls are often clearer in test setup than one merged call.
       "unicorn/prefer-top-level-await": "off", // Top-level await might slow down the test suite start up.
     },
