@@ -8,6 +8,10 @@ import reactYouMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need
 import { globPatterns } from "../lib/glob-patterns.js";
 
 const files = [globPatterns.jsx, globPatterns.typescriptJsx];
+// Hook rules (rules-of-hooks, exhaustive-deps, React Compiler) must also cover custom hooks
+// defined in plain .ts/.js files that contain no JSX.
+const nonJsxFiles = [globPatterns.javascript, globPatterns.typescript];
+const hookFiles = [...files, ...nonJsxFiles];
 
 /** @type {import("eslint").Linter.Config[]} */
 export const react = [
@@ -53,7 +57,7 @@ export const react = [
   },
   {
     ...reactHooksPlugin.configs.flat.recommended,
-    files,
+    files: hookFiles,
   },
   {
     // @eslint-react owns every hook/React-Compiler rule it ships an
@@ -63,6 +67,20 @@ export const react = [
     // the fallback. Two gaps this preset leaves are patched in the rules block below.
     ...reactPlugin2.configs["disable-conflict-eslint-plugin-react-hooks"],
     files,
+  },
+  {
+    // In .ts/.js files eslint-plugin-react-hooks is the only hook layer (@eslint-react only
+    // covers jsx/tsx). Align its severities with the @eslint-react equivalents used in
+    // .tsx so that moving a custom hook between file extensions doesn't change severity.
+    files: nonJsxFiles,
+    rules: {
+      "react-hooks/globals": "warn", // matches @eslint-react/globals
+      "react-hooks/immutability": "warn", // matches @eslint-react/immutability
+      "react-hooks/purity": "warn", // matches @eslint-react/purity
+      "react-hooks/refs": "warn", // matches @eslint-react/refs
+      "react-hooks/set-state-in-effect": "warn", // matches @eslint-react/set-state-in-effect
+      "react-hooks/unsupported-syntax": "error", // matches @eslint-react/unsupported-syntax
+    },
   },
   {
     ...reactYouMightNotNeedAnEffect.configs.recommended,
@@ -124,6 +142,7 @@ export const react = [
     files: globPatterns.tests,
     rules: {
       "@eslint-react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
+      "react-hooks/exhaustive-deps": "off", // Same as above, for hook tests in plain .ts/.js files.
       "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
       "@eslint-react/no-missing-component-display-name": "off", // Anonymous inline components are common in tests.
     },
