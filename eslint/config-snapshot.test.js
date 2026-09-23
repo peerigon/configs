@@ -50,7 +50,7 @@ const presetMatrix = [
   {
     name: "typescript-react",
     preset: typescriptReactPreset,
-    files: ["main.tsx", "main.ts", "main.test.tsx"],
+    files: ["main.tsx", "main.ts", "main.test.tsx", "main.test.ts"],
   },
 ];
 
