@@ -778,11 +778,11 @@
     "unicorn/consistent-arrow-return-style": [0],
     "unicorn/consistent-assert": [2],
     "unicorn/consistent-boolean-name": [
-      2,
+      0,
       {
         "checkVariables": "always",
-        "checkArguments": "never",
-        "checkFunctions": "never",
+        "checkArguments": "always",
+        "checkFunctions": "always",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
@@ -2294,11 +2294,11 @@
     "unicorn/consistent-arrow-return-style": [0],
     "unicorn/consistent-assert": [2],
     "unicorn/consistent-boolean-name": [
-      2,
+      0,
       {
         "checkVariables": "always",
-        "checkArguments": "never",
-        "checkFunctions": "never",
+        "checkArguments": "always",
+        "checkFunctions": "always",
         "checkMethods": "never",
         "checkFields": "never",
         "ignore": [],
