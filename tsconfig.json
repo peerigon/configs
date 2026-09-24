@@ -1,7 +1,7 @@
 {
   "extends": ["./typescript/base.json", "./typescript/js-lib.json"],
   "compilerOptions": {
-    "lib": ["es2024"],
+    "lib": ["es2025"],
     "rootDir": ".",
     "skipLibCheck": true,
     "types": ["node"]
