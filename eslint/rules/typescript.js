@@ -40,6 +40,16 @@ export const typescript =
           ],
           "@typescript-eslint/class-literal-property-style": "off", // https://typescript-eslint.io/rules/class-literal-property-style
           "@typescript-eslint/consistent-type-definitions": ["warn", "type"], // https://typescript-eslint.io/rules/consistent-type-definitions
+          // Inline type specifiers avoid a second import statement from the same module.
+          // Combined with no-import-type-side-effects, imports that only contain types
+          // still use `import type` so that they are fully erased under verbatimModuleSyntax.
+          // `import("a").A` type annotations are allowed since they are always erased
+          // and are commonly used in test mocks, e.g. `importOriginal<typeof import("a")>()`.
+          "@typescript-eslint/consistent-type-imports": [
+            // https://typescript-eslint.io/rules/consistent-type-imports
+            "warn",
+            { disallowTypeAnnotations: false, fixStyle: "inline-type-imports" },
+          ],
           "@typescript-eslint/explicit-member-accessibility": [
             // https://typescript-eslint.io/rules/explicit-member-accessibility
             "warn",
@@ -69,6 +79,9 @@ export const typescript =
           ],
           "@typescript-eslint/no-empty-function": "off", // https://typescript-eslint.io/rules/no-empty-function
           "@typescript-eslint/no-empty-interface": "off", // https://typescript-eslint.io/rules/no-empty-interface
+          // With verbatimModuleSyntax, `import { type A } from "a"` is compiled to `import "a"`
+          // which keeps the module (and its side-effects) in the bundle.
+          "@typescript-eslint/no-import-type-side-effects": "warn", // https://typescript-eslint.io/rules/no-import-type-side-effects
           // `any` is sometimes useful for small and abstract functions.
           // Should only be used in isolated parts of the codebase.
           // Appropriate usage can only be checked in a PR review.
