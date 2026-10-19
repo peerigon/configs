@@ -343,6 +343,15 @@
     "typescript/class-literal-property-style": "allow",
     "typescript/consistent-return": "warn",
     "typescript/consistent-type-definitions": ["warn", ["type"]],
+    "typescript/consistent-type-imports": [
+      "warn",
+      [
+        {
+          "disallowTypeAnnotations": false,
+          "fixStyle": "inline-type-imports"
+        }
+      ]
+    ],
     "typescript/explicit-member-accessibility": [
       "warn",
       [
@@ -369,6 +378,7 @@
     "typescript/no-floating-promises": "warn",
     "typescript/no-for-in-array": "warn",
     "typescript/no-implied-eval": "warn",
+    "typescript/no-import-type-side-effects": "warn",
     "typescript/no-meaningless-void-operator": "warn",
     "typescript/no-misused-new": "warn",
     "typescript/no-misused-spread": "warn",
@@ -831,6 +841,15 @@
     "typescript/class-literal-property-style": "allow",
     "typescript/consistent-return": "warn",
     "typescript/consistent-type-definitions": ["warn", ["type"]],
+    "typescript/consistent-type-imports": [
+      "warn",
+      [
+        {
+          "disallowTypeAnnotations": false,
+          "fixStyle": "inline-type-imports"
+        }
+      ]
+    ],
     "typescript/explicit-member-accessibility": [
       "warn",
       [
@@ -857,6 +876,7 @@
     "typescript/no-floating-promises": "warn",
     "typescript/no-for-in-array": "warn",
     "typescript/no-implied-eval": "warn",
+    "typescript/no-import-type-side-effects": "warn",
     "typescript/no-meaningless-void-operator": "warn",
     "typescript/no-misused-new": "warn",
     "typescript/no-misused-spread": "warn",
@@ -1295,6 +1315,15 @@
     "typescript/consistent-return": "warn",
     "typescript/consistent-type-assertions": "allow",
     "typescript/consistent-type-definitions": ["warn", ["type"]],
+    "typescript/consistent-type-imports": [
+      "warn",
+      [
+        {
+          "disallowTypeAnnotations": false,
+          "fixStyle": "inline-type-imports"
+        }
+      ]
+    ],
     "typescript/explicit-member-accessibility": [
       "warn",
       [
@@ -1321,6 +1350,7 @@
     "typescript/no-floating-promises": "warn",
     "typescript/no-for-in-array": "warn",
     "typescript/no-implied-eval": "warn",
+    "typescript/no-import-type-side-effects": "warn",
     "typescript/no-meaningless-void-operator": "warn",
     "typescript/no-misused-new": "warn",
     "typescript/no-misused-spread": "warn",

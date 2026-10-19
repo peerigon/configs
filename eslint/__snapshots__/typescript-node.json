@@ -206,6 +206,13 @@
     "@typescript-eslint/consistent-indexed-object-style": [2],
     "@typescript-eslint/consistent-type-assertions": [2],
     "@typescript-eslint/consistent-type-definitions": [1, "type"],
+    "@typescript-eslint/consistent-type-imports": [
+      1,
+      {
+        "disallowTypeAnnotations": false,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "@typescript-eslint/dot-notation": [
       2,
       {
@@ -437,6 +444,7 @@
     "@typescript-eslint/no-for-in-array": [2],
     "@typescript-eslint/no-generated-empty-object-type": [2],
     "@typescript-eslint/no-implied-eval": [2],
+    "@typescript-eslint/no-import-type-side-effects": [1],
     "@typescript-eslint/no-inferrable-types": [2],
     "@typescript-eslint/no-invalid-void-type": [2],
     "@typescript-eslint/no-meaningless-void-operator": [2],
@@ -2107,6 +2115,13 @@
     "@typescript-eslint/consistent-indexed-object-style": [2],
     "@typescript-eslint/consistent-type-assertions": [2],
     "@typescript-eslint/consistent-type-definitions": [0, "type"],
+    "@typescript-eslint/consistent-type-imports": [
+      1,
+      {
+        "disallowTypeAnnotations": false,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "@typescript-eslint/dot-notation": [
       2,
       {
@@ -2338,6 +2353,7 @@
     "@typescript-eslint/no-for-in-array": [2],
     "@typescript-eslint/no-generated-empty-object-type": [2],
     "@typescript-eslint/no-implied-eval": [2],
+    "@typescript-eslint/no-import-type-side-effects": [1],
     "@typescript-eslint/no-inferrable-types": [2],
     "@typescript-eslint/no-invalid-void-type": [2],
     "@typescript-eslint/no-meaningless-void-operator": [2],
@@ -4010,6 +4026,13 @@
     "@typescript-eslint/consistent-indexed-object-style": [2],
     "@typescript-eslint/consistent-type-assertions": [0],
     "@typescript-eslint/consistent-type-definitions": [1, "type"],
+    "@typescript-eslint/consistent-type-imports": [
+      1,
+      {
+        "disallowTypeAnnotations": false,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "@typescript-eslint/dot-notation": [
       2,
       {
@@ -4241,6 +4264,7 @@
     "@typescript-eslint/no-for-in-array": [2],
     "@typescript-eslint/no-generated-empty-object-type": [2],
     "@typescript-eslint/no-implied-eval": [2],
+    "@typescript-eslint/no-import-type-side-effects": [1],
     "@typescript-eslint/no-inferrable-types": [2],
     "@typescript-eslint/no-invalid-void-type": [2],
     "@typescript-eslint/no-meaningless-void-operator": [2],

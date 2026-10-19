@@ -19,6 +19,16 @@ export const typescript = {
     ],
     "typescript/class-literal-property-style": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/class-literal-property-style
     "typescript/consistent-type-definitions": ["warn", "type"], // https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-definitions
+    // Inline type specifiers avoid a second import statement from the same module.
+    // Combined with no-import-type-side-effects, imports that only contain types
+    // still use `import type` so that they are fully erased under verbatimModuleSyntax.
+    // `import("a").A` type annotations are allowed since they are always erased
+    // and are commonly used in test mocks, e.g. `importOriginal<typeof import("a")>()`.
+    "typescript/consistent-type-imports": [
+      // https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports
+      "warn",
+      { disallowTypeAnnotations: false, fixStyle: "inline-type-imports" },
+    ],
     "typescript/explicit-member-accessibility": [
       // https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-member-accessibility
       "warn",
@@ -38,6 +48,9 @@ export const typescript = {
     "id-match": ruleOptions["id-match"],
     "typescript/no-confusing-void-expression": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-confusing-void-expression
     "typescript/no-empty-interface": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-empty-interface
+    // With verbatimModuleSyntax, `import { type A } from "a"` is compiled to `import "a"`
+    // which keeps the module (and its side-effects) in the bundle.
+    "typescript/no-import-type-side-effects": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-import-type-side-effects
     // `any` is sometimes useful for small and abstract functions.
     // Should only be used in isolated parts of the codebase.
     // Appropriate usage can only be checked in a PR review.
