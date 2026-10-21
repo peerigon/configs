@@ -115,3 +115,33 @@ with branch protection rules.
 To prevent stale changelogs, releases fail when a `CHANGELOG.md` file exists in the
 repository. You can bypass this check by setting
 `SEMANTIC_RELEASE_ALLOW_CHANGELOG=true`.
+
+## Commit analysis: `conventionalcommits` preset
+
+The preset uses the `conventionalcommits` preset for both the commit analyzer and the release notes
+generator instead of semantic-release's default `angular` preset. The only functional difference for
+releases is the `!` shorthand:
+
+| Commit message                                       | `angular` (default) | `conventionalcommits` |
+| ---------------------------------------------------- | ------------------- | --------------------- |
+| `feat(scope)!: drop Node 20`                         | **no release**      | major                 |
+| `fix!: change default`                               | **no release**      | major                 |
+| `feat: x` + footer `BREAKING CHANGE: ...`            | major               | major                 |
+| `feat!: x` + footer `BREAKING-CHANGE: ...`           | **no release**      | major                 |
+| `feat: x` + heading `## BREAKING CHANGE` in the body | minor               | minor                 |
+| `fix: x` / `perf: x`                                 | patch               | patch                 |
+| `refactor:`, `docs:`, `chore:`, `build:`, `ci:`      | no release          | no release            |
+
+Note that a heading like `## BREAKING CHANGE` never counts. The footer has to be a paragraph that starts
+with `BREAKING CHANGE:` at the beginning of a line. Because squash merges use the PR title as the commit
+header and the PR description as the body, this applies to PR titles and descriptions as well.
+
+The release notes also look different:
+
+- `BREAKING CHANGES` is rendered as `### ⚠ BREAKING CHANGES` and listed first, including `!` commits
+  (`* **x:** drop Node 20`). With `angular`, only commits with a footer show up there.
+- Section order is Features, Bug Fixes, Performance Improvements, Reverts (`angular`: Bug Fixes first).
+- The version header is `## [2.0.0]` (`angular`: `# [2.0.0]` for minor/major and `## [2.0.0]` for patches).
+
+Still add a `BREAKING CHANGE:` footer to every breaking change: it carries the migration instructions that
+end up in the release notes. Projects with their own `.releaserc` that keep the `angular` preset ignore `!`.

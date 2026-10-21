@@ -36,8 +36,10 @@ export const config = {
           ` && node "${verifyPublishableScript}"`,
       },
     ],
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
+    // The default angular preset ignores the `!` in `feat(scope)!:` and would silently skip
+    // the release unless the body has a `BREAKING CHANGE:` footer. conventionalcommits honors both.
+    ["@semantic-release/commit-analyzer", { preset: "conventionalcommits" }],
+    ["@semantic-release/release-notes-generator", { preset: "conventionalcommits" }],
     [
       "@semantic-release/npm",
       {
