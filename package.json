@@ -149,6 +149,8 @@
     "typescript-eslint": "^8.65.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
