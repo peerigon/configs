@@ -91,7 +91,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Prefer staged validation for non-trivial tasks. While iterating, run only fast, focused checks (type diagnostics, the single affected unit test file). Defer slow checks (browser/e2e/visual tests, builds, full test suites) until the change is complete, unless the change touches exactly what that check proves. Run formatting and linting once the change is complete (before handoff, a commit or a push, whoever does it), not after every edit. For trivial tasks, a single final validation is acceptable.
 - Adjust documentation both in comments and markdown files once you're done
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
-- **Important**: For breaking changes, do not rely on the `!` shorthand (e.g. `feat!:`). This repo's semantic-release config uses the default `conventional-changelog-angular` preset, whose header parser does not recognize `!` — such commits are silently ignored (not even counted as a `feat`/`fix` release). Always add a `BREAKING CHANGE:` footer describing the change instead.
+- For breaking changes, mark the commit or PR title with `!` (e.g. `feat(scope)!:`) and add a `BREAKING CHANGE:` footer that tells consumers what to do. `@peerigon/configs/semantic-release` uses the `conventionalcommits` preset, which honors `!`. If a project still uses the default `angular` preset, `!` is ignored and the `BREAKING CHANGE:` paragraph (at the start of a line, not a heading) is the only trigger, otherwise the merge releases nothing.
 
 ## Consumer-repo uncertainty protocol
 
