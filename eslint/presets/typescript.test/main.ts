@@ -7,6 +7,7 @@ const snake_case = 123;
 
 // Should not complain about missing dot-notation here since
 // we're using TS's noPropertyAccessFromIndexSignature
+// eslint-disable-next-line unicorn/no-top-level-side-effects
 process.env["SOME_ENV_VAR"] = "test";
 
 // Bracket notation on index type should not show dot-notation error
@@ -43,11 +44,9 @@ export const untypedExport = (value: string) => value;
 // Internal (non-exported) functions are fine without an explicit return type
 const inferredInternal = (value: string) => value;
 
-// eslint-disable-next-line unicorn/no-top-level-side-effects
 console.log(getMessage(), SomeClass, snake_case, test, untypedExport, inferredInternal);
 
 /* @ts-expect-error Inconsistent returns should be caught by TypeScript */
-// eslint-disable-next-line unicorn/no-top-level-side-effects
 (() => {
   if (Math.random() > 0.5) {
     return true;
