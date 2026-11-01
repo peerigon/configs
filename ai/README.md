@@ -16,6 +16,8 @@ Put this in your project-specific rules file (like `CLAUDE.md`, `.cursor/rules.m
 
 The `@` line makes Claude Code load the rules (and the language-specific guides they import) into context at session start. A plain Markdown link is not enough: agents rarely open linked files on their own. Other agents ignore the `@` line and follow the link. Adjust the path if your `node_modules` is not next to the rules file (e.g. in monorepo packages).
 
+Dependencies must be installed before the agent session starts. Without `node_modules` (e.g. in a fresh clone or a new worktree), the import silently loads nothing. Install them in your workspace setup script or before you start the agent.
+
 For large repositories, we recommend maintaining a repo-level routing document at `docs/agent-routing.md` to help agents find the right entrypoints quickly.
 You can start from [`agent-routing.example.md`](./agent-routing.example.md) and adapt it to your needs.
 
