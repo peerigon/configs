@@ -21,20 +21,33 @@ alwaysApply: true
 - Before the first tool call, state in one sentence what you are about to do
 - While working, give a brief update only when something important is found or direction changes
 - When done, lead with the outcome (what happened or what was found); add supporting detail after
+- End the final message with an explicit status: whether it is ready to merge (and why not), decisions needed from the user, and the next step. If nothing is left, say so
 - Keep responses focused and concise; avoid filler sections, redundant summaries, and unnecessary caveats
+- Write for a reader who has not followed your investigation: use plain language, define uncommon terms on first use, and do not use labels from your own process (finding numbers, severities, option letters)
+- End with at most one question, phrased so that a short "yes" has exactly one meaning
 - Only narrate a correction when the error would change the user's code, conclusions, or decisions; state it briefly and continue
 
 ### Task scope
 
-- Deliver what was asked, at the scope intended; do not silently narrow, widen, or transform the task
-- Make routine judgment calls yourself; check in only when different readings of the request would lead to materially different work
+- Deliver what was asked, at the scope intended; do not narrow, widen, or transform the task. Disclosing that you narrowed it does not make it acceptable
+- Finish all findings and all similar occurrences (sweep the codebase for the same pattern). Leave open only what is blocked or needs a real decision, and list those
+- If the next step follows directly from the request and is reversible (edits, local commits on the feature branch), do it instead of asking. Ask only before irreversible or outward-facing actions (merging, deploying, publishing, closing issues, touching secrets or production) that the user has not already authorized
+- Do the work yourself when you have the tools: run commands, install dependencies, and use available CLIs (`gh`, cloud or platform CLIs) instead of asking the user to check a dashboard or run something. Ask only for credentials, logins, or approvals
 - If the request seems mistaken or a better approach exists, say so in one sentence, then continue with the task as asked
+- Do not add feature flags, options, modes, compatibility layers, files, or docs that the request does not need. Unreleased or unused APIs may break without a compatibility layer; if you can't tell whether an API is in use, ask once
+
+### Verify before claiming
+
+- If running a command, reading the code, or looking at the actual output (test run, build, screenshot) can settle a claim quickly, do it before stating the claim. Otherwise mark the claim as unverified
+- Before saying a visual or behavioral fix works, check the actual result, not just the code change
+- Prefer the root-cause fix. If you ship a stopgap (e.g. a longer timeout, a retry), label it as one and name the real fix
+- Test shell commands you hand to the user, or flag them as untested
 
 ### Subagent delegation
 
 - Delegate to a subagent only for large tasks that are genuinely independent and parallelizable (e.g. a wide multi-file investigation)
 - Do not delegate work you can finish in a handful of tool calls
-- Do not use subagents to verify or double-check your own work
+- Before opening a non-trivial PR or marking it ready, have one fresh-context review agent review the diff. Fix the findings that hold up and briefly list the ones you rejected
 - Use one subagent when one suffices; keep spawn counts low
 
 ## File order (MUST)
@@ -69,17 +82,25 @@ Exception: define earlier only when module-level execution (TDZ / load-time init
 
 See [Coding Styleguide JavaScript & TypeScript](./coding-styleguide-js-ts.mdc)
 
+@coding-styleguide-js-ts.mdc
+
 ## HTML & CSS
 
 See [Coding Styleguide HTML & CSS](./coding-styleguide-html-css.mdc)
+
+@coding-styleguide-html-css.mdc
 
 ## React
 
 See [Coding Styleguide React](./coding-styleguide-react.mdc)
 
+@coding-styleguide-react.mdc
+
 ## Shell scripts
 
 See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
+
+@coding-styleguide-sh.mdc
 
 ## Development Practices
 
@@ -89,9 +110,16 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Unit test files are colocated with source files (\*.test.ts)
 - Write integration or e2e tests for more complex functions/classes/components
 - Prefer staged validation for non-trivial tasks. While iterating, run only fast, focused checks (type diagnostics, the single affected unit test file). Defer slow checks (browser/e2e/visual tests, builds, full test suites) until the change is complete, unless the change touches exactly what that check proves. Run formatting and linting once the change is complete (before handoff, a commit or a push, whoever does it), not after every edit. For trivial tasks, a single final validation is acceptable.
+- Before pushing, run the repository's format, lint, type-check, and unit-test commands for the affected packages. Only browser, e2e, and visual tests may be left to CI; say so in the handoff. If dependencies are missing, install them instead of skipping validation
+- Before writing a utility, check whether an installed dependency or a well-maintained package already does it
+- After install, update, merge, or rebase operations, review `git diff` and revert changes the task did not ask for (e.g. lockfile or manifest rewrites by the package manager)
+- In the handoff, list every file, CI job, or config you removed (including during conflict resolution) and why
 - Adjust documentation both in comments and markdown files once you're done
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
 - For breaking changes, mark the commit or PR title with `!` (e.g. `feat(scope)!:`) and add a `BREAKING CHANGE:` footer that tells consumers what to do. `@peerigon/configs/semantic-release` uses the `conventionalcommits` preset, which honors `!`. If a project still uses the default `angular` preset, `!` is ignored and the `BREAKING CHANGE:` paragraph (at the start of a line, not a heading) is the only trigger, otherwise the merge releases nothing.
+- When PRs are squash-merged, the PR title and description become the commit message: put the `BREAKING CHANGE:` footer in the PR description, not only in individual commits
+- After every push to a branch with an open PR, update the PR title and description so they describe the current diff (high-level and concise, no history of earlier iterations)
+- Pass PR, issue, and comment bodies to `gh` via `--body-file` or a quoted heredoc so markdown (backticks, `$`) is not escaped or expanded
 
 ## Consumer-repo uncertainty protocol
 

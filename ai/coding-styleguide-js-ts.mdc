@@ -12,7 +12,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 ## Formatting
 
-- Use Prettier's default formatting
+- Use the repository's formatter (Prettier or Oxfmt) and its config; do not hand-format code the formatter would rewrite
 
 ## Imports & exports
 
@@ -212,3 +212,5 @@ const user = unwrap(userResult);
 ## Testing
 
 See [Coding Styleguide Testing](./coding-styleguide-testing.mdc)
+
+@coding-styleguide-testing.mdc
