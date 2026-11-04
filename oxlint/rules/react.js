@@ -59,6 +59,7 @@ export const react = {
 
     // Classic react rules we kept in the ESLint pack (where native exists)
     "react/button-has-type": "warn", // replaces @eslint-react/dom-no-missing-button-type
+    "react/display-name": "warn", // replaces @eslint-react/no-missing-component-display-name
     "react/iframe-missing-sandbox": "warn", // replaces @eslint-react/dom-no-missing-iframe-sandbox
     "react/jsx-boolean-value": ["warn", "never"], // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-boolean-value
     "react/jsx-curly-brace-presence": ["warn", "never"], // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-curly-brace-presence
@@ -119,6 +120,7 @@ export const react = {
       rules: {
         "react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
         "react/only-export-components": "off", // Test files export helpers/constants alongside components.
+        "react/display-name": "off", // Anonymous inline components are common in tests.
       },
     },
   ],

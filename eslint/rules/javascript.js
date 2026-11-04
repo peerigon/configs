@@ -56,7 +56,6 @@ export const javascript = [
       "unicorn/prefer-iterator-helpers": "off",
       "unicorn/prefer-iterator-to-array-at-end": "off",
       "unicorn/prefer-object-destructuring-defaults": "off",
-      "unicorn/prefer-scoped-selector": "off",
       "unicorn/prefer-single-array-predicate": "off",
       // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
       // equivalents report the same code and ship an autofix, while the core rules don't.
@@ -95,6 +94,11 @@ export const javascript = [
       "dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
       eqeqeq: ["warn", "always", { null: "ignore" }], // https://eslint.org/docs/latest/rules/eqeqeq
       "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://eslint.org/docs/latest/rules/grouped-accessor-pairs
+      "max-depth": ["warn", 5], // https://eslint.org/docs/latest/rules/max-depth
+      // Callbacks nest by design in React and test code, so the limit is looser than max-depth's.
+      "max-nested-callbacks": ["warn", 5], // https://eslint.org/docs/latest/rules/max-nested-callbacks
+      // Positional arguments of the same type can be swapped without a type error.
+      "max-params": ["warn", { max: 4 }], // https://eslint.org/docs/latest/rules/max-params
       "no-alert": "warn", // https://eslint.org/docs/latest/rules/no-alert
       "no-array-constructor": "warn", // https://eslint.org/docs/latest/rules/no-array-constructor
       "no-bitwise": "warn", // https://eslint.org/docs/latest/rules/no-bitwise
@@ -170,6 +174,8 @@ export const javascript = [
       "no-only-tests": noOnlyTests,
     },
     rules: {
+      "max-depth": "off", // Nested describe blocks are often the clearest structure.
+      "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
       "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
       "no-new": "off", // Constructor side effects are often asserted directly in tests.
       "no-only-tests/no-only-tests": "error", // Should show a warning when a test is focussed (overridden to off when using vitest config).

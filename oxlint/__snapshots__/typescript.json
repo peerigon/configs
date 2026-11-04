@@ -16,6 +16,7 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
       [
@@ -23,6 +24,15 @@
           "max": 1400,
           "skipBlankLines": true,
           "skipComments": true
+        }
+      ]
+    ],
+    "max-nested-callbacks": ["warn", [5]],
+    "max-params": [
+      "warn",
+      [
+        {
+          "max": 4
         }
       ]
     ],
@@ -371,6 +381,7 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
       [
@@ -378,6 +389,15 @@
           "max": 1400,
           "skipBlankLines": true,
           "skipComments": true
+        }
+      ]
+    ],
+    "max-nested-callbacks": ["warn", [5]],
+    "max-params": [
+      "warn",
+      [
+        {
+          "max": 4
         }
       ]
     ],
@@ -713,6 +733,7 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "max-depth": "allow",
     "max-lines": [
       "warn",
       [
@@ -720,6 +741,15 @@
           "max": 1400,
           "skipBlankLines": true,
           "skipComments": true
+        }
+      ]
+    ],
+    "max-nested-callbacks": "allow",
+    "max-params": [
+      "warn",
+      [
+        {
+          "max": 4
         }
       ]
     ],

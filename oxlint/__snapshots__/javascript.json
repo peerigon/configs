@@ -16,6 +16,16 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "max-depth": ["warn", [5]],
+    "max-nested-callbacks": ["warn", [5]],
+    "max-params": [
+      "warn",
+      [
+        {
+          "max": 4
+        }
+      ]
+    ],
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -227,6 +237,16 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "max-depth": "allow",
+    "max-nested-callbacks": "allow",
+    "max-params": [
+      "warn",
+      [
+        {
+          "max": 4
+        }
+      ]
+    ],
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",

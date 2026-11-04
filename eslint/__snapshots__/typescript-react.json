@@ -59,6 +59,8 @@
     "@eslint-react/no-direct-mutation-state": [2],
     "@eslint-react/no-forward-ref": [1],
     "@eslint-react/no-leaked-conditional-rendering": [2],
+    "@eslint-react/no-missing-component-display-name": [1],
+    "@eslint-react/no-missing-context-display-name": [1],
     "@eslint-react/no-missing-key": [2],
     "@eslint-react/no-nested-component-definitions": [2],
     "@eslint-react/no-nested-lazy-component-declarations": [2],
@@ -1025,6 +1027,7 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [1, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -1032,6 +1035,13 @@
         "max": 1400,
         "skipBlankLines": true,
         "skipComments": true
+      }
+    ],
+    "max-nested-callbacks": [1, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
       }
     ],
     "max-statements-per-line": [0],
@@ -2135,7 +2145,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -2847,6 +2857,7 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [1, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -2854,6 +2865,13 @@
         "max": 1400,
         "skipBlankLines": true,
         "skipComments": true
+      }
+    ],
+    "max-nested-callbacks": [1, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
       }
     ],
     "max-statements-per-line": [0],
@@ -3941,7 +3959,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -4212,6 +4230,8 @@
     "@eslint-react/no-direct-mutation-state": [2],
     "@eslint-react/no-forward-ref": [1],
     "@eslint-react/no-leaked-conditional-rendering": [2],
+    "@eslint-react/no-missing-component-display-name": [0],
+    "@eslint-react/no-missing-context-display-name": [1],
     "@eslint-react/no-missing-key": [2],
     "@eslint-react/no-nested-component-definitions": [2],
     "@eslint-react/no-nested-lazy-component-declarations": [2],
@@ -5178,6 +5198,7 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [0, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -5185,6 +5206,13 @@
         "max": 1400,
         "skipBlankLines": true,
         "skipComments": true
+      }
+    ],
+    "max-nested-callbacks": [0, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
       }
     ],
     "max-statements-per-line": [0],
@@ -6289,7 +6317,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -6504,6 +6532,7 @@
     "@babel/object-curly-spacing": [0],
     "@babel/semi": [0],
     "@eslint-react/exhaustive-deps": [0],
+    "@eslint-react/no-missing-component-display-name": [0],
     "@stylistic/array-bracket-newline": [0],
     "@stylistic/array-bracket-spacing": [0],
     "@stylistic/array-element-newline": [0],
@@ -7002,6 +7031,7 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [0, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -7009,6 +7039,13 @@
         "max": 1400,
         "skipBlankLines": true,
         "skipComments": true
+      }
+    ],
+    "max-nested-callbacks": [0, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
       }
     ],
     "max-statements-per-line": [0],
@@ -8098,7 +8135,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {

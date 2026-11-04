@@ -120,6 +120,8 @@ export const react = [
       "@eslint-react/dom-no-missing-button-type": "warn", // replaces react/button-has-type
       "@eslint-react/dom-no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
       "@eslint-react/dom-no-unknown-property": "warn", // replaces react/no-unknown-property
+      "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name. Anonymous memo/forwardRef components show up as "Anonymous" in error component stacks.
+      "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
       "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
       "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state
       // disable-conflict-eslint-plugin-react-hooks misses this pair, so turn off the
@@ -147,6 +149,7 @@ export const react = [
       "@eslint-react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
       "react-hooks/exhaustive-deps": "off", // Same as above, for hook tests in plain .ts/.js files.
       "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
+      "@eslint-react/no-missing-component-display-name": "off", // Anonymous inline components are common in tests.
     },
   },
 ];

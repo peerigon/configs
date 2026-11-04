@@ -53,6 +53,11 @@ export const javascript = {
     "eslint-js/dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
     eqeqeq: ["warn", "always", { null: "ignore" }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/eqeqeq
     "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/grouped-accessor-pairs
+    "max-depth": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth
+    // Callbacks nest by design in React and test code, so the limit is looser than max-depth's.
+    "max-nested-callbacks": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks
+    // Positional arguments of the same type can be swapped without a type error.
+    "max-params": ["warn", { max: 4 }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-params
     "no-alert": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-alert
     "no-array-constructor": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-array-constructor
     "no-bitwise": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-bitwise
@@ -126,6 +131,8 @@ export const javascript = {
     {
       files: globPatterns.tests,
       rules: {
+        "max-depth": "off", // Nested describe blocks are often the clearest structure.
+        "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
         "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
         "no-new": "off", // Constructor side effects are often asserted directly in tests.
         "no-only-tests/no-only-tests": "error", // Should show a warning when a test is focussed (overridden to off when using vitest config).

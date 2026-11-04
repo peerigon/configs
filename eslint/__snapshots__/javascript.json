@@ -296,7 +296,15 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [1, 5],
     "max-len": [0],
+    "max-nested-callbacks": [1, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
+      }
+    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
     "new-parens": [0],
@@ -1349,7 +1357,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -1857,7 +1865,15 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
+    "max-depth": [0, 5],
     "max-len": [0],
+    "max-nested-callbacks": [0, 5],
+    "max-params": [
+      1,
+      {
+        "max": 4
+      }
+    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
     "new-parens": [0],
@@ -2911,7 +2927,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [0],
+    "unicorn/prefer-scoped-selector": [2],
     "unicorn/prefer-set-has": [
       2,
       {
