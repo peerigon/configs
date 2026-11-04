@@ -106,11 +106,11 @@ export const react = [
       "@stylistic": stylisticPlugin,
     },
     rules: {
-      // self-closing-comp, jsx-curly-brace-presence and jsx-pascal-case moved to
-      // @stylistic/eslint-plugin, same options as their eslint-plugin-react equivalents.
+      // self-closing-comp and jsx-curly-brace-presence moved to @stylistic/eslint-plugin, same
+      // options as their eslint-plugin-react equivalents. jsx-pascal-case is not enabled: it is a
+      // naming preference without an autofix.
       "@stylistic/jsx-self-closing-comp": "warn", // https://eslint.style/rules/jsx-self-closing-comp
       "@stylistic/jsx-curly-brace-presence": ["warn", "never"], // https://eslint.style/rules/jsx-curly-brace-presence
-      "@stylistic/jsx-pascal-case": "warn", // https://eslint.style/rules/jsx-pascal-case
       "@eslint-react/dom-no-string-style-prop": "warn", // replaces react/style-prop-object
       "@eslint-react/dom-no-unsafe-target-blank": "warn", // replaces react/no-invalid-html-attribute (the rel="noopener noreferrer" case)
       // @eslint-react equivalents that replace eslint-plugin-react rules but are not
@@ -120,8 +120,6 @@ export const react = [
       "@eslint-react/dom-no-missing-button-type": "warn", // replaces react/button-has-type
       "@eslint-react/dom-no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
       "@eslint-react/dom-no-unknown-property": "warn", // replaces react/no-unknown-property
-      "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name
-      "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
       "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
       "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state
       // disable-conflict-eslint-plugin-react-hooks misses this pair, so turn off the
@@ -136,6 +134,11 @@ export const react = [
       // Component return types (JSX.Element vs ReactNode vs React.ReactElement) are noisy,
       // version-dependent, and don't add the same contract value as a typed utility function.
       "@typescript-eslint/explicit-module-boundary-types": "off",
+      // Naming preferences without an autofix. Code is mostly written by coding agents now, and
+      // renames ripple across files without preventing a bug.
+      "@eslint-react/naming-convention-context-name": "off",
+      "@eslint-react/naming-convention-id-name": "off",
+      "@eslint-react/naming-convention-ref-name": "off",
     },
   },
   {
@@ -144,7 +147,6 @@ export const react = [
       "@eslint-react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
       "react-hooks/exhaustive-deps": "off", // Same as above, for hook tests in plain .ts/.js files.
       "react-refresh/only-export-components": "off", // Test files export helpers/constants alongside components.
-      "@eslint-react/no-missing-component-display-name": "off", // Anonymous inline components are common in tests.
     },
   },
 ];

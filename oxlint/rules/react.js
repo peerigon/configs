@@ -59,7 +59,6 @@ export const react = {
 
     // Classic react rules we kept in the ESLint pack (where native exists)
     "react/button-has-type": "warn", // replaces @eslint-react/dom-no-missing-button-type
-    "react/display-name": "warn", // replaces @eslint-react/no-missing-component-display-name
     "react/iframe-missing-sandbox": "warn", // replaces @eslint-react/dom-no-missing-iframe-sandbox
     "react/jsx-boolean-value": ["warn", "never"], // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-boolean-value
     "react/jsx-curly-brace-presence": ["warn", "never"], // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-curly-brace-presence
@@ -81,7 +80,6 @@ export const react = {
     "react/jsx-no-constructed-context-values": "warn", // replaces @eslint-react/no-unstable-context-value
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-undef": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-undef
-    "react/jsx-pascal-case": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-pascal-case
     "react/jsx-props-no-spread-multi": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spread-multi
     "react/no-find-dom-node": "warn",
     "react/no-redundant-should-component-update": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/no-redundant-should-component-update
@@ -121,7 +119,6 @@ export const react = {
       rules: {
         "react/exhaustive-deps": "off", // Effect dependency permutations are often intentionally incomplete in tests.
         "react/only-export-components": "off", // Test files export helpers/constants alongside components.
-        "react/display-name": "off", // Anonymous inline components are common in tests.
       },
     },
   ],

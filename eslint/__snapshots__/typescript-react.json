@@ -40,9 +40,9 @@
     "@eslint-react/jsx-no-leaked-dollar": [1],
     "@eslint-react/jsx-no-leaked-semicolon": [1],
     "@eslint-react/jsx-no-namespace": [2],
-    "@eslint-react/naming-convention-context-name": [1],
-    "@eslint-react/naming-convention-id-name": [1],
-    "@eslint-react/naming-convention-ref-name": [1],
+    "@eslint-react/naming-convention-context-name": [0],
+    "@eslint-react/naming-convention-id-name": [0],
+    "@eslint-react/naming-convention-ref-name": [0],
     "@eslint-react/no-access-state-in-setstate": [2],
     "@eslint-react/no-array-index-key": [1],
     "@eslint-react/no-children-count": [1],
@@ -59,8 +59,6 @@
     "@eslint-react/no-direct-mutation-state": [2],
     "@eslint-react/no-forward-ref": [1],
     "@eslint-react/no-leaked-conditional-rendering": [2],
-    "@eslint-react/no-missing-component-display-name": [1],
-    "@eslint-react/no-missing-context-display-name": [1],
     "@eslint-react/no-missing-key": [2],
     "@eslint-react/no-nested-component-definitions": [2],
     "@eslint-react/no-nested-lazy-component-declarations": [2],
@@ -255,14 +253,6 @@
       0,
       {
         "allow": "none"
-      }
-    ],
-    "@stylistic/jsx-pascal-case": [
-      1,
-      {
-        "allowAllCaps": false,
-        "allowLeadingUnderscore": false,
-        "allowNamespace": false
       }
     ],
     "@stylistic/jsx-props-no-multi-spaces": [0],
@@ -566,172 +556,6 @@
     "@typescript-eslint/lines-around-comment": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/method-signature-style": [1, "property"],
-    "@typescript-eslint/naming-convention": [
-      1,
-      {
-        "selector": "default",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "parameter",
-        "format": ["camelCase", "PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "method",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "typeLike",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "enumMember",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "modifiers": ["destructured"],
-        "format": null
-      },
-      {
-        "selector": [
-          "classProperty",
-          "objectLiteralProperty",
-          "typeProperty",
-          "classMethod",
-          "objectLiteralMethod",
-          "typeMethod",
-          "accessor",
-          "enumMember"
-        ],
-        "modifiers": ["requiresQuotes"],
-        "format": null
-      },
-      {
-        "selector": "objectLiteralProperty",
-        "format": null
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "variable"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "function"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameter"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "property"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameterProperty"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "method"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "accessor"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enumMember"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "class"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "interface"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeAlias"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enum"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeParameter"
-      }
-    ],
     "@typescript-eslint/no-array-constructor": [2],
     "@typescript-eslint/no-array-delete": [2],
     "@typescript-eslint/no-base-to-string": [2],
@@ -839,7 +663,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [2],
+    "@typescript-eslint/prefer-includes": [0],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -848,7 +672,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [2],
+    "@typescript-eslint/prefer-string-starts-ends-with": [0],
     "@typescript-eslint/promise-function-async": [
       1,
       {
@@ -925,16 +749,6 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
-    "camelcase": [
-      0,
-      {
-        "allow": ["^UNSAFE_"],
-        "ignoreDestructuring": false,
-        "ignoreGlobals": false,
-        "ignoreImports": false,
-        "properties": "always"
-      }
-    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -976,15 +790,6 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
-    "func-style": [
-      1,
-      "expression",
-      {
-        "allowArrowFunctions": false,
-        "allowTypeAnnotation": false,
-        "overrides": {}
-      }
-    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -1220,7 +1025,6 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
-    "max-depth": [1, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -1230,25 +1034,8 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [1, 3],
-    "max-params": [
-      1,
-      {
-        "max": 4
-      }
-    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -1297,12 +1084,6 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
-      }
-    ],
-    "no-else-return": [
-      1,
-      {
-        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -1399,7 +1180,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [1],
     "no-new-func": [1],
@@ -1543,7 +1324,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -1702,7 +1482,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [2],
+    "unicorn/better-dom-traversing": [0],
     "unicorn/catch-error-name": [
       2,
       {
@@ -1711,7 +1491,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      2,
+      0,
       {
         "preferThis": true,
         "preferSuper": true
@@ -1742,7 +1522,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      2,
+      0,
       {
         "order": [
           "static-field",
@@ -1756,7 +1536,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [2, {}],
+    "unicorn/consistent-compound-words": [0, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],
@@ -1782,7 +1562,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [2],
+    "unicorn/consistent-optional-chaining": [0],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -2083,9 +1863,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [2],
+    "unicorn/no-unreadable-iife": [0],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [2],
+    "unicorn/no-unreadable-object-destructuring": [0],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -2186,7 +1966,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [2],
+    "unicorn/prefer-array-last-methods": [0],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -2220,7 +2000,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      2,
+      0,
       {
         "checkFallbackExpressions": true
       }
@@ -2272,16 +2052,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      2,
+      0,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [2],
+    "unicorn/prefer-iterator-helpers": [0],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [2],
+    "unicorn/prefer-iterator-to-array-at-end": [0],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -2316,7 +2096,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [2],
+    "unicorn/prefer-object-destructuring-defaults": [0],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -2349,7 +2129,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [2],
+    "unicorn/prefer-scoped-selector": [0],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -2368,7 +2148,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [2],
+    "unicorn/prefer-single-array-predicate": [0],
     "unicorn/prefer-single-call": [
       2,
       {
@@ -2801,172 +2581,6 @@
     "@typescript-eslint/lines-around-comment": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/method-signature-style": [1, "property"],
-    "@typescript-eslint/naming-convention": [
-      1,
-      {
-        "selector": "default",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "parameter",
-        "format": ["camelCase", "PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "method",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "typeLike",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "enumMember",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "modifiers": ["destructured"],
-        "format": null
-      },
-      {
-        "selector": [
-          "classProperty",
-          "objectLiteralProperty",
-          "typeProperty",
-          "classMethod",
-          "objectLiteralMethod",
-          "typeMethod",
-          "accessor",
-          "enumMember"
-        ],
-        "modifiers": ["requiresQuotes"],
-        "format": null
-      },
-      {
-        "selector": "objectLiteralProperty",
-        "format": null
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "variable"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "function"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameter"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "property"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameterProperty"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "method"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "accessor"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enumMember"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "class"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "interface"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeAlias"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enum"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeParameter"
-      }
-    ],
     "@typescript-eslint/no-array-constructor": [2],
     "@typescript-eslint/no-array-delete": [2],
     "@typescript-eslint/no-base-to-string": [2],
@@ -3074,7 +2688,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [2],
+    "@typescript-eslint/prefer-includes": [0],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -3083,7 +2697,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [2],
+    "@typescript-eslint/prefer-string-starts-ends-with": [0],
     "@typescript-eslint/promise-function-async": [
       1,
       {
@@ -3160,16 +2774,6 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
-    "camelcase": [
-      0,
-      {
-        "allow": ["^UNSAFE_"],
-        "ignoreDestructuring": false,
-        "ignoreGlobals": false,
-        "ignoreImports": false,
-        "properties": "always"
-      }
-    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -3211,15 +2815,6 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
-    "func-style": [
-      1,
-      "expression",
-      {
-        "allowArrowFunctions": false,
-        "allowTypeAnnotation": false,
-        "overrides": {}
-      }
-    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -3246,7 +2841,6 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
-    "max-depth": [1, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -3256,25 +2850,8 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [1, 3],
-    "max-params": [
-      1,
-      {
-        "max": 4
-      }
-    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -3323,12 +2900,6 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
-      }
-    ],
-    "no-else-return": [
-      1,
-      {
-        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -3425,7 +2996,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [1],
     "no-new-func": [1],
@@ -3569,7 +3140,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -3712,7 +3282,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [2],
+    "unicorn/better-dom-traversing": [0],
     "unicorn/catch-error-name": [
       2,
       {
@@ -3721,7 +3291,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      2,
+      0,
       {
         "preferThis": true,
         "preferSuper": true
@@ -3752,7 +3322,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      2,
+      0,
       {
         "order": [
           "static-field",
@@ -3766,7 +3336,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [2, {}],
+    "unicorn/consistent-compound-words": [0, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],
@@ -3792,7 +3362,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [2],
+    "unicorn/consistent-optional-chaining": [0],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -4093,9 +3663,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [2],
+    "unicorn/no-unreadable-iife": [0],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [2],
+    "unicorn/no-unreadable-object-destructuring": [0],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -4196,7 +3766,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [2],
+    "unicorn/prefer-array-last-methods": [0],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -4230,7 +3800,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      2,
+      0,
       {
         "checkFallbackExpressions": true
       }
@@ -4282,16 +3852,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      2,
+      0,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [2],
+    "unicorn/prefer-iterator-helpers": [0],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [2],
+    "unicorn/prefer-iterator-to-array-at-end": [0],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -4326,7 +3896,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [2],
+    "unicorn/prefer-object-destructuring-defaults": [0],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -4359,7 +3929,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [2],
+    "unicorn/prefer-scoped-selector": [0],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -4378,7 +3948,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [2],
+    "unicorn/prefer-single-array-predicate": [0],
     "unicorn/prefer-single-call": [
       2,
       {
@@ -4611,9 +4181,9 @@
     "@eslint-react/jsx-no-leaked-dollar": [1],
     "@eslint-react/jsx-no-leaked-semicolon": [1],
     "@eslint-react/jsx-no-namespace": [2],
-    "@eslint-react/naming-convention-context-name": [1],
-    "@eslint-react/naming-convention-id-name": [1],
-    "@eslint-react/naming-convention-ref-name": [1],
+    "@eslint-react/naming-convention-context-name": [0],
+    "@eslint-react/naming-convention-id-name": [0],
+    "@eslint-react/naming-convention-ref-name": [0],
     "@eslint-react/no-access-state-in-setstate": [2],
     "@eslint-react/no-array-index-key": [1],
     "@eslint-react/no-children-count": [1],
@@ -4630,8 +4200,6 @@
     "@eslint-react/no-direct-mutation-state": [2],
     "@eslint-react/no-forward-ref": [1],
     "@eslint-react/no-leaked-conditional-rendering": [2],
-    "@eslint-react/no-missing-component-display-name": [0],
-    "@eslint-react/no-missing-context-display-name": [1],
     "@eslint-react/no-missing-key": [2],
     "@eslint-react/no-nested-component-definitions": [2],
     "@eslint-react/no-nested-lazy-component-declarations": [2],
@@ -4826,14 +4394,6 @@
       0,
       {
         "allow": "none"
-      }
-    ],
-    "@stylistic/jsx-pascal-case": [
-      1,
-      {
-        "allowAllCaps": false,
-        "allowLeadingUnderscore": false,
-        "allowNamespace": false
       }
     ],
     "@stylistic/jsx-props-no-multi-spaces": [0],
@@ -5137,172 +4697,6 @@
     "@typescript-eslint/lines-around-comment": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/method-signature-style": [1, "property"],
-    "@typescript-eslint/naming-convention": [
-      0,
-      {
-        "selector": "default",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "parameter",
-        "format": ["camelCase", "PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "method",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "typeLike",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "enumMember",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "modifiers": ["destructured"],
-        "format": null
-      },
-      {
-        "selector": [
-          "classProperty",
-          "objectLiteralProperty",
-          "typeProperty",
-          "classMethod",
-          "objectLiteralMethod",
-          "typeMethod",
-          "accessor",
-          "enumMember"
-        ],
-        "modifiers": ["requiresQuotes"],
-        "format": null
-      },
-      {
-        "selector": "objectLiteralProperty",
-        "format": null
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "variable"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "function"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameter"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "property"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameterProperty"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "method"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "accessor"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enumMember"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "class"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "interface"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeAlias"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enum"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeParameter"
-      }
-    ],
     "@typescript-eslint/no-array-constructor": [2],
     "@typescript-eslint/no-array-delete": [2],
     "@typescript-eslint/no-base-to-string": [2],
@@ -5410,7 +4804,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [2],
+    "@typescript-eslint/prefer-includes": [0],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -5419,7 +4813,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [2],
+    "@typescript-eslint/prefer-string-starts-ends-with": [0],
     "@typescript-eslint/promise-function-async": [
       0,
       {
@@ -5496,16 +4890,6 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
-    "camelcase": [
-      0,
-      {
-        "allow": ["^UNSAFE_"],
-        "ignoreDestructuring": false,
-        "ignoreGlobals": false,
-        "ignoreImports": false,
-        "properties": "always"
-      }
-    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -5547,15 +4931,6 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
-    "func-style": [
-      1,
-      "expression",
-      {
-        "allowArrowFunctions": false,
-        "allowTypeAnnotation": false,
-        "overrides": {}
-      }
-    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -5791,7 +5166,6 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
-    "max-depth": [0, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -5801,25 +5175,8 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [0, 3],
-    "max-params": [
-      1,
-      {
-        "max": 4
-      }
-    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -5868,12 +5225,6 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
-      }
-    ],
-    "no-else-return": [
-      1,
-      {
-        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -5970,7 +5321,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [0],
     "no-new-func": [1],
@@ -6115,7 +5466,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -6274,7 +5624,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [2],
+    "unicorn/better-dom-traversing": [0],
     "unicorn/catch-error-name": [
       2,
       {
@@ -6283,7 +5633,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      2,
+      0,
       {
         "preferThis": true,
         "preferSuper": true
@@ -6314,7 +5664,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      2,
+      0,
       {
         "order": [
           "static-field",
@@ -6328,7 +5678,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [2, {}],
+    "unicorn/consistent-compound-words": [0, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],
@@ -6354,7 +5704,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [2],
+    "unicorn/consistent-optional-chaining": [0],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -6655,9 +6005,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [2],
+    "unicorn/no-unreadable-iife": [0],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [2],
+    "unicorn/no-unreadable-object-destructuring": [0],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -6758,7 +6108,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [2],
+    "unicorn/prefer-array-last-methods": [0],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -6792,7 +6142,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      2,
+      0,
       {
         "checkFallbackExpressions": true
       }
@@ -6844,16 +6194,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      2,
+      0,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [2],
+    "unicorn/prefer-iterator-helpers": [0],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [2],
+    "unicorn/prefer-iterator-to-array-at-end": [0],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -6888,7 +6238,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [2],
+    "unicorn/prefer-object-destructuring-defaults": [0],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -6921,7 +6271,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [2],
+    "unicorn/prefer-scoped-selector": [0],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -6940,7 +6290,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [2],
+    "unicorn/prefer-single-array-predicate": [0],
     "unicorn/prefer-single-call": [
       0,
       {
@@ -7136,7 +6486,6 @@
     "@babel/object-curly-spacing": [0],
     "@babel/semi": [0],
     "@eslint-react/exhaustive-deps": [0],
-    "@eslint-react/no-missing-component-display-name": [0],
     "@stylistic/array-bracket-newline": [0],
     "@stylistic/array-bracket-spacing": [0],
     "@stylistic/array-element-newline": [0],
@@ -7375,172 +6724,6 @@
     "@typescript-eslint/lines-around-comment": [0],
     "@typescript-eslint/member-delimiter-style": [0],
     "@typescript-eslint/method-signature-style": [1, "property"],
-    "@typescript-eslint/naming-convention": [
-      0,
-      {
-        "selector": "default",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "parameter",
-        "format": ["camelCase", "PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "method",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "typeLike",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "enumMember",
-        "format": ["PascalCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "variable",
-        "modifiers": ["destructured"],
-        "format": null
-      },
-      {
-        "selector": [
-          "classProperty",
-          "objectLiteralProperty",
-          "typeProperty",
-          "classMethod",
-          "objectLiteralMethod",
-          "typeMethod",
-          "accessor",
-          "enumMember"
-        ],
-        "modifiers": ["requiresQuotes"],
-        "format": null
-      },
-      {
-        "selector": "objectLiteralProperty",
-        "format": null
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "variable"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "function"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameter"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "property"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "parameterProperty"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "method"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "accessor"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enumMember"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "class"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "interface"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeAlias"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "enum"
-      },
-      {
-        "filter": {
-          "match": true,
-          "regex": "^(__|UNSAFE_).+$"
-        },
-        "format": null,
-        "selector": "typeParameter"
-      }
-    ],
     "@typescript-eslint/no-array-constructor": [2],
     "@typescript-eslint/no-array-delete": [2],
     "@typescript-eslint/no-base-to-string": [2],
@@ -7648,7 +6831,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [2],
+    "@typescript-eslint/prefer-includes": [0],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -7657,7 +6840,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [2],
+    "@typescript-eslint/prefer-string-starts-ends-with": [0],
     "@typescript-eslint/promise-function-async": [
       0,
       {
@@ -7734,16 +6917,6 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
-    "camelcase": [
-      0,
-      {
-        "allow": ["^UNSAFE_"],
-        "ignoreDestructuring": false,
-        "ignoreGlobals": false,
-        "ignoreImports": false,
-        "properties": "always"
-      }
-    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -7785,15 +6958,6 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
-    "func-style": [
-      1,
-      "expression",
-      {
-        "allowArrowFunctions": false,
-        "allowTypeAnnotation": false,
-        "overrides": {}
-      }
-    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -7820,7 +6984,6 @@
     "linebreak-style": [0],
     "lines-around-comment": [0],
     "logical-assignment-operators": [0, "always"],
-    "max-depth": [0, 5],
     "max-len": [0],
     "max-lines": [
       1,
@@ -7830,25 +6993,8 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [0, 3],
-    "max-params": [
-      1,
-      {
-        "max": 4
-      }
-    ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -7897,12 +7043,6 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
-      }
-    ],
-    "no-else-return": [
-      1,
-      {
-        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -7999,7 +7139,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [0],
     "no-new-func": [1],
@@ -8144,7 +7284,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -8288,7 +7427,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [2],
+    "unicorn/better-dom-traversing": [0],
     "unicorn/catch-error-name": [
       2,
       {
@@ -8297,7 +7436,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      2,
+      0,
       {
         "preferThis": true,
         "preferSuper": true
@@ -8328,7 +7467,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      2,
+      0,
       {
         "order": [
           "static-field",
@@ -8342,7 +7481,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [2, {}],
+    "unicorn/consistent-compound-words": [0, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],
@@ -8368,7 +7507,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [2],
+    "unicorn/consistent-optional-chaining": [0],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -8669,9 +7808,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [2],
+    "unicorn/no-unreadable-iife": [0],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [2],
+    "unicorn/no-unreadable-object-destructuring": [0],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -8772,7 +7911,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [2],
+    "unicorn/prefer-array-last-methods": [0],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -8806,7 +7945,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      2,
+      0,
       {
         "checkFallbackExpressions": true
       }
@@ -8858,16 +7997,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      2,
+      0,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [2],
+    "unicorn/prefer-iterator-helpers": [0],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [2],
+    "unicorn/prefer-iterator-to-array-at-end": [0],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -8902,7 +8041,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [2],
+    "unicorn/prefer-object-destructuring-defaults": [0],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -8935,7 +8074,7 @@
     "unicorn/prefer-regexp-escape": [0],
     "unicorn/prefer-regexp-test": [2],
     "unicorn/prefer-response-static-json": [2],
-    "unicorn/prefer-scoped-selector": [2],
+    "unicorn/prefer-scoped-selector": [0],
     "unicorn/prefer-set-has": [
       2,
       {
@@ -8954,7 +8093,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [2],
+    "unicorn/prefer-single-array-predicate": [0],
     "unicorn/prefer-single-call": [
       0,
       {

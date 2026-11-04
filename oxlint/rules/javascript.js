@@ -27,6 +27,8 @@ export const javascript = {
     "unicorn/prefer-ternary": "off",
     "unicorn/require-array-join-separator": "off",
     "unicorn/prefer-import-meta-properties": "error",
+    // ESLint gets this from unicorn's recommended config (with an autofix) instead of the core rule
+    "unicorn/no-negated-condition": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-negated-condition
 
     // Possible Problems
     // ----------------------------------------------
@@ -47,24 +49,10 @@ export const javascript = {
     // ----------------------------------------------
     "accessor-pairs": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/accessor-pairs
     "block-scoped-var": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/block-scoped-var
-    // camelcase not native → JS plugin
-    "eslint-js/camelcase": [
-      "warn",
-      {
-        allow: ["^UNSAFE_"],
-        ignoreDestructuring: false,
-        properties: "always",
-      },
-    ], // https://eslint.org/docs/latest/rules/camelcase
     "eslint-js/consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
     "eslint-js/dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
     eqeqeq: ["warn", "always", { null: "ignore" }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/eqeqeq
-    "func-style": ["warn", "declaration"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-style
     "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/grouped-accessor-pairs
-    "max-depth": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth
-    "max-nested-callbacks": ["warn", 3], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks
-    "max-params": ["warn", { max: 4 }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-params
-    "new-cap": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/new-cap
     "no-alert": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-alert
     "no-array-constructor": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-array-constructor
     "no-bitwise": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-bitwise
@@ -81,7 +69,6 @@ export const javascript = {
     "no-labels": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-labels
     "no-lone-blocks": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-lone-blocks
     "no-multi-str": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-multi-str
-    "no-negated-condition": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-negated-condition
     "no-new": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new
     "no-new-func": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-func
     "no-new-wrappers": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-wrappers
@@ -139,9 +126,6 @@ export const javascript = {
     {
       files: globPatterns.tests,
       rules: {
-        "eslint-js/camelcase": "off", // Mock payloads often mirror external casing conventions.
-        "max-depth": "off", // Nested describe blocks are often the clearest structure.
-        "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
         "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
         "no-new": "off", // Constructor side effects are often asserted directly in tests.
         "no-only-tests/no-only-tests": "error", // Should show a warning when a test is focussed (overridden to off when using vitest config).

@@ -40,6 +40,27 @@ export const javascript = [
       "unicorn/prefer-import-meta-properties": "error",
       "unicorn/prefer-simple-condition-first": "warn", // Only a warning because most reports need a manual short-circuit review before reordering.
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
+      // Stylistic rules without an autofix (or with suggestions only). Code is mostly written by
+      // coding agents now, and every such report costs them a manual edit loop without
+      // preventing a bug.
+      "unicorn/better-dom-traversing": "off",
+      "unicorn/class-reference-in-static-methods": "off",
+      "unicorn/consistent-class-member-order": "off", // Suggestion only: members have to be reordered by hand.
+      "unicorn/consistent-compound-words": "off", // Renames ripple across files; TypeScript catches broken references anyway.
+      "unicorn/consistent-optional-chaining": "off",
+      "unicorn/no-unreadable-iife": "off",
+      "unicorn/no-unreadable-object-destructuring": "off",
+      "unicorn/prefer-array-last-methods": "off",
+      "unicorn/prefer-default-parameters": "off",
+      "unicorn/prefer-includes-over-repeated-comparisons": "off",
+      "unicorn/prefer-iterator-helpers": "off",
+      "unicorn/prefer-iterator-to-array-at-end": "off",
+      "unicorn/prefer-object-destructuring-defaults": "off",
+      "unicorn/prefer-scoped-selector": "off",
+      "unicorn/prefer-single-array-predicate": "off",
+      // Core no-else-return, no-negated-condition and no-useless-concat are not enabled on purpose:
+      // unicorn/no-useless-else, unicorn/no-negated-condition and unicorn/no-useless-concat report
+      // the same code and ship an autofix.
     },
   },
   {
@@ -71,21 +92,14 @@ export const javascript = [
       // ----------------------------------------------
       "accessor-pairs": "warn", // https://eslint.org/docs/latest/rules/accessor-pairs
       "block-scoped-var": "warn", // https://eslint.org/docs/latest/rules/block-scoped-var
-      camelcase: ["warn", ruleOptions.camelcase], // https://eslint.org/docs/latest/rules/camelcase
       "consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
       "dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
       eqeqeq: ["warn", "always", { null: "ignore" }], // https://eslint.org/docs/latest/rules/eqeqeq
-      "func-style": ["warn", "declaration"], // https://eslint.org/docs/latest/rules/func-style
       "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://eslint.org/docs/latest/rules/grouped-accessor-pairs
-      "max-depth": ["warn", 5], // https://eslint.org/docs/latest/rules/max-depth
-      "max-nested-callbacks": ["warn", 3], // https://eslint.org/docs/latest/rules/max-nested-callbacks
-      "max-params": ["warn", { max: 4 }], // https://eslint.org/docs/latest/rules/max-params
-      "new-cap": "warn", // https://eslint.org/docs/latest/rules/new-cap
       "no-alert": "warn", // https://eslint.org/docs/latest/rules/no-alert
       "no-array-constructor": "warn", // https://eslint.org/docs/latest/rules/no-array-constructor
       "no-bitwise": "warn", // https://eslint.org/docs/latest/rules/no-bitwise
       "no-caller": "warn", // https://eslint.org/docs/latest/rules/no-caller
-      "no-else-return": "warn", // https://eslint.org/docs/latest/rules/no-else-return
       "no-eval": "warn", // https://eslint.org/docs/latest/rules/no-eval
       "no-extend-native": "warn", // https://eslint.org/docs/latest/rules/no-extend-native
       "no-extra-bind": "warn", // https://eslint.org/docs/latest/rules/no-extra-bind
@@ -97,7 +111,6 @@ export const javascript = [
       "no-labels": "warn", // https://eslint.org/docs/latest/rules/no-labels
       "no-lone-blocks": "warn", // https://eslint.org/docs/latest/rules/no-lone-blocks
       "no-multi-str": "warn", // https://eslint.org/docs/latest/rules/no-multi-str
-      "no-negated-condition": "warn", // https://eslint.org/docs/latest/rules/no-negated-condition
       "no-new": "warn", // https://eslint.org/docs/latest/rules/no-new
       "no-new-func": "warn", // https://eslint.org/docs/latest/rules/no-new-func
       "no-new-wrappers": "warn", // https://eslint.org/docs/latest/rules/no-new-wrappers
@@ -126,7 +139,6 @@ export const javascript = [
       "no-unused-vars": ["error", ruleOptions["no-unused-vars"]],
       "no-useless-call": "warn", // https://eslint.org/docs/latest/rules/no-useless-call
       "no-useless-computed-key": "warn", // https://eslint.org/docs/latest/rules/no-useless-computed-key
-      "no-useless-concat": "warn", // https://eslint.org/docs/latest/rules/no-useless-concat
       "no-useless-constructor": "warn", // https://eslint.org/docs/latest/rules/no-useless-constructor
       "no-useless-escape": "warn", // https://eslint.org/docs/latest/rules/no-useless-escape
       "no-useless-rename": "warn", // https://eslint.org/docs/latest/rules/no-useless-rename
@@ -158,9 +170,6 @@ export const javascript = [
       "no-only-tests": noOnlyTests,
     },
     rules: {
-      camelcase: "off", // Mock payloads often mirror external casing conventions.
-      "max-depth": "off", // Nested describe blocks are often the clearest structure.
-      "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
       "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
       "no-new": "off", // Constructor side effects are often asserted directly in tests.
       "no-only-tests/no-only-tests": "error", // Should show a warning when a test is focussed (overridden to off when using vitest config).

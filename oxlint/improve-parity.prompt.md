@@ -35,7 +35,7 @@ See the root [`README.md`](../README.md) and [`AGENTS.md`](../AGENTS.md).
 3. **Decide per gap**
    - **Promote to native** if the rule exists in the schema: wire it in the matching `oxlint/rules/*` or style pack with options copied from ESLint; remove the JS-plugin fallback if nothing else needs that plugin.
    - **Keep JS plugin** if only the ESLint package implements it and JS plugins still work.
-   - **Replace approximation** (e.g. `id-match` → `typescript/naming-convention`) only when the real rule is available and options can match closely enough; port selectors from [`eslint/lib/rule-options.js`](../eslint/lib/rule-options.js).
+   - **Replace approximation** only when the real rule is available and options can match closely enough; port options from the ESLint source of truth.
    - **Leave as lost** if still unsupported (especially type-aware custom JS-plugin rules).
 
 4. **Implement the smallest diff** — Touch only the Oxlint files needed. Do not change ESLint presets unless fixing a shared helper on purpose.

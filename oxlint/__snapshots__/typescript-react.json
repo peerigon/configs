@@ -14,21 +14,8 @@
       ]
     ],
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
-    "id-match": [
-      "warn",
-      [
-        "^(?:__|UNSAFE_)?[a-zA-Z][a-zA-Z0-9]*$|^[A-Z][A-Z0-9_]*$|^_[a-zA-Z][a-zA-Z0-9]*$",
-        {
-          "ignoreDestructuring": true,
-          "properties": false,
-          "classFields": true,
-          "onlyDeclarations": false
-        }
-      ]
-    ],
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
@@ -64,7 +51,6 @@
     "jsx_a11y/role-supports-aria-props": "warn",
     "jsx_a11y/scope": "warn",
     "jsx_a11y/tabindex-no-positive": "warn",
-    "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
       [
@@ -75,16 +61,6 @@
         }
       ]
     ],
-    "max-nested-callbacks": ["warn", [3]],
-    "max-params": [
-      "warn",
-      [
-        {
-          "max": 4
-        }
-      ]
-    ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -130,7 +106,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "warn",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -238,7 +213,6 @@
     "preserve-caught-error": "warn",
     "react/button-has-type": "warn",
     "react/capitalized-calls": "warn",
-    "react/display-name": "warn",
     "react/error-boundaries": "warn",
     "react/exhaustive-deps": "warn",
     "react/exhaustive-effect-dependencies": "warn",
@@ -274,7 +248,6 @@
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-script-url": "warn",
     "react/jsx-no-undef": "warn",
-    "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-spread-multi": "warn",
     "react/memo-dependencies": "warn",
     "react/no-children-prop": "warn",
@@ -473,6 +446,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",
@@ -513,21 +487,8 @@
       ]
     ],
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
-    "id-match": [
-      "warn",
-      [
-        "^(?:__|UNSAFE_)?[a-zA-Z][a-zA-Z0-9]*$|^[A-Z][A-Z0-9_]*$|^_[a-zA-Z][a-zA-Z0-9]*$",
-        {
-          "ignoreDestructuring": true,
-          "properties": false,
-          "classFields": true,
-          "onlyDeclarations": false
-        }
-      ]
-    ],
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
@@ -563,7 +524,6 @@
     "jsx_a11y/role-supports-aria-props": "warn",
     "jsx_a11y/scope": "warn",
     "jsx_a11y/tabindex-no-positive": "warn",
-    "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
       [
@@ -574,16 +534,6 @@
         }
       ]
     ],
-    "max-nested-callbacks": ["warn", [3]],
-    "max-params": [
-      "warn",
-      [
-        {
-          "max": 4
-        }
-      ]
-    ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -629,7 +579,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "warn",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -737,7 +686,6 @@
     "preserve-caught-error": "warn",
     "react/button-has-type": "warn",
     "react/capitalized-calls": "warn",
-    "react/display-name": "warn",
     "react/error-boundaries": "warn",
     "react/exhaustive-deps": "warn",
     "react/exhaustive-effect-dependencies": "warn",
@@ -773,7 +721,6 @@
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-script-url": "warn",
     "react/jsx-no-undef": "warn",
-    "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-spread-multi": "warn",
     "react/memo-dependencies": "warn",
     "react/no-children-prop": "warn",
@@ -972,6 +919,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",
@@ -1011,12 +959,9 @@
         }
       ]
     ],
-    "eslint-js/camelcase": "allow",
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
-    "id-match": "allow",
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
@@ -1052,7 +997,6 @@
     "jsx_a11y/role-supports-aria-props": "warn",
     "jsx_a11y/scope": "warn",
     "jsx_a11y/tabindex-no-positive": "warn",
-    "max-depth": "allow",
     "max-lines": [
       "warn",
       [
@@ -1063,16 +1007,6 @@
         }
       ]
     ],
-    "max-nested-callbacks": "allow",
-    "max-params": [
-      "warn",
-      [
-        {
-          "max": 4
-        }
-      ]
-    ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -1118,7 +1052,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "allow",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -1219,7 +1152,6 @@
     "preserve-caught-error": "warn",
     "react/button-has-type": "warn",
     "react/capitalized-calls": "warn",
-    "react/display-name": "allow",
     "react/error-boundaries": "warn",
     "react/exhaustive-deps": "allow",
     "react/exhaustive-effect-dependencies": "warn",
@@ -1255,7 +1187,6 @@
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-script-url": "warn",
     "react/jsx-no-undef": "warn",
-    "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-spread-multi": "warn",
     "react/memo-dependencies": "warn",
     "react/no-children-prop": "warn",
@@ -1429,6 +1360,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",

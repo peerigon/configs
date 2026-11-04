@@ -110,6 +110,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - Unit test files are colocated with source files (\*.test.ts)
 - Write integration or e2e tests for more complex functions/classes/components
 - Prefer staged validation for non-trivial tasks. While iterating, run only fast, focused checks (type diagnostics, the single affected unit test file). Defer slow checks (browser/e2e/visual tests, builds, full test suites) until the change is complete, unless the change touches exactly what that check proves. Run formatting and linting once the change is complete (before handoff, a commit or a push, whoever does it), not after every edit. For trivial tasks, a single final validation is acceptable.
+- Run the linter with its autofix first (e.g. `eslint --fix`, `oxlint --fix`, or the repository's `lint:fix` script), then fix only the remaining reports by hand
 - Before pushing, run the repository's format, lint, type-check, and unit-test commands for the affected packages. Only browser, e2e, and visual tests may be left to CI; say so in the handoff. If dependencies are missing, install them instead of skipping validation
 - Before writing a utility, check whether an installed dependency or a well-maintained package already does it
 - After install, update, merge, or rebase operations, review `git diff` and revert changes the task did not ask for (e.g. lockfile or manifest rewrites by the package manager)

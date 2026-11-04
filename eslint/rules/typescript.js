@@ -64,11 +64,6 @@ export const typescript =
           // Internal functions should infer their return type to keep diffs small.
           "@typescript-eslint/explicit-module-boundary-types": "warn", // https://typescript-eslint.io/rules/explicit-module-boundary-types
           "@typescript-eslint/method-signature-style": ["warn", "property"], // https://typescript-eslint.io/rules/method-signature-style
-          "@typescript-eslint/naming-convention": [
-            // https://typescript-eslint.io/rules/naming-convention
-            "warn",
-            ...ruleOptions["@typescript-eslint/naming-convention"].defaultRules,
-          ],
           "@typescript-eslint/no-confusing-void-expression": [
             // https://typescript-eslint.io/rules/no-confusing-void-expression
             "off",
@@ -102,6 +97,10 @@ export const typescript =
             },
           ], // https://typescript-eslint.io/rules/no-unnecessary-condition
           "@typescript-eslint/no-unnecessary-qualifier": "warn", // https://typescript-eslint.io/rules/no-unnecessary-qualifier
+          // unicorn/prefer-includes and unicorn/prefer-string-starts-ends-with report the same code
+          // (also in plain JS files), so the typescript-eslint duplicates are turned off.
+          "@typescript-eslint/prefer-includes": "off", // https://typescript-eslint.io/rules/prefer-includes
+          "@typescript-eslint/prefer-string-starts-ends-with": "off", // https://typescript-eslint.io/rules/prefer-string-starts-ends-with
           "@typescript-eslint/no-unsafe-argument": "off", // https://typescript-eslint.io/rules/no-unsafe-argument
           "@typescript-eslint/no-unsafe-assignment": "off", // https://typescript-eslint.io/rules/no-unsafe-assignment
           "@typescript-eslint/no-unsafe-call": "off", // https://typescript-eslint.io/rules/no-unsafe-call
@@ -168,7 +167,6 @@ export const typescript =
               considerDefaultExhaustiveForUnions: true,
             },
           ], // https://typescript-eslint.io/rules/switch-exhaustiveness-check
-          camelcase: "off",
           "max-lines": [
             "warn",
             {
@@ -177,7 +175,6 @@ export const typescript =
               skipComments: true,
             },
           ],
-          "func-style": ["warn", "expression"], // https://eslint.org/docs/latest/rules/func-style
           "prefer-arrow/prefer-arrow-functions": [
             // https://github.com/TristonJ/eslint-plugin-prefer-arrow
             "warn",
@@ -200,7 +197,6 @@ export const typescript =
           "@typescript-eslint/consistent-type-definitions": "off", // https://typescript-eslint.io/rules/consistent-type-definitions
           // In d.ts files it's sometimes necessary to overload existing methods
           "@typescript-eslint/method-signature-style": "off", // https://typescript-eslint.io/rules/method-signature-style
-          "@typescript-eslint/naming-convention": "off", // https://typescript-eslint.io/rules/naming-convention
           // Unused vars can be common in d.ts files when declaration merging is used
           "@typescript-eslint/no-unused-vars": "off", // https://typescript-eslint.io/rules/no-unused-vars
           // Since d.ts files are used to type external modules, we can't control the coding style
@@ -216,8 +212,6 @@ export const typescript =
         rules: {
           // Type assertions are quite common in tests
           "@typescript-eslint/consistent-type-assertions": "off", // https://typescript-eslint.io/rules/consistent-type-assertions
-          // Mocking often requires to mock objects with a different naming convention
-          "@typescript-eslint/naming-convention": "off", // https://typescript-eslint.io/rules/naming-convention
           // We allow any to be used in tests, so returning it is ok
           "@typescript-eslint/no-unsafe-return": "off", // https://typescript-eslint.io/rules/no-unsafe-return
           // chai uses these as assertions
