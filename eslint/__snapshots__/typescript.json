@@ -347,7 +347,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [0],
+    "@typescript-eslint/prefer-includes": [2],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -356,7 +356,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [0],
+    "@typescript-eslint/prefer-string-starts-ends-with": [2],
     "@typescript-eslint/promise-function-async": [
       1,
       {
@@ -559,6 +559,12 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
+      }
+    ],
+    "no-else-return": [
+      1,
+      {
+        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -2131,7 +2137,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [0],
+    "@typescript-eslint/prefer-includes": [2],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -2140,7 +2146,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [0],
+    "@typescript-eslint/prefer-string-starts-ends-with": [2],
     "@typescript-eslint/promise-function-async": [
       1,
       {
@@ -2345,6 +2351,12 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
+      }
+    ],
+    "no-else-return": [
+      1,
+      {
+        "allowElseIf": true
       }
     ],
     "no-empty": [
@@ -3917,7 +3929,7 @@
     "@typescript-eslint/prefer-find": [2],
     "@typescript-eslint/prefer-for-of": [2],
     "@typescript-eslint/prefer-function-type": [2],
-    "@typescript-eslint/prefer-includes": [0],
+    "@typescript-eslint/prefer-includes": [2],
     "@typescript-eslint/prefer-literal-enum-member": [2],
     "@typescript-eslint/prefer-namespace-keyword": [2],
     "@typescript-eslint/prefer-nullish-coalescing": [2],
@@ -3926,7 +3938,7 @@
     "@typescript-eslint/prefer-reduce-type-parameter": [2],
     "@typescript-eslint/prefer-regexp-exec": [2],
     "@typescript-eslint/prefer-return-this-type": [2],
-    "@typescript-eslint/prefer-string-starts-ends-with": [0],
+    "@typescript-eslint/prefer-string-starts-ends-with": [2],
     "@typescript-eslint/promise-function-async": [
       0,
       {
@@ -4129,6 +4141,12 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
+      }
+    ],
+    "no-else-return": [
+      1,
+      {
+        "allowElseIf": true
       }
     ],
     "no-empty": [

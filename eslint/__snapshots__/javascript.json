@@ -349,6 +349,12 @@
         "allowSeparateTypeImports": false
       }
     ],
+    "no-else-return": [
+      1,
+      {
+        "allowElseIf": true
+      }
+    ],
     "no-empty": [
       2,
       {
@@ -1902,6 +1908,12 @@
       {
         "includeExports": false,
         "allowSeparateTypeImports": false
+      }
+    ],
+    "no-else-return": [
+      1,
+      {
+        "allowElseIf": true
       }
     ],
     "no-empty": [

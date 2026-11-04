@@ -97,10 +97,6 @@ export const typescript =
             },
           ], // https://typescript-eslint.io/rules/no-unnecessary-condition
           "@typescript-eslint/no-unnecessary-qualifier": "warn", // https://typescript-eslint.io/rules/no-unnecessary-qualifier
-          // unicorn/prefer-includes and unicorn/prefer-string-starts-ends-with report the same code
-          // (also in plain JS files), so the typescript-eslint duplicates are turned off.
-          "@typescript-eslint/prefer-includes": "off", // https://typescript-eslint.io/rules/prefer-includes
-          "@typescript-eslint/prefer-string-starts-ends-with": "off", // https://typescript-eslint.io/rules/prefer-string-starts-ends-with
           "@typescript-eslint/no-unsafe-argument": "off", // https://typescript-eslint.io/rules/no-unsafe-argument
           "@typescript-eslint/no-unsafe-assignment": "off", // https://typescript-eslint.io/rules/no-unsafe-assignment
           "@typescript-eslint/no-unsafe-call": "off", // https://typescript-eslint.io/rules/no-unsafe-call

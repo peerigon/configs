@@ -58,9 +58,8 @@ export const javascript = [
       "unicorn/prefer-object-destructuring-defaults": "off",
       "unicorn/prefer-scoped-selector": "off",
       "unicorn/prefer-single-array-predicate": "off",
-      // Core no-else-return, no-negated-condition and no-useless-concat are not enabled on purpose:
-      // unicorn/no-useless-else, unicorn/no-negated-condition and unicorn/no-useless-concat report
-      // the same code and ship an autofix.
+      // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
+      // equivalents report the same code and ship an autofix, while the core rules don't.
     },
   },
   {
@@ -100,6 +99,7 @@ export const javascript = [
       "no-array-constructor": "warn", // https://eslint.org/docs/latest/rules/no-array-constructor
       "no-bitwise": "warn", // https://eslint.org/docs/latest/rules/no-bitwise
       "no-caller": "warn", // https://eslint.org/docs/latest/rules/no-caller
+      "no-else-return": "warn", // https://eslint.org/docs/latest/rules/no-else-return
       "no-eval": "warn", // https://eslint.org/docs/latest/rules/no-eval
       "no-extend-native": "warn", // https://eslint.org/docs/latest/rules/no-extend-native
       "no-extra-bind": "warn", // https://eslint.org/docs/latest/rules/no-extra-bind
