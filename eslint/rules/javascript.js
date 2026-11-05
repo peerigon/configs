@@ -38,7 +38,6 @@ export const javascript = [
       "unicorn/require-array-join-separator": "off",
       "unicorn/single-line-block-comment-style": "off", // Would force every single-line JSDoc annotation (e.g. `/** @type {...} */`) into multiline form, contradicting standard JSDoc convention.
       "unicorn/prefer-import-meta-properties": "error",
-      "unicorn/prefer-simple-condition-first": "warn", // Only a warning because most reports need a manual short-circuit review before reordering.
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
       // Stylistic rules without an autofix (or with suggestions only). Code is mostly written by
       // coding agents now, and every such report costs them a manual edit loop without
@@ -48,6 +47,7 @@ export const javascript = [
       "unicorn/consistent-class-member-order": "off", // Suggestion only: members have to be reordered by hand.
       "unicorn/consistent-compound-words": "off", // Renames ripple across files; TypeScript catches broken references anyway.
       "unicorn/consistent-optional-chaining": "off",
+      "unicorn/no-await-expression-member": "off", // Its fix only covers `const x = (await y).z`; `expect((await y).z)` and other inline uses need a manual rewrite that only adds a temporary variable.
       "unicorn/no-unreadable-iife": "off",
       "unicorn/no-unreadable-object-destructuring": "off",
       "unicorn/prefer-array-last-methods": "off",
@@ -57,6 +57,7 @@ export const javascript = [
       "unicorn/prefer-iterator-to-array-at-end": "off",
       "unicorn/prefer-object-destructuring-defaults": "off",
       "unicorn/prefer-single-array-predicate": "off",
+      "unicorn/prefer-simple-condition-first": "off", // No autofix: every report needs a manual short-circuit review, and a careless reorder breaks guards like `obj && obj.x`.
       // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
       // equivalents report the same code and ship an autofix, while the core rules don't.
     },
