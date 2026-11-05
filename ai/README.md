@@ -6,7 +6,7 @@ Contains resources and styleguides for coding agents.
 
 [`rules.mdc`](./rules.mdc) contains Peerigon's universal coding principles and links to language-specific guides.
 
-Put this in your project-specific rules file (like `CLAUDE.md`, `.cursor/rules.mdc`, etc.):
+Put this in your project-specific rules file (`AGENTS.md`, `.cursor/rules.mdc`, etc.):
 
 ```md
 **Important**: You **must** follow [these rules](./node_modules/@peerigon/configs/ai/rules.mdc) and its language-specific rules referenced in that file.
@@ -18,8 +18,9 @@ The `@` line makes Claude Code load the rules (and the language-specific guides 
 
 Dependencies must be installed before the agent session starts. Without `node_modules` (e.g. in a fresh clone or a new worktree), the import silently loads nothing. Install them in your workspace setup script or before you start the agent.
 
-For large repositories, we recommend maintaining a repo-level routing document at `docs/agent-routing.md` to help agents find the right entrypoints quickly.
-You can start from [`agent-routing.example.md`](./agent-routing.example.md) and adapt it to your needs.
+Claude Code (v2.1.277 or later) reads `AGENTS.md` and expands its `@` imports, but only while no `CLAUDE.md` or `CLAUDE.local.md` exists in the working directory or above it. Keep one `AGENTS.md` and no `CLAUDE.md`, so the per-directory `AGENTS.md` files load too.
+
+For large repositories, route agents from a short "Where to look" table in the root `AGENTS.md` and keep rules of one directory in that directory's `AGENTS.md`, instead of one central routing document every change has to edit. See [`routing.example.md`](./routing.example.md).
 
 ## Migration Guide
 

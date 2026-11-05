@@ -135,14 +135,15 @@ Some guidance depends on the consuming repository's runtime and toolchain (modul
 - Do not silently introduce a new convention in a mixed or unknown setup.
 - If no answer is possible, follow the closest existing local convention and explicitly document the assumption.
 
-## Repo-level routing system
+## Agent documentation and routing
 
-To reduce exploration cost in large repositories, use a repo-level routing document.
+Route agents from the root `AGENTS.md`, and keep each fact next to the code it concerns, so no single doc file needs an edit in every change.
 
-- Preferred path in consuming repositories: `docs/agent-routing.md` (or the nearest existing equivalent).
-- Use `@peerigon/configs/ai/agent-routing.example.md` as a starting structure and adapt it to the consuming repository.
-- At task start, check whether routing exists.
-- If routing is missing and the task is non-trivial, create an initial routing file before implementation. If local policy may restrict docs changes, ask one concise question first.
-- Use routing-first navigation: read the relevant routing section before broad codebase exploration.
-- Keep routing concise and practical. Update it when better entrypoints, caveats, or validation commands are discovered.
-- Do not duplicate full architecture docs. Routing should be an index for fast task orientation.
+- The root `AGENTS.md` holds a short "Where to look" table: one row per area, pointing at the doc or directory to read first. Rows change only when an area is added or moved.
+- Rules and traps of one directory live in that directory's `AGENTS.md`. Claude Code loads it when it opens a file in that directory, so it costs no context elsewhere.
+- Long-lived decisions get one file each (e.g. `docs/decisions/<decision-title>.md`), named after the decision instead of numbered, so parallel branches never collide.
+- At task start, read the routing table and the docs it names for the area you touch before broad exploration.
+- When a non-trivial repository has no routing table yet, add one to the root `AGENTS.md`; start from `@peerigon/configs/ai/routing.example.md`.
+- Record what you learn where it applies: a directory's rule in its `AGENTS.md`, a decision in its own file, an area's how-to in the area's doc. Delete what your change makes stale.
+- Record what the code cannot tell: the reason, the trap, the invariant. File lists, signatures and anything `ls` or `grep` finds stay out.
+- Claude Code reads `AGENTS.md` files only while no `CLAUDE.md` or `CLAUDE.local.md` exists in the working directory or above it. Keep instructions in `AGENTS.md` and add no `CLAUDE.md`.

@@ -30,10 +30,12 @@ Also checkout the instructions for each respective config:
 
 Furthermore, this package also contains [rules and instructions for AI coding agents](./ai/README.md) that are based on the configurations.
 
-If you want your AI coding agent to stick to our configs and coding principles, put this in your project-specific rules file (like `CLAUDE.md`, `.cursor/rules.mdc`, etc.):
+If you want your AI coding agent to stick to our configs and coding principles, put this in your project-specific rules file (`AGENTS.md`, `.cursor/rules.mdc`, etc.; see [`ai/README.md`](./ai/README.md)):
 
 ```md
 **Important**: You **must** follow [these rules](./node_modules/@peerigon/configs/ai/rules.mdc) and its language-specific rules referenced in that file.
+
+@node_modules/@peerigon/configs/ai/rules.mdc
 ```
 
 ## Philosophy
