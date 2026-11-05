@@ -40,6 +40,12 @@ export const javascript = [
       "unicorn/prefer-import-meta-properties": "error",
       "unicorn/prefer-simple-condition-first": "warn", // Only a warning because most reports need a manual short-circuit review before reordering.
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
+      // These rules suggest APIs that the `es2025` lib of our TypeScript base config doesn't declare
+      // (and that older runtimes lack), so following them produces type errors:
+      // - Array.fromAsync() is ES2026 (only in TypeScript's `esnext.array` lib)
+      // - Iterator.zip() isn't declared in any TypeScript lib yet
+      "unicorn/prefer-array-from-async": "off",
+      "unicorn/prefer-iterator-zip": "off",
     },
   },
   {
