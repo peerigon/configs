@@ -49,6 +49,15 @@ export const javascript = {
     // ----------------------------------------------
     "accessor-pairs": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/accessor-pairs
     "block-scoped-var": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/block-scoped-var
+    // camelcase not native → JS plugin
+    "eslint-js/camelcase": [
+      "warn",
+      {
+        allow: ["^UNSAFE_"],
+        ignoreDestructuring: false,
+        properties: "always",
+      },
+    ], // https://eslint.org/docs/latest/rules/camelcase
     "eslint-js/consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
     "eslint-js/dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
     eqeqeq: ["warn", "always", { null: "ignore" }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/eqeqeq
@@ -131,6 +140,7 @@ export const javascript = {
     {
       files: globPatterns.tests,
       rules: {
+        "eslint-js/camelcase": "off", // Mock payloads often mirror external casing conventions.
         "max-depth": "off", // Nested describe blocks are often the clearest structure.
         "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
         "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.

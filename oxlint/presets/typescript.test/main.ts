@@ -6,7 +6,7 @@ export const untypedExport = (value: string) => value;
 // Internal (non-exported) functions are fine without an explicit return type
 const inferredInternal = (value: string) => value;
 
-// Naming conventions are not enforced
+// oxlint-disable-next-line id-match
 const snake_case = 123;
 
 class SomeClass {
@@ -20,7 +20,7 @@ class SomeClass {
     console.log(this.#someProp);
   }
 
-  // Naming conventions are not enforced
+  // oxlint-disable-next-line id-match
   snake_case() {}
 }
 

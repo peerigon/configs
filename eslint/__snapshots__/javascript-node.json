@@ -229,6 +229,16 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
+    "camelcase": [
+      1,
+      {
+        "allow": ["^UNSAFE_"],
+        "ignoreDestructuring": false,
+        "ignoreGlobals": false,
+        "ignoreImports": false,
+        "properties": "always"
+      }
+    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -710,7 +720,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [0],
+    "unicorn/better-dom-traversing": [2],
     "unicorn/catch-error-name": [
       2,
       {
@@ -719,7 +729,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      0,
+      2,
       {
         "preferThis": true,
         "preferSuper": true
@@ -750,7 +760,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      0,
+      2,
       {
         "order": [
           "static-field",
@@ -790,7 +800,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [0],
+    "unicorn/consistent-optional-chaining": [2],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -1091,9 +1101,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [0],
+    "unicorn/no-unreadable-iife": [2],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [0],
+    "unicorn/no-unreadable-object-destructuring": [2],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -1194,7 +1204,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [0],
+    "unicorn/prefer-array-last-methods": [2],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -1228,7 +1238,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      0,
+      2,
       {
         "checkFallbackExpressions": true
       }
@@ -1280,16 +1290,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      0,
+      2,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [0],
+    "unicorn/prefer-iterator-helpers": [2],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [0],
+    "unicorn/prefer-iterator-to-array-at-end": [2],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -1324,7 +1334,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [0],
+    "unicorn/prefer-object-destructuring-defaults": [2],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -1376,7 +1386,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [0],
+    "unicorn/prefer-single-array-predicate": [2],
     "unicorn/prefer-single-call": [
       2,
       {
@@ -1798,6 +1808,16 @@
     "block-scoped-var": [1],
     "block-spacing": [0],
     "brace-style": [0],
+    "camelcase": [
+      0,
+      {
+        "allow": ["^UNSAFE_"],
+        "ignoreDestructuring": false,
+        "ignoreGlobals": false,
+        "ignoreImports": false,
+        "properties": "always"
+      }
+    ],
     "comma-dangle": [0],
     "comma-spacing": [0],
     "comma-style": [0],
@@ -2280,7 +2300,7 @@
     "template-curly-spacing": [0],
     "template-tag-spacing": [0],
     "unicode-bom": [1, "never"],
-    "unicorn/better-dom-traversing": [0],
+    "unicorn/better-dom-traversing": [2],
     "unicorn/catch-error-name": [
       2,
       {
@@ -2289,7 +2309,7 @@
       }
     ],
     "unicorn/class-reference-in-static-methods": [
-      0,
+      2,
       {
         "preferThis": true,
         "preferSuper": true
@@ -2320,7 +2340,7 @@
       }
     ],
     "unicorn/consistent-class-member-order": [
-      0,
+      2,
       {
         "order": [
           "static-field",
@@ -2360,7 +2380,7 @@
       }
     ],
     "unicorn/consistent-json-file-read": [2, "string"],
-    "unicorn/consistent-optional-chaining": [0],
+    "unicorn/consistent-optional-chaining": [2],
     "unicorn/consistent-template-literal-escape": [2],
     "unicorn/consistent-tuple-labels": [2],
     "unicorn/custom-error-definition": [0],
@@ -2764,7 +2784,7 @@
     "unicorn/prefer-array-from-range": [2],
     "unicorn/prefer-array-index-of": [2],
     "unicorn/prefer-array-iterable-methods": [2],
-    "unicorn/prefer-array-last-methods": [0],
+    "unicorn/prefer-array-last-methods": [2],
     "unicorn/prefer-array-slice": [2],
     "unicorn/prefer-array-some": [2],
     "unicorn/prefer-at": [
@@ -2798,7 +2818,7 @@
     ],
     "unicorn/prefer-date-now": [2],
     "unicorn/prefer-default-parameters": [
-      0,
+      2,
       {
         "checkFallbackExpressions": true
       }
@@ -2850,16 +2870,16 @@
     "unicorn/prefer-import-meta-properties": [2],
     "unicorn/prefer-includes": [2],
     "unicorn/prefer-includes-over-repeated-comparisons": [
-      0,
+      2,
       {
         "minimumComparisons": 3
       }
     ],
     "unicorn/prefer-iterable-in-constructor": [2],
     "unicorn/prefer-iterator-concat": [0],
-    "unicorn/prefer-iterator-helpers": [0],
+    "unicorn/prefer-iterator-helpers": [2],
     "unicorn/prefer-iterator-to-array": [2],
-    "unicorn/prefer-iterator-to-array-at-end": [0],
+    "unicorn/prefer-iterator-to-array-at-end": [2],
     "unicorn/prefer-iterator-zip": [2],
     "unicorn/prefer-json-import": [0],
     "unicorn/prefer-keyboard-event-key": [2],
@@ -2894,7 +2914,7 @@
       }
     ],
     "unicorn/prefer-object-define-properties": [2],
-    "unicorn/prefer-object-destructuring-defaults": [0],
+    "unicorn/prefer-object-destructuring-defaults": [2],
     "unicorn/prefer-object-from-entries": [
       2,
       {
@@ -2946,7 +2966,7 @@
         "negatedConditions": "simplify"
       }
     ],
-    "unicorn/prefer-single-array-predicate": [0],
+    "unicorn/prefer-single-array-predicate": [2],
     "unicorn/prefer-single-call": [
       0,
       {

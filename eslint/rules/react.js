@@ -107,8 +107,8 @@ export const react = [
     },
     rules: {
       // self-closing-comp and jsx-curly-brace-presence moved to @stylistic/eslint-plugin, same
-      // options as their eslint-plugin-react equivalents. jsx-pascal-case is not enabled: it is a
-      // naming preference without an autofix.
+      // options as their eslint-plugin-react equivalents. jsx-pascal-case is not enabled: React already
+      // requires component names to start with a capital letter.
       "@stylistic/jsx-self-closing-comp": "warn", // https://eslint.style/rules/jsx-self-closing-comp
       "@stylistic/jsx-curly-brace-presence": ["warn", "never"], // https://eslint.style/rules/jsx-curly-brace-presence
       "@eslint-react/dom-no-string-style-prop": "warn", // replaces react/style-prop-object
@@ -136,11 +136,6 @@ export const react = [
       // Component return types (JSX.Element vs ReactNode vs React.ReactElement) are noisy,
       // version-dependent, and don't add the same contract value as a typed utility function.
       "@typescript-eslint/explicit-module-boundary-types": "off",
-      // Naming preferences without an autofix. Code is mostly written by coding agents now, and
-      // renames ripple across files without preventing a bug.
-      "@eslint-react/naming-convention-context-name": "off",
-      "@eslint-react/naming-convention-id-name": "off",
-      "@eslint-react/naming-convention-ref-name": "off",
     },
   },
   {

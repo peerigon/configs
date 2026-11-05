@@ -16,6 +16,18 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": [
+      "warn",
+      [
+        "^(?:__|UNSAFE_)?[a-zA-Z][a-zA-Z0-9]*$|^[A-Z][A-Z0-9_]*$|^_[a-zA-Z][a-zA-Z0-9]*$",
+        {
+          "ignoreDestructuring": true,
+          "properties": false,
+          "classFields": true,
+          "onlyDeclarations": false
+        }
+      ]
+    ],
     "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
@@ -381,6 +393,7 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": "allow",
     "max-depth": ["warn", [5]],
     "max-lines": [
       "warn",
@@ -730,9 +743,11 @@
         }
       ]
     ],
+    "eslint-js/camelcase": "allow",
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": "allow",
     "max-depth": "allow",
     "max-lines": [
       "warn",

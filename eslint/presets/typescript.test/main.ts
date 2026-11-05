@@ -2,7 +2,7 @@ import { getMessage } from "./message.ts";
 // Check if import attributes are detected and formatted correctly
 import test from "./test.json" with { type: "json" };
 
-// Naming conventions are not enforced (renames are churn without a correctness gain)
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const snake_case = 123;
 
 // Should not complain about missing dot-notation here since
@@ -26,7 +26,8 @@ class SomeClass {
     console.log(this.#someProp);
   }
 
-  // Naming conventions are not enforced
+  // Should be an error
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   snake_case() {}
 }
 

@@ -39,24 +39,10 @@ export const javascript = [
       "unicorn/single-line-block-comment-style": "off", // Would force every single-line JSDoc annotation (e.g. `/** @type {...} */`) into multiline form, contradicting standard JSDoc convention.
       "unicorn/prefer-import-meta-properties": "error",
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
-      // Stylistic rules without an autofix (or with suggestions only). Code is mostly written by
-      // coding agents now, and every such report costs them a manual edit loop without
-      // preventing a bug.
-      "unicorn/better-dom-traversing": "off",
-      "unicorn/class-reference-in-static-methods": "off",
-      "unicorn/consistent-class-member-order": "off", // Suggestion only: members have to be reordered by hand.
+      // Code is mostly written by coding agents now. These rules have no reliable autofix, fire
+      // often and add little long-term consistency, so every report costs an edit loop for no gain.
       "unicorn/consistent-compound-words": "off", // Renames ripple across files; TypeScript catches broken references anyway.
-      "unicorn/consistent-optional-chaining": "off",
       "unicorn/no-await-expression-member": "off", // Its fix only covers `const x = (await y).z`; `expect((await y).z)` and other inline uses need a manual rewrite that only adds a temporary variable.
-      "unicorn/no-unreadable-iife": "off",
-      "unicorn/no-unreadable-object-destructuring": "off",
-      "unicorn/prefer-array-last-methods": "off",
-      "unicorn/prefer-default-parameters": "off",
-      "unicorn/prefer-includes-over-repeated-comparisons": "off",
-      "unicorn/prefer-iterator-helpers": "off",
-      "unicorn/prefer-iterator-to-array-at-end": "off",
-      "unicorn/prefer-object-destructuring-defaults": "off",
-      "unicorn/prefer-single-array-predicate": "off",
       "unicorn/prefer-simple-condition-first": "off", // No autofix: every report needs a manual short-circuit review, and a careless reorder breaks guards like `obj && obj.x`.
       // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
       // equivalents report the same code and ship an autofix, while the core rules don't.
@@ -91,6 +77,7 @@ export const javascript = [
       // ----------------------------------------------
       "accessor-pairs": "warn", // https://eslint.org/docs/latest/rules/accessor-pairs
       "block-scoped-var": "warn", // https://eslint.org/docs/latest/rules/block-scoped-var
+      camelcase: ["warn", ruleOptions.camelcase], // https://eslint.org/docs/latest/rules/camelcase
       "consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
       "dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
       eqeqeq: ["warn", "always", { null: "ignore" }], // https://eslint.org/docs/latest/rules/eqeqeq
@@ -175,6 +162,7 @@ export const javascript = [
       "no-only-tests": noOnlyTests,
     },
     rules: {
+      camelcase: "off", // Mock payloads often mirror external casing conventions.
       "max-depth": "off", // Nested describe blocks are often the clearest structure.
       "max-nested-callbacks": "off", // Nested test callbacks are idiomatic in test frameworks.
       "no-await-in-loop": "off", // Await in loops is pretty common in Playwright tests.
@@ -187,6 +175,8 @@ export const javascript = [
       "require-yield": "off", // Generators without yield are common in test helpers/setup.
       "unicorn/no-global-object-property-assignment": "off", // Test setup often assigns globals on purpose (e.g. `globalThis.window` from jsdom).
       "unicorn/no-top-level-assignment-in-function": "off", // Tests commonly use `let server; beforeAll(() => { server = … })`.
+      "unicorn/no-unreadable-iife": "off", // Mocks and fixtures are written once and rarely read.
+      "unicorn/no-unreadable-object-destructuring": "off", // Mocks and fixtures are written once and rarely read.
       "unicorn/no-unnecessary-global-this": "off", // Test setup often uses `globalThis` explicitly to make global access obvious.
       "unicorn/prefer-single-call": "off", // Multiple `Array#push()` / `classList` calls are often clearer in test setup than one merged call.
       "unicorn/prefer-top-level-await": "off", // Top-level await might slow down the test suite start up.

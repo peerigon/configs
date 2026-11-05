@@ -85,6 +85,7 @@ Optional opinionated packs:
 
 - **Native rules first**, then JS plugins (`oxlint-plugin-eslint`, `prefer-arrow`, Playwright, TanStack Query, `react-you-might-not-need-an-effect`).
 - **React** uses native `react` + `jsx-a11y` + `react/react-compiler` (not `@eslint-react`).
+- **Naming** uses `id-match` as an approximation of `@typescript-eslint/naming-convention`.
 - Severity stays mostly `warn`, matching the ESLint package philosophy.
 
 ## Snapshots

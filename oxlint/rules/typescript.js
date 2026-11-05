@@ -2,8 +2,9 @@ import { globPatterns } from "../lib/glob-patterns.js";
 import { ruleOptions } from "../lib/rule-options.js";
 
 /**
- * TypeScript rule pack (best-effort port of eslint/rules/typescript.js). Presets must set plugins
- * to include typescript and options.typeAware: true.
+ * TypeScript rule pack (best-effort port of eslint/rules/typescript.js). naming-convention →
+ * id-match (see GAPS.md). Presets must set plugins to include typescript and options.typeAware:
+ * true.
  */
 export const typescript = {
   jsPlugins: ["eslint-plugin-prefer-arrow"],
@@ -42,6 +43,9 @@ export const typescript = {
     // Internal functions should infer their return type to keep diffs small.
     "typescript/explicit-module-boundary-types": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-module-boundary-types
     "typescript/method-signature-style": ["warn", "property"], // https://oxc.rs/docs/guide/usage/linter/rules/typescript/method-signature-style
+    // Approximate naming-convention (selector matrix not available natively)
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-match
+    "id-match": ruleOptions["id-match"],
     "typescript/no-confusing-void-expression": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-confusing-void-expression
     "typescript/no-empty-interface": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-empty-interface
     // With verbatimModuleSyntax, `import { type A } from "a"` is compiled to `import "a"`
@@ -107,6 +111,7 @@ export const typescript = {
         considerDefaultExhaustiveForUnions: true,
       },
     ], // https://oxc.rs/docs/guide/usage/linter/rules/typescript/switch-exhaustiveness-check
+    "eslint-js/camelcase": "off",
     "max-lines": [
       "warn",
       {
@@ -137,6 +142,7 @@ export const typescript = {
         "typescript/consistent-type-definitions": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-definitions
         // In d.ts files it's sometimes necessary to overload existing methods
         "typescript/method-signature-style": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/method-signature-style
+        "id-match": "off", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-match
         // Unused vars can be common in d.ts files when declaration merging is used
         "no-unused-vars": "off", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-vars
       },
@@ -146,6 +152,8 @@ export const typescript = {
       rules: {
         // Type assertions are quite common in tests
         "typescript/consistent-type-assertions": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-assertions
+        // Mocking often requires to mock objects with a different naming convention
+        "id-match": "off", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-match
         // We allow any to be used in tests, so returning it is ok
         "typescript/no-unsafe-return": "off", // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-return
         // chai uses these as assertions

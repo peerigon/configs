@@ -16,6 +16,18 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": [
+      "warn",
+      [
+        "^(?:__|UNSAFE_)?[a-zA-Z][a-zA-Z0-9]*$|^[A-Z][A-Z0-9_]*$|^_[a-zA-Z][a-zA-Z0-9]*$",
+        {
+          "ignoreDestructuring": true,
+          "properties": false,
+          "classFields": true,
+          "onlyDeclarations": false
+        }
+      ]
+    ],
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
@@ -500,6 +512,18 @@
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": [
+      "warn",
+      [
+        "^(?:__|UNSAFE_)?[a-zA-Z][a-zA-Z0-9]*$|^[A-Z][A-Z0-9_]*$|^_[a-zA-Z][a-zA-Z0-9]*$",
+        {
+          "ignoreDestructuring": true,
+          "properties": false,
+          "classFields": true,
+          "onlyDeclarations": false
+        }
+      ]
+    ],
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
@@ -981,9 +1005,11 @@
         }
       ]
     ],
+    "eslint-js/camelcase": "allow",
     "for-direction": "warn",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
+    "id-match": "allow",
     "jsx_a11y/alt-text": "warn",
     "jsx_a11y/anchor-has-content": "warn",
     "jsx_a11y/anchor-is-valid": "warn",
