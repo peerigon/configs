@@ -36,10 +36,13 @@ Recommended configuration in your `package.json` (using [`npm-run-all2`](https:/
   "type": "module",
   "scripts": {
     "test": "run-p test:*",
-    "test:lint": "eslint --max-warnings 0 --cache ."
+    "test:lint": "eslint --max-warnings 0 --cache .",
+    "lint:fix": "eslint --fix --cache ."
   }
 }
 ```
+
+Run `lint:fix` before fixing the remaining reports by hand. Many style rules ship an autofix, and the [AI rules](../ai/rules.mdc) tell coding agents to do the same.
 
 ## Ignored files
 

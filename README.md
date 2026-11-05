@@ -75,6 +75,7 @@ Our linting rules:
 
 - are mostly based on recommended sets
 - use type information to catch logic bugs
+- keep style rules without an autofix only where they buy long-term consistency (naming, modern idioms). Most code is written by coding agents now, and agents copy the code around them, so consistency compounds, while every report costs an edit loop
 - highlight a11y problems
 - are less strict in tests
 

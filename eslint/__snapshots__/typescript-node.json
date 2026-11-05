@@ -651,8 +651,8 @@
     "for-direction": [2],
     "func-call-spacing": [0],
     "func-style": [
-      1,
-      "expression",
+      0,
+      "declaration",
       {
         "allowArrowFunctions": false,
         "allowTypeAnnotation": false,
@@ -695,7 +695,7 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [1, 3],
+    "max-nested-callbacks": [1, 5],
     "max-params": [
       1,
       {
@@ -704,16 +704,6 @@
     ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -864,7 +854,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [1],
     "no-new-func": [1],
@@ -1008,7 +998,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -1341,7 +1330,7 @@
     "unicorn/no-asterisk-prefix-in-documentation-comments": [0],
     "unicorn/no-async-iterator-callback": [2],
     "unicorn/no-async-promise-finally": [2],
-    "unicorn/no-await-expression-member": [2],
+    "unicorn/no-await-expression-member": [0],
     "unicorn/no-await-in-promise-methods": [2],
     "unicorn/no-barrel-files": [0],
     "unicorn/no-blob-to-file": [2],
@@ -1793,7 +1782,7 @@
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
     "unicorn/prefer-short-escape-sequences": [2],
-    "unicorn/prefer-simple-condition-first": [1],
+    "unicorn/prefer-simple-condition-first": [0],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [
       2,
@@ -2645,8 +2634,8 @@
     "for-direction": [2],
     "func-call-spacing": [0],
     "func-style": [
-      1,
-      "expression",
+      0,
+      "declaration",
       {
         "allowArrowFunctions": false,
         "allowTypeAnnotation": false,
@@ -2691,7 +2680,7 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [1, 3],
+    "max-nested-callbacks": [1, 5],
     "max-params": [
       1,
       {
@@ -2700,16 +2689,6 @@
     ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -2860,7 +2839,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [1],
     "no-new-func": [1],
@@ -3004,7 +2983,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -3337,7 +3315,7 @@
     "unicorn/no-asterisk-prefix-in-documentation-comments": [0],
     "unicorn/no-async-iterator-callback": [2],
     "unicorn/no-async-promise-finally": [2],
-    "unicorn/no-await-expression-member": [2],
+    "unicorn/no-await-expression-member": [0],
     "unicorn/no-await-in-promise-methods": [2],
     "unicorn/no-barrel-files": [0],
     "unicorn/no-blob-to-file": [2],
@@ -3789,7 +3767,7 @@
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
     "unicorn/prefer-short-escape-sequences": [2],
-    "unicorn/prefer-simple-condition-first": [1],
+    "unicorn/prefer-simple-condition-first": [0],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [
       2,
@@ -4641,8 +4619,8 @@
     "for-direction": [2],
     "func-call-spacing": [0],
     "func-style": [
-      1,
-      "expression",
+      0,
+      "declaration",
       {
         "allowArrowFunctions": false,
         "allowTypeAnnotation": false,
@@ -4685,7 +4663,7 @@
         "skipComments": true
       }
     ],
-    "max-nested-callbacks": [0, 3],
+    "max-nested-callbacks": [0, 5],
     "max-params": [
       1,
       {
@@ -4694,16 +4672,6 @@
     ],
     "max-statements-per-line": [0],
     "multiline-ternary": [0],
-    "new-cap": [
-      1,
-      {
-        "capIsNew": true,
-        "capIsNewExceptions": [],
-        "newIsCap": true,
-        "newIsCapExceptions": [],
-        "properties": true
-      }
-    ],
     "new-parens": [0],
     "newline-per-chained-call": [0],
     "no-alert": [1],
@@ -4854,7 +4822,7 @@
     "no-multi-spaces": [0],
     "no-multi-str": [1],
     "no-multiple-empty-lines": [0],
-    "no-negated-condition": [1],
+    "no-negated-condition": [0],
     "no-nested-ternary": [0],
     "no-new": [0],
     "no-new-func": [1],
@@ -4999,7 +4967,6 @@
         "enforceForClassMembers": true
       }
     ],
-    "no-useless-concat": [1],
     "no-useless-constructor": [0],
     "no-useless-escape": [
       1,
@@ -5332,7 +5299,7 @@
     "unicorn/no-asterisk-prefix-in-documentation-comments": [0],
     "unicorn/no-async-iterator-callback": [2],
     "unicorn/no-async-promise-finally": [2],
-    "unicorn/no-await-expression-member": [2],
+    "unicorn/no-await-expression-member": [0],
     "unicorn/no-await-in-promise-methods": [2],
     "unicorn/no-barrel-files": [0],
     "unicorn/no-blob-to-file": [2],
@@ -5507,9 +5474,9 @@
       }
     ],
     "unicorn/no-unreadable-for-of-expression": [0],
-    "unicorn/no-unreadable-iife": [2],
+    "unicorn/no-unreadable-iife": [0],
     "unicorn/no-unreadable-new-expression": [0],
-    "unicorn/no-unreadable-object-destructuring": [2],
+    "unicorn/no-unreadable-object-destructuring": [0],
     "unicorn/no-unsafe-buffer-conversion": [2],
     "unicorn/no-unsafe-dom-html": [0],
     "unicorn/no-unsafe-json-serialization": [2],
@@ -5784,7 +5751,7 @@
     "unicorn/prefer-set-size": [2],
     "unicorn/prefer-short-arrow-method": [0, "always"],
     "unicorn/prefer-short-escape-sequences": [2],
-    "unicorn/prefer-simple-condition-first": [1],
+    "unicorn/prefer-simple-condition-first": [0],
     "unicorn/prefer-simple-sort-comparator": [2],
     "unicorn/prefer-simplified-conditions": [
       2,

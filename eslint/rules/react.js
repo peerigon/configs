@@ -120,7 +120,7 @@ export const react = [
       "@eslint-react/dom-no-missing-button-type": "warn", // replaces react/button-has-type
       "@eslint-react/dom-no-missing-iframe-sandbox": "warn", // replaces react/iframe-missing-sandbox
       "@eslint-react/dom-no-unknown-property": "warn", // replaces react/no-unknown-property
-      "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name
+      "@eslint-react/no-missing-component-display-name": "warn", // replaces react/display-name. Anonymous memo/forwardRef components show up as "Anonymous" in error component stacks.
       "@eslint-react/no-missing-context-display-name": "warn", // replaces react/display-name (context)
       "@eslint-react/no-unstable-context-value": "warn", // replaces react/jsx-no-constructed-context-values
       "@eslint-react/no-unused-state": "warn", // replaces react/no-unused-state

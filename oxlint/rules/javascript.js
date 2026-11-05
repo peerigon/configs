@@ -27,6 +27,8 @@ export const javascript = {
     "unicorn/prefer-ternary": "off",
     "unicorn/require-array-join-separator": "off",
     "unicorn/prefer-import-meta-properties": "error",
+    // ESLint gets this from unicorn's recommended config (with an autofix) instead of the core rule
+    "unicorn/no-negated-condition": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-negated-condition
 
     // Possible Problems
     // ----------------------------------------------
@@ -62,9 +64,10 @@ export const javascript = {
     "func-style": ["warn", "declaration"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-style
     "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/grouped-accessor-pairs
     "max-depth": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth
-    "max-nested-callbacks": ["warn", 3], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks
+    // Callbacks nest by design in React code (tests are exempt below), so the limit is looser.
+    "max-nested-callbacks": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks
+    // Positional arguments of the same type can be swapped without a type error.
     "max-params": ["warn", { max: 4 }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-params
-    "new-cap": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/new-cap
     "no-alert": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-alert
     "no-array-constructor": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-array-constructor
     "no-bitwise": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-bitwise
@@ -81,7 +84,6 @@ export const javascript = {
     "no-labels": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-labels
     "no-lone-blocks": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-lone-blocks
     "no-multi-str": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-multi-str
-    "no-negated-condition": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-negated-condition
     "no-new": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new
     "no-new-func": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-func
     "no-new-wrappers": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-wrappers

@@ -14,7 +14,7 @@
       ]
     ],
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": [
@@ -40,7 +40,7 @@
         }
       ]
     ],
-    "max-nested-callbacks": ["warn", [3]],
+    "max-nested-callbacks": ["warn", [5]],
     "max-params": [
       "warn",
       [
@@ -49,7 +49,6 @@
         }
       ]
     ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -95,7 +94,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "warn",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -353,6 +351,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",
@@ -393,7 +392,7 @@
       ]
     ],
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": "allow",
@@ -408,7 +407,7 @@
         }
       ]
     ],
-    "max-nested-callbacks": ["warn", [3]],
+    "max-nested-callbacks": ["warn", [5]],
     "max-params": [
       "warn",
       [
@@ -417,7 +416,6 @@
         }
       ]
     ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -463,7 +461,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "warn",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -708,6 +705,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",
@@ -749,7 +747,7 @@
     ],
     "eslint-js/camelcase": "allow",
     "for-direction": "warn",
-    "func-style": ["warn", ["expression"]],
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": "allow",
@@ -773,7 +771,6 @@
         }
       ]
     ],
-    "new-cap": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
     "no-async-promise-executor": "warn",
@@ -819,7 +816,6 @@
     "no-loss-of-precision": "warn",
     "no-misleading-character-class": "warn",
     "no-multi-str": "warn",
-    "no-negated-condition": "warn",
     "no-new": "allow",
     "no-new-func": "warn",
     "no-new-native-nonconstructor": "warn",
@@ -1053,6 +1049,7 @@
     "unicorn/no-instanceof-builtins": "warn",
     "unicorn/no-invalid-fetch-options": "warn",
     "unicorn/no-invalid-remove-event-listener": "warn",
+    "unicorn/no-negated-condition": "warn",
     "unicorn/no-nested-ternary": "allow",
     "unicorn/no-new-array": "warn",
     "unicorn/no-null": "allow",

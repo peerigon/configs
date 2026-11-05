@@ -38,8 +38,13 @@ export const javascript = [
       "unicorn/require-array-join-separator": "off",
       "unicorn/single-line-block-comment-style": "off", // Would force every single-line JSDoc annotation (e.g. `/** @type {...} */`) into multiline form, contradicting standard JSDoc convention.
       "unicorn/prefer-import-meta-properties": "error",
-      "unicorn/prefer-simple-condition-first": "warn", // Only a warning because most reports need a manual short-circuit review before reordering.
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
+      // Code is mostly written by coding agents now. These rules have no reliable autofix, fire
+      // often and add little long-term consistency, so every report costs an edit loop for no gain.
+      "unicorn/no-await-expression-member": "off", // Its fix only covers `const x = (await y).z`; `expect((await y).z)` and other inline uses need a manual rewrite that only adds a temporary variable.
+      "unicorn/prefer-simple-condition-first": "off", // No autofix: every report needs a manual short-circuit review, and a careless reorder breaks guards like `obj && obj.x`.
+      // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
+      // equivalents report the same code and ship an autofix, while the core rules don't.
     },
   },
   {
@@ -78,9 +83,10 @@ export const javascript = [
       "func-style": ["warn", "declaration"], // https://eslint.org/docs/latest/rules/func-style
       "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://eslint.org/docs/latest/rules/grouped-accessor-pairs
       "max-depth": ["warn", 5], // https://eslint.org/docs/latest/rules/max-depth
-      "max-nested-callbacks": ["warn", 3], // https://eslint.org/docs/latest/rules/max-nested-callbacks
+      // Callbacks nest by design in React code (tests are exempt below), so the limit is looser.
+      "max-nested-callbacks": ["warn", 5], // https://eslint.org/docs/latest/rules/max-nested-callbacks
+      // Positional arguments of the same type can be swapped without a type error.
       "max-params": ["warn", { max: 4 }], // https://eslint.org/docs/latest/rules/max-params
-      "new-cap": "warn", // https://eslint.org/docs/latest/rules/new-cap
       "no-alert": "warn", // https://eslint.org/docs/latest/rules/no-alert
       "no-array-constructor": "warn", // https://eslint.org/docs/latest/rules/no-array-constructor
       "no-bitwise": "warn", // https://eslint.org/docs/latest/rules/no-bitwise
@@ -97,7 +103,6 @@ export const javascript = [
       "no-labels": "warn", // https://eslint.org/docs/latest/rules/no-labels
       "no-lone-blocks": "warn", // https://eslint.org/docs/latest/rules/no-lone-blocks
       "no-multi-str": "warn", // https://eslint.org/docs/latest/rules/no-multi-str
-      "no-negated-condition": "warn", // https://eslint.org/docs/latest/rules/no-negated-condition
       "no-new": "warn", // https://eslint.org/docs/latest/rules/no-new
       "no-new-func": "warn", // https://eslint.org/docs/latest/rules/no-new-func
       "no-new-wrappers": "warn", // https://eslint.org/docs/latest/rules/no-new-wrappers
@@ -126,7 +131,6 @@ export const javascript = [
       "no-unused-vars": ["error", ruleOptions["no-unused-vars"]],
       "no-useless-call": "warn", // https://eslint.org/docs/latest/rules/no-useless-call
       "no-useless-computed-key": "warn", // https://eslint.org/docs/latest/rules/no-useless-computed-key
-      "no-useless-concat": "warn", // https://eslint.org/docs/latest/rules/no-useless-concat
       "no-useless-constructor": "warn", // https://eslint.org/docs/latest/rules/no-useless-constructor
       "no-useless-escape": "warn", // https://eslint.org/docs/latest/rules/no-useless-escape
       "no-useless-rename": "warn", // https://eslint.org/docs/latest/rules/no-useless-rename
@@ -171,6 +175,8 @@ export const javascript = [
       "require-yield": "off", // Generators without yield are common in test helpers/setup.
       "unicorn/no-global-object-property-assignment": "off", // Test setup often assigns globals on purpose (e.g. `globalThis.window` from jsdom).
       "unicorn/no-top-level-assignment-in-function": "off", // Tests commonly use `let server; beforeAll(() => { server = … })`.
+      "unicorn/no-unreadable-iife": "off", // Mocks and fixtures are written once and rarely read.
+      "unicorn/no-unreadable-object-destructuring": "off", // Mocks and fixtures are written once and rarely read.
       "unicorn/no-unnecessary-global-this": "off", // Test setup often uses `globalThis` explicitly to make global access obvious.
       "unicorn/prefer-single-call": "off", // Multiple `Array#push()` / `classList` calls are often clearer in test setup than one merged call.
       "unicorn/prefer-top-level-await": "off", // Top-level await might slow down the test suite start up.

@@ -120,7 +120,9 @@ export const typescript = {
         skipComments: true,
       },
     ],
-    "func-style": ["warn", "expression"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-style
+    // prefer-arrow enforces the function style in TS. func-style would also flag generators and
+    // functions that use `this`, which can't be arrow functions.
+    "func-style": "off",
     "prefer-arrow/prefer-arrow-functions": [
       // https://github.com/TristonJ/eslint-plugin-prefer-arrow
       "warn",
