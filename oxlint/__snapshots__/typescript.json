@@ -14,6 +14,7 @@
       ]
     ],
     "for-direction": "warn",
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": [
@@ -391,6 +392,7 @@
       ]
     ],
     "for-direction": "warn",
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": "allow",
@@ -745,6 +747,7 @@
     ],
     "eslint-js/camelcase": "allow",
     "for-direction": "warn",
+    "func-style": "allow",
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "id-match": "allow",

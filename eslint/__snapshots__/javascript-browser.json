@@ -280,6 +280,15 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
+    "func-style": [
+      1,
+      "declaration",
+      {
+        "allowArrowFunctions": false,
+        "allowTypeAnnotation": false,
+        "overrides": {}
+      }
+    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -774,7 +783,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [0, {}],
+    "unicorn/consistent-compound-words": [2, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],
@@ -1859,6 +1868,15 @@
     "flowtype/union-intersection-spacing": [0],
     "for-direction": [2],
     "func-call-spacing": [0],
+    "func-style": [
+      1,
+      "declaration",
+      {
+        "allowArrowFunctions": false,
+        "allowTypeAnnotation": false,
+        "overrides": {}
+      }
+    ],
     "function-call-argument-newline": [0],
     "function-paren-newline": [0],
     "generator-star": [0],
@@ -2354,7 +2372,7 @@
         ]
       }
     ],
-    "unicorn/consistent-compound-words": [0, {}],
+    "unicorn/consistent-compound-words": [2, {}],
     "unicorn/consistent-conditional-object-spread": [2, "logical"],
     "unicorn/consistent-date-clone": [2],
     "unicorn/consistent-destructuring": [0],

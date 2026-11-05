@@ -61,9 +61,10 @@ export const javascript = {
     "eslint-js/consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
     "eslint-js/dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
     eqeqeq: ["warn", "always", { null: "ignore" }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/eqeqeq
+    "func-style": ["warn", "declaration"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-style
     "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/grouped-accessor-pairs
     "max-depth": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth
-    // Callbacks nest by design in React and test code, so the limit is looser than max-depth's.
+    // Callbacks nest by design in React code (tests are exempt below), so the limit is looser.
     "max-nested-callbacks": ["warn", 5], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks
     // Positional arguments of the same type can be swapped without a type error.
     "max-params": ["warn", { max: 4 }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-params

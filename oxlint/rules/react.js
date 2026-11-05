@@ -81,6 +81,7 @@ export const react = {
     "react/jsx-no-constructed-context-values": "warn", // replaces @eslint-react/no-unstable-context-value
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-undef": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-undef
+    "react/jsx-pascal-case": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-pascal-case
     "react/jsx-props-no-spread-multi": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spread-multi
     "react/no-find-dom-node": "warn",
     "react/no-redundant-should-component-update": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/react/no-redundant-should-component-update

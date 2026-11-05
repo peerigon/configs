@@ -41,7 +41,6 @@ export const javascript = [
       "unicorn/prefer-then-catch": "off", // Its fix (`.then().catch()`) is reported by unicorn/prefer-await anyway. Rewriting to `await` with try/catch fixes both.
       // Code is mostly written by coding agents now. These rules have no reliable autofix, fire
       // often and add little long-term consistency, so every report costs an edit loop for no gain.
-      "unicorn/consistent-compound-words": "off", // Renames ripple across files; TypeScript catches broken references anyway.
       "unicorn/no-await-expression-member": "off", // Its fix only covers `const x = (await y).z`; `expect((await y).z)` and other inline uses need a manual rewrite that only adds a temporary variable.
       "unicorn/prefer-simple-condition-first": "off", // No autofix: every report needs a manual short-circuit review, and a careless reorder breaks guards like `obj && obj.x`.
       // Core no-negated-condition and no-useless-concat are not enabled on purpose: the unicorn
@@ -81,9 +80,10 @@ export const javascript = [
       "consistent-return": "warn", // https://eslint.org/docs/latest/rules/consistent-return
       "dot-notation": "warn", // https://eslint.org/docs/latest/rules/dot-notation
       eqeqeq: ["warn", "always", { null: "ignore" }], // https://eslint.org/docs/latest/rules/eqeqeq
+      "func-style": ["warn", "declaration"], // https://eslint.org/docs/latest/rules/func-style
       "grouped-accessor-pairs": ["warn", "setBeforeGet"], // https://eslint.org/docs/latest/rules/grouped-accessor-pairs
       "max-depth": ["warn", 5], // https://eslint.org/docs/latest/rules/max-depth
-      // Callbacks nest by design in React and test code, so the limit is looser than max-depth's.
+      // Callbacks nest by design in React code (tests are exempt below), so the limit is looser.
       "max-nested-callbacks": ["warn", 5], // https://eslint.org/docs/latest/rules/max-nested-callbacks
       // Positional arguments of the same type can be swapped without a type error.
       "max-params": ["warn", { max: 4 }], // https://eslint.org/docs/latest/rules/max-params

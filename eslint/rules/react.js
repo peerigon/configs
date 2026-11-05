@@ -106,11 +106,11 @@ export const react = [
       "@stylistic": stylisticPlugin,
     },
     rules: {
-      // self-closing-comp and jsx-curly-brace-presence moved to @stylistic/eslint-plugin, same
-      // options as their eslint-plugin-react equivalents. jsx-pascal-case is not enabled: React already
-      // requires component names to start with a capital letter.
+      // self-closing-comp, jsx-curly-brace-presence and jsx-pascal-case moved to
+      // @stylistic/eslint-plugin, same options as their eslint-plugin-react equivalents.
       "@stylistic/jsx-self-closing-comp": "warn", // https://eslint.style/rules/jsx-self-closing-comp
       "@stylistic/jsx-curly-brace-presence": ["warn", "never"], // https://eslint.style/rules/jsx-curly-brace-presence
+      "@stylistic/jsx-pascal-case": "warn", // https://eslint.style/rules/jsx-pascal-case
       "@eslint-react/dom-no-string-style-prop": "warn", // replaces react/style-prop-object
       "@eslint-react/dom-no-unsafe-target-blank": "warn", // replaces react/no-invalid-html-attribute (the rel="noopener noreferrer" case)
       // @eslint-react equivalents that replace eslint-plugin-react rules but are not

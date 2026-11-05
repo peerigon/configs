@@ -14,6 +14,7 @@
       ]
     ],
     "for-direction": "warn",
+    "func-style": ["warn", ["declaration"]],
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "max-depth": ["warn", [5]],
@@ -236,6 +237,7 @@
     ],
     "eslint-js/camelcase": "allow",
     "for-direction": "warn",
+    "func-style": ["warn", ["declaration"]],
     "getter-return": "warn",
     "grouped-accessor-pairs": ["warn", ["setBeforeGet"]],
     "max-depth": "allow",
