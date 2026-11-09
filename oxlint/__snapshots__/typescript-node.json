@@ -82,6 +82,16 @@
     "no-extra-label": "warn",
     "no-func-assign": "warn",
     "no-global-assign": "warn",
+    "no-implicit-coercion": [
+      "warn",
+      [
+        {
+          "boolean": true,
+          "number": false,
+          "string": false
+        }
+      ]
+    ],
     "no-implicit-globals": "warn",
     "no-implied-eval": "warn",
     "no-import-assign": "warn",
@@ -449,6 +459,16 @@
     "no-extra-label": "warn",
     "no-func-assign": "warn",
     "no-global-assign": "warn",
+    "no-implicit-coercion": [
+      "warn",
+      [
+        {
+          "boolean": true,
+          "number": false,
+          "string": false
+        }
+      ]
+    ],
     "no-implicit-globals": "warn",
     "no-implied-eval": "warn",
     "no-import-assign": "warn",
@@ -804,6 +824,16 @@
     "no-extra-label": "warn",
     "no-func-assign": "warn",
     "no-global-assign": "warn",
+    "no-implicit-coercion": [
+      "warn",
+      [
+        {
+          "boolean": true,
+          "number": false,
+          "string": false
+        }
+      ]
+    ],
     "no-implicit-globals": "warn",
     "no-implied-eval": "warn",
     "no-import-assign": "warn",

@@ -78,6 +78,8 @@ export const javascript = {
     "no-extra-bind": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-extra-bind
     "no-extra-label": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-extra-label
     "no-implicit-globals": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-globals
+    // Only the boolean check: `!!value` reads as a typo, `Boolean(value)` states the intent. `+x`, `""+x` etc. stay allowed.
+    "no-implicit-coercion": ["warn", { boolean: true, number: false, string: false }], // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-coercion
     "no-implied-eval": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implied-eval
     "no-iterator": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-iterator
     "no-label-var": "warn", // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-label-var
