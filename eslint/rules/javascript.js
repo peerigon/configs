@@ -97,6 +97,8 @@ export const javascript = [
       "no-extra-bind": "warn", // https://eslint.org/docs/latest/rules/no-extra-bind
       "no-extra-label": "warn", // https://eslint.org/docs/latest/rules/no-extra-label
       "no-implicit-globals": "warn", // https://eslint.org/docs/latest/rules/no-implicit-globals
+      // Only the boolean check: `!!value` reads as a typo, `Boolean(value)` states the intent. `+x`, `""+x` etc. stay allowed.
+      "no-implicit-coercion": ["warn", { boolean: true, number: false, string: false }], // https://eslint.org/docs/latest/rules/no-implicit-coercion
       "no-implied-eval": "warn", // https://eslint.org/docs/latest/rules/no-implied-eval
       "no-iterator": "warn", // https://eslint.org/docs/latest/rules/no-iterator
       "no-label-var": "warn", // https://eslint.org/docs/latest/rules/no-label-var

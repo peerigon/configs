@@ -429,6 +429,16 @@
         "exceptions": []
       }
     ],
+    "no-implicit-coercion": [
+      1,
+      {
+        "allow": [],
+        "boolean": true,
+        "disallowTemplateShorthand": false,
+        "number": false,
+        "string": false
+      }
+    ],
     "no-implicit-globals": [
       1,
       {
@@ -2015,6 +2025,16 @@
       2,
       {
         "exceptions": []
+      }
+    ],
+    "no-implicit-coercion": [
+      1,
+      {
+        "allow": [],
+        "boolean": true,
+        "disallowTemplateShorthand": false,
+        "number": false,
+        "string": false
       }
     ],
     "no-implicit-globals": [
