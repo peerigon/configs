@@ -144,6 +144,7 @@ Keep docs practical and copy-paste friendly.
 - CI builds and tests on PR/push.
 - Releases are branch-gated (`main`/`beta`) and semantic-release-driven.
 - Prefer conventional commit messages when asked to prepare commits for release automation.
+- PRs are squash-merged with the PR title as commit subject and the PR body as commit message. For breaking changes, use `!` in the title (`feat(scope)!: ...`) and put a line starting with `BREAKING CHANGE: ` (colon, at the start of a line) in the PR body — a `## Breaking change` heading is not recognized by semantic-release and will not appear in the release notes.
 
 ## Quick task checklist for agents
 
