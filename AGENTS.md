@@ -6,8 +6,7 @@
 
 - ESLint presets, optional style packs, and library-specific rule sets
 - Oxlint presets (best-effort ESLint parity; opt-in alongside or instead of ESLint)
-- Prettier configuration plus plugins for import sorting, JSDoc, package.json, CSS, and Tailwind ordering
-- Oxfmt config (best-effort Prettier parity; opt-in _instead of_ Prettier — do not run both)
+- Oxfmt config (import sorting, JSDoc, package.json, and Tailwind ordering)
 - TypeScript base and library-focused `tsconfig` presets
 - Semantic-release presets (including cross-publish)
 - VSCode settings reference
@@ -24,8 +23,7 @@ The package philosophy is:
 
 - `eslint/`: preset and rule composition source files
 - `oxlint/`: best-effort Oxlint presets/rules/styles (see `oxlint/GAPS.md` and `oxlint/improve-parity.prompt.md`)
-- `prettier/`: exported Prettier config
-- `oxfmt/`: exported Oxfmt config (best-effort Prettier parity; pick one formatter — see `oxfmt/GAPS.md`)
+- `oxfmt/`: exported Oxfmt config
 - `typescript/`: exported tsconfig JSON presets and helper glue
 - `semantic-release/`: release preset exports
 - `ai/`: agent styleguide/rules and migration guidance
@@ -109,17 +107,11 @@ If your change affects publishing behavior, also verify:
 - Keep [`oxlint/GAPS.md`](./oxlint/GAPS.md) current; use [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md) after Oxlint upgrades.
 - When [`config-snapshot.test.js`](./oxlint/config-snapshot.test.js) fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md).
 
-### Prettier changes (`prettier/`)
-
-- Stay close to Prettier defaults unless there is strong objective value.
-- Any plugin/order change must be deterministic and reduce review noise.
-
 ### `oxfmt/`
 
-- Best-effort mirror of `prettier/`; keep output as close to the Prettier config as Oxfmt allows.
-- This repo dogfoods Oxfmt (root `oxfmt.config.mts`, `test:format`, lint-staged, `.vscode` formatter). Keep publishing the Prettier config for consumers who still use Prettier.
-- Do not dual-run Prettier and Oxfmt in a consumer project — pick one (Oxfmt uses its default `printWidth: 100`).
-- Keep [`oxfmt/GAPS.md`](./oxfmt/GAPS.md) (and the summary in [`oxfmt/README.md`](./oxfmt/README.md)) current when Oxfmt gains or loses parity.
+- Stay close to Oxfmt defaults unless there is strong objective value; any option change must be deterministic and reduce review noise.
+- This repo dogfoods Oxfmt (root `oxfmt.config.mts`, `test:format`, lint-staged, `.vscode` formatter).
+- Keep the "Known limitations" section in [`oxfmt/README.md`](./oxfmt/README.md) current when Oxfmt gains or loses features.
 - Update the `oxfmt/base.test` fixture when the config changes, then re-run `npm run test:oxfmt`.
 
 ### TypeScript config changes (`typescript/`, root `tsconfig.json`)
@@ -143,7 +135,7 @@ If your change affects publishing behavior, also verify:
 When behavior changes, update the nearest relevant README:
 
 - root `README.md` for package-level behavior/philosophy
-- area README (`eslint/README.md`, `oxlint/README.md`, `prettier/README.md`, `oxfmt/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
+- area README (`eslint/README.md`, `oxlint/README.md`, `oxfmt/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
 
 Keep docs practical and copy-paste friendly.
 

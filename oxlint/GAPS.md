@@ -45,7 +45,6 @@ Upstream references:
 
 - Shipping `@eslint-react` as the React source of truth under Oxlint (JS plugin story for scoped sub-plugins is fragile; type-checked rules cannot run as JS plugins).
 - Perfect option parity for every typescript-eslint stylistic rule.
-- Replacing Prettier with Oxfmt in this package (separate concern).
 
 ## How to verify a gap is closed
 
