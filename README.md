@@ -20,7 +20,7 @@ Also checkout the instructions for each respective config:
 
 - [ESLint](/eslint/README.md)
 - [Oxlint](/oxlint/README.md) (best-effort opt-in alternative; see also [GAPS](/oxlint/GAPS.md))
-- [Oxfmt](/oxfmt/README.md) (see also [GAPS](/oxfmt/GAPS.md))
+- [Oxfmt](/oxfmt/README.md)
 - [TypeScript](/typescript/README.md)
 - [Semantic release](/semantic-release/README.md)
 - [VSCode](/.vscode/README.md)

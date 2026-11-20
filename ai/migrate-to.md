@@ -19,7 +19,7 @@ Only do this step if the project is a library (i.e. the `package.json` contains 
 
 ## Step 3: Migrate formatter to Oxfmt
 
-Read https://github.com/peerigon/configs/blob/main/oxfmt/README.md and https://github.com/peerigon/configs/blob/main/oxfmt/GAPS.md for instructions how to configure Oxfmt. Remove Prettier (its dependencies, config and ignore files) if present. Before finishing the PR, format all files with Oxfmt.
+Read https://github.com/peerigon/configs/blob/main/oxfmt/README.md for instructions how to configure Oxfmt. Remove Prettier (its dependencies, config and ignore files) if present. Before finishing the PR, format all files with Oxfmt.
 
 ## Step 4: Migrate ESLint and TypeScript
 

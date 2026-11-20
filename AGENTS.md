@@ -23,7 +23,7 @@ The package philosophy is:
 
 - `eslint/`: preset and rule composition source files
 - `oxlint/`: best-effort Oxlint presets/rules/styles (see `oxlint/GAPS.md` and `oxlint/improve-parity.prompt.md`)
-- `oxfmt/`: exported Oxfmt config (see `oxfmt/GAPS.md` for known limitations)
+- `oxfmt/`: exported Oxfmt config
 - `typescript/`: exported tsconfig JSON presets and helper glue
 - `semantic-release/`: release preset exports
 - `ai/`: agent styleguide/rules and migration guidance
@@ -111,7 +111,7 @@ If your change affects publishing behavior, also verify:
 
 - Stay close to Oxfmt defaults unless there is strong objective value; any option change must be deterministic and reduce review noise.
 - This repo dogfoods Oxfmt (root `oxfmt.config.mts`, `test:format`, lint-staged, `.vscode` formatter).
-- Keep [`oxfmt/GAPS.md`](./oxfmt/GAPS.md) (and the summary in [`oxfmt/README.md`](./oxfmt/README.md)) current when Oxfmt gains or loses features.
+- Keep the "Known limitations" section in [`oxfmt/README.md`](./oxfmt/README.md) current when Oxfmt gains or loses features.
 - Update the `oxfmt/base.test` fixture when the config changes, then re-run `npm run test:oxfmt`.
 
 ### TypeScript config changes (`typescript/`, root `tsconfig.json`)

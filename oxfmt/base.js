@@ -9,8 +9,7 @@
  *
  * `package.json` sorting is enabled by Oxfmt by default.
  *
- * CSS properties are formatted but not sorted. See [README.md](./README.md) and
- * [GAPS.md](./GAPS.md) for known limitations.
+ * CSS properties are formatted but not sorted. See [README.md](./README.md) for known limitations.
  *
  * @module oxfmtConfig
  */

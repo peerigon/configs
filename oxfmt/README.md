@@ -1,6 +1,6 @@
 # [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) config
 
-Shared Oxfmt config. Migrating from Prettier? Remove Prettier (and `prettier.config.*` / `.prettierrc*`) and its plugins from the project first. See also [GAPS.md](./GAPS.md) for known limitations.
+Shared Oxfmt config. Migrating from Prettier? Remove Prettier (and `prettier.config.*` / `.prettierrc*`) and its plugins from the project first.
 
 ## Installation
 
@@ -40,10 +40,11 @@ Uses Oxfmt's defaults (including `printWidth: 100`). On top of those, our config
 
 ## Known limitations
 
-- **No CSS property sorting.** CSS is formatted but declarations are not reordered.
+- **No CSS property sorting.** CSS is formatted but declarations are not reordered ([oxc#22576](https://github.com/oxc-project/oxc/issues/22576)).
 - **Tailwind v4** may require pointing `sortTailwindcss.stylesheet` at your CSS entry; v3 auto-detects `tailwind.config.js`.
+- **`package.json` and import sorting** use Oxfmt's own algorithm (perfectionist-style import groups) and may order things differently than other tools.
 
-See [GAPS.md](./GAPS.md) for the full, living list.
+Upstream docs: [configuration](https://oxc.rs/docs/guide/usage/formatter/config.html), [sorting](https://oxc.rs/docs/guide/usage/formatter/sorting.html), [unsupported features](https://oxc.rs/docs/guide/usage/formatter/unsupported-features.html).
 
 ## Ignoring files
 
