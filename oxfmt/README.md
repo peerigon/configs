@@ -1,10 +1,6 @@
 # [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) config
 
-Best-effort Oxfmt config that mirrors the [Prettier config](../prettier/README.md) in this package.
-
-**Pick one formatter.** Do not run Prettier and Oxfmt on the same codebase — their defaults differ (notably `printWidth`: Prettier `80`, Oxfmt `100`) and several plugins are only approximated or missing. See [GAPS.md](./GAPS.md).
-
-**This is not a 1:1 port.** Oxfmt is Prettier-compatible by design, but a few of our Prettier plugins have no Oxfmt equivalent yet — see [Differences](#differences-from-the-prettier-config).
+Shared Oxfmt config. Migrating from Prettier? Remove Prettier (and `prettier.config.*` / `.prettierrc*`) and its plugins from the project first. See also [GAPS.md](./GAPS.md) for known limitations.
 
 ## Installation
 
@@ -12,7 +8,7 @@ Best-effort Oxfmt config that mirrors the [Prettier config](../prettier/README.m
 npm install oxfmt @peerigon/configs --save-dev
 ```
 
-Remove Prettier (and `prettier.config.*` / `.prettierrc*`) from the project, then create an `oxfmt.config.ts` next to your `package.json`:
+Create an `oxfmt.config.ts` next to your `package.json`:
 
 ```ts
 export { default } from "@peerigon/configs/oxfmt";
@@ -42,17 +38,13 @@ Uses Oxfmt's defaults (including `printWidth: 100`). On top of those, our config
 
 `package.json` sorting is enabled by Oxfmt by default.
 
-## Differences from the Prettier config
+## Known limitations
 
-Oxfmt aims for Prettier parity, but some differences remain — most notably:
-
-- **`printWidth` is `100`** (Oxfmt default), not Prettier's `80`. This alone makes dual-running impractical.
-- **No CSS property sorting.** There is no equivalent to `prettier-plugin-css-order`; CSS is formatted but declarations are not reordered.
-- **`package.json` sorting differs.** Oxfmt's built-in sorter is not compatible with `prettier-plugin-packagejson`, so key ordering may differ.
+- **No CSS property sorting.** CSS is formatted but declarations are not reordered.
 - **Tailwind v4** may require pointing `sortTailwindcss.stylesheet` at your CSS entry; v3 auto-detects `tailwind.config.js`.
 
-See [GAPS.md](./GAPS.md) for the full, living list of differences.
+See [GAPS.md](./GAPS.md) for the full, living list.
 
 ## Ignoring files
 
-Files matching `**/*.generated.*` are ignored via `ignorePatterns` in the config. Oxfmt also respects `.gitignore` and `.prettierignore` automatically.
+Files matching `**/*.generated.*` are ignored via `ignorePatterns` in the config. Oxfmt also respects `.gitignore` automatically.

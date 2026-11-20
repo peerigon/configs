@@ -15,7 +15,7 @@ export const javascript = [
       // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/896
       "unicorn/name-replacements": "off", // Renamed from unicorn/prevent-abbreviations
       "unicorn/filename-case": "off",
-      "unicorn/no-asterisk-prefix-in-documentation-comments": "off", // Conflicts with the formatters (Prettier, Oxfmt) which keep the asterisk prefix in JSDoc blocks
+      "unicorn/no-asterisk-prefix-in-documentation-comments": "off", // Conflicts with the formatters (Oxfmt) which keep the asterisk prefix in JSDoc blocks
       "unicorn/no-nested-ternary": "off",
       "unicorn/no-null": "off",
       "unicorn/no-useless-undefined": "off",

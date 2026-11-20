@@ -6,4 +6,4 @@ This workspace:
 
 - recommends the [Oxc](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode) extension (`oxc.oxc-vscode`) for Oxfmt formatting (and Oxlint when enabled)
 - recommends the ESLint extension
-- marks Prettier as unwanted — this repo dogfoods Oxfmt, not Prettier
+- marks Prettier as unwanted — this repo uses Oxfmt

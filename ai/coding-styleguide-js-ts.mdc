@@ -12,7 +12,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 ## Formatting
 
-- Use the repository's formatter (Prettier or Oxfmt) and its config; do not hand-format code the formatter would rewrite
+- Use the repository's formatter (Oxfmt) and its config; do not hand-format code the formatter would rewrite
 
 ## Imports & exports
 
