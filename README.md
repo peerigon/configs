@@ -32,7 +32,7 @@ Furthermore, this package also contains [rules and instructions for AI coding ag
 If you want your AI coding agent to stick to our configs and coding principles, put this in your project-specific rules file (`AGENTS.md`, `.cursor/rules.mdc`, etc.; see [`ai/README.md`](./ai/README.md)):
 
 ```md
-**Important**: You **must** follow [these rules](./node_modules/@peerigon/configs/ai/rules.mdc) and its language-specific rules referenced in that file.
+Follow [these rules](./node_modules/@peerigon/configs/ai/rules.mdc) and the language-specific guides they reference.
 
 @node_modules/@peerigon/configs/ai/rules.mdc
 ```

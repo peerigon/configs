@@ -5,13 +5,15 @@ globs: **/*.sh, **/*.bash, **/*.zsh
 
 # Shell scripts
 
-- Prepend all shell scripts with
+- Start new shell scripts with a Bash shebang and strict mode (`pipefail` is not available in every `/bin/sh`). Keep the shebang of existing scripts: a zsh or POSIX `sh` script may rely on that shell or run where Bash is not installed:
 
-```sh
-set -o errexit  # exit when there was a single error
-set -o pipefail # fail when there was a pipe error
-set -o nounset  # fail when an env variable is not set
+```bash
+#!/usr/bin/env bash
+set -o errexit  # exit when a command fails
+set -o pipefail # fail when a command in a pipe fails
+set -o nounset  # fail when an unset variable is used
 ```
 
+- Put the main logic in a `main` function at the top and call `main "$@"` on the last line, so helpers can be defined below it
 - Make sure that shell scripts also work when file names contain spaces
 - Prefer commands that work on Linux, MacOS and Windows WSL

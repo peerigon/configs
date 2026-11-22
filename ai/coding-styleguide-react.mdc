@@ -5,12 +5,11 @@ globs: **/*.tsx, **/*.jsx
 
 # React
 
-- Use arrow functions for components
-- Inline component props next to the component prop argument
-- **File order (MUST)**: put the main component (and its exported API) first; keep local helpers, secondary types, and minor constants below it — same rule as the JS/TS styleguide
+- Use arrow functions for components (function declarations where the project's lint config enforces them)
+- Type props inline in the component's parameter (`({ title }: { title: string }) => …`) instead of declaring a separate props type, unless the type is reused or exported
 - Derive state where possible
 - Avoid unnecessary `useState` and `useEffect`
 - Use `useEffect` only when synchronizing with external systems (for example browser APIs, subscriptions, timers, network interactions)
 - Keep effects small, deterministic, and cleanup-safe
-- Avoid `useMemo` and `useCallback` unless its absolutely necessary
+- Avoid `useMemo` and `useCallback` unless a measured performance problem or a referential-equality requirement (e.g. an effect dependency) needs them
 - Create a story for each React component if Storybook is used

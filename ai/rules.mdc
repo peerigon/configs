@@ -1,6 +1,5 @@
 ---
 description: Rules for coding agents to follow
-globs: **/*
 alwaysApply: true
 ---
 
@@ -13,13 +12,14 @@ alwaysApply: true
 - Use names consistently
 - Prefer explicit over implicit
 - Keep code close together that belongs together
+- When a rule here conflicts with the project's lint, format, or TypeScript config, the config wins
 
 ## Agentic Behavior
 
 ### Communication and verbosity
 
 - Before the first tool call, state in one sentence what you are about to do
-- While working, give a brief update only when something important is found or direction changes
+- While working, give a brief update when you find something important, change direction, or have worked for a while without telling the user what you are doing
 - When done, lead with the outcome (what happened or what was found); add supporting detail after
 - End the final message with an explicit status: whether it is ready to merge (and why not), decisions needed from the user, and the next step. If nothing is left, say so
 - Keep responses focused and concise; avoid filler sections, redundant summaries, and unnecessary caveats
@@ -50,15 +50,15 @@ alwaysApply: true
 - Before opening a non-trivial PR or marking it ready, have one fresh-context review agent review the diff. Fix the findings that hold up and briefly list the ones you rejected
 - Use one subagent when one suffices; keep spawn counts low
 
-## File order (MUST)
+## File order
 
-Do **not** follow "define before call". In JS/TS (and most modern languages), functions may call helpers declared later in the file as long as they are not invoked during module init before those bindings exist.
-
-Order every file by importance so a reader hits the interesting part first:
+Order every file by importance so a reader hits the interesting part first. This applies to JS/TS files, including React components and tests, and to other languages that allow it:
 
 1. Imports (and required module-level side effects)
 2. Primary export / main entry (the reason the file exists)
 3. Supporting types, constants, and private helpers at the bottom
+
+Do not follow "define before call": a function may call helpers declared later in the file, as long as they are not invoked during module init before those bindings exist.
 
 ```ts
 // Bad — scroll past helpers to find the API
@@ -104,7 +104,7 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 
 ## Development Practices
 
-- Breakdown complex tasks into smaller, manageable todos and write them down to a dedicated TODO file
+- Break down complex tasks into smaller todos and track them with your todo tool, not in a file in the repository
 - Aim for small, reviewable pull-requests. Split work into logical units, and use stacked PRs when scope or risk justifies incremental review.
 - Write unit tests for simple, pure functions
 - Unit test files are colocated with source files (\*.test.ts)
@@ -117,20 +117,21 @@ See [Coding Styleguide Shell Scripts](./coding-styleguide-sh.mdc)
 - In the handoff, list every file, CI job, or config you removed (including during conflict resolution) and why
 - Adjust documentation both in comments and markdown files once you're done
 - Use [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
-- For breaking changes, mark the commit or PR title with `!` (e.g. `feat(scope)!:`) and add a `BREAKING CHANGE:` footer that tells consumers what to do. `@peerigon/configs/semantic-release` uses the `conventionalcommits` preset, which honors `!`. If a project still uses the default `angular` preset, `!` is ignored and the `BREAKING CHANGE:` paragraph (at the start of a line, not a heading) is the only trigger, otherwise the merge releases nothing.
+- For breaking changes, mark the commit or PR title with `!` (e.g. `feat(scope)!:`) and add a `BREAKING CHANGE:` footer (at the start of a line, not a heading) that tells consumers what to do
 - When PRs are squash-merged, the PR title and description become the commit message: put the `BREAKING CHANGE:` footer in the PR description, not only in individual commits
 - After every push to a branch with an open PR, update the PR title and description so they describe the current diff (high-level and concise, no history of earlier iterations)
 - Pass PR, issue, and comment bodies to `gh` via `--body-file` or a quoted heredoc so markdown (backticks, `$`) is not escaped or expanded
 
 ## Consumer-repo uncertainty protocol
 
-Some guidance depends on the consuming repository's runtime and toolchain (module resolution, transpilation, bundler, test runner).
+Some conventions depend on the consuming repository's runtime and toolchain (module resolution, transpilation, bundler, test runner), e.g. import specifiers (extensions vs. extensionless, `.js` vs. `.ts`), module format, and file naming.
 
 - First infer conventions from local evidence:
   - nearby files and existing import style
   - tsconfig compiler options
   - eslint and import rules
   - package scripts and build tooling
+- Keep the established convention consistent within a module or package.
 - If evidence is insufficient or conflicting, ask one concise question before changing conventions.
 - Do not silently introduce a new convention in a mixed or unknown setup.
 - If no answer is possible, follow the closest existing local convention and explicitly document the assumption.

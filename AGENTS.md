@@ -1,155 +1,44 @@
 # AGENTS.md
 
-## Purpose of this repository
+`@peerigon/configs` publishes shared ESLint, Oxlint, Oxfmt, TypeScript and semantic-release configs, plus rules for AI coding agents (`ai/`). Source configs live in the area folders and are exported via `package.json` `exports` (built into `dist/`).
 
-`@peerigon/configs` is a publishable package of shared development configs and guidance:
+Philosophy: optimize for readability first, refactorability second, writing convenience third. Formatting is convention-driven and deterministic; linting focuses on correctness, security, modern idioms, and a11y; type-checking is strict enough for safe refactoring, with local escape hatches.
 
-- ESLint presets, optional style packs, and library-specific rule sets
-- Oxlint presets (best-effort ESLint parity; opt-in alongside or instead of ESLint)
-- Oxfmt config (import sorting, JSDoc, package.json, and Tailwind ordering)
-- TypeScript base and library-focused `tsconfig` presets
-- Semantic-release presets (including cross-publish)
-- VSCode settings reference
-- AI coding-agent rules and migration docs aligned with the same coding philosophy
+This repo follows its own agent rules, with one difference: it is a JavaScript repo, so write `.js` files with JSDoc types (type-checked by `npm run test:types`), not `.ts`. Where the rules conflict with this repo's lint config (e.g. it enforces function declarations), the lint config wins.
 
-The package philosophy is:
+@ai/rules.mdc
 
-- optimize for readability first, refactorability second, writing convenience third
-- keep formatting convention-driven and deterministic
-- keep linting focused on correctness, security, modern idioms, and a11y
-- keep type-checking strict enough for safe refactoring, while allowing local escape hatches when necessary
+## Where to look
 
-## Source of truth by folder
+Read the doc for the area you touch before exploring. Directories with their own `AGENTS.md` carry the rules and traps of that code.
 
-- `eslint/`: preset and rule composition source files
-- `oxlint/`: best-effort Oxlint presets/rules/styles (see `oxlint/GAPS.md` and `oxlint/improve-parity.prompt.md`)
-- `oxfmt/`: exported Oxfmt config
-- `typescript/`: exported tsconfig JSON presets and helper glue
-- `semantic-release/`: release preset exports
-- `ai/`: agent styleguide/rules and migration guidance
-- `.vscode/`: reference workspace/editor settings
-- `tools/`: release/build helper scripts
+| Area                          | Start with                                                                |
+| ----------------------------- | ------------------------------------------------------------------------- |
+| ESLint presets, rules, styles | `eslint/AGENTS.md`, `eslint/README.md`                                    |
+| Oxlint presets and parity     | `oxlint/AGENTS.md`, `oxlint/GAPS.md`                                      |
+| Oxfmt config                  | `oxfmt/AGENTS.md`, `oxfmt/README.md`                                      |
+| TypeScript presets            | `typescript/AGENTS.md`, `typescript/README.md`                            |
+| Semantic-release presets      | `semantic-release/AGENTS.md`, `.releaserc.json`, `.github/workflows/`     |
+| AI agent rules (`ai/`)        | `ai/README.md`; the whole folder is published, so it holds no `AGENTS.md` |
+| VSCode reference settings     | `.vscode/README.md`                                                       |
+| Package-level docs            | `README.md`                                                               |
 
-Do not edit `dist/` manually (it is build output).
+## Working rules
 
-## How to work in this repo
+- `dist/` is build output; never edit it by hand. `**/*.generated.*` files are generated too.
+- Keep changes backwards compatible and preserve published export paths and config names unless the task is a breaking change.
+- Prefer extending recommended rule sets over bespoke one-off logic.
+- Prefer objective linting and type-safety improvements over subjective style churn.
+- `ai/` is consumer-facing: keep it consistent with the root README philosophy and with the lint presets' defaults, and prefer concise, enforceable rules. Links in `ai/` must resolve inside the published package (`files` in `package.json`: `dist`, `ai`, `README.md`).
+- When behavior or setup changes, update the nearest README.
 
-### Package and runtime assumptions
+## Validation
 
-- Package manager: `npm`
-- Module format: ESM (`"type": "module"`)
-- Main artifact model: source configs are authored in repo folders and exported via `package.json` `exports`
+Run the focused `test:*` script for the area you touched (see `package.json` and the area's `AGENTS.md`), then before finishing:
 
-### Coding and change principles
+- `npm test`
+- `npm run build`
 
-- Keep changes minimal, localized, and backwards compatible unless breaking behavior is explicitly requested.
-- Preserve published export paths and config names unless migration is clearly part of the task.
-- Prefer extending recommended rule sets over bespoke one-off logic when possible.
-- Align changes with repo philosophy: objective linting/type-safety improvements over subjective style churn.
-- Keep examples/tests realistic and focused on expected diagnostics.
+## Release and CI
 
-### Ignoring and generated files
-
-- ESLint and Oxfmt conventions treat `**/*.generated.*` as ignored/generated.
-- Do not hand-edit generated/demo artifacts unless the task is specifically about those artifacts.
-
-## Validation workflow
-
-Run targeted checks for touched scope first, then broader checks before finishing.
-
-- Full validation:
-  - `npm test`
-  - `npm run build`
-- Common focused checks:
-  - `npm run test:lint`
-  - `npm run test:format` — Oxfmt (`oxfmt --check .`)
-  - `npm run test:types`
-  - `npm run test:publishable`
-- ESLint preset/style/rule fixture checks (if relevant):
-  - `npm run test:presets:javascript`
-  - `npm run test:presets:typescript`
-  - `npm run test:presets:typescript-react`
-  - `npm run test:styles:no-default-export`
-  - `npm run test:styles:no-null`
-  - `npm run test:styles:prefer-array-shorthand`
-  - `npm run test:styles:prefer-interface`
-  - `npm run test:styles:jsx-no-literals`
-  - `npm run test:rules:vitest`
-  - `npm run test:snapshot` — if this fails, follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md)
-- Oxlint fixture checks (if relevant):
-  - `npm run test:oxlint:typescript`
-  - `npm run test:oxlint:typescript-react`
-  - `npm run test:oxlint:no-default-export`
-  - `npm run test:oxlint:snapshot` — if this fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md)
-  - When closing ESLint↔Oxlint gaps after an Oxlint upgrade, follow [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md)
-- Oxfmt fixture check (if relevant):
-  - `npm run test:oxfmt`
-
-If your change affects publishing behavior, also verify:
-
-- `.releaserc.json` preset extension behavior
-- workflow expectations in `.github/workflows/test-and-release.yml`
-
-## Editing guidance by area
-
-### `eslint/`
-
-- Keep presets composable and avoid combining multiple presets into one consumer entrypoint by default.
-- If you change or add ESLint rules, add or update tests for them whenever possible.
-- Ensure fixture tests in matching `*.test` folders demonstrate intended pass/fail cases.
-- For style rules (`eslint/styles/*`), document trade-offs in comments/docs when behavior is opinionated.
-- Preserve test relaxations where intended; strictness is context-dependent (app code vs tests).
-- When [`config-snapshot.test.js`](./eslint/config-snapshot.test.js) fails (often after a dependency upgrade), follow [`eslint/review-config-snapshot.prompt.md`](./eslint/review-config-snapshot.prompt.md): update snapshots, review the diff, adjust rule sources if needed, and ask the user for final judgement before committing.
-
-### `oxlint/`
-
-- Best-effort mirror of `eslint/`; prefer native rules, then JS plugins.
-- Keep [`oxlint/GAPS.md`](./oxlint/GAPS.md) current; use [`oxlint/improve-parity.prompt.md`](./oxlint/improve-parity.prompt.md) after Oxlint upgrades.
-- When [`config-snapshot.test.js`](./oxlint/config-snapshot.test.js) fails, follow [`oxlint/review-config-snapshot.prompt.md`](./oxlint/review-config-snapshot.prompt.md).
-
-### `oxfmt/`
-
-- Stay close to Oxfmt defaults unless there is strong objective value; any option change must be deterministic and reduce review noise.
-- This repo dogfoods Oxfmt (root `oxfmt.config.mts`, `test:format`, lint-staged, `.vscode` formatter).
-- Keep the "Known limitations" section in [`oxfmt/README.md`](./oxfmt/README.md) current when Oxfmt gains or loses features.
-- Update the `oxfmt/base.test` fixture when the config changes, then re-run `npm run test:oxfmt`.
-
-### TypeScript config changes (`typescript/`, root `tsconfig.json`)
-
-- Keep base configs strict and modern.
-- Treat `skipLibCheck` and similar loosening options as explicit trade-offs, not defaults.
-- Maintain clear separation between base checking config and library build partials.
-
-### Semantic-release changes (`semantic-release/`, `.releaserc.json`)
-
-- Preserve cross-publish behavior unless task explicitly changes release targets.
-- Keep CI release permissions and provenance expectations in sync with preset behavior.
-
-### AI guidance changes (`ai/`)
-
-- Keep AI guidance consistent with coding/linting/type-checking philosophy in root README.
-- Prefer concise, enforceable rules over long ambiguous prose.
-
-## Documentation expectations
-
-When behavior changes, update the nearest relevant README:
-
-- root `README.md` for package-level behavior/philosophy
-- area README (`eslint/README.md`, `oxlint/README.md`, `oxfmt/README.md`, `typescript/README.md`, `semantic-release/README.md`, `.vscode/README.md`, `ai/README.md`) for setup or usage changes
-
-Keep docs practical and copy-paste friendly.
-
-## Release and CI context
-
-- CI builds and tests on PR/push.
-- Releases are branch-gated (`main`/`beta`) and semantic-release-driven.
-- Prefer conventional commit messages when asked to prepare commits for release automation.
-
-## Quick task checklist for agents
-
-- Understand which config area is affected.
-- Implement the smallest correct change.
-- Update/extend fixtures/tests for behavioral changes.
-- Run focused checks, then full checks if impact is broad.
-- Update relevant README(s) when behavior/setup changes.
-- Leave repository in a releasable state.
+CI builds and tests on PRs and pushes. Releases are semantic-release-driven and only run from `main` and `beta`, so commit messages and squash-merged PR titles must be Conventional Commits.

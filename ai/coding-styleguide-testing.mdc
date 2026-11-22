@@ -1,13 +1,13 @@
 ---
 description: Best practices and conventions for testing JavaScript and TypeScript code
-globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
+globs: **/*.test.*, **/*.spec.*
 ---
 
 # Testing
 
 ## General principle
 
-**Important**: Aim for the smallest high-value test set that protects behavior, interface contracts, invariants, and regression-prone paths. Focus on testing behavior rather than implementation details.
+Aim for the smallest high-value test set that protects behavior, interface contracts, invariants, and regression-prone paths. Focus on testing behavior rather than implementation details.
 
 ## Structure & Organization
 
@@ -16,21 +16,19 @@ globs: **/*.test.js, **/*.test.ts, **/*.test.tsx
 - Hierarchical grouping: Use nested describe() blocks - outer for function/class, inner for scenarios
 - Logical categorization: Group by behavior, input type, or state (e.g., "with valid input", "error handling")
 - Each it() should test a single behavior
-- Put setup hooks and test cases first; keep local helper functions and fixtures at the bottom of the file
 
 ## Test Coverage
 
+Pick the cases that can actually break the contract; skip the rest:
+
 - Happy path: Test expected behavior with typical inputs
-- Edge cases: Test boundaries, empty values, maximum/minimum values
-- Error scenarios: Test all failure modes with proper error type/message validation
-- Type variations: Test all relevant data types (primitives, objects, arrays, functions)
-- Falsy values: Explicitly test null, undefined, 0, "", false, NaN
+- Edge cases: Test boundaries and empty values the code handles differently
+- Error scenarios: Test the failure modes callers rely on, with error type/message validation
+- Input variations: Test other data types or falsy values (`undefined`, `0`, `""`, `false`, `NaN`) only where the code branches on them or accepts them
 
 ## Type Safety
 
-- Type annotations: Include explicit types in test variables to verify inference
-- Compile-time checks: Some tests exist just to verify type compatibility
-- Type tests for generics: Add type tests for generic functions, classes, etc. Use the test runner's type testing tool when available (e.g. with Vitest: `expectTypeOf`)
+- Type tests for generics: Add type tests for generic functions, classes, etc. Use the test runner's type testing tool (e.g. with Vitest: `expectTypeOf`), not variable annotations: an annotation only checks assignability, not the inferred type
 
 ## Best Practices
 
