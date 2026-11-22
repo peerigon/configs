@@ -1,6 +1,6 @@
 ---
 description: JavaScript and TypeScript best practices and conventions
-globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
+globs: **/*.js, **/*.jsx, **/*.ts, **/*.tsx, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 ---
 
 # JavaScript & TypeScript
@@ -8,7 +8,6 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use TypeScript. If .js files are requested, use JSDoc type annotations
 - Prefer functional over imperative
 - Prefer immutability
-- **Priority rule (MUST)**: order every file by importance. Start with the primary logic and keep less important helpers/details at the end. Do **not** put small helpers, secondary types, or uninteresting constants above the main export just to satisfy "define before call".
 
 ## Formatting
 
@@ -17,22 +16,15 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 ## Imports & exports
 
 - Use ESM unless you're editing a CommonJS file
-- Follow the consuming repository's established import-specifier convention (extensions vs extensionless; `.js` vs `.ts` in TypeScript source files)
-- Determine convention from nearby files and configuration before introducing new imports
-- Keep import style consistent within a module/package; avoid mixed styles unless already established
-- If conventions are unclear or conflicting, ask the user before changing or introducing import-specifier style
+- Follow the repository's import-specifier convention; see the consumer-repo uncertainty protocol in the main rules
 - Avoid default imports and default exports
-- Avoid barrel files (index files that only re-export) unless its a package entry file
+- Avoid barrel files (index files that only re-export) unless it's a package entry file
 
 ## File structure
 
 - Do not add a file header comment by default
 - For complex or high-impact files only, add a short context comment near the top (3-6 lines) that explains purpose, where to start reading, and non-obvious caveats
-- Then imports
-- Then the file's primary export(s) / main classes and functions (order by importance relative to the file purpose)
-- Then supporting types, less important constants/variables, and private helpers at the bottom
-- Calling a helper from a function body does **not** require the helper to appear above that function; only load-time / TDZ constraints do
-- Exception: when module execution requires a binding to be initialized before it is used at load time, define it earlier
+- Order the rest as described in "File order" in the main rules
 
 ## Naming Conventions
 
@@ -63,7 +55,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 - Use template literals for string interpolation
 - Prefer `undefined` over `null`
 - Destructure objects and arrays, especially when using default values
-- Use optional chaining (`?.`) and nullish coalescing (`??`) instead of `||`
+- Use optional chaining (`?.`) and nullish coalescing (`??`) to handle `undefined`/`null`, not `&&` chains or `||` defaults
 
 ## Control flow
 
@@ -76,7 +68,7 @@ globs: **/*.js, **/*.ts, **/*.mjs, **/*.cjs, **/*.mts, **/*.cts
 
 If `@peerigon/typescript-toolkit` is not yet in the project's dependencies and one of the patterns below applies, **ask the user whether they want to add it** before proceeding.
 
-When it is installed, prefer these helpers over the equivalent inline patterns — they remove control-flow noise and keep business logic readable. When calling their generic functions explicitly, use descriptive type parameter names (`need<User>()`, not `need<T>()`) — see [Types](#types) below.
+When it is installed, prefer these helpers over the equivalent inline patterns — they remove control-flow noise and keep business logic readable. Rely on type inference when calling them; pass a type argument (e.g. `need<User>(…)`) only when inference fails.
 
 **`need` — assert non-null and return the value**
 
@@ -173,7 +165,7 @@ const user = unwrap(userResult);
 
 ## Functions
 
-- **Important**: Use arrow functions instead of function declarations unless there is no appropriate syntax like function overloads or generators
+- Use arrow functions instead of function declarations unless there is no appropriate syntax like function overloads or generators. Exception: use function declarations where the project's lint config enforces them (the ESLint presets do in JavaScript files)
 - Use objects as parameters when there are more than 2 parameters
 - Keep functions small and focused on single responsibility
 - Write pure functions when possible
@@ -189,25 +181,25 @@ const user = unwrap(userResult);
 ## Types
 
 - Use strict mode
-- Only use `interface` for interfaces that are intended to be implemented by a `class`
+- Only use `interface` for interfaces that are intended to be implemented by a `class`, unless the project enables the `prefer-interface` lint style
 - Use `type` for all other cases, especially object types
-- **Important**: Use the generic notation for types (e.g. `Array<string>` instead of `string[]`)
+- Use the generic notation for array types (e.g. `Array<string>` instead of `string[]`), unless the project enables the `prefer-array-shorthand` lint style
 - Do not use `any` to fix type errors. Search for a better alternative.
 - If you have to use `any`, try with `unknown` first
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/). Lift types into higher-level, special types as soon as they have been parsed (e.g. prefer explicit string literals over just `string`)
 - Infer types (using type utilities like `Pick`, `Omit`, ...) instead of duplicating them
 - Do not apply TypeScript generics explicitly unless necessary (prefer inference; use explicit type arguments when inference is wrong, ambiguous, or a type parameter cannot be inferred)
-- Prefer `satisfies` over type declarations
+- Prefer `satisfies` over type annotations on values (`const config = { … } satisfies Config`)
 - Use explicit return types for functions when the function is exported and the return type is not a literal or when it has high cyclomatic complexity
 - Use erasable syntax only
-- **Important**: Use descriptive type parameter names in generic types, do not use single letter type parameter names
+- Use descriptive type parameter names in generic declarations (`type Box<Value> = …`, not `type Box<T> = …`)
 
 ## Comments
 
 - Use comments to explain why, invariants, constraints, and non-obvious trade-offs
 - Do not write comments that only restate what the code already makes obvious
 - Add short contract comments only for complex or high-impact exports. Focus on purpose, guarantees, and important caveats.
-- **Comments:** no bare `/* */` block comments. Use `//` for inline notes; use JSDoc (`/** */`) for file-level comments (with `@file`) and when documenting an exported symbol, prop, or function.
+- No bare `/* */` block comments. Use `//` for inline notes; use JSDoc (`/** */`) for file-level comments (with `@file`) and when documenting an exported symbol, prop, or function.
 
 ## Testing
 

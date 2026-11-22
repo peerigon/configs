@@ -92,7 +92,7 @@ border: 1px solid #ccc;
 Provide visible focus for all interactive elements:
 
 ```css
-button:focus {
+button:focus-visible {
   outline: 2px solid #007bff;
   outline-offset: 2px;
 }
